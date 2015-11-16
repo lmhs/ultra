@@ -1,0 +1,26 @@
+include ../../basic/nav/nav
+include ../../basic/link/link
+
+mixin header-top()
+	block vars
+	.header__top
+		if pageId !== 'order'
+			+nav(getData('navigation')[0],'top').nav-list--inline
+		else
+			+link('/index').header-top__link-small--pseudo
+				i.icon-return
+				span.link__text.header-top__link-text--pseudo В магазин
+		.user__menu
+			+link('/cart').header-top__link
+				i.icon-cart.header-top__icon-cart
+				span.link__text Корзина
+			+link('').header-top__link.js-login(data-toggle="modal", data-target=".bs-example-modal-sm")
+				i.icon-enter.header-top__icon-enter
+				span.link__text Войти
+			//- button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
+				| Launch demo modal
+
+	//- #myModal.modal.fade.bs-example-modal-sm(tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel')
+	//- 	.modal-dialog.modal-sm
+	//- 		.modal-content
+	//- 			| ...

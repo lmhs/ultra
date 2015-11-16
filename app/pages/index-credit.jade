@@ -1,0 +1,11 @@
+block vars
+	- var pageId = 'Кредит';
+
+include ../blocks/index/credit/credit
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Кредит';
+
+block content
+	+credit()

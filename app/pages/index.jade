@@ -1,9 +1,14 @@
+block vars
+	- var pageId = -1;
+
 include ../blocks/index/index
+include ../blocks/basic/nav-small/nav-small
 
 extends ../blocks/layout-default/layout-default
 
 block head
-	- var pageTitle = 'CSSSR Project Template';
+	- var pageTitle = 'Главная';
 
 block content
 	+index()
+

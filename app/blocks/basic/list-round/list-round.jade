@@ -1,0 +1,7 @@
+mixin list-round(elements)
+
+	ol.list-round&attributes(attributes)
+		each item, n in elements
+			li
+				span.number-round n
+				block

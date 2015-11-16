@@ -1,0 +1,14 @@
+include ../../basic/nav/nav
+include ../../basic/logo/logo
+include ../../basic/search/search
+include ../../basic/phone/phone
+
+mixin header-main()
+	block vars
+	- var	order = pageId === 'order'
+	.header__main
+		+logo().header__logo
+		if !order
+			.header__search
+				+search().header__search-input
+		+phone().header__phone

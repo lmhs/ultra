@@ -1,0 +1,18 @@
+include ../../basic/link/link
+include ../nav-list/nav-list
+
+mixin nav(elements, type)
+	- var item = '';
+	- var listItems = elements[type];
+		case type
+			when 'top'
+			when 'main'
+				- classes= 'nav--'+type
+			default
+				- classes= 'nav--'+type
+	nav.nav(class=classes)&attributes(attributes)
+		if (listItems.length > 1)
+			+navList(listItems, type)
+
+
+

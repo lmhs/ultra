@@ -1,0 +1,34 @@
+include ../../basic/link/link
+
+mixin navList(elements, type)
+	ul.nav-list&attributes(attributes)
+		each element in elements
+			if (type == 'footer-left')
+				li.nav-list-item
+					+link(element.href).footer__link--light
+						| !{element.name}
+			else if (type == 'footer-right')
+				li.nav-list-item
+					+link(element.href).footer__link--dark
+						| !{element.name}
+			else if (type == 'footer-bottom')
+				li.nav-list-item
+					+link(element.href)(class= element.heading === true ? 'footer__link--heading' : '').footer__link--dark
+						| !{element.name}
+			else if (type == 'top')
+				li.nav-list-item.nav-list-item--header-top
+					+link(element.href).header-top__link
+						| !{element.name}
+			else if (type == 'main')
+				li.nav-list-item.nav-list-item--header-main
+					+link(element.href).header-main__link(class= element.sale === true ? 'header-main__link--sale' : '')
+						if (element.sale === true)
+							span.sale-icon-text %
+						else
+							i(class= 'icon-' + element.icon).icon-nav
+						span.nav__text !{element.name}
+			else
+				li.nav-list-item
+					+link(element.href)
+						| !{element.name}
+

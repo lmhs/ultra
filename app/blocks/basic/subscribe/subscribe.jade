@@ -1,0 +1,28 @@
+include ../button/button
+
+mixin subscribe()
+	section.subscribe
+		h3.subscribe__heading Ultra предложения
+		.subscribe__arrows
+			i.icon-left-arrow--footer
+			span.subscribe__arrows__caption Подпишись и получи купон на скидку
+			i.icon-right-arrow--footer
+		.subscribe__forms.clearfix
+			.subscribe__form
+				.subscribe__head
+					span.subscribe__head__txt.subscribe__head__txt--red Для женщин
+					i.icon-woman
+				.subscribe__body
+					input(type="email",placeholder='woman@gmail.com').subscribe__input
+				.subscribe__foot
+					+button('Подписаться','buttonSubmit').btn-med.btn--ghost.subscribe__btn.subscribe__btn--red
+						| Подписаться
+			.subscribe__form
+				.subscribe__head
+					i.icon-man
+					span.subscribe__head__txt.subscribe__head__txt--white Для мужчин
+				.subscribe__body
+					input(type="email",placeholder='man@gmail.com').subscribe__input
+				.subscribe__foot
+					+button('Подписаться','buttonSubmit').btn-med.btn--ghost.subscribe__btn.subscribe__btn--white
+						| Подписаться

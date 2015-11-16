@@ -1,0 +1,11 @@
+block vars
+	- var pageId = 'order';
+
+include ../blocks/index/order/order
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Оформление заказа';
+
+block content
+	+order()

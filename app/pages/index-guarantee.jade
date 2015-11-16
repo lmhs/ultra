@@ -1,0 +1,11 @@
+block vars
+	- var pageId = 'Гарантии';
+
+include ../blocks/index/guarantee/guarantee
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Гарантии';
+
+block content
+	+guarantee()

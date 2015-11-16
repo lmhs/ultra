@@ -1,0 +1,120 @@
+include ../../layout/content/content
+include ../../basic/link/link
+include ../../basic/order-form-section/order-form-section
+include ../../basic/button/button
+include ../../basic/details/details
+include ../../basic/phone/phone
+include ../../basic/form/form
+include ../../basic/help-block/help-block
+include ../../basic/tooltip/tooltip
+include ../../basic/dropdown/dropdown
+include ../../basic/table/table
+
+mixin order()
+	section.order__head
+		.inner.inner--w1360
+			.col-xs-12
+				h2.h1.order__heading !{pageTitle}
+	+content()
+		.inner.inner--w1360
+			.col-xs-8
+				.order__form-wrap
+					form.order__form.form-horisontal
+						+order-form-section(1,'Введите ваши данные')
+							+input-horizontal({name:'Имя',placeholder:'Имя',required:true,help:{name:'helpName',text:'Например, Иван'}})#name.order__form__input
+							+input-horizontal({type:'email',name:'Email',placeholder:'Email',required:true,help:{name:'helpEmail',text:'На этот почтовый ящик пришлем подробности заказа'}})#email.order__form__input
+							+input-horizontal({type:'phone',name:'Телефон',placeholder:'Телефон',required:true,help:{name:'helpPhone','text':'Контактный телефон только на случай вопросов по Вашему заказу'},validate:{'text':'Введите номер телефона'}})#phone.order__form__input
+
+						+order-form-section(2,'Город и способ доставки')
+							.form-group
+								label.control-label.col-sm-2
+									| Город
+								.col-sm-10
+									select.form-control.order__form__input
+										option
+											| Минск
+										option
+											| Брест
+										option
+											| Витебск
+										option
+											| Гродно
+										option
+											| Гомель
+										option
+											| Могилев
+									+helpInlineBlock
+										+link.link--pseudo.help-link--inline
+											| Нет Вашего города в списке?
+							//- +dropdown("Город",[
+											{text:"Минск",url:jv0,city:"Minsk"},
+											{text:"Брест",url:jv0,city:"Brest"},
+											{text:"Могилев",url:jv0,city:"Mahiliou"}
+											])
+							//- +input-horizontal({name:'Город',placeholder:'Город',required:true})#city.order__form__input
+
+							.form-group
+								.col-sm-10.col-sm-offset-2
+									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
+							+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address.order__form__input
+
+							.form-group
+								.col-sm-10.col-sm-offset-2
+									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
+									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'})
+										strong.order__form__price.js-order-price 41 612 BYR
+
+						+order-form-section(3,'Способ оплаты')
+							.form-group
+								.col-sm-10.col-sm-offset-2
+									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios'})
+									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios'})
+									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios'})
+							.form-group
+								.col-sm-10.col-sm-offset-2
+									+link().link--pseudo.order__form__back-link.js-return-order
+										| Вернуться назад
+									+button(submit,'buttonSubmit').btn-lg.btn--dark.order__form__submit-btn.js-submit-order
+										| Оформить заказ
+
+
+
+
+			.col-xs-4
+				section.order__fast
+					.order__fast__inner
+						h2.order__fast__heading.h2--red Быстрый заказ
+						h6.small.order__fast__subheading Не хотите заполнять  никаких форм?
+						form
+							label.order__fast__label Просто введите номер:
+							+input({'type':'phone',value:'+375'})
+							.form-group
+								+button(submit,'buttonSubmit').btn-lg.btn--dark.btn-block.order-fast__form__submit-btn.js-submit-order-fast
+									| Заказать быстро
+				section.order__delivery
+					.order__delivery__head
+						h6.small.order__delivery__heading Доставка
+						.icon-order-delivery-wrap
+							i.icon-truck-delivery.icon-order-truck-delivery
+					.order__delivery__body
+						.order__delivery__row
+							strong.order__delivery__strong Дни работы:
+							span.order__delivery__span Понедельник — Суббота
+						.order__delivery__row
+							strong.order__delivery__strong Часы работы:
+							span.order__delivery__span с 12.00 до 24.00
+						ul.default-ul.order__delivery__default-ul
+							li Бесплатная доставка по Минску
+							li Дешевая доставка по РБ
+
+	+content()
+		.inner.inner--w1360
+				section.order__border
+	section.order__items
+		+content()
+			.inner.inner--w1360
+				.col-xs-12
+					strong Вы заказываете
+					span 2 товара на сумму 1 212 000 BYR
+					+table(["","Описание товара","Цена за шт","Кол-во"],[["1","Блендер Philips HR2095/30","500 000 BYR","1"],["2","Nokia Lumia 630 Yellow (Black)","712 000 BYR","1"]])
+

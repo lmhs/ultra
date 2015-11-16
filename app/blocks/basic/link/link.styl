@@ -1,0 +1,131 @@
+.link
+	text-decoration underline
+	color #E14013
+
+	&:hover
+	&:focus
+		text-decoration none
+		color #E14013
+
+	&--secondary
+		color #111
+
+		&:hover
+		&:focus
+			color #959595
+			text-decoration none
+
+	&--pseudo
+		// text-decoration-style dashed
+		text-decoration none
+		border-bottom 1px dashed #E14013
+		&:hover
+		&:focus
+			text-decoration none
+			border-bottom-color #E14013
+
+	&--light
+		color #FFF
+
+		&:hover
+		&:focus
+			color #FFF
+
+.footer__link--light
+	color #E1E1E1
+	text-decoration none
+	font-size 15px
+
+.footer__link--red
+	font-size 13px
+	text-decoration none
+
+.footer__link--dark
+	font-size 13px
+	color #707070
+	text-decoration none
+
+.footer__link--heading
+	color #ccc
+
+.header-top__link
+	font-size 13px
+	color #252525
+	display inline-block
+	vertical-align top
+	padding 9px 13px 7px
+	text-decoration none
+
+.header-top__link-small--pseudo
+	display inline-block
+	text-decoration none
+	vertical-align top
+	margin-top 11px
+	line-height 18px
+
+.header-top__link-text--pseudo
+	color #999
+	font-size 13px
+	border-bottom 1px dashed #999
+	margin-left 5px
+
+.search__list__link
+	font-size 12px
+	color #888
+	border-bottom-color #888
+	@extend .link--pseudo
+	&:hover
+	&:focus
+		border-bottom-color #111
+		color #111
+
+.header-main__link
+	// width 187px
+	width 100%
+	height 90px
+	display block
+	float left
+	color #FFF
+	font-size 13px
+	line-height 18px
+	text-align center
+	text-decoration none
+	background-color #252525
+	position relative
+	// border-left 1px solid #363636
+	&:before
+		content ''
+		position absolute
+		left -1px
+		top 0
+		display block
+		float left
+		width 1px
+		height 100%
+		background #363636
+
+	&:hover
+		box-shadow inset 0px 0px 0px 1px #E14013
+		color #fff
+		border-bottom 3px solid #E14013
+		background-color #363636
+
+	.nav-list-item--header-main:last-child &
+		border-right 1px solid #363636
+
+	&--sale
+		background-color #E14013
+		&:hover
+		&:focus
+			background-color #EE3C0A
+			border-bottom 0
+			box-shadow none
+
+.help-link--inline
+	// nb! PT Sans?
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	font-size 12px
+	line-height 1
+	margin-top 0
+	margin-bottom 0
+	font-style normal

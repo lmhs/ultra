@@ -1,0 +1,279 @@
+[
+	{
+		"top" : [
+			{
+				"name" : "О магазине",
+				"href" : "/index-about.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Доставка и оплата",
+				"href" : "/index-delivery.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Товары в кредит",
+				"href" : "/index-credit.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Помощь",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			}
+		],
+		"main" : [
+			{
+				"name" : "Фото, телефония, мультимедиа",
+				"href" : "/index-goods.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "multimedia"
+			},
+			{
+				"name" : "Бытовая техника",
+				"href" : "/goods.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "household"
+			},
+			{
+				"name" : "Туризм, спорт, отдых",
+				"href" : "/goods.html",
+				"menu" : true,
+				"sale" : false,
+				"icon" : "sport"
+			},
+			{
+				"name" : "Товары для детей, игры",
+				"href" : "/goods.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "children"
+			},
+			{
+				"name" : "Автотовары",
+				"href" : "/goods.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "auto"
+			},
+			{
+				"name" : "Дом, сад, ремонт",
+				"href" : "/goods.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "repair"
+			},
+			{
+				"name" : "Акции, скидки, уценка",
+				"href" : "/goods.html",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "sale"
+			}
+		],
+		"footer-left" : [
+			{
+				"name" : "О магазине",
+				"href" : "/index-about.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Доставка и оплата",
+				"href" : "/index-delivery.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Товары в кредит",
+				"href" : "/index-credit.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Гарантия",
+				"href" : "/index-guarantee.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Дополнительная гарантия",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Дисконтная программа",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Часто задаваемые вопросы",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Благотворительность",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Подарочные сертификаты",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Сервисные центры",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Блог",
+				"href" : "/index-help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			}
+		],
+		"footer-right" : [
+			{
+				"name" : "Фотоаппараты",
+				"href" : "/about.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Объективы",
+				"href" : "/delivery.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Вспышки и лампы",
+				"href" : "/credit.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Mp3 плееры",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Наушники",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Фены и Стайлеры",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Машинки для стрижки",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Бритвы",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			},
+			{
+				"name" : "Мультиварки",
+				"href" : "/help.html",
+				"menu" : false,
+				"sale" : false,
+				"icon" : ""
+			}
+		],
+		"footer-bottom" : [
+			{
+				"name" 		: "Фото, телефония, мультимедиа",
+				"href" 		: "/about.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : true,
+				"icon" 		: ""
+			},
+			{
+				"name" 		: "Фототехника и фотоаппараты",
+				"href" 		: "/delivery.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : false,
+				"icon" 		: ""
+			},
+			{
+				"name" 		: "Телефония",
+				"href" 		: "/credit.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : false,
+				"icon" 		: ""
+			},
+			{
+				"name" 		: "Аудио, Видео, TV",
+				"href" 		: "/help.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : false,
+				"icon" 		: ""
+			},
+			{
+				"name" 		: "Оборудование для DJ",
+				"href" 		: "/help.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : false,
+				"icon" 		: ""
+			},
+			{
+				"name" 		: "Планшеты, компьютерная и офисная техника",
+				"href" 		: "/help.html",
+				"menu" 		: false,
+				"sale" 		: false,
+				"heading" : false,
+				"icon" 		: ""
+			}
+		]
+	}
+]

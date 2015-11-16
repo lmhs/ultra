@@ -1,9 +1,9 @@
-- var pageScripts = pageScripts || [[], [], []];
+- var pageScripts = pageScripts || [['modernizr.custom.min.js'], [], []];
 
 include ../../../node_modules/bemto.jade/bemto.jade
-include ../header/header
+include ../layout/header/header
 include ../main/main
-include ../footer/footer
+include ../layout/footer/footer
 include ../scripts/scripts
 
 +script([], ['app.min.js'])
@@ -12,9 +12,9 @@ doctype html
 html(lang='ru')
 	include ../head/head
 	body
+		+header()
 		+main()
-			+header()
 			block content
-			+footer()
+		+footer()
 
 		+scripts()

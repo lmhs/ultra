@@ -1,0 +1,30 @@
+include ../../basic/nav/nav
+include ../../basic/subscribe/subscribe
+include ../../basic/link/link
+
+mixin footer()
+	footer.footer
+		.container
+			.row
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-left')
+				.col-xs-8
+					+subscribe()
+				.col-xs-2
+					+link('/sale.html').footer__link--red
+						| Акции, скидки, уценка
+					+nav(getData('navigation')[0],'footer-right')
+			.row.footer__bottom-nav
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+				.col-xs-2
+					+nav(getData('navigation')[0],'footer-bottom')
+

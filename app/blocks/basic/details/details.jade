@@ -1,0 +1,10 @@
+mixin details(intro,summary)
+
+	details.details-item()&attributes(attributes)
+		summary.summary
+			span.summary-intro !{intro}
+			.summary-txt-wrap
+				span.summary-txt !{summary}
+		.details-content
+			.details-content-txt
+				block

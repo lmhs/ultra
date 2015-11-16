@@ -1,0 +1,20 @@
+include ../link/link
+include ../button/button
+
+mixin phone()
+	.phone&attributes(attributes)
+		span.phone__area
+			| +375
+		ul.phone__code
+			li.phone__code-item.phone__code-item--vel
+				| (44)
+			li.phone__code-item.phone__code-item--mts
+				| (29)
+			li.phone__code-item.phone__code-item--life
+				| (25)
+		+link('tel:7825555').phone__number
+				| 782 55 55
+		.phone__extra
+			| Время работы магазина: Пн-Пт с 9 до 20
+			+button().btn-xsm.btn--dark.btn--callback
+				| Обратный звонок

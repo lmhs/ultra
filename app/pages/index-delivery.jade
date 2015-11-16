@@ -1,0 +1,11 @@
+block vars
+	- var pageId = 'Доставка';
+
+include ../blocks/index/delivery/delivery
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Доставка и оплата';
+
+block content
+	+delivery()
