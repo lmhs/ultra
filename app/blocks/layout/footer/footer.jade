@@ -6,25 +6,25 @@ mixin footer()
 	footer.footer
 		.container
 			.row
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-left')
-				.col-xs-8
+				.col-md-4
 					+subscribe()
-				.col-xs-2
+				.col-md-1
 					+link('/sale.html').footer__link--red
 						| Акции, скидки, уценка
 					+nav(getData('navigation')[0],'footer-right')
 			.row.footer__bottom-nav
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
-				.col-xs-2
+				.col-md-1
 					+nav(getData('navigation')[0],'footer-bottom')
 

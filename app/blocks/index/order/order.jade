@@ -9,15 +9,16 @@ include ../../basic/help-block/help-block
 include ../../basic/tooltip/tooltip
 include ../../basic/dropdown/dropdown
 include ../../basic/table/table
+include ../../basic/checkbox/checkbox
 
 mixin order()
 	section.order__head
-		.inner.inner--w1360
-			.col-xs-12
+		+content()
+			.col-md-6
 				h2.h1.order__heading !{pageTitle}
-	+content()
-		.inner.inner--w1360
-			.col-xs-8
+	section.order__body
+		+content()
+			.col-md-4
 				.order__form-wrap
 					form.order__form.form-horisontal
 						+order-form-section(1,'Введите ваши данные')
@@ -27,9 +28,9 @@ mixin order()
 
 						+order-form-section(2,'Город и способ доставки')
 							.form-group
-								label.control-label.col-sm-2
+								label.control-label.col-sm-1
 									| Город
-								.col-sm-10
+								.col-sm-4
 									select.form-control.order__form__input
 										option
 											| Минск
@@ -54,33 +55,29 @@ mixin order()
 							//- +input-horizontal({name:'Город',placeholder:'Город',required:true})#city.order__form__input
 
 							.form-group
-								.col-sm-10.col-sm-offset-2
+								.col-sm-4.col-sm-offset-1
 									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
 							+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address.order__form__input
 
 							.form-group
-								.col-sm-10.col-sm-offset-2
+								.col-sm-4.col-sm-offset-1
 									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
 									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'})
 										strong.order__form__price.js-order-price 41 612 BYR
 
 						+order-form-section(3,'Способ оплаты')
 							.form-group
-								.col-sm-10.col-sm-offset-2
+								.col-sm-4.col-sm-offset-1
 									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios'})
 									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios'})
 									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios'})
 							.form-group
-								.col-sm-10.col-sm-offset-2
+								.col-sm-4.col-sm-offset-1
 									+link().link--pseudo.order__form__back-link.js-return-order
 										| Вернуться назад
 									+button(submit,'buttonSubmit').btn-lg.btn--dark.order__form__submit-btn.js-submit-order
 										| Оформить заказ
-
-
-
-
-			.col-xs-4
+			.col-md-2
 				section.order__fast
 					.order__fast__inner
 						h2.order__fast__heading.h2--red Быстрый заказ
@@ -106,15 +103,42 @@ mixin order()
 						ul.default-ul.order__delivery__default-ul
 							li Бесплатная доставка по Минску
 							li Дешевая доставка по РБ
-
-	+content()
-		.inner.inner--w1360
-				section.order__border
+	section.order__border
 	section.order__items
 		+content()
-			.inner.inner--w1360
-				.col-xs-12
-					strong Вы заказываете
-					span 2 товара на сумму 1 212 000 BYR
-					+table(["","Описание товара","Цена за шт","Кол-во"],[["1","Блендер Philips HR2095/30","500 000 BYR","1"],["2","Nokia Lumia 630 Yellow (Black)","712 000 BYR","1"]])
+			.col-md-6
+				strong Вы заказываете
+				span 2 товара на сумму 1 212 000 BYR
+				table.table.table-bordered.order__items__table
+					thead
+						tr
+							th(colspan="2") Описание товара
+							th Цена за шт.
+							th Кол-во
+							th Итого
+							th
+					tbody
+						tr
+							td
+								a(href="/index-good.html")
+									img(src="/assets/images/w9fdby7l0gdogomcxqkka.jpg", alt="phone").order-item__img
+							td
+								.order-item__description
+									a(href="/index-good.html")
+										strong.order-item__description__name Nokia Lumia 630 Yellow (Black)
+										span.order-item__description__text Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM
+									.order-item__description__warranty
+										.checkbox
+											label
+												input.checkbox-element(type='checkbox')
+												span Продлить гарантию еще на 1 год
+												strong + 50 400 BYR
+										+link().link--pseudo узнать подробнее
+							td 712 000 BYR
+							td
+								+inputNumber({value:"2",min:"0",max:"999"})
+							td 712 000 BYR
+							td
+								+link()
+									i.icon-trash
 

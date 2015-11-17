@@ -9,18 +9,18 @@ mixin header()
 		.header__top-wrap
 			.container
 				.row
-					.col-xs-12
+					.col-md-6
 						+header-top()
 		.header__main-wrap
 			.container
 				.row
-					.col-xs-12
+					.col-md-6
 						+header-main()
 		if !order
 			.header__nav-wrap
 				.container
 					.row
-						.col-xs-12
+						.col-md-6
 							+nav(getData('navigation')[0],'main').nav-list--inline.clearfix
 
 

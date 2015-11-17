@@ -1,5 +1,9 @@
-mixin checkbox(name,value,labelText,id)
+mixin checkbox(args)
 	.checkbox
 		label
-			input(type='checkbox', name=name, id=id, value=value).checkbox-element&attributes(attributes)
-			labelText
+			input.checkbox-element(
+				type='checkbox',
+				name= args.name ? args.name : '',
+				id= args.id ? args.id : '',
+				value= args.value ? args.value : '')&attributes(attributes)
+			| #{args.label}

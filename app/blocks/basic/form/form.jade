@@ -32,6 +32,34 @@ mixin input(args)
 			aria-describedby=args.help ? args.help.name : null)&attributes(attributes)
 		if args.help
 			+helpBlock(args.help.name)
+				|!{args.help.text}
+		if block
+			block
+
+//- Input control with form-group wrapper
+mixin inputNumber(args)
+	- if (args.name)
+		- var label= args.name
+	.form-group.input-group
+		if label
+			label.control-label(
+				for=attributes.id ? attributes.id : null,
+				class=args.required ? 'is-required' : '') #{label}
+		input.form-control(
+			type='number'
+			name=args.name ? args.name : null
+			value=args.value ? args.value : null
+			min=args.min ? args.min : null
+			max=args.max ? args.max : null
+			placeholder=args.placeholder ? args.placeholder : null
+			aria-describedby=args.help ? args.help.name : null)&attributes(attributes)
+		.input-group__btn--vertical
+			button(type='button',role='button').input-number-btn.input-number-btn--up.js-up-input
+				i.icon-caret-up
+			button(type='button',role='button').input-number-btn.input-number-btn--down.js-down-input
+				i.icon-caret-down
+		if args.help
+			+helpBlock(args.help.name)
 				| !{args.help.text}
 		if block
 			block
@@ -41,10 +69,10 @@ mixin input-horizontal(args)
 	- if (args.name)
 		- var label= args.name
 	.form-group
-		label.control-label.col-sm-2(
+		label.control-label.col-sm-1(
 			for=attributes.id ? attributes.id : null,
 			class=args.required ? 'is-required' : '') #{label}
-		.col-sm-10
+		.col-sm-4
 			input.form-control(
 				type=args.type ? args.type : 'text'
 				name=args.name ? args.name : null
