@@ -3,6 +3,7 @@ import $ from 'jquery';
 import './bootstrap-modals.js';
 import './bootstrap-tooltip.js';
 import './bootstrap-dropdown.js';
+import './bootstrap-tab.js';
 import './jquery.details.min.js';
 
 $(() => {
@@ -12,7 +13,13 @@ $(() => {
 	if (!Modernizr.details) {
     $('details').details();
   }
-  $('[data-toggle="tooltip"]').tooltip()
+
+  $('[data-toggle="tooltip"]').tooltip();
+
+  $('.js-product-nav').on('click','.js-product-nav-tab', function (e) {
+  	e.preventDefault();
+	  $(this).tab('show')
+	})
 });
 
 // ($('.js-login').on('click',function (){
