@@ -75,7 +75,7 @@ mixin order()
 								.col-sm-4.col-sm-offset-1
 									+link().link--pseudo.order__form__back-link.js-return-order
 										| Вернуться назад
-									+button(submit,'buttonSubmit').btn-lg.btn--dark.order__form__submit-btn.js-submit-order
+									+button({type:'buttonSubmit'}).btn-lg.btn--dark.order__form__submit-btn.js-submit-order
 										| Оформить заказ
 			.col-md-2
 				section.order__fast
@@ -86,7 +86,7 @@ mixin order()
 							label.order__fast__label Просто введите номер:
 							+input({'type':'phone',value:'+375'})
 							.form-group
-								+button(submit,'buttonSubmit').btn-lg.btn--dark.btn-block.order-fast__form__submit-btn.js-submit-order-fast
+								+button({type:'buttonSubmit'}).btn-lg.btn--dark.btn-block.order-fast__form__submit-btn.js-submit-order-fast
 									| Заказать быстро
 				section.order__delivery
 					.order__delivery__head

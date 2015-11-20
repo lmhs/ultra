@@ -4,7 +4,7 @@ include ../link/link
 
 mixin search()
 	input(type='search',placeholder='Быстрый поиск товара')&attributes(attributes)
-	+button('Найти','buttonSubmit').btn-sm.btn--dark.header__search-btn
+	+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
 		| Найти
 	.search__list
 		| Часто ищут:

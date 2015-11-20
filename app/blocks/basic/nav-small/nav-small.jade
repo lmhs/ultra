@@ -1,18 +1,18 @@
 include ../link/link
 
 mixin nav-small(elements)
-	nav.nav-small
-		ul.nav-small__list
+	nav.breadcrumb-nav-wrap
+		ul.breadcrumb.breadcrumb-nav
 			- var length = elements.length
 			- var i = 0
 			each item in elements
-				li.nav-small__item
 					- var last = i === length-1
 					- i++
 					if !last
-						+link().nav-small__link
-							| !{item}
-						i.icon-gt
+						li.breadcrumb-nav__item
+							+link().breadcrumb-nav__link
+								| !{item}
+							//- i.icon-gt
 					else
-						span.nav-small__link.nav-small__link--current
+						li.breadcrumb-nav__item.active
 							| !{item}
