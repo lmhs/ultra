@@ -10,5 +10,5 @@ mixin header-main()
 		+logo().header__logo
 		if !order
 			.header__search
-				+search().header__search-input
-		+phone().header__phone
+				+search({type:'header'}).header__search-input
+		+phone({type:'header'}).header__phone

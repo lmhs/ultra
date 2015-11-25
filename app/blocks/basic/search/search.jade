@@ -1,17 +1,77 @@
 //- include ../input/input
 include ../button/button
 include ../link/link
+include ../label/label
 
-mixin search()
-	input(type='search',placeholder='Быстрый поиск товара')&attributes(attributes)
-	+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
-		| Найти
-	.search__list
-		| Часто ищут:
-		| &#32;
-		+link().search__list__link
-			| мультиварка
-		| ,
-		| &#32;
-		+link().search__list__link
-			| фотоаппарат
+mixin search(args)
+	label.search-input-label&attributes(attributes)
+		input(type='search',placeholder='Быстрый поиск товара').form-control
+	if args
+		case args.type
+			when 'header'
+				+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
+					| Найти
+				.search__list
+					| Часто ищут:
+					| &#32;
+					+link().search__list__link
+						| мультиварка
+					| ,
+					| &#32;
+					+link().search__list__link
+						| фотоаппарат
+
+			when 'not-found'
+				+button({type:'buttonSubmit'}).btn-med.btn--dark.not-found__search-btn
+					| Найти
+				.search__list
+					+label('default','Часто ищут:').not-found__label
+					| &#32;
+					+link().search__list__link.search__list__link--large
+						| мультиварка
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--large
+						| фотоаппарат
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--medium
+						| соковыжималка
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--medium
+						| планшет
+					| ,
+					| &#32;
+					+link().search__list__link
+						| ноутбук
+					| ,
+					| &#32;
+					+link().search__list__link
+						| скороварка
+					| ,
+					| &#32;
+					+link().search__list__link
+						| электропечь
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Samsung S4
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Philips
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Apple
+					| ,
+					| &#32;
+					+link().search__list__link
+						| iPhone 6
+					| ,
+					| &#32;
+					+link().search__list__link
+						| газонокосилка
+
+

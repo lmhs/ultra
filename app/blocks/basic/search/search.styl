@@ -1,17 +1,22 @@
-input.header__search-input[type=search]
-	border 1px solid #d3d7da
-	background-color #f9f9f9
-	width 454px
-	height 32px
-	padding-left 36px
-	padding-top 12px
-	padding-bottom 10px
-	border-radius 2px
-	&::placeholder
-		color #888
-		font-size 13px
-		font-style italic
+.search-input-label
+	display inline-block
+	vertical-align top
+	position relative
+	cursor text
+	font-weight light
+	&::before
+		content ''
+		sprite($icon_search)
+		position absolute
+		top 50%
+		left 8px
+		margin-top -8px
 
 .search__list
 	font-size 12px
 	color #888
+
+.not-found__search-input-label
+	margin-bottom 19px
+	&::before
+		left 18px
