@@ -5,6 +5,7 @@ import './bootstrap-tooltip.js';
 import './bootstrap-dropdown.js';
 import './bootstrap-tab.js';
 import './jquery.details.min.js';
+import './jquery.countdown.js';
 
 $(() => {
 	svg4everybody();
@@ -19,9 +20,19 @@ $(() => {
   $('.js-product-nav').on('click','.js-product-nav-tab', function (e) {
   	e.preventDefault();
 	  $(this).tab('show')
-	})
-});
+	});
 
-// ($('.js-login').on('click',function (){
+	$('#phone1').countDown({
+		targetOffset: {
+			'day': 		18,
+			'month': 	0,
+			'year': 	0,
+			'hour': 	6,
+			'min': 		23,
+			'sec': 		54
+		},
+    omitWeeks: true
+	});
+})
 
-// }))();
+// ()();

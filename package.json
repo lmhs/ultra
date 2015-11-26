@@ -48,6 +48,7 @@
     "debuga": "^1.0.2",
     "del": "^2.0.0",
     "eslint": "^1.0.0",
+    "flipclock": "^0.7.8",
     "gulp": "^3.9.0",
     "gulp-bump": "^1.0.0",
     "gulp-cached": "^1.1.0",
