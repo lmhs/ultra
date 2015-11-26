@@ -44,6 +44,7 @@ gulp.task('styles', () => (
             'Opera >= ' + browsers.opera,
             'Safari >= ' + browsers.safari
           ),
+        cssgrace,
         fontWeight()
         ]
       ))
