@@ -1,13 +1,35 @@
-mixin product-similar()
-	.product.product--similar.js-product
-		.product__title
-			| SAMSUNG G350E Galaxy Star
-			| Advance White
-		.product__image
-			img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
-		strong.product__price
-			| 22 415 BYR
-		footer.product__footer
+mixin product()
+	.product.js-product
+		aside.product__labels
+			.product__label.product__label--discount
+				| -20%
+			.product__label.product__label--hit
+				| Хит!
+			.product__label.product__label--new
+				| Новинка!
+		.product__head
+			.product__title
+				h4.product__title-text
+					| SAMSUNG G350E Galaxy Star
+					| Advance White
+			.product__rating
+				.product__review
+					| отзывы
+				span.spec__rating-stars
+					i.icon-star-rating
+					i.icon-star-rating
+					i.icon-star-rating
+					i.icon-star-rating
+					i.icon-star-rating
+		.product__body
+			.product__image
+				img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
+			.product__price
+				s.product__price-old
+					| 45 000 BYR
+				strong.product__price-special
+					| 22 415 BYR
+		.product__footer
 			.product__features
 				img(src="/assets/images/android-icon.png", alt="android")
 				img(src="/assets/images/2-sim-icon.png", alt="2-sim")
@@ -24,5 +46,15 @@ mixin product-similar()
 				+link().spec__action-link--pseudo
 					i.icon-price-favorites.spec__icon-price-favorites
 					span.spec__action-link-text В избранном
-
+		.product__video
+			.product__video__heading
+				| Видео
+			.product__video__content
+				| play
+		.product__present
+			| Present
+		.product__added.product__added--compare
+			| Добавлено к сравнению
+		.product__added.product__added--favorite
+			| Добавлено в избранное
 
