@@ -1,0 +1,43 @@
+.phone
+	font-family 'PT Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	color #999
+
+.phone__area
+.phone__number
+	font-size 52px
+	letter-spacing -4px
+
+.phone__area
+	margin-right 5px
+
+.phone__code
+	display inline-block
+
+	&-item
+		font-size 14px
+		line-height 14px
+		&::before
+			content ''
+			display inline-block
+			vertical-align top
+			margin-top 1px
+			margin-right 4px
+		&--vel::before
+			sprite($icon_vel_13)
+		&--mts::before
+			sprite($icon_mts_13)
+		&--life::before
+			sprite($icon_life_13)
+
+.phone__number
+	margin-left 4px
+	color #252525
+	text-decoration none
+
+.phone__extra
+	font-size 12px
+	line-height 21px
+	color #888
+
+.header__phone
+	float right
