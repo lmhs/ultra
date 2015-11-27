@@ -1,73 +1,102 @@
 include ../rating/rating
 include ../action/action
+include ../available/available
 include ../review-small/review-small
 
 mixin product(args)
-	.product.js-product&attributes(attributes)
-		if args.labels
-			aside.product__labels
-				case args.labels
-					when 'discount'
-						.product__label.product__label--discount
-							| -20%
-						br
-					when 'hit'
-						.product__label.product__label--hit
-							| Хит!
-						br
-					when 'new'
-						.product__label.product__label--new
-							| Новинка
-						br
-		a(href="/index-product.html").product__link
-			.product__head
-				.product__title
+	if args.type !== 'sidebar'
+		.product.js-product&attributes(attributes)
+			if args.labels
+				aside.product__labels
+					case args.labels
+						when 'discount'
+							.product__label.product__label--discount
+								| -20%
+							br
+						when 'hit'
+							.product__label.product__label--hit
+								| Хит!
+							br
+						when 'new'
+							.product__label.product__label--new
+								| Новинка
+							br
+			a(href="/index-product.html").product__link
+				.product__head
 					.product__title-text
 						| SAMSUNG G350E Galaxy Star
 						| Advance White
-				if args.type !== 'similar'
-					.product__rating
-						+reviewSmall().product__review-small
-						+rating()
-			.product__body
+					if args.type !== 'similar'
+						.product__rating
+							+reviewSmall().product__review-small
+							+rating()
+				.product__body
+					.product__image
+						img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
+					.product__price
+						if args.oldPrice
+							s.product__price-old
+								| !{args.oldPrice}
+						strong.product__price-special
+							| 22 415 BYR
+			.product__foot
+				if args.type === 'similar'
+					.product__features
+						span.product__features__icon-wrap
+							img(src="/assets/images/android-icon.png", alt="android")
+						span.product__features__icon-wrap
+							img(src="/assets/images/2-sim-icon.png", alt="2-sim")
+						span.product__features__icon-wrap
+							img(src="/assets/images/3g-icon.png", alt="3g")
+						span.product__features__icon-wrap
+							img(src="/assets/images/ips-icon.png", alt="ips")
+						span.product__features__icon-wrap
+							img(src="/assets/images/4-cores-icon.png", alt="4-cores")
+						span.product__features__icon-wrap
+							img(src="/assets/images/gps-icon.png", alt="gps")
+				.product__actions
+					+button().btn-sm.btn--red.product__buy-btn
+						| Купить
+					.product__actions__links
+						+action({type:'compare'}).product__action
+						+action({type:'favorite'}).product__action
+			if args.video
+				.product__video
+					.product__video__heading
+						| Видео
+					.product__video__content
+						| play
+			if args.present
+				.product__present
+					| Present
+			if args.added
+				case args.added
+					when 'compare'
+						.product__added.product__added--compare
+							| Добавлено к сравнению
+					when 'favorite'
+						.product__added.product__added--favorite
+							| Добавлено в избранное
+	else
+		.product.product-sidebar.js-product&attributes(attributes)
+			.product__head.product-sidebar__head
+				.product__title-text.product-sidebar__title-text
+					| SAMSUNG G350E Galaxy Star
+					| Advance White
+			.product__body.product-sidebar__body
 				.product__image
 					img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
-				.product__price
+				.product__price.product-sidebar__price
 					if args.oldPrice
-						s.product__price-old
+						s.product__price-old.product-sidebar__price-old
 							| !{args.oldPrice}
-					strong.product__price-special
+					strong.product__price-special.product-sidebar__price-special
 						| 22 415 BYR
-		.product__footer
-			if args.type === 'similar'
-				.product__features
-					img(src="/assets/images/android-icon.png", alt="android")
-					img(src="/assets/images/2-sim-icon.png", alt="2-sim")
-					img(src="/assets/images/3g-icon.png", alt="3g")
-					img(src="/assets/images/ips-icon.png", alt="ips")
-					img(src="/assets/images/4-cores-icon.png", alt="4-cores")
-					img(src="/assets/images/gps-icon.png", alt="gps")
-			.product__actions
-				+button().btn-sm.btn--red.product__buy-btn
+				+button().btn-lg.btn-block.btn--red.product-sidebar__buy-btn
 					| Купить
-				.product__actions__links
-					+action({type:'compare'}).product__action
-					+action({type:'favorite'}).product__action
-		if args.video
-			.product__video
-				.product__video__heading
-					| Видео
-				.product__video__content
-					| play
-		if args.present
-			.product__present
-				| Present
-		if args.added
-			case args.added
-				when 'compare'
-					.product__added.product__added--compare
-						| Добавлено к сравнению
-				when 'favorite'
-					.product__added.product__added--favorite
-						| Добавлено в избранное
+				+available({count:5})
+			.product__foot.product-sidebar__foot
+				+action({type:'drop'}).product__action
+				+action({type:'compare'}).product__action
+				+action({type:'favorite'}).product__action
 

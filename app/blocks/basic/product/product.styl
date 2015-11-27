@@ -1,13 +1,18 @@
 .product
 	border-radius 2px
 	border 1px solid #E1E1E1
-	padding 20px 16px 0
+	padding 20px 16px 19px
 	position relative
+
+	&-sidebar
+		border-radius 0
+		border-top-width 4px
+		padding 0
 
 	&__link
 		&::after
 			position absolute
-			content ''
+			// content ''
 			top -1px
 			right -1px
 			bottom -1px
@@ -40,14 +45,37 @@
 			background-color #FF7300
 			border-left-color #E26702
 
-
 	&__title-text
 		color #333
 		font-size 13px
 		line-height 16px
 
+	&-sidebar__head
+		padding 20px 16px
+		background-color #F6F6F6
+
+	&-sidebar__title-text
+		color #111
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight bold
+		font-size 15px
+		line-height 18px
+
 	&__body
 		padding-top 32px
+
+	&-sidebar__body
+		padding 12px 15px 14px
+
+	&__foot
+		padding-top 30px
+
+	&-sidebar__foot
+		padding 16px 15px
+		background-color #F6F6F6
+
+	&__image
+		overflow hidden
 
 	&__price
 		margin-top 12px
@@ -67,30 +95,53 @@
 			color #333
 			font-size 14px
 
+	&-sidebar__price
+		text-align left
+		&-old
+			font-size 16px
+		&-special
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 20px
+
 	&__features
-		padding-top 40px
+		padding-top 10px
+		display flex
+		justify-content space-between
+		flex-wrap wrap
+		align-items center
+		align-content center
+
+	&__features__icon-wrap
+		display inline-block
+		margin-bottom 20px
+		margin-right 10px
+
+	// nb to fix
+	.no-flexbox &__features
 		text-align justify
-		img
-			display inline-block
-			margin-bottom 20px
-			margin-right 5px
 
 	&__buy-btn
 		display inline-block
 		vertical-align top
+		position relative
+		z-index 2
 
 
 	&__actions
 		font-size 0
-		position relative
-		z-index 2
 		&__links
 			max-width 50%
 			padding-left 20px
 			display inline-block
 			vertical-align top
 
+	&__action
+		position relative
+		z-index 2
+
+
 .similar__product
+	padding-bottom 0
 
 	&:hover
 		border-color #C2C2C2
@@ -102,6 +153,9 @@
 			display block
 
 	.product__features
+		display flex
+
+	.no-flexbox & .product__features
 		display block
 
 	.product__actions

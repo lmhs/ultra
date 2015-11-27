@@ -6,13 +6,30 @@
 	text-align center
 	margin-bottom 17px
 
-.product-page__head__icons
+.product-page__icons
 	font-size 0
 	text-align center
-	img
-		vertical-align bottom
-	img + img
-		margin-left 40px
+	height 40px
+	display flex
+	justify-content center
+	align-items center
+	&-wrap
+		&+& img
+			margin-left 40px
+
+
+.no-flexbox
+	.product-page__icons
+		font-size 0
+		text-align center
+		height 40px
+		display table
+		margin 0 auto
+		&-wrap
+			display table-cell
+			vertical-align middle
+			&+& img
+				margin-left 40px
 
 .product-page__offers
 	padding-bottom 50px
@@ -23,6 +40,9 @@
 		.spec__available-icon
 			sprite($icon_check_gray)
 
+.product-page__info
+	padding-top 63px
+	border-top 1px solid #e1e1e1
 
 .spec__label__caption
 	margin-top 4px
@@ -58,9 +78,7 @@
 		margin-bottom 16px
 
 .spec__available
-	font-size 11px
-	color #888
-	margin-left 4px
+	display block
 
 .spec__warranty
 	font-size 12px
@@ -167,22 +185,6 @@
 		border-bottom-color #888
 	&__left
 		padding-right 40px
-
-.product-page__similar
-	&__head
-		padding-top 68px
-		padding-bottom 31px
-		text-align center
-	&__heading
-		margin-top 0
-		margin-bottom 0
-		display inline-block
-		vertical-align top
-		margin-right 15px
-	&__tag
-		vertical-align top
-		display inline-block
-		float none
 
 .product-page__unavailable-divider
 	margin-top 15px

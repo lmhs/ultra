@@ -1,6 +1,7 @@
 include ../../layout/content/content
 include ../../layout/expert/expert
 include ../../layout/timer/timer
+include ../../layout/similar/similar
 include ../../layout/recent/recent
 include ../../layout/not-found/not-found
 include ../../basic/link/link
@@ -22,6 +23,7 @@ include ../../basic/countdown/countdown
 include ../../basic/product/product
 include ../../basic/rating/rating
 include ../../basic/action/action
+include ../../basic/available/available
 
 
 mixin productPage()
@@ -33,13 +35,19 @@ mixin productPage()
 		+content()
 			.col-md-6
 				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
-				.product-page__head__icons
-					img(src="/assets/images/android-icon.png", alt="android")
-					img(src="/assets/images/2-sim-icon.png", alt="2-sim")
-					img(src="/assets/images/3g-icon.png", alt="3g")
-					img(src="/assets/images/ips-icon.png", alt="ips")
-					img(src="/assets/images/4-cores-icon.png", alt="4-cores")
-					img(src="/assets/images/gps-icon.png", alt="gps")
+				.product-page__icons
+					span.product-page__icons-wrap
+						img(src="/assets/images/android-icon.png", alt="android")
+					span.product-page__icons-wrap
+						img(src="/assets/images/2-sim-icon.png", alt="2-sim")
+					span.product-page__icons-wrap
+						img(src="/assets/images/3g-icon.png", alt="3g")
+					span.product-page__icons-wrap
+						img(src="/assets/images/ips-icon.png", alt="ips")
+					span.product-page__icons-wrap
+						img(src="/assets/images/4-cores-icon.png", alt="4-cores")
+					span.product-page__icons-wrap
+						img(src="/assets/images/gps-icon.png", alt="gps")
 
 	section.product-page__offers
 		+content()
@@ -70,15 +78,10 @@ mixin productPage()
 								| 2 610 000 BYR
 							strong.spec__price.spec__price--new
 								| 1 950 000 BYR
-						.spec__available
-							i.icon-check-green.spec__available-icon
-							span.spec__available
-								| В наличии —
-								if available
-									span.js-available-count  5
-								else
-									span.js-available-count  0
-								|  шт.
+							if available
+								+available({count:5}).spec__available
+							else
+								+available({count:0}).spec__available
 						if available
 							.spec__buy
 								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
@@ -140,32 +143,15 @@ mixin productPage()
 								br
 								| Ежедневно в другие регионы
 							+link().link--pseudo.product-page__condition__link Условия доставки
-	section.product-page__similar
-		.container
-			.row
-				.col-md-6
-					.product-page__similar__head
-						h4.product-page__similar__heading Похожие велосипеды с
-						+tag('2014 год',false).product-page__similar__tag
-						+tag('горный',false).product-page__similar__tag
-						+tag('мужской',false).product-page__similar__tag
-						+tag('еще параметр',true).product-page__similar__tag
-			.row
-				.col-md-20
-					+product({type:'similar'}).similar__product
-				.col-md-20
-					+product({type:'similar'}).similar__product
-				.col-md-20
-					+product({type:'similar'}).similar__product
-				.col-md-20
-					+product({type:'similar'}).similar__product
-				.col-md-20
-					+product({type:'similar'}).similar__product
+	+similar()
 	section.product-page__info
 		+content()
 			.col-md-1
-				aside(style='width:100%;height:631px;background:gray;')
-					| Samsung i9300 Galaxy S III Garnet
+				aside
+					+product({
+										type:'sidebar',
+										oldPrice: '45 000 BYR'
+									})
 			.col-md-5
 				ul.nav.nav-tabs.js-product-nav
 					li.active(role='presentation')
