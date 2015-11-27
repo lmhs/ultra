@@ -1,60 +1,73 @@
-mixin product()
-	.product.js-product
-		aside.product__labels
-			.product__label.product__label--discount
-				| -20%
-			.product__label.product__label--hit
-				| Хит!
-			.product__label.product__label--new
-				| Новинка!
-		.product__head
-			.product__title
-				h4.product__title-text
-					| SAMSUNG G350E Galaxy Star
-					| Advance White
-			.product__rating
-				.product__review
-					| отзывы
-				span.spec__rating-stars
-					i.icon-star-rating
-					i.icon-star-rating
-					i.icon-star-rating
-					i.icon-star-rating
-					i.icon-star-rating
-		.product__body
-			.product__image
-				img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
-			.product__price
-				s.product__price-old
-					| 45 000 BYR
-				strong.product__price-special
-					| 22 415 BYR
+include ../rating/rating
+include ../action/action
+include ../review-small/review-small
+
+mixin product(args)
+	.product.js-product&attributes(attributes)
+		if args.labels
+			aside.product__labels
+				case args.labels
+					when 'discount'
+						.product__label.product__label--discount
+							| -20%
+						br
+					when 'hit'
+						.product__label.product__label--hit
+							| Хит!
+						br
+					when 'new'
+						.product__label.product__label--new
+							| Новинка
+						br
+		a(href="/index-product.html").product__link
+			.product__head
+				.product__title
+					.product__title-text
+						| SAMSUNG G350E Galaxy Star
+						| Advance White
+				if args.type !== 'similar'
+					.product__rating
+						+reviewSmall().product__review-small
+						+rating()
+			.product__body
+				.product__image
+					img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
+				.product__price
+					if args.oldPrice
+						s.product__price-old
+							| !{args.oldPrice}
+					strong.product__price-special
+						| 22 415 BYR
 		.product__footer
-			.product__features
-				img(src="/assets/images/android-icon.png", alt="android")
-				img(src="/assets/images/2-sim-icon.png", alt="2-sim")
-				img(src="/assets/images/3g-icon.png", alt="3g")
-				img(src="/assets/images/ips-icon.png", alt="ips")
-				img(src="/assets/images/4-cores-icon.png", alt="4-cores")
-				img(src="/assets/images/gps-icon.png", alt="gps")
+			if args.type === 'similar'
+				.product__features
+					img(src="/assets/images/android-icon.png", alt="android")
+					img(src="/assets/images/2-sim-icon.png", alt="2-sim")
+					img(src="/assets/images/3g-icon.png", alt="3g")
+					img(src="/assets/images/ips-icon.png", alt="ips")
+					img(src="/assets/images/4-cores-icon.png", alt="4-cores")
+					img(src="/assets/images/gps-icon.png", alt="gps")
 			.product__actions
-				+button().btn-sm.btn-red
+				+button().btn-sm.btn--red.product__buy-btn
 					| Купить
-				+link().spec__action-link--pseudo
-					i.icon-price-compare.spec__icon-price-compare
-					span.spec__action-link-text Сравнить
-				+link().spec__action-link--pseudo
-					i.icon-price-favorites.spec__icon-price-favorites
-					span.spec__action-link-text В избранном
-		.product__video
-			.product__video__heading
-				| Видео
-			.product__video__content
-				| play
-		.product__present
-			| Present
-		.product__added.product__added--compare
-			| Добавлено к сравнению
-		.product__added.product__added--favorite
-			| Добавлено в избранное
+				.product__actions__links
+					+action({type:'compare'}).product__action
+					+action({type:'favorite'}).product__action
+		if args.video
+			.product__video
+				.product__video__heading
+					| Видео
+				.product__video__content
+					| play
+		if args.present
+			.product__present
+				| Present
+		if args.added
+			case args.added
+				when 'compare'
+					.product__added.product__added--compare
+						| Добавлено к сравнению
+				when 'favorite'
+					.product__added.product__added--favorite
+						| Добавлено в избранное
 

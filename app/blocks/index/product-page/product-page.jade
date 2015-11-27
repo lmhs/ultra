@@ -20,6 +20,8 @@ include ../../basic/table/table
 include ../../basic/checkbox/checkbox
 include ../../basic/countdown/countdown
 include ../../basic/product/product
+include ../../basic/rating/rating
+include ../../basic/action/action
 
 
 mixin productPage()
@@ -87,12 +89,7 @@ mixin productPage()
 										| узнать подробнее
 					.spec__right
 						.spec__rating-wrap
-							span.spec__rating-stars
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
+							+rating()
 							span.spec__rating-number
 								strong 4,8
 								|  из 5
@@ -100,15 +97,9 @@ mixin productPage()
 								| (8 голосов)
 						.spec__actions
 							if available
-								+link().spec__action-link--pseudo
-									i.icon-price-label.spec__icon-price-label
-									span.spec__action-link-text Узнать о снижении цены
-							+link().spec__action-link--pseudo
-								i.icon-price-compare.spec__icon-price-compare
-								span.spec__action-link-text Сравнить
-							+link().spec__action-link--pseudo
-								i.icon-price-favorites.spec__icon-price-favorites
-								span.spec__action-link-text В избранном
+								+action({type:'drop'})
+							+action({type:'compare'})
+							+action({type:'favorite'})
 						if available
 							.spec__credit
 								+link()
@@ -150,14 +141,26 @@ mixin productPage()
 								| Ежедневно в другие регионы
 							+link().link--pseudo.product-page__condition__link Условия доставки
 	section.product-page__similar
-		+content()
-			.col-md-6
-				.product-page__similar__head
-					h4.product-page__similar__heading Похожие велосипеды с
-					+tag('2014 год',false).product-page__similar__tag
-					+tag('горный',false).product-page__similar__tag
-					+tag('мужской',false).product-page__similar__tag
-					+tag('еще параметр',true).product-page__similar__tag
+		.container
+			.row
+				.col-md-6
+					.product-page__similar__head
+						h4.product-page__similar__heading Похожие велосипеды с
+						+tag('2014 год',false).product-page__similar__tag
+						+tag('горный',false).product-page__similar__tag
+						+tag('мужской',false).product-page__similar__tag
+						+tag('еще параметр',true).product-page__similar__tag
+			.row
+				.col-md-20
+					+product({type:'similar'}).similar__product
+				.col-md-20
+					+product({type:'similar'}).similar__product
+				.col-md-20
+					+product({type:'similar'}).similar__product
+				.col-md-20
+					+product({type:'similar'}).similar__product
+				.col-md-20
+					+product({type:'similar'}).similar__product
 	section.product-page__info
 		+content()
 			.col-md-1

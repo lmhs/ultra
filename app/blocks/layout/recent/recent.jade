@@ -8,13 +8,26 @@ mixin recent()
 				.col-md-6
 					h2.recent__heading Недавно вы просматривал
 			.row
-				.col-md-1
-					+product()
-				.col-md-1
-					+product()
-				.col-md-1
-					+product()
-				.col-md-1
-					+product()
-				.col-md-1
-					+product()
+				.col-md-20
+					+product({
+										type:'recent',
+										labels:'new'
+									}).recent__product
+				.col-md-20
+					+product({
+										type:'recent',
+										labels:'discount',
+										oldPrice: '45 000 BYR'
+									}).recent__product
+				.col-md-20
+					+product({type:'recent'}).recent__product
+				.col-md-20
+					+product({
+										type:'recent',
+										labels:'hit'
+									}).recent__product
+				.col-md-20
+					+product({
+										type:'recent',
+										labels:'new'
+									}).recent__product

@@ -1,43 +1,122 @@
-.phone
-	font-family 'PT Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-	color #999
+.product
+	border-radius 2px
+	border 1px solid #E1E1E1
+	padding 20px 16px 0
+	position relative
 
-.phone__area
-.phone__number
-	font-size 52px
-	letter-spacing -4px
-
-.phone__area
-	margin-right 5px
-
-.phone__code
-	display inline-block
-
-	&-item
-		font-size 14px
-		line-height 14px
-		&::before
+	&__link
+		&::after
+			position absolute
 			content ''
+			top -1px
+			right -1px
+			bottom -1px
+			left -1px
+			z-index 1
+
+	&__labels
+		position absolute
+		top 78px
+		left -1px
+
+	&__label
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight semibold
+		font-size 18px
+		display inline-block
+		color #FFF
+		line-height 1
+		padding 10px 12px 10px 8px
+		background-color #FF503F
+		border-left 4px solid #f13d2b
+		margin-bottom 2px
+		&--discount
+			background-color #FF503F
+			border-left-color #f13d2b
+		&--new
+			background-color #8DC63F
+			border-left-color #6CA61C
+		&--hit
+			background-color #FF7300
+			border-left-color #E26702
+
+
+	&__title-text
+		color #333
+		font-size 13px
+		line-height 16px
+
+	&__body
+		padding-top 32px
+
+	&__price
+		margin-top 12px
+		line-height 18px
+		text-align center
+		&-old
+		&-special
+			display block
+
+		&-old
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 12px
+			color #898989
+			font-weight light
+
+		&-special
+			color #333
+			font-size 14px
+
+	&__features
+		padding-top 40px
+		text-align justify
+		img
+			display inline-block
+			margin-bottom 20px
+			margin-right 5px
+
+	&__buy-btn
+		display inline-block
+		vertical-align top
+
+
+	&__actions
+		font-size 0
+		position relative
+		z-index 2
+		&__links
+			max-width 50%
+			padding-left 20px
 			display inline-block
 			vertical-align top
-			margin-top 1px
-			margin-right 4px
-		&--vel::before
-			sprite($icon_vel_13)
-		&--mts::before
-			sprite($icon_mts_13)
-		&--life::before
-			sprite($icon_life_13)
 
-.phone__number
-	margin-left 4px
-	color #252525
-	text-decoration none
+.similar__product
 
-.phone__extra
-	font-size 12px
-	line-height 21px
-	color #888
+	&:hover
+		border-color #C2C2C2
+		box-shadow 0px 2px 0px 0px rgba(1, 2, 2, 0.3)
 
-.header__phone
-	float right
+		.product__features
+			visibility hidden
+		.product__actions
+			display block
+
+	.product__features
+		display block
+
+	.product__actions
+		display none
+		position absolute
+		bottom 0
+		left 0
+		right 0
+		text-align center
+		padding-bottom 36px
+
+	.product__actions__links
+		display block
+		margin 10px auto 0
+		padding-left 13px
+		text-align left
+
+
