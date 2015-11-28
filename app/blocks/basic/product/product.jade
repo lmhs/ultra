@@ -56,7 +56,10 @@ mixin product(args)
 							img(src="/assets/images/gps-icon.png", alt="gps")
 				.product__actions
 					+button().btn-sm.btn--red.product__buy-btn
-						| Купить
+						if args.type !== 'set'
+							| Купить
+						else
+							| В комплект
 					.product__actions__links
 						+action({type:'compare'}).product__action
 						+action({type:'favorite'}).product__action

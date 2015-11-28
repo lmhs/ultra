@@ -19,29 +19,29 @@ mixin other()
 				.row-20
 					.col-md-20-1
 						+product({
-											type:'other',
+											type:'set',
 											labels:'new'
 										}).other__product
 					.col-md-20-1
 						+product({
-											type:'other',
+											type:'set',
 											labels:'discount',
 											oldPrice: '45 000 BYR'
 										}).other__product
 					.col-md-20-1
-						+product({type:'other'}).other__product
+						+product({type:'set'}).other__product
 					.col-md-20-1
 						+product({
-											type:'other',
+											type:'set',
 											labels:'hit'
 										}).other__product
 					.col-md-20-1
 						+product({
-											type:'other',
+											type:'set',
 											labels:'new'
 										}).other__product
 		.other__more
 			+button().btn-lg.btn--dark.show-more-btn
 				| Загрузить еще 10 товаров
-				i.icon-arrow-down-f.show-more-btn__icon
+				i.icon-arrow-down-10-f.show-more-btn__icon
 
