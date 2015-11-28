@@ -2,6 +2,7 @@ include ../../layout/content/content
 include ../../layout/expert/expert
 include ../../layout/timer/timer
 include ../../layout/similar/similar
+include ../../layout/other/other
 include ../../layout/recent/recent
 include ../../layout/not-found/not-found
 include ../../basic/link/link
@@ -152,65 +153,67 @@ mixin productPage()
 							+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page__info
-		+content()
-			.col-md-1
-				aside
-					+product({
-										type:'sidebar',
-										oldPrice: '45 000 BYR'
-									})
-			.col-md-5
-				+navTabs({
-									type:'small',
-									links: [
-										{
-											isActive: true,
-											href: '#description',
-											class: 'js-product-nav-tab',
-											icon: 'feather',
-											content: 'Описание'
-											},
-										{
-											isActive: false,
-											href: '#features',
-											class: 'js-product-nav-tab',
-											icon: 'info',
-											content: 'Характеристики'
-											},
-										{
-											isActive: false,
-											href: '#review',
-											class: 'js-product-nav-tab',
-											icon: 'review',
-											content: 'Отзывы'
-											},
-										{
-											isActive: false,
-											href: '#questions',
-											class: 'js-product-nav-tab',
-											icon: 'help',
-											content: 'Вопрос – ответ'
-											},
-										{
-											isActive: false,
-											href: '#delivery',
-											class: 'js-product-nav-tab',
-											icon: 'delivery',
-											content: 'Доставка и оплата'
-											}
-									]
-								}).js-product-nav
-				.tab-content
-					#description.tab-pane.active(role='tabpanel')
-						+description()
-					#features.tab-pane(role='tabpanel')
-						+features()
-					#reviews.tab-pane(role='tabpanel')
-						+reviews()
-					#questions.tab-pane(role='tabpanel')
-						+questions()
-					#delivery.tab-pane(role='tabpanel')
-						+delivery()
+		.container-20
+			.row-20
+				.col-md-20-1
+					aside
+						+product({
+											type:'sidebar',
+											oldPrice: '45 000 BYR'
+										})
+				.col-md-20-4
+					+navTabs({
+										type:'small',
+										links: [
+											{
+												isActive: true,
+												href: '#description',
+												class: 'js-product-nav-tab',
+												icon: 'feather',
+												content: 'Описание'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
+												},
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-nav-tab',
+												icon: 'review',
+												content: 'Отзывы'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												},
+											{
+												isActive: false,
+												href: '#delivery',
+												class: 'js-product-nav-tab',
+												icon: 'delivery',
+												content: 'Доставка и оплата'
+												}
+										]
+									}).js-product-nav
+
+					.tab-content.product-page__tab-content
+						#description.tab-pane.active(role='tabpanel')
+							+description()
+						#features.tab-pane(role='tabpanel')
+							+features()
+						#reviews.tab-pane(role='tabpanel')
+							+reviews()
+						#questions.tab-pane(role='tabpanel')
+							+questions()
+						#delivery.tab-pane(role='tabpanel')
+							+delivery()
 	+expert()
 	+pattern()
 	section.product-page__set
@@ -218,6 +221,7 @@ mixin productPage()
 			.col-md-1
 				.product-temp(style="width:100%;height:420px;background: gray;")
 			.col-md-5
+	+other()
 	+recent()
 	+not-found()
 
