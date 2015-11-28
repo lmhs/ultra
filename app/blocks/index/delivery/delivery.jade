@@ -1,5 +1,5 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../basic/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
@@ -9,7 +9,7 @@ mixin delivery()
 	+content()
 		.inner.inner--w1360
 			.col-md-6
-				+nav-small(['Главная', pageTitle])
+				+breadcrumb(['Главная', pageTitle])
 	section.delivery__payment
 		h2.h1.delivery__heading-main Оплата
 		p.caption

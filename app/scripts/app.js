@@ -12,14 +12,14 @@ $(() => {
 
 
 	if (!Modernizr.details) {
-    $('details').details();
-  }
+		$('details').details();
+	}
 
-  $('[data-toggle="tooltip"]').tooltip();
+	$('[data-toggle="tooltip"]').tooltip();
 
-  $('.js-product-nav').on('click','.js-product-nav-tab', function (e) {
-  	e.preventDefault();
-	  $(this).tab('show')
+	$('.js-product-nav').on('click','.js-product-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
 	});
 
 	$('#phone1').countDown({
@@ -31,7 +31,7 @@ $(() => {
 			'min': 		23,
 			'sec': 		54
 		},
-    omitWeeks: true
+	   omitWeeks: true
 	});
 })
 

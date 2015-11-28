@@ -1,0 +1,95 @@
+.nav-tabs
+	display table
+	width 100%
+	& > li
+		display table-cell
+		float none
+		margin-bottom 0
+		vertical-align top
+		& > a
+			height 53px
+			white-space nowrap
+			padding-left 0
+			padding-right 0
+			text-align center
+			background-color #F8F8F8
+			margin-top 10px
+			border-radius 0
+			border 1px solid #ebebeb
+			border-bottom-color transparent
+			border-top-width 4px
+			margin-right 0
+			transition margin 0s, padding 0s
+			text-decoration none
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 14px
+			color #333
+			padding-bottom 18px
+			padding-top 12px
+			line-height 1
+			vertical-align bottom
+			// icon margin-top = total height - border-top-width - padding-top - padding-bottom - icon-height
+			// icon-info example: 53-4-12-18-25
+			.icon-feather
+				vertical-align bottom
+				position relative
+				top 3px
+				margin-top -8px
+				margin-right 7px
+			.icon-info
+				vertical-align bottom
+				position relative
+				margin-top -6px
+				top 6px
+				margin-right 17px
+			.icon-review
+				vertical-align bottom
+				position relative
+				top 5px
+				margin-top -5px
+				margin-right 17px
+			.icon-help
+				vertical-align bottom
+				position relative
+				top 6px
+				margin-top -6px
+				margin-right 17px
+			.icon-delivery
+				vertical-align bottom
+				position relative
+				top 4px
+				margin-top -1px
+				margin-right 19px
+			&:hover
+			&:focus
+				margin-top 0
+				padding-top 22px
+				height 63px
+				text-decoration underline
+				border-bottom-color transparent
+
+		&.active
+			& > a
+				margin-top 0
+				padding-top 22px
+				height 63px
+				text-decoration none
+				&
+				&:hover
+				&:focus
+					border-top-width 4px
+
+				.icon-feather
+					sprite($icon_feather_red)
+				.icon-delivery
+					sprite($icon_truck_small_red)
+				.icon-review
+					sprite($icon_review_red)
+				.icon-info
+					sprite($icon_info_red)
+				.icon-help
+					sprite($icon_help_red)
+
+	&__text
+		display inline-block
+		vertical-align bottom

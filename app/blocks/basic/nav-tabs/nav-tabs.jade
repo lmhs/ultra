@@ -1,0 +1,9 @@
+include ../link/link
+
+mixin navTabs(args)
+	ul.nav.nav-tabs(class= (args.type === small) ? 'nav-tabs--small' : '')&attributes(attributes)
+		each item in args.links
+			li(role='presentation', class= (item.isActive) ? 'active' : '')
+				+link(item.href).js-product-nav-tab
+					i(class= 'icon-' + item.icon + ' nav__icon-' + item.icon)
+					span.nav-tabs__text !{item.content}

@@ -12,7 +12,7 @@ include ../../basic/details/details
 include ../../basic/phone/phone
 include ../../basic/form/form
 include ../../basic/label/label
-include ../../basic/nav-small/nav-small
+include ../../basic/breadcrumb/breadcrumb
 include ../../basic/help-block/help-block
 include ../../basic/tooltip/tooltip
 include ../../basic/dropdown/dropdown
@@ -24,13 +24,20 @@ include ../../basic/product/product
 include ../../basic/rating/rating
 include ../../basic/action/action
 include ../../basic/available/available
+include ../../basic/nav-tabs/nav-tabs
+
+include description/description
+include features/features
+include reviews/reviews
+include questions/questions
+include delivery/delivery
 
 
 mixin productPage()
 	- var available = productState !== 'notAvailable';
 	+content()
 		.col-md-6
-			+nav-small(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
+			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
 	section.product-page__head
 		+content()
 			.col-md-6
@@ -153,49 +160,57 @@ mixin productPage()
 										oldPrice: '45 000 BYR'
 									})
 			.col-md-5
-				ul.nav.nav-tabs.js-product-nav
-					li.active(role='presentation')
-						+link('#description').js-product-nav-tab
-							i.icon-feather.nav__icon-feather
-							| Описание
-					li(role='presentation')
-						+link('#features').js-product-nav-tab
-							i.icon-info.nav__icon-info
-							| Характеристики
-					li(role='presentation')
-						+link('#reviews').js-product-nav-tab
-							i.icon-review.nav__icon-review
-							| Отзывы
-					li(role='presentation')
-						+link('#questions').js-product-nav-tab
-							i.icon-question.nav__icon-question
-							| Вопрос – ответ
-					li(role='presentation')
-						+link('#delivery').js-product-nav-tab
-							i.icon-delivery.nav__icon-delivery
-							| Доставка и оплата
-
+				+navTabs({
+									type:'small',
+									links: [
+										{
+											isActive: true,
+											href: '#description',
+											class: 'js-product-nav-tab',
+											icon: 'feather',
+											content: 'Описание'
+											},
+										{
+											isActive: false,
+											href: '#features',
+											class: 'js-product-nav-tab',
+											icon: 'info',
+											content: 'Характеристики'
+											},
+										{
+											isActive: false,
+											href: '#review',
+											class: 'js-product-nav-tab',
+											icon: 'review',
+											content: 'Отзывы'
+											},
+										{
+											isActive: false,
+											href: '#questions',
+											class: 'js-product-nav-tab',
+											icon: 'help',
+											content: 'Вопрос – ответ'
+											},
+										{
+											isActive: false,
+											href: '#delivery',
+											class: 'js-product-nav-tab',
+											icon: 'delivery',
+											content: 'Доставка и оплата'
+											}
+									]
+								}).js-product-nav
 				.tab-content
 					#description.tab-pane.active(role='tabpanel')
-						article.description
-							h2 Видео обзор SAMSUNG I9300 Galaxy S III Garnet Red
-							iframe(src="https://www.youtube.com/watch?v=0-T3FC0rWsc", width="790", height="514", frameborder="0")
-							.description__center
-								+button().btn-xsm.btn--ghost.btn--ghost-gray.more-videos-btn.js-more-videos
-									| Еще 2 видео обзора
-									i.icon-arrow-down.more-videos-btn__icon-arrow
-							h2 Спутник в твоем мире
-							figure
-								img(src="http://dummyimage.com/786x336/4d494d/686a82.gif&text=placeholder+image",width="786",height="336", alt="placeholder+image")
-							p Новый смартфон Samsung GALAXY S4 станет твоим истинным компаньоном, который поможет упростить общение с людьми и сохранить самые радостные моменты жизни. Каждая его функция призвана сделать твою жизнь насыщенней и интересней. Кроме того, он может следить за твоим здоровьем и самочувствием. Samsung GALAXY S4 — твой незаменимый помощник.
+						+description()
 					#features.tab-pane(role='tabpanel')
-						| features
+						+features()
 					#reviews.tab-pane(role='tabpanel')
-						| reviews
+						+reviews()
 					#questions.tab-pane(role='tabpanel')
-						| questions
+						+questions()
 					#delivery.tab-pane(role='tabpanel')
-						| delivery
+						+delivery()
 	+expert()
 	+pattern()
 	section.product-page__set
@@ -205,6 +220,4 @@ mixin productPage()
 			.col-md-5
 	+recent()
 	+not-found()
-
-
 
