@@ -2,13 +2,17 @@
 include ../button/button
 include ../link/link
 include ../label/label
+include ../select/select
 
 mixin search(args)
-	label.search-input-label&attributes(attributes)
-		input(type='search',placeholder='Быстрый поиск товара').form-control
 	if args
 		case args.type
 			when 'header'
+				label.search-input-label.header__search-input-label.input-group.select2-bootstrap-append&attributes(attributes)
+					input(type='search',placeholder='Быстрый поиск товара').form-control
+					//- span.input-group-addon.header__search-input-group-addon
+					.input-group-btn.header__search-input-group-addon
+						+select({default:'Все категории',items:getData('navigation')[0].main}).select2-container--bootstrap
 				+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
 					| Найти
 				.search__list
@@ -22,6 +26,8 @@ mixin search(args)
 						| фотоаппарат
 
 			when 'not-found'
+				label.search-input-label&attributes(attributes)
+					input(type='search',placeholder='Быстрый поиск товара').form-control
 				+button({type:'buttonSubmit'}).btn-med.btn--dark.not-found__search-btn
 					| Найти
 				.search__list

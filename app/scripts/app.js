@@ -1,8 +1,9 @@
 import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
+import select2 from 'select2';
 import './bootstrap-modals.js';
 import './bootstrap-tooltip.js';
-import './bootstrap-dropdown.js';
+// import './bootstrap-select.js';
 import './bootstrap-tab.js';
 import './jquery.details.min.js';
 import './jquery.countdown.js';
@@ -33,6 +34,11 @@ $(() => {
 		},
 	   omitWeeks: true
 	});
+
+	$('select').select2({
+		dropdownAutoWidth: true,
+		minimumResultsForSearch: Infinity
+	})
 })
 
 // ()();
