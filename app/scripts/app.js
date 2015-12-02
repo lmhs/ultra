@@ -36,7 +36,8 @@ $(() => {
 	});
 
 	$('select').select2({
-		dropdownAutoWidth: true,
+		width: 'resolve',
+		dropdownAutoWidth: 'true',
 		minimumResultsForSearch: Infinity
 	})
 })

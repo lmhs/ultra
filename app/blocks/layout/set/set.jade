@@ -12,29 +12,31 @@ mixin set()
 						.set-all__inner
 							h5.set-all__heading Ваш комплект
 							.set-all__items.cf.js-added-items
-								.media.set-all__item
-									.media-left.media-middle
-										.set-all__item__img-wrap
-											img(src="http://dummyimage.com/84x84/4d494d/686a82.gif&text=placeholder+image",width="84",height="84", alt="placeholder+image")
-									.media-body
-										h6.set-all__item__name Велосипед Scott Gambler 20 Bike
+								.set-all__item
+									.set-all__item__img-wrap
+										img(src="http://dummyimage.com/84x84/4d494d/686a82.gif&text=placeholder+image",width="84",height="84", alt="placeholder+image")
+									.set-all__item-body
+										h6.set-all__item__name
+											| Велосипед Scott Gambler 20 Bike
 										strong.set-all__item__price-special 1 950 000 BYR
 								.set-all__items__plus
-									i.icon-plus-111-11
-								.media.set-all__item
-									.media-left.media-middle
-										.set-all__item__img-wrap
-											img(src="http://dummyimage.com/84x84/4d494d/686a82.gif&text=placeholder+image",width="84",height="84", alt="placeholder+image")
-									.media-body
+									i.icon-plus-111-11.set-all__items__plus-icon
+								.set-all__item
+									.set-all__item__img-wrap
+										img(src="http://dummyimage.com/84x84/4d494d/686a82.gif&text=placeholder+image",width="84",height="84", alt="placeholder+image")
+									.set-all__item-body
 										h6.set-all__item__name Велосипедный рюкзак Gambler 52M
 										s.set-all__item__price-old 250 000 BYR
 										strong.set-all__item__price-special 1 950 000 BYR
 								.set-all__items__equal
-									i.icon-equal-111-11-9
+									i.icon-equal-111-11-9.set-all__items__equal-icon
 								.set-all__items__result
-									strong.set-all__result-heading Экономия: 125 000 BYR
-									s.set-all__result__price-old 2 610 000 BYR
-									strong.set-all__result__price-special 2 075 000 BYR
-									+button().btn-med.btn--red.set-all__result__buy-set-btn
+									span.set-all__result-heading
+										| Экономия:
+										strong  125 000 BYR
+									.set-all__result__price
+										s.set-all__result__price-old 2 610 000 BYR
+										strong.set-all__result__price-special 2 075 000 BYR
+									+button().btn-sm.btn--red.set-all__result__buy-set-btn
 										| Купить комплект
 
