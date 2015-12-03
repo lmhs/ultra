@@ -40,12 +40,14 @@ mixin input(args)
 mixin inputNumber(args)
 	- if (args.name)
 		- var label= args.name
-	.form-group.input-group
+	.form-group.input-group.input-number.js-input-number
 		if label
 			label.control-label(
 				for=attributes.id ? attributes.id : null,
 				class=args.required ? 'is-required' : '') #{label}
-		input.form-control(
+		input.form-control.js-input-number-control(
+			data-type='number'
+			data-ride='spinner'
 			type='number'
 			name=args.name ? args.name : null
 			value=args.value ? args.value : null
@@ -54,9 +56,9 @@ mixin inputNumber(args)
 			placeholder=args.placeholder ? args.placeholder : null
 			aria-describedby=args.help ? args.help.name : null)&attributes(attributes)
 		.input-group__btn--vertical
-			button(type='button',role='button').input-number-btn.input-number-btn--up.js-up-input
+			button(type='button', role='button', data-value='increase', data-toggle='spinner', data-target='#'+attributes.id).input-number-btn.input-number-btn--up.js-up-input
 				i.icon-caret-up
-			button(type='button',role='button').input-number-btn.input-number-btn--down.js-down-input
+			button(type='button', role='button', data-value='decrease', data-toggle='spinner', data-target='#'+attributes.id).input-number-btn.input-number-btn--down.js-down-input
 				i.icon-caret-down
 		if args.help
 			+helpBlock(args.help.name)
