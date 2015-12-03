@@ -7,8 +7,10 @@ include ../../layout/social/social
 include ../../layout/recent/recent
 include ../../layout/not-found/not-found
 include ../../basic/pattern/pattern
+include ../../basic/modal/modal
 
 mixin index()
+	+modalSubscribe('subscribePopup')
 	+promo()
 	+hot()
 	+announce()

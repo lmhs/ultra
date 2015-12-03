@@ -1,0 +1,88 @@
+.modal-content
+	box-shadow none
+	border-radius 2px
+
+	@media (min-width: 720px)
+		box-shadow none
+
+.modal-dialog .close
+	position absolute
+	width 60px
+	height 60px
+	top 0
+	right 0
+	text-align center
+	margin 0
+	z-index 3
+
+// .modal-close-icon
+	// vertical-align top
+
+.modal-dialog--subscribe
+	width 1100px
+	@media (min-width: 1100px)
+		width 1100px
+	.modal-header
+		padding 0
+		min-height 0
+		border none
+	.modal-body
+		padding 0
+	.modal-content
+		background 	url(../images/subscribe-girl.png) 23px 100% no-repeat,
+								url(../images/pattern-color-175.png) 0 265px no-repeat,
+								url(../images/pattern-color-bones-178x175.png) -2px 265px repeat-x,
+								#F9F9F9
+
+.subscribe-popup__text
+	margin-left 50%
+	width 50%
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	color #252525
+	line-height 1
+	padding-top 95px
+	text-transform uppercase
+	position relative
+	&::after
+		content ''
+		background url(../images/subscribe-stripe.png) no-repeat;
+		display block
+		width 281px
+		height 171px
+		position absolute
+		right -47px
+		top 143px
+	&-1
+		font-size 37px
+		font-weight semibold
+		margin-bottom 32px
+	&-2
+		font-size 65px
+		font-weight bold
+		margin-bottom 20px
+	&-3
+		font-size 28px
+		font-weight light
+		text-transform none
+		margin-bottom 5px
+	&-4
+		color #FFF
+		font-size 30px
+		padding 10px
+		display inline-block
+		background-color #252525
+	&-5
+		position absolute
+		font-weight extrabold
+		font-size 70px
+		color #FFF
+		top 181px
+		right 76px
+		z-index 2
+		transform rotate(-15deg)
+		// 15
+
+.subscribe-popup__form
+	padding-top 45px
+	padding-bottom 103px
+	text-transform none
