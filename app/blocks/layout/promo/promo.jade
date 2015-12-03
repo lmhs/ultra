@@ -1,33 +1,36 @@
 include ../content/content
+include ../../basic/button/button
 include ../../basic/product/product
 
-mixin recent()
-	section.recent
-		.container-20
-			.row-20
-				.col-md-20-5
-					h2.recent__heading Недавно вы просматривали
-			.row-20
-				.col-md-20-1
-					+product({
-										type:'recent',
-										labels:'new'
-									}).recent__product
-				.col-md-20-1
-					+product({
-										type:'recent',
-										labels:'discount',
-										oldPrice: '45 000 BYR'
-									}).recent__product
-				.col-md-20-1
-					+product({type:'recent'}).recent__product
-				.col-md-20-1
-					+product({
-										type:'recent',
-										labels:'hit'
-									}).recent__product
-				.col-md-20-1
-					+product({
-										type:'recent',
-										labels:'new'
-									}).recent__product
+mixin promo()
+	section.promo
+		.container()
+			.row
+				.col-md-4.promo__col-md-4
+					.slide
+						.slide-1
+							img(src="./images/slide-1.jpg", alt="slide-1").slide__bg
+							.slide__content
+								h2.slide__heading Как правильно выбрать велосипед?
+									small Научим, расскажем, покажем
+								.slide__actions
+									+button().btn-lg.btn--dark.btn--more.slide__btn--more
+										| Читать обзор
+										i.icon-arrow-gt.btn-more__icon
+									+button().btn-lg.btn--red.slide__btn
+										| Выбрать велосипед
+				.col-md-2.promo__col-md-2
+					.promo__right
+						img(src="http://dummyimage.com/140x290/4d494d/686a82.gif&text=iphone-6",width="140",height="290", alt="iphone-6").promo__right__img
+						h2.promo__right__heading iPhone 6
+							small уже в продаже
+			.row
+				.col-md-3
+					| 10 лет в Беларуси
+					| Дождь, гром и молния нас не остановят. Работаем без выходных, даже в Новый Год.
+				.col-md-3
+					| Быстрая доставка
+					| По Минску и другим регионам Беларуси
+					| Сделка без рисков
+					| Плати наличными при получении или денежным переводом
+

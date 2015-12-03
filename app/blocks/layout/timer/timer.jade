@@ -19,6 +19,10 @@ mixin timer(args)
 							| на следующую покупку
 					.timer__countdown-wrap
 						+countdown(args.countdownId)
+					if args.limit
+						.timer__limit
+							i.icon-important.timer__limit__icon
+							|  Товар заканчивается
 			when 'present'
 				.timer__label.timer__label--present
 					.timer__label-inner
@@ -30,6 +34,10 @@ mixin timer(args)
 							| задняя мигалка KELLYS — FOCUS
 					.timer__countdown-wrap
 						+countdown(args.countdownId)
+					if args.limit
+						.timer__limit
+							i.icon-important.timer__limit__icon
+							|  Товар заканчивается
 
 			when 'discount'
 			default
@@ -39,3 +47,7 @@ mixin timer(args)
 				.timer__body
 					.timer__countdown-wrap
 						+countdown(args.countdownId)
+					if args.limit
+						.timer__limit
+							i.icon-important.timer__limit__icon
+							|  Товар заканчивается

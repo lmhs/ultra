@@ -1,11 +1,12 @@
 include ../rating/rating
 include ../action/action
+include ../../layout/timer/timer
 include ../available/available
 include ../review-small/review-small
 
 mixin product(args)
-	if args.type !== 'sidebar'
-		.product.js-product&attributes(attributes)
+	if ((args.type !== 'sidebar') && (args.type !== 'hot'))
+		.product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
 			if args.labels
 				aside.product__labels
 					case args.labels
@@ -81,7 +82,8 @@ mixin product(args)
 					when 'favorite'
 						.product__added.product__added--favorite
 							| Добавлено в избранное
-	else
+
+	else if args.type === 'sidebar'
 		.product.product-sidebar.js-product&attributes(attributes)
 			.product__head.product-sidebar__head
 				.product__title-text.product-sidebar__title-text
@@ -103,4 +105,44 @@ mixin product(args)
 				+action({type:'drop'}).product__action
 				+action({type:'compare'}).product__action
 				+action({type:'favorite'}).product__action
+
+	else if args.type === 'hot'
+		.product.hot__product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
+			if args.limit
+				+timer({type:'discount',limit: args.limit})
+			else
+				+timer({type:'discount'})
+			.product__body
+				.product__image
+					img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
+				.product__info
+					.product__title-text
+						| SAMSUNG G350E Galaxy Star
+						| Advance White
+					.product__rating
+						+reviewSmall().product__review-small
+						+rating()
+					.product__info__left
+						.product__price
+							if args.oldPrice
+								s.product__price-old
+									| !{args.oldPrice}
+							strong.product__price-special
+								| 22 415 BYR
+						+button().btn-lg.btn--red.product__buy-btn
+							| Купить
+					.product__info__right
+						ul
+							li.product__info__item Экран
+								span.product__info__value  3"
+							li.product__info__item Матрица
+								span.product__info__value  16.4 МП (1/2.3")
+							li.product__info__item Оптический зум
+								span.product__info__value  12x
+							li.product__info__item Съемка видео
+								span.product__info__value  720p
+							li.product__info__item Wi-Fi
+
+
+
 

@@ -1,45 +1,17 @@
-include ../../layout/content/content
 include ../../layout/expert/expert
-include ../../layout/timer/timer
-include ../../layout/similar/similar
 include ../../layout/promo/promo
 include ../../layout/hot/hot
 include ../../layout/announce/announce
 include ../../layout/categories/categories
 include ../../layout/social/social
-include ../../layout/other/other
 include ../../layout/recent/recent
-include ../../layout/product-page-set/product-page-set
 include ../../layout/not-found/not-found
-include ../../basic/link/link
 include ../../basic/pattern/pattern
-include ../../basic/order-form-section/order-form-section
-include ../../basic/button/button
-include ../../basic/details/details
-include ../../basic/phone/phone
-include ../../basic/form/form
-include ../../basic/label/label
-include ../../basic/breadcrumb/breadcrumb
-include ../../basic/help-block/help-block
-include ../../basic/tooltip/tooltip
-include ../../basic/dropdown/dropdown
-include ../../basic/tag/tag
-include ../../basic/table/table
-include ../../basic/checkbox/checkbox
-include ../../basic/countdown/countdown
-include ../../basic/product/product
-include ../../basic/rating/rating
-include ../../basic/action/action
-include ../../basic/available/available
-include ../../basic/nav-tabs/nav-tabs
-
-
 
 mixin index()
 	section.promo
 		| promo
-	section.hot
-		| hot
+	+hot()
 	+announce()
 	+pattern()
 	+expert()

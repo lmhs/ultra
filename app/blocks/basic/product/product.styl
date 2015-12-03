@@ -177,4 +177,77 @@
 		padding-left 13px
 		text-align left
 
+.hot__product
+	border none
+	padding 0
+	// min-height 678px
+
+	&.product--horizontal
+		margin-bottom 20px
+
+	.product
+		&__body
+			border 1px solid #ebebeb
+			border-top none
+			padding 27px 0 27px
+			min-height 588px
+			clearfix()
+
+			.product--horizontal&
+				min-height 238px
+
+		&__image
+			text-align center
+			.product--horizontal&
+				width 300px
+				float left
+
+		&__info
+			padding 30px
+
+			.product--horizontal&
+				margin-left 300px
+				padding-left 0
+				padding-top 0
+
+			&__left
+			&__right
+				width 50%
+
+			&__left
+				float left
+
+			&__right
+				float right
+
+		&__rating
+			margin-bottom 20px
+
+		&__price
+			text-align left
+			margin-top 0
+			margin-bottom 20px
+			&-old
+				font-size 16px
+				margin-bottom 5px
+			&-special
+				font-size 24px
+				line-height 1.2
+				color #E14013
+
+		&__buy-btn
+			padding 10px 45px
+			font-weight normal
+
+		&__info
+			&__item
+				font-size 13px
+				color #111
+			&__value
+				color #555
+
+		&__title-text
+			font-size 24px
+			line-height 1.2
+
 

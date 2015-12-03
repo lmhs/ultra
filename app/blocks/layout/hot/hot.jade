@@ -1,33 +1,33 @@
 include ../content/content
 include ../../basic/product/product
+include ../../basic/button/button
 
-mixin recent()
-	section.recent
+mixin hot()
+	section.hot
 		.container-20
 			.row-20
 				.col-md-20-5
-					h2.recent__heading Недавно вы просматривали
+					h2.h1.h2--red.hot__heading Горящие предложения
+						small максимальные скидки
 			.row-20
-				.col-md-20-1
+				.col-md-20-3
 					+product({
-										type:'recent',
-										labels:'new'
-									}).recent__product
-				.col-md-20-1
+										type:'hot',
+										position: 'horizontal',
+										oldPrice: '45 000 BYR',
+										limit: true
+									}).hot__product
 					+product({
-										type:'recent',
-										labels:'discount',
+										type:'hot',
+										position: 'horizontal',
 										oldPrice: '45 000 BYR'
-									}).recent__product
-				.col-md-20-1
-					+product({type:'recent'}).recent__product
-				.col-md-20-1
+									}).hot__product
+				.col-md-20-2
 					+product({
-										type:'recent',
-										labels:'hit'
-									}).recent__product
-				.col-md-20-1
-					+product({
-										type:'recent',
-										labels:'new'
-									}).recent__product
+										type:'hot',
+										oldPrice: '45 000 BYR'
+									}).hot__product
+			.row-20
+				.col-md-20-5
+					.hot__more
+						+buttonMore({itemCount:10})
