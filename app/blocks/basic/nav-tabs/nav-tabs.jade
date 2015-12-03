@@ -7,3 +7,10 @@ mixin navTabs(args)
 				+link(item.href).js-product-nav-tab
 					i(class= 'icon-' + item.icon + ' nav__icon-' + item.icon)
 					span.nav-tabs__text !{item.content}
+
+mixin navSocial(args)
+	ul.nav.nav-tabs.social&attributes(attributes)
+		each item in args.links
+			li(role='presentation', class= (item.isActive) ? 'active' : '')
+				+link(item.href).js-tablet-social-nav-tab
+					i(class= 'icon-' + item.icon + ' tablet__icon-' + item.icon)

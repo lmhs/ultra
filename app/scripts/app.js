@@ -24,6 +24,12 @@ $(() => {
 		$(this).tab('show')
 	});
 
+	$('.js-tablet-social-nav').on('click','.js-tablet-social-nav-tab', function (e) {
+		e.preventDefault();
+		console.log('click');
+		$(this).tab('show')
+	});
+
 	// $('#phone1').countDown({
 	// 	targetOffset: {
 	// 		'day': 		18,
@@ -40,6 +46,7 @@ $(() => {
 		minimumResultsForSearch: Infinity
 	});
 
+	// http://indigojs.github.io/bootstrap-spinner/
 	$("input[type=number],input[data-type=number],#spinner").spinner();
 
 })
