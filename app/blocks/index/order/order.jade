@@ -195,4 +195,16 @@ mixin order()
 							td
 								+link()
 									i.icon-trash.order-item__icon-trash
+				.order__foot
+					.order__return
+						+link('/index.html').link--pseudo.order__return-link
+							| Вернуться к покупкам
+					.order__cart
+						.order__cart__refresh
+							+link().order__cart__refresh-link
+								i.icon-refresh
+								span.order__cart__refresh-link-text--pseudo Обновить корзину
+						.order__cart__final
+							| Сумма заказа:
+							strong  1 212 000 BYR
 
