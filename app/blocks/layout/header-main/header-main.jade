@@ -6,9 +6,11 @@ include ../../basic/phone/phone
 mixin header-main()
 	block vars
 	- var	order = pageId === 'order'
-	.header__main
-		+logo().header__logo
-		if !order
-			.header__search
-				+search().header__search-input
-		+phone().header__phone
+	.col-md-6
+		.header__main
+			+logo().header__logo
+			.header__inner
+				+phone({type:'header'}).header__phone
+				if !order
+					.header__search
+						+search({type:'header'}).header__search-input

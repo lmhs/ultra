@@ -1,0 +1,12 @@
+block vars
+	- var pageId = 'product';
+
+include ../blocks/index/product-page/product-page
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Samsung 19300 Galaxy S III';
+	- var	productState = 'discount';
+
+block content
+	+productPage()

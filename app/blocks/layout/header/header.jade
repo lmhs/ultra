@@ -1,5 +1,6 @@
 include ../header-top/header-top
 include ../header-main/header-main
+include ../../layout/content/content
 include ../../basic/nav/nav
 
 mixin header()
@@ -7,21 +8,17 @@ mixin header()
 	- var	order = pageId === 'order'
 	header.header(class= order ? 'header--w-border' : '')
 		.header__top-wrap
-			.container
-				.row
-					.col-xs-12
-						+header-top()
+			+content()
+				.col-md-6
+					+header-top()
 		.header__main-wrap
-			.container
-				.row
-					.col-xs-12
-						+header-main()
+			+content()
+				+header-main()
 		if !order
 			.header__nav-wrap
-				.container
-					.row
-						.col-xs-12
-							+nav(getData('navigation')[0],'main').nav-list--inline.clearfix
+				+content()
+					.col-md-6
+						+nav(getData('navigation')[0],'main').nav-list--inline.clearfix
 
 
 

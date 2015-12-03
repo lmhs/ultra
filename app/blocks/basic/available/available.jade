@@ -1,0 +1,10 @@
+mixin available(args)
+	.available-block&attributes(attributes)
+		i.icon-check-green.available-icon
+		span.available
+			| В наличии —
+			if args.count === 0
+				span.js-available-count  0
+			else
+				span.js-available-count  5
+			|  шт.

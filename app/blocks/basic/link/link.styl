@@ -1,11 +1,5 @@
 .link
 	text-decoration underline
-	color #E14013
-
-	&:hover
-	&:focus
-		text-decoration none
-		color #E14013
 
 	&--secondary
 		color #111
@@ -16,7 +10,6 @@
 			text-decoration none
 
 	&--pseudo
-		// text-decoration-style dashed
 		text-decoration none
 		border-bottom 1px dashed #E14013
 		&:hover
@@ -78,6 +71,19 @@
 	&:focus
 		border-bottom-color #111
 		color #111
+	&--medium
+		font-size 16px
+		color #464646
+		&:hover
+		&:focus
+			border-bottom-style solid
+	&--large
+		font-size 18px
+		border-bottom-color #111
+		color #111
+		&:hover
+		&:focus
+			border-bottom-style solid
 
 .header-main__link
 	// width 187px
@@ -129,3 +135,16 @@
 	margin-top 0
 	margin-bottom 0
 	font-style normal
+
+.order__return-link
+	font-size 12px
+	color #7C7C7C
+	border-bottom-color #7C7C7C
+
+.order__cart__refresh-link
+	text-decoration none
+	&-text--pseudo
+		color #006889
+		vertical-align top
+		margin-left 8px
+		border-bottom 1px dashed #006889

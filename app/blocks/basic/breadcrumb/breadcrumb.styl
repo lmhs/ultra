@@ -1,0 +1,23 @@
+	// .nav-small__item
+	// display inline
+
+.breadcrumb-nav__link
+	text-decoration none
+
+	color $breadcrumb-color
+
+.breadcrumb-nav
+	line-height 1
+	font-size 12px
+	margin-bottom 0
+	padding-bottom 0
+
+.breadcrumb > li
+	vertical-align top
+
+	& + li::before
+		sprite($icon_arrow_gt_bb)
+		margin 0 5px
+		display inline-block
+		vertical-align top
+		padding 0

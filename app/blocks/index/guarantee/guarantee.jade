@@ -1,5 +1,5 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../basic/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
@@ -7,8 +7,8 @@ include ../../basic/details/details
 mixin guarantee()
 	+content()
 		.inner.inner--w1360
-			.col-xs-12
-				+nav-small(['Главная', pageTitle])
+			.col-md-6
+				+breadcrumb(['Главная', pageTitle])
 
 	section.guarantee__terms
 		.inner.inner--w900

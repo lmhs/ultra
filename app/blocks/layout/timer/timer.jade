@@ -1,0 +1,41 @@
+include ../../basic/countdown/countdown
+include ../../basic/link/link
+
+mixin timer(args)
+	section.timer&attributes(attributes)
+		case args.type
+			when 'coupon'
+				.timer__label
+					.timer__label-inner
+						i.icon-scissors.timer__scissors
+				.timer__body
+					.timer__caption
+						strong.timer__strong Купон
+						strong.timer__strong.timer__strong__info
+							| на
+							span.timer__strong__info--red
+								|  25 000 BYR
+						+link().link--pseudo.timer__link
+							| на следующую покупку
+					.timer__countdown-wrap
+						+countdown(args.countdownId)
+			when 'present'
+				.timer__label.timer__label--present
+					.timer__label-inner
+						img(src="http://dummyimage.com/64x54/4d494d/686a82.gif&text=placeholder+image",width="64",height="54", alt="placeholder+image").timer__img
+				.timer__body.timer__body--present
+					.timer__caption
+						strong.timer__strong Подарок
+						+link().link--pseudo.timer__link
+							| задняя мигалка KELLYS — FOCUS
+					.timer__countdown-wrap
+						+countdown(args.countdownId)
+
+			when 'discount'
+			default
+				.timer__label
+					.timer__label__text
+						| -10%
+				.timer__body
+					.timer__countdown-wrap
+						+countdown(args.countdownId)

@@ -19,10 +19,12 @@ button
 	&-xsm
 		font-size 12px
 		padding 2px 12px
+		border-radius 2px
 	// 34
 	&-sm
 		font-size 15px
 		padding 5px 24px
+		border-radius 2px
 	// 48
 	&-med
 		font-size 16px
@@ -30,7 +32,8 @@ button
 	// 56
 	&-lg
 		font-size 18px
-		padding 16px 31px
+		padding 15px 31px
+		border-radius 4px
 
 	&--default
 		border 0
@@ -56,6 +59,33 @@ button
 			&:focus
 			&.focus
 				background-color #C93005
+				color #FFF
+				box-shadow none
+
+	&--red
+		border 0
+
+		&
+		&:focus
+		&.focus
+			background-color #E14013
+			color #fff
+
+		&:hover
+			background-color #111
+
+		&:active
+			&
+			&:focus
+			&.focus
+				background-color #000
+				color #FFF
+				box-shadow none
+		&.active
+			&
+			&:focus
+			&.focus
+				background-color #000
 				color #FFF
 				box-shadow none
 
@@ -106,6 +136,15 @@ button
 				background-color #111
 				color #FFF
 
+		&-brown
+			font-weight light
+			color #111
+			border-color #363636
+
+			&:hover
+				background-color #363636
+				color #FFF
+
 		&:active
 			&
 			&:focus
@@ -118,10 +157,12 @@ button
 				box-shadow none
 
 .header__search-btn
-	vertical-align top
+	position absolute
+	top 0
+	right 0
 	font-size 13px
 	padding-top 7px
-	padding-bottom 6px
+	padding-bottom 7px
 
 .btn--callback
 	margin-left 10px
@@ -143,3 +184,58 @@ button
 		&:hover
 			background-color #E14013
 			color #191919
+
+.not-found__search-btn
+	padding 14px 35px
+	vertical-align top
+
+.not-found__btn-callback
+	padding 14px 35px
+	vertical-align top
+	margin-top 15px
+	margin-bottom 12px
+
+.more-videos-btn
+	padding-top 4px
+	padding-bottom 4px
+	&__icon-arrow
+		vertical-align top
+		margin-left 11px
+		margin-top 7px
+	&:hover
+		.more-videos-btn__icon-arrow
+			sprite($icon_arrow_down_f)
+
+.product__buy-btn
+.product__set-btn
+	display inline-block
+	vertical-align top
+	position relative
+	z-index 2
+
+.product__set-btn
+	padding-left 14px
+	padding-right 14px
+
+.product-sidebar__buy-btn
+	border-radius 2px
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	font-weight normal
+
+
+.show-more-btn
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	padding-top 14px
+	padding-bottom 14px
+	font-weight light
+
+	&__icon
+		vertical-align top
+		margin-left 18px
+		margin-top 10px
+
+.set-all__result__buy-set-btn
+	font-size 14px
+	font-weight normal
+	padding-top 9px
+	padding-bottom 9px

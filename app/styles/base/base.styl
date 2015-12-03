@@ -1,9 +1,5 @@
 body
-	color #555
-	font-family 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif
-	background-color #fff
 	cursor default
-	font-size 15px
 	line-height 24px
 
 strong
@@ -17,25 +13,7 @@ $light-color
 	color #959595
 
 h1
-h2
-h3
-h4
-h5
-h6
 .h1
-.h2
-.h3
-.h4
-.h5
-.h6
-	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', 'Droid Sans', Helvetica, Arial, sans-serif
-	color #111
-	font-weight bold
-
-h1
-.h1
-	font-size 36px
-
 	small
 		display block
 		margin-top 30px
@@ -68,25 +46,8 @@ h6
 
 h2
 .h2
-	font-size 34px
 	&--red
 		color #E14013
-
-h3
-.h3
-	font-size 30px
-
-h4
-.h4
-	font-size 26px
-
-h5
-.h5
-	font-size 24px
-
-h6
-.h6
-	font-size 22px
 
 h6.small
 .h6.small
@@ -132,32 +93,9 @@ a
 .cf:after
 	clear both
 
-i[class*=icon-]
-span[class*=icon-]
+i[class*="icon-"]
+span[class*="icon-"]
 	display inline-block
-
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11
-	padding-left 6px
-	padding-right 6px
-
-	&:first-child:not(.col-sm-offset-2)
-		padding-left 20px
-
-	&:last-child:not(.col-sm-offset-2)
-		padding-right 20px
-
-.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
-	padding-left 20px
-	padding-right 20px
-
-.row
-	margin-left -20px
-	margin-right -20px
-
-.container
-	padding-left 20px
-	padding-right 20px
-	width 1360px
 
 .inner
 	margin 0 auto
@@ -181,4 +119,47 @@ span[class*=icon-]
 	margin 0 20px
 	border-top 3px solid #E14013
 
+.container-20
+	padding-left 8px
+	padding-right 8px
+	margin-right auto
+	margin-left auto
+
+	@media (min-width: 720px)
+		width 736px
+	@media (min-width: 990px)
+		width 100%
+	@media (min-width: 1360px)
+		width 1336px
+
+
+.row-20
+	margin-left -8px
+	margin-right -8px
+	clearfix()
+
+.col-md-20-1
+.col-md-20-2
+.col-md-20-3
+.col-md-20-4
+.col-md-20-5
+	min-height 1px
+	float left
+	padding-left 8px
+	padding-right 8px
+
+.col-md-20-1
+	width 20%
+
+.col-md-20-2
+	width 40%
+
+.col-md-20-3
+	width 60%
+
+.col-md-20-4
+	width 80%
+
+.col-md-20-5
+	width 100%
 

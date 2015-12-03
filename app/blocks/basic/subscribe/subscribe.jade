@@ -15,7 +15,7 @@ mixin subscribe()
 				.subscribe__body
 					input(type="email",placeholder='woman@gmail.com').subscribe__input
 				.subscribe__foot
-					+button('Подписаться','buttonSubmit').btn-med.btn--ghost.subscribe__btn.subscribe__btn--red
+					+button({type:'buttonSubmit'}).btn-med.btn--ghost.subscribe__btn.subscribe__btn--red
 						| Подписаться
 			.subscribe__form
 				.subscribe__head
@@ -24,5 +24,5 @@ mixin subscribe()
 				.subscribe__body
 					input(type="email",placeholder='man@gmail.com').subscribe__input
 				.subscribe__foot
-					+button('Подписаться','buttonSubmit').btn-med.btn--ghost.subscribe__btn.subscribe__btn--white
+					+button({type:'buttonSubmit'}).btn-med.btn--ghost.subscribe__btn.subscribe__btn--white
 						| Подписаться

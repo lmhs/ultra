@@ -1,0 +1,223 @@
+include ../../layout/content/content
+include ../../layout/expert/expert
+include ../../layout/timer/timer
+include ../../layout/similar/similar
+include ../../layout/other/other
+include ../../layout/recent/recent
+include ../../layout/product-page-set/product-page-set
+include ../../layout/not-found/not-found
+include ../../basic/link/link
+include ../../basic/pattern/pattern
+include ../../basic/order-form-section/order-form-section
+include ../../basic/button/button
+include ../../basic/details/details
+include ../../basic/phone/phone
+include ../../basic/form/form
+include ../../basic/label/label
+include ../../basic/breadcrumb/breadcrumb
+include ../../basic/help-block/help-block
+include ../../basic/tooltip/tooltip
+include ../../basic/dropdown/dropdown
+include ../../basic/tag/tag
+include ../../basic/table/table
+include ../../basic/checkbox/checkbox
+include ../../basic/countdown/countdown
+include ../../basic/product/product
+include ../../basic/rating/rating
+include ../../basic/action/action
+include ../../basic/available/available
+include ../../basic/nav-tabs/nav-tabs
+
+include description/description
+include features/features
+include reviews/reviews
+include questions/questions
+include delivery/delivery
+
+
+mixin productPage()
+	- var available = productState !== 'notAvailable';
+	+content()
+		.col-md-6
+			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
+	section.product-page__head
+		+content()
+			.col-md-6
+				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
+				.product-page__icons
+					span.product-page__icons-wrap
+						img(src="./assets/images/android-icon.png", alt="android")
+					span.product-page__icons-wrap
+						img(src="./assets/images/2-sim-icon.png", alt="2-sim")
+					span.product-page__icons-wrap
+						img(src="./assets/images/3g-icon.png", alt="3g")
+					span.product-page__icons-wrap
+						img(src="./assets/images/ips-icon.png", alt="ips")
+					span.product-page__icons-wrap
+						img(src="./assets/images/4-cores-icon.png", alt="4-cores")
+					span.product-page__icons-wrap
+						img(src="./assets/images/gps-icon.png", alt="gps")
+
+	section.product-page__offers
+		+content()
+			.col-md-3
+				.product-page__offers__gallery
+
+
+			.col-md-3
+				.product-page__offers__spec(class=!available ? 'product-page__offers__spec--unavailable' : '')
+					.row
+						.col-md-4
+							.spec__label
+								if available
+									+label-warning('На что стоит обратить внимание?')
+									p.spec__label__caption
+										| Функция «Social tag» позволяет соединить лица в вашем фотоальбоме с социальными сетями.
+								else
+									+label-warning('Товара нет в наличии')
+					if available
+						+timer({type: productState, countdownId:'phone1'}).product-page__timer
+					else
+						hr.product-page__unavailable-divider
+					.spec__left
+						.spec__price-wrap
+							if !available
+								.spec__price.spec__price-text Последняя цена на сайте
+							s.spec__price.spec__price--old
+								| 2 610 000 BYR
+							strong.spec__price.spec__price--new
+								| 1 950 000 BYR
+							if available
+								+available({count:5}).spec__available
+							else
+								+available({count:0}).spec__available
+						if available
+							.spec__buy
+								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
+									| Купить
+								+checkbox({name:'product-warranty',value:'add-warranty',label:'Продлить гарантию еще на 1 год'}).spec__warranty
+									strong.spec__warranty-price + 106 400 BYR
+									+link().link--pseudo.spec__buy__info.js-show-info
+										| узнать подробнее
+					.spec__right
+						.spec__rating-wrap
+							+rating()
+							span.spec__rating-number
+								strong 4,8
+								|  из 5
+							em.spec__rating-votes
+								| (8 голосов)
+						.spec__actions
+							if available
+								+action({type:'drop'})
+							+action({type:'compare'})
+							+action({type:'favorite'})
+						if available
+							.spec__credit
+								+link()
+									i.icon-timer.spec__credit__timer
+									span.spec__credit__link-text Как купить в кредит?
+					if available
+						.spec__one-click
+							.spec__one-click__input-wrap
+								+input({type:'phone',value:'+375'}).spec__phone-input
+							i.icon-arrow-right.spec__icon-arrow
+							+button({type:'buttonSubmit'}).btn-med.btn--dark.spec__one-click__btn.js-one-click-buy
+								| Купить в один клик
+	section.product-page__conditions
+		+content()
+			.col-md-6
+				.product-page__conditions__inner
+					.media.product-page__condition
+						.media-left.product-page__condition__left
+							i.icon-wire-transfer
+						.media-body
+							h6.product-page__condition__heading Гарантия возврата денег
+							p.product-page__condition__caption в течение 14 дней с даты покупки
+							+link().link--pseudo.product-page__condition__link Условия возврата
+					.media.product-page__condition
+						.media-left.product-page__condition__left
+							i.icon-calendar-48
+						.media-body
+							h6.product-page__condition__heading 48 месяцев гарантии
+							p.product-page__condition__caption от производителя
+							+link().link--pseudo.product-page__condition__link Условия гарантии
+					.media.product-page__condition
+						.media-left.product-page__condition__left
+							i.icon-truck-delivery
+						.media-body
+							h6.product-page__condition__heading Быстрая доставка
+							p.product-page__condition__caption
+								| По Минску сегодня.
+								br
+								| Ежедневно в другие регионы
+							+link().link--pseudo.product-page__condition__link Условия доставки
+	+similar()
+	section.product-page__info
+		.container-20
+			.row-20
+				.col-md-20-1
+					aside
+						+product({
+											type:'sidebar',
+											oldPrice: '45 000 BYR'
+										})
+				.col-md-20-4
+					+navTabs({
+										type:'small',
+										links: [
+											{
+												isActive: true,
+												href: '#description',
+												class: 'js-product-nav-tab',
+												icon: 'feather',
+												content: 'Описание'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
+												},
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-nav-tab',
+												icon: 'review',
+												content: 'Отзывы'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												},
+											{
+												isActive: false,
+												href: '#delivery',
+												class: 'js-product-nav-tab',
+												icon: 'delivery',
+												content: 'Доставка и оплата'
+												}
+										]
+									}).js-product-nav
+
+					.tab-content.product-page__tab-content
+						#description.tab-pane.active(role='tabpanel')
+							+description()
+						#features.tab-pane(role='tabpanel')
+							+features()
+						#reviews.tab-pane(role='tabpanel')
+							+reviews()
+						#questions.tab-pane(role='tabpanel')
+							+questions()
+						#delivery.tab-pane(role='tabpanel')
+							+delivery()
+	+expert()
+	+pattern()
+	+productPageSet()
+	+recent()
+	+not-found()
+

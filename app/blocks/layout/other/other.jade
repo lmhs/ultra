@@ -1,0 +1,47 @@
+include ../content/content
+include ../../basic/product/product
+include ../../basic/tag/tag
+include ../../basic/button/button
+
+mixin other()
+	section.other
+		.container-20
+			.row-20
+				.col-md-20-5
+					h2.other__heading Чехлы для телефонов
+					.other__tags
+						+tag('2014 год',false).other__tag
+						+tag('горный',false).other__tag
+						+tag('мужской',false).other__tag
+						+tag('еще параметр',true).other__tag
+		.other__items.js-other-items
+			.container-20
+				.row-20
+					.col-md-20-1
+						+product({
+											type:'set',
+											labels:'new'
+										}).other__product
+					.col-md-20-1
+						+product({
+											type:'set',
+											labels:'discount',
+											oldPrice: '45 000 BYR'
+										}).other__product
+					.col-md-20-1
+						+product({type:'set'}).other__product
+					.col-md-20-1
+						+product({
+											type:'set',
+											labels:'hit'
+										}).other__product
+					.col-md-20-1
+						+product({
+											type:'set',
+											labels:'new'
+										}).other__product
+		.other__more
+			+button().btn-lg.btn--dark.show-more-btn
+				| Загрузить еще 10 товаров
+				i.icon-arrow-down-10-f.show-more-btn__icon
+

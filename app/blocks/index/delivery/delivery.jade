@@ -1,5 +1,5 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../basic/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
@@ -8,8 +8,8 @@ include ../../basic/phone/phone
 mixin delivery()
 	+content()
 		.inner.inner--w1360
-			.col-xs-12
-				+nav-small(['Главная', pageTitle])
+			.col-md-6
+				+breadcrumb(['Главная', pageTitle])
 	section.delivery__payment
 		h2.h1.delivery__heading-main Оплата
 		p.caption
@@ -27,6 +27,6 @@ mixin delivery()
 				.help__call
 					h2.help__heading Нужна помощь?
 					h3.help__subheading Звони сейчас
-					+phone
+					+phone({})
 
 
