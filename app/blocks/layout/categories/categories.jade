@@ -11,32 +11,8 @@ mixin categories()
 					.category__select-wrap
 						.category__select__inner
 							+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.category__select
-					.subcategory-nav-wrap
-						| Крупная бытовая техника
-					.category__filter
-						strong.category__filter__title
-							| Выберите цену
-						.category__filter__slider-wrap
-							#slider.noUi-extended
-						.category__filter__inputs
-							.category__filter__input
-								.category__filter__input-text
-									| от
-							+input-simple({
-																type: 'text'
-																//- min: 0,
-																//- max: 25999900,
-																//- step: 100
-															}).category__filter__input-field#js-slider-from
-							.category__filter__input
-								.category__filter__input-text
-									| до
-							+input-simple({
-																type: 'text'
-																//- min: 100,
-																//- max: 26000000,
-																//- step: 100
-															}).category__filter__input-field#js-slider-to
+					// category select end
+		// category select and filter wrap end
 		.category__nav-wrap
 			.container-20
 				.row-20
@@ -80,6 +56,39 @@ mixin categories()
 												}
 										]
 									}).js-subheader-nav-tab
+		// category subheader end
+		.category__filter-wrap
+			.container-20
+				.row-20
+					.col-md-20-5
+
+						.category__filter
+							strong.category__filter__title
+								| Выберите цену
+							.category__filter__slider-wrap
+								#slider.noUi-extended
+							.category__filter__inputs
+								.category__filter__input
+									.category__filter__input-text
+										| от
+								+input-simple-money({
+																	type: 'text',
+																	label: 'BYR'
+																	//- min: 0,
+																	//- max: 25999900,
+																	//- step: 100
+																}).category__filter__input-field#js-slider-from
+								.category__filter__input
+									.category__filter__input-text
+										| до
+								+input-simple-money({
+																	type: 'text',
+																	label: 'BYR'
+																	//- min: 100,
+																	//- max: 26000000,
+																	//- step: 100
+																}).category__filter__input-field#js-slider-to
+		// category filter end
 		.tab-content.category__tab-content
 			#large-appliances.tab-pane.active(role='tabpanel')
 				.container-20
@@ -128,7 +137,9 @@ mixin categories()
 					.row-20
 						.col-md-20-5
 							| Климатическая техника
+			// category tab content end
 			.category__tab-content__foot
 				+buttonMore({itemCount:8})
+			// category load more end
 			script(src="https://www.youtube.com/iframe_api")
 

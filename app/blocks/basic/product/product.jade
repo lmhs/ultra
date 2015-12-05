@@ -110,6 +110,7 @@ mixin product(args)
 					when 'favorite'
 						.product__added.product__added--favorite
 							| Добавлено в избранное
+		// product end
 
 	else if args.type === 'sidebar'
 		.product.product-sidebar.js-product&attributes(attributes)
@@ -133,6 +134,7 @@ mixin product(args)
 				+action({type:'drop'}).product__action
 				+action({type:'compare'}).product__action
 				+action({type:'favorite'}).product__action
+		// product sidebar end
 
 	else if args.type === 'hot'
 		.product.hot__product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
@@ -170,6 +172,7 @@ mixin product(args)
 							li.product__info__item Съемка видео
 								span.product__info__value  720p
 							li.product__info__item Wi-Fi
+		// product hot end
 
 
 

@@ -11,12 +11,17 @@ include ../../basic/modal/modal
 
 mixin index()
 	+modalSubscribe('subscribePopup')
-	+categories()
 	+promo()
 	+hot()
 	+announce()
 	+pattern()
-	+expert()
+	+expert({
+						heading: 'Лучший выбор',
+						subheading: 'цена и качество'
+
+				}).main__expert
+		| Я изучил товар и могу Вам помочь с выбором в соотношении цены и качества. Вам всего лишь нужно выбрать категорию товара и ценовой диапазон. <br/> <br/> Если вы меня не знаете, посмотрите <a class="link" href="javascript:void(0);">видеообзоры со мной</a>.
+	+categories()
 	+recent()
 	+indexSocial
 	+not-found()

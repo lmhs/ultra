@@ -45,7 +45,7 @@ mixin inputNumber(args)
 		if label
 			label.control-label(
 				for=attributes.id ? attributes.id : null,
-				class=args.required ? 'is-required' : '') #{label}
+				class=args.required ? 'is-required' : '') !{label}
 		input.form-control.js-input-number-control(
 			data-type='number'
 			data-ride='spinner'
@@ -66,6 +66,21 @@ mixin inputNumber(args)
 				| !{args.help.text}
 		if block
 			block
+
+
+//- Simple form input control without a form-group
+mixin input-simple-money(args)
+	.input-money
+		label.control-label.input-money-label(
+				for=attributes.id ? attributes.id : null) !{args.label}
+		input.form-control(
+				type=args.type ? args.type : 'text'
+				name=args.name ? args.name : null
+				value=args.value ? args.value : null
+				step=args.step ? args.step : null
+				min=args.min ? args.min : null
+				max=args.max ? args.max : null
+				placeholder=args.placeholder ? args.placeholder : null)&attributes(attributes)
 
 //- input-horisontal
 mixin input-horizontal(args)

@@ -6,8 +6,11 @@ import watch from 'gulp-watch';
 gulp.task('watch', () => {
 	global.watch = true;
 
-	watch('app/sprite/**/*.png', gulp.start(
-		'sprite'
+	watch('app/sprite/**/*.png', () => runSequence(
+		'sprite',
+		'styles',
+		'copy',
+		reload
 	));
 
 	watch('app/{styles,blocks}/**/*.styl', () => runSequence(
@@ -27,7 +30,7 @@ gulp.task('watch', () => {
 
 	watch('app/scripts/**/*.js', () => gulp.start(
 		'scripts',
-		'lint',
+		// 'lint',
 		reload
 	));
 

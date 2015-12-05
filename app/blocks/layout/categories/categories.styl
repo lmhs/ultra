@@ -1,9 +1,7 @@
-.categories
-	padding-top 20px
 
 .category__select
 	&-wrap
-
+		height 44px
 		margin-bottom 30px
 		position relative
 	&__inner
@@ -19,12 +17,22 @@
 			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 			color #333
 
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			color #252525
+			font-size 24px
+			font-weight bold
+			display inline-block
+			vertical-align top
+			// width 800px
+			padding 0
+
+
 		.select2-container--default .select2-selection--single .select2-selection__arrow
 			position static
 			display inline-block
 			vertical-align top
-			margin 44px 0 28px 6px
 			padding 0
+			margin-left 6px
 			b
 				border none
 				sprite($icon_arrow_down_333_15x9)
@@ -37,37 +45,36 @@
 				vertical-align middle
 				margin-top 6px
 
+		.select2-container--default .select2-selection--single
+			background-color rgba(255,255,255,0)
+
 		.select2-container .select2-selection--single
-			height 100px
 			border-color transparent
 			border-top-width 4px
 
 		.select2-container--open .select2-selection--single
-
+			background-color rgba(255,255,255,1)
 			border-radius 0
 			border 1px solid #acacac
 			border-top-width 4px
 
-		.select2-container--default.select2-container--open .select2-selection--single
-			.select2-selection__rendered
-				color #E14013
+		.select2-container--default.select2-container--open
+			margin-top -44px
+			.select2-selection--single
+				height 100px
 
-			.select2-selection__arrow b
-				sprite($icon_arrow_down_red_15x9)
+				.select2-selection__rendered
+					color #E14013
+					margin 44px 0 28px
+
+				.select2-selection__arrow
+					margin-top 44px
+					margin-bottom 28px
+					b
+						sprite($icon_arrow_down_red_15x9)
 
 		.select2-container--default.select2-container--open.select2-container--below .select2-selection--single
 			border-bottom none
-
-
-		.select2-container--default .select2-selection--single .select2-selection__rendered
-			color #252525
-			font-size 24px
-			font-weight bold
-			display inline-block
-			vertical-align top
-			// width 800px
-			padding 0
-			margin 44px 0 28px
 
 .category__select__dropdown
 	.select2-results__option
@@ -92,9 +99,10 @@
 
 .category__filter
 	display inline-block
-	padding 26px 0
+	padding 25px 0 26px
 	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-
+	&-wrap
+		border-bottom 1px solid #EBEBEB
 	&__title
 		font-size 16px
 		color #252525
@@ -105,6 +113,7 @@
 		display inline-block
 		vertical-align top
 		width 342px
+		margin-top 16px
 		margin-left 37px
 	&__inputs
 		display inline-block
@@ -113,15 +122,11 @@
 		display inline-block
 		vertical-align top
 		height 32px
+		line-height 32px
 		margin-left 34px
 		&-text
 			font-size 13px
 			color #999
-		&-field
-			width 148px
-			margin-left 9px
-			display inline-block
-			vertical-align top
 
 .category__nav-wrap
 	background-color #F6F6F6
