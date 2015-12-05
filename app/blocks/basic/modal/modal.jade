@@ -1,4 +1,6 @@
 include ../form/form
+include ../checkbox/checkbox
+include ../link/link
 include ../button/button
 
 //- modal
@@ -39,3 +41,45 @@ mixin modalSubscribe(id)
 											}).subscribe-popup__form__input
 							+button().btn-med.btn--red.subscribe-popup__form__btn
 								| Подписаться
+
+mixin modalLogin(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--login
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					h4.login-modal__heading Вход в личный кабинет
+				.modal-body
+					form.login-modal__form
+						+input-horizontal({name:'Имя',placeholder:'Имя'})#name.login-modal__form__input
+						+input-horizontal({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
+						.login-modal__form__actions
+							.col-sm-4.col-sm-offset-1
+								+button().btn-med.btn--red.login-modal__form__login-btn.js-login-btn
+									| Войти
+								.login-modal__form__checkbox-wrap
+									+checkbox({
+														label:'Запомнить меня',
+														checked: true
+														}).login-modal__form__checkbox.js-remember-checkbox
+
+						.login-modal__form__actions
+							.col-sm-4.col-sm-offset-1
+								+button().btn-sm.btn--ghost.btn--ghost-gray.login-modal__form__remember-btn.js-remember-btn
+									| Вспомнить пароль
+								+button().btn-sm.btn--ghost.btn--ghost-dark.login-modal__form__register-btn.js-register-btn
+									| Регистрация
+						.login-modal__form__actions.login-modal__form__actions--foot
+							.login-modal__form__actions__or
+								| или
+							.login-modal__form__actions__social
+								+link().login-modal__form__actions__social-link.js-fb-login
+									i.icon-fb-42x43
+								+link().login-modal__form__actions__social-link.js-vk-login
+									i.icon-vk-42x43
+								+link().login-modal__form__actions__social-link.js-google-login
+									i.icon-google-42x43
+
