@@ -26,6 +26,7 @@ mixin input(args)
 			type=args.type ? args.type : 'text'
 			name=args.name ? args.name : null
 			value=args.value ? args.value : null
+			step=args.step ? args.step : null
 			min=args.min ? args.min : null
 			max=args.max ? args.max : null
 			placeholder=args.placeholder ? args.placeholder : null
@@ -99,6 +100,7 @@ mixin input-simple(args)
 				type=args.type ? args.type : 'text'
 				name=args.name ? args.name : null
 				value=args.value ? args.value : null
+				step=args.step ? args.step : null
 				min=args.min ? args.min : null
 				max=args.max ? args.max : null
 				placeholder=args.placeholder ? args.placeholder : null)&attributes(attributes)

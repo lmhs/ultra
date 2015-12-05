@@ -1,33 +1,63 @@
 include ../content/content
 include ../../basic/product/product
+include ../../basic/form/form
 
-mixin recent()
-	section.recent
+mixin categories()
+	section.categories
 		.container-20
 			.row-20
 				.col-md-20-5
-					h2.recent__heading Недавно вы просматривали
+					.category__select-wrap
+						.category__select__inner
+							+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.category__select
+					.subcategory-nav-wrap
+						| Крупная бытовая техника
+					.category__filter
+						strong.category__filter__title
+							| Выберите цену
+						.category__filter__slider-wrap
+							#slider.noUi-extended
+						.category__filter__inputs
+							.category__filter__input
+								.category__filter__input-text
+									| от
+							+input-simple({
+																type: 'text'
+																//- min: 0,
+																//- max: 25999900,
+																//- step: 100
+															}).category__filter__input-field#js-slider-from
+							.category__filter__input
+								.category__filter__input-text
+									| до
+							+input-simple({
+																type: 'text'
+																//- min: 100,
+																//- max: 26000000,
+																//- step: 100
+															}).category__filter__input-field#js-slider-to
+
 			.row-20
 				.col-md-20-1
 					+product({
-										type:'recent',
+										type:'categories',
 										labels:'new'
-									}).recent__product
+									}).categories__product
 				.col-md-20-1
 					+product({
-										type:'recent',
+										type:'categories',
 										labels:'discount',
 										oldPrice: '45 000 BYR'
-									}).recent__product
+									}).categories__product
 				.col-md-20-1
-					+product({type:'recent'}).recent__product
+					+product({type:'categories'}).categories__product
 				.col-md-20-1
 					+product({
-										type:'recent',
+										type:'categories',
 										labels:'hit'
-									}).recent__product
+									}).categories__product
 				.col-md-20-1
 					+product({
-										type:'recent',
+										type:'categories',
 										labels:'new'
-									}).recent__product
+									}).categories__product

@@ -14,3 +14,10 @@ mixin navSocial(args)
 			li(role='presentation', class= (item.isActive) ? 'active' : '')
 				+link(item.href).js-tablet-social-nav-tab
 					i(class= 'icon-' + item.icon + ' tablet__icon-' + item.icon)
+
+mixin navSubheader(args)
+	ul.nav.nav-tabs.subheader-nav&attributes(attributes)
+		each item in args.links
+			li(role='presentation', class= (item.isActive) ? 'active' : '')
+				+link(item.href).js-subheader-nav-tab
+					span.nav-tabs__text !{item.content}

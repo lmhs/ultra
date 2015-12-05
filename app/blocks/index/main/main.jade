@@ -11,13 +11,12 @@ include ../../basic/modal/modal
 
 mixin index()
 	+modalSubscribe('subscribePopup')
+	+categories()
 	+promo()
 	+hot()
 	+announce()
 	+pattern()
 	+expert()
-	section.categories
-		| categories
 	+recent()
 	+indexSocial
 	+not-found()
