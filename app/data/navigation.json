@@ -81,43 +81,6 @@
 				"icon" : "sale"
 			}
 		],
-		"subheader" : [
-			{
-				"name" : "Крупная бытовая техника",
-				"href" : "/index-goods.html",
-				"menu" : false,
-				"sale" : false,
-				"icon" : "multimedia"
-			},
-			{
-				"name" : "Техника для кухни",
-				"href" : "/goods.html",
-				"menu" : false,
-				"sale" : false,
-				"icon" : "household"
-			},
-			{
-				"name" : "Техника для дома",
-				"href" : "/goods.html",
-				"menu" : true,
-				"sale" : false,
-				"icon" : "sport"
-			},
-			{
-				"name" : "Техника для красоты и здоровья",
-				"href" : "/goods.html",
-				"menu" : false,
-				"sale" : false,
-				"icon" : "children"
-			},
-			{
-				"name" : "Климатическая техника",
-				"href" : "/goods.html",
-				"menu" : false,
-				"sale" : false,
-				"icon" : "auto"
-			}
-		],
 		"footer-left" : [
 			{
 				"name" : "О магазине",

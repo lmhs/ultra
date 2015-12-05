@@ -1,7 +1,15 @@
 include ../link/link
 
 mixin navTabs(args)
-	ul.nav.nav-tabs(class= (args.type === small) ? 'nav-tabs--small' : '')&attributes(attributes)
+	ul.nav.nav-tabs&attributes(attributes)
+		each item in args.links
+			li(role='presentation', class= (item.isActive) ? 'active' : '')
+				+link(item.href).js-nav-tab
+					i(class= 'icon-' + item.icon + ' nav__icon-' + item.icon)
+					span.nav-tabs__text !{item.content}
+
+mixin navTabsProduct(args)
+	ul.nav.nav-tabs.product-nav-tabs(class= (args.type === small) ? 'product-nav-tabs--small' : '')&attributes(attributes)
 		each item in args.links
 			li(role='presentation', class= (item.isActive) ? 'active' : '')
 				+link(item.href).js-product-nav-tab
@@ -16,8 +24,9 @@ mixin navSocial(args)
 					i(class= 'icon-' + item.icon + ' tablet__icon-' + item.icon)
 
 mixin navSubheader(args)
-	ul.nav.nav-tabs.subheader-nav&attributes(attributes)
-		each item in args.links
-			li(role='presentation', class= (item.isActive) ? 'active' : '')
-				+link(item.href).js-subheader-nav-tab
-					span.nav-tabs__text !{item.content}
+	.subheader-nav-tabs-outer
+		ul.nav.nav-tabs.subheader-nav-tabs&attributes(attributes)
+			each item in args.links
+				li(role='presentation', class= (item.isActive) ? 'active' : '')
+					+link(item.href)(class= item.class)
+						span.nav-tabs__text !{item.content}

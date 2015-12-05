@@ -28,7 +28,10 @@ $(() => {
 
 	$('.js-tablet-social-nav').on('click','.js-tablet-social-nav-tab', function (e) {
 		e.preventDefault();
-		console.log('click');
+		$(this).tab('show')
+	});
+	$('.js-subheader-nav-tab').on('click','.js-category-nav-tab', function (e) {
+		e.preventDefault();
 		$(this).tab('show')
 	});
 
