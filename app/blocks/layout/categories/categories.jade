@@ -80,13 +80,14 @@ mixin categories()
 												}
 										]
 									}).js-subheader-nav-tab
-		.tab-content.caegory-page__tab-content
+		.tab-content.category__tab-content
 			#large-appliances.tab-pane.active(role='tabpanel')
 				.container-20
 					.row-20
 						.col-md-20-1
 							+product({
 												type:'categories',
+												video: true,
 												labels:'new'
 											}).categories__product
 						.col-md-20-1
@@ -127,4 +128,7 @@ mixin categories()
 					.row-20
 						.col-md-20-5
 							| Климатическая техника
+			.category__tab-content__foot
+				+buttonMore({itemCount:8})
+			script(src="https://www.youtube.com/iframe_api")
 

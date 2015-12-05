@@ -47,19 +47,19 @@ $(() => {
 	//    omitWeeks: true
 	// });
 
-	$('select').select2({
-		dropdownAutoWidth : true,
-		minimumResultsForSearch: Infinity
-	});
+$('select').select2({
+	dropdownAutoWidth : true,
+	minimumResultsForSearch: Infinity
+});
 
-	var categorySelect = $('.category__select').select2({
-		dropdownAutoWidth : 'true',
-		width: "460px",
-		minimumResultsForSearch: Infinity
+var categorySelect = $('.category__select').select2({
+	dropdownAutoWidth : 'true',
+	width: "460px",
+	minimumResultsForSearch: Infinity
 			// containerCssClass : "category__select__dropdown"
 		});
 
-	categorySelect.data('select2').$results.addClass("category__select__dropdown")
+categorySelect.data('select2').$results.addClass("category__select__dropdown")
 
 
 	// http://indigojs.github.io/bootstrap-spinner/
