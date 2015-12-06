@@ -11,8 +11,15 @@ import './blocks/spinner.js';
 $(() => {
 	$('.js-login-btn').on('click',() => {
 		$('#loginPopup').modal('hide');
-	})
+	});
 	$('.js-register-btn').on('click',() => {
 		$('#loginPopup').modal('hide');
+	});
+	$('.js-forgot-btn').on('click',() => {
+		$('#loginPopup').modal('hide');
+	});
+	$('.js-forgot-return').on('click',() => {
+		$('#forgotPopup').modal('hide');
+		$('#loginPopup').modal('show');
 	})
 })

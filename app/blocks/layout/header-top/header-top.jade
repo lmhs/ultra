@@ -8,9 +8,9 @@ mixin header-top()
 		if pageId !== 'order'
 			+nav(getData('navigation')[0],'top').nav-list--inline
 		else
-			+link('/index').header-top__link-small--pseudo
-				i.icon-return
-				span.link__text.header-top__link-text--pseudo В магазин
+			+link('/index').link-small--pseudo
+				i.icon-return.link-icon-return
+				span.link__text.link-text--pseudo В магазин
 		.user__menu
 			+link('/cart').header-top__link
 				i.icon-cart.header-top__icon-cart
@@ -20,3 +20,4 @@ mixin header-top()
 				span.link__text Войти
 			+modalLogin('loginPopup')
 			+modalHello('helloPopup')
+			+modalForgot('forgotPopup')

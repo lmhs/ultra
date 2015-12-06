@@ -53,12 +53,12 @@ mixin modalLogin(id)
 						span.sr-only Close
 					h4.login-modal__heading Вход в личный кабинет
 				.modal-body
-					form.login-modal__form
-						+input-horizontal({name:'Имя',placeholder:'Имя'})#name.login-modal__form__input
+					form.modal__form.login-modal__form.js-login-form
+						+input-horizontal({name:'Email',placeholder:'Email'})#email.login-modal__form__input
 						+input-horizontal({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
 						.login-modal__form__actions
 							.col-sm-4.col-sm-offset-1
-								+button().btn-med.btn--red.login-modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
+								+button().btn-med.btn--red.modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
 									| Войти
 								.login-modal__form__checkbox-wrap
 									+checkbox({
@@ -68,9 +68,9 @@ mixin modalLogin(id)
 
 						.login-modal__form__actions
 							.col-sm-4.col-sm-offset-1
-								+button().btn-sm.btn--ghost.btn--ghost-gray.login-modal__form__remember-btn.js-remember-btn
+								+button().btn-sm.btn--ghost.btn--ghost-gray.modal__form__forgot-btn.js-forgot-btn(data-toggle="modal", data-target="#forgotPopup")
 									| Вспомнить пароль
-								+button().btn-sm.btn--ghost.btn--ghost-dark.login-modal__form__register-btn.js-register-btn
+								+button().btn-sm.btn--ghost.btn--ghost-dark.modal__form__register-btn.js-register-btn
 									| Регистрация
 						.login-modal__form__actions.login-modal__form__actions--foot
 							.login-modal__form__actions__or
@@ -100,6 +100,32 @@ mixin modalHello(id)
 						span.js-username  Наталья
 						| !
 				.modal-body
-					.hello-modal__greeting
-						p.hello-modal__text Рады снова видеть Вас на сайте.
+					.modal-body__content
+						p.modal-body__text Рады снова видеть Вас на сайте.
+
+mixin modalForgot(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--forgot
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					h4.forgot-modal__heading
+						| Напомнить пароль
+				.modal-body
+					.modal-body__content
+						p.modal-body__text Введите Email, который вы указывали при регистрации. На него мы вышлем инструкции по восстановлению пароля
+						form.modal__form.forgot-modal__form.js-forgot-form
+							+input-horizontal({name:'Email',placeholder:'Email'})#forgotEmail.forgot-modal__form__input
+							.form-group
+								.col-sm-4.col-sm-offset-1
+									+button().btn-med.btn--red.modal__form__forgot-btn.js-forgot-btn
+										| Напомнить пароль
+							.form-group
+								+link().link-small--pseudo.js-forgot-return
+									i.icon-return.link-icon-return
+									span.link__text.link-text--pseudo Вернуться
+
 
