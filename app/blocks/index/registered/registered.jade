@@ -1,0 +1,96 @@
+include ../../layout/content/content
+include ../../basic/breadcrumb/breadcrumb
+include ../../basic/link/link
+include ../../basic/button/button
+include ../../basic/details/details
+include ../../basic/phone/phone
+
+mixin registered()
+	+content()
+		.col-md-6
+			+breadcrumb(['Главная', pageTitle])
+	section.credit__head
+		+content()
+			.col-md-6
+				h2.h1.credit__heading-main Кредит
+	section.credit__intro
+		+content()
+			.col-md-6
+				.credit__headlines.cf
+					.credit__headlines-left
+						h3.credit__intro__heading-light Хватит мечтать!
+						h3.credit__intro__heading-bold Пора воплощать
+					.credit__headlines-right
+						h3.credit__intro__heading-light Кредит За 30 минут
+	section.credit__conditions
+		+content()
+			.col-md-6
+				//- .inner.inner--w1100
+				h2.credit__conditions__heading Условия приобретения товара в кредит
+		+content()
+			.col-md-3
+				.conditions-wrap.cf
+					.conditions.push-right
+						.condition
+							i.icon-calculator.condition__icon
+							.condition__text
+								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
+								p.caption.condition__caption
+									| Кредит оформляется на товары, стоимость которых более 1 500 000 BYR.
+									| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+					.conditions.push-right
+						.condition
+							i.icon-stock-percent.condition__icon
+							.condition__text
+								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
+								ul.default-ul.condition__default-ul
+									li размер ставки зависит от наименования товара и срока кредитования
+									li проценты начисляются ежемесячно на остаток кредита за вычетом предыдущих платежей
+									li дополнительные проценты и платежи отсутствуют
+			.col-md-3
+				.conditions-wrap.cf
+					.conditions--right
+						.condition
+							i.icon-stock.condition__icon
+							.condition__text
+								h6.small.condition__heading Увеличение стоимости на 12%
+								p.caption.condition__caption
+									| Цены на сайте действительны при оплате наличными. При оформлении товара в кредит, его стоимость может увеличиться на 12%
+
+					.conditions--right
+						.condition
+							i.icon-withdrawal.condition__icon
+							.condition__text
+								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
+								ul.default-ul.condition__default-ul
+									li при приобретении товара стоимостью до 14 000 000 BYR — 0 BYR
+									li при приобретении товара стоимостью свыше 14 000 000 BYR — 10% от стоимости
+
+	section.credit__documents
+		+content()
+			.col-md-2
+				h2.h1.h1--red.documents__heading Документы
+					small необходимые при оформлении кредита
+				p.caption Для оформления покупки в кредит, необходимо предъявить следующий минимум документов
+			.col-md-4
+
+
+	section.credit__location
+		+content()
+			.col-md-6
+				h2.credit__location__heading Место оформления кредита
+		.credit__location-map
+			<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=FhX9G4kYS8Rdm3YQ0A8_WP4a0Jqu6IcG&width=100%&height=100%&lang=ru_RU&sourceType=constructor"></script>
+	section.help
+		+content()
+			.col-md-4.col-md-offset-1
+				//- .inner.inner--w900
+				.help__center
+					.help__photo
+						img(src="/assets/images/help-photo.jpg", alt="Позвони мне")
+					.help__call
+						h2.help__heading Нужна помощь?
+						h3.help__subheading Звони сейчас
+						+phone({})
+
+

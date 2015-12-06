@@ -18,9 +18,15 @@ import $ from 'jquery';
 		if ( $(e.target).closest('.js-main-menu-item').length === 0 ) {
 			$('#js-top-menu').find('.js-main-menu-item.is-selected').removeClass('is-selected');
 		}
+		if ( $(e.target).closest('.js-user-menu-wrap').length === 0 ) {
+			$('.js-user-menu-wrap.is-opened').removeClass('is-opened');
+		}
 	});
 	$('#js-top-menu').on('click','.js-main-menu-link', function () {
 		$('.js-main-menu-item').removeClass('is-selected');
 		$(this).closest('.js-main-menu-item').addClass('is-selected');
+	})
+	$('.js-user-menu-wrap').on('click','.js-user-menu', function () {
+		$(this).closest('.js-user-menu-wrap').toggleClass('is-opened');
 	})
 }));
