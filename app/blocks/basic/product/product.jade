@@ -1,11 +1,12 @@
 include ../rating/rating
 include ../action/action
+include ../../layout/timer/timer
 include ../available/available
 include ../review-small/review-small
 
 mixin product(args)
-	if args.type !== 'sidebar'
-		.product.js-product&attributes(attributes)
+	if ((args.type !== 'sidebar') && (args.type !== 'hot'))
+		.product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
 			if args.labels
 				aside.product__labels
 					case args.labels
@@ -39,37 +40,65 @@ mixin product(args)
 								| !{args.oldPrice}
 						strong.product__price-special
 							| 22 415 BYR
-			.product__foot
-				if args.type === 'similar'
-					.product__features
-						span.product__features__icon-wrap
-							img(src="./assets/images/android-icon.png", alt="android")
-						span.product__features__icon-wrap
-							img(src="./assets/images/2-sim-icon.png", alt="2-sim")
-						span.product__features__icon-wrap
-							img(src="./assets/images/3g-icon.png", alt="3g")
-						span.product__features__icon-wrap
-							img(src="./assets/images/ips-icon.png", alt="ips")
-						span.product__features__icon-wrap
-							img(src="./assets/images/4-cores-icon.png", alt="4-cores")
-						span.product__features__icon-wrap
-							img(src="./assets/images/gps-icon.png", alt="gps")
-				.product__actions
-					if args.type !== 'set'
-						+button().btn-sm.btn--red.product__buy-btn
-							| Купить
-					else
-						+button().btn-sm.btn--red.product__set-btn
-							| В комплект
-					.product__actions__links
-						+action({type:'compare'}).product__action
-						+action({type:'favorite'}).product__action
+			if args.type !== 'categories'
+				.product__foot
+					if args.type === 'similar'
+						.product__features
+							span.product__features__icon-wrap
+								img(src="./assets/images/android-icon.png", alt="android")
+							span.product__features__icon-wrap
+								img(src="./assets/images/2-sim-icon.png", alt="2-sim")
+							span.product__features__icon-wrap
+								img(src="./assets/images/3g-icon.png", alt="3g")
+							span.product__features__icon-wrap
+								img(src="./assets/images/ips-icon.png", alt="ips")
+							span.product__features__icon-wrap
+								img(src="./assets/images/4-cores-icon.png", alt="4-cores")
+							span.product__features__icon-wrap
+								img(src="./assets/images/gps-icon.png", alt="gps")
+					.product__actions
+						if args.type !== 'set'
+							+button().btn-sm.btn--red.product__buy-btn
+								| Купить
+						else
+							+button().btn-sm.btn--red.product__set-btn
+								| В комплект
+						.product__actions__links
+							+action({type:'compare'}).product__action
+							+action({type:'favorite'}).product__action
 			if args.video
 				.product__video
 					.product__video__heading
 						| Видео
 					.product__video__content
-						| play
+						// https://developers.google.com/youtube/iframe_api_reference
+						iframe(width="100%", height="122", src="https://www.youtube.com/embed/X3uM4q26fSo?enablejsapi=1", frameborder="0", allowfullscreen)#video
+						+link().product__video-link#js-start-video
+							span.product__video-link__inner
+								i.icon-video-play.product__video__icon
+						script.
+							var player;
+							function onYouTubePlayerAPIReady() {
+								// create the global player from the specific iframe (#video)
+								player = new YT.Player('video', {
+									events: {
+										// call this function when player is ready to use
+										'onReady': onPlayerReady
+									}
+								});
+							}
+
+							function onPlayerReady(event) {
+								// bind events
+								var playButton = document.getElementById("js-start-video");
+								playButton.addEventListener("click", function() {
+									playButton.style.display = 'none';
+									player.playVideo();
+
+								});
+							}
+
+
 			if args.present
 				.product__present
 					| Present
@@ -81,7 +110,9 @@ mixin product(args)
 					when 'favorite'
 						.product__added.product__added--favorite
 							| Добавлено в избранное
-	else
+		// product end
+
+	else if args.type === 'sidebar'
 		.product.product-sidebar.js-product&attributes(attributes)
 			.product__head.product-sidebar__head
 				.product__title-text.product-sidebar__title-text
@@ -103,4 +134,46 @@ mixin product(args)
 				+action({type:'drop'}).product__action
 				+action({type:'compare'}).product__action
 				+action({type:'favorite'}).product__action
+		// product sidebar end
+
+	else if args.type === 'hot'
+		.product.hot__product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
+			if args.limit
+				+timer({type:'discount',limit: args.limit})
+			else
+				+timer({type:'discount'})
+			.product__body
+				.product__image
+					img(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image")
+				.product__info
+					.product__title-text
+						| SAMSUNG G350E Galaxy Star
+						| Advance White
+					.product__rating
+						+reviewSmall().product__review-small
+						+rating()
+					.product__info__left
+						.product__price
+							if args.oldPrice
+								s.product__price-old
+									| !{args.oldPrice}
+							strong.product__price-special
+								| 22 415 BYR
+						+button().btn-lg.btn--red.product__buy-btn
+							| Купить
+					.product__info__right
+						ul
+							li.product__info__item Экран
+								span.product__info__value  3"
+							li.product__info__item Матрица
+								span.product__info__value  16.4 МП (1/2.3")
+							li.product__info__item Оптический зум
+								span.product__info__value  12x
+							li.product__info__item Съемка видео
+								span.product__info__value  720p
+							li.product__info__item Wi-Fi
+		// product hot end
+
+
+
 

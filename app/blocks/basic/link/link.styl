@@ -49,14 +49,17 @@
 	padding 9px 13px 7px
 	text-decoration none
 
-.header-top__link-small--pseudo
+.link-small--pseudo
 	display inline-block
 	text-decoration none
 	vertical-align top
 	margin-top 11px
 	line-height 18px
 
-.header-top__link-text--pseudo
+.link-icon-return
+	vertical-align bottom
+
+.link-text--pseudo
 	color #999
 	font-size 13px
 	border-bottom 1px dashed #999
@@ -148,3 +151,37 @@
 		vertical-align top
 		margin-left 8px
 		border-bottom 1px dashed #006889
+
+.follow-link
+	display inline-block
+	width 280px
+	height 40px
+	line-height 40px
+	font-style italic
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	font-size 15px
+	color #FFF
+	text-decoration none
+	position relative
+	padding-left 54px
+	&::before
+		content ''
+		position absolute
+		display block
+		width 1px
+		left 36px
+		top 7px
+		bottom 7px
+	&:hover
+		color #FFF
+		text-decoration underline
+	&--fb
+		background-color rgb(47, 128, 208)
+		&::before
+			background-color #3a5580
+		.icon-fb-10x16
+			position absolute
+			top 13px
+			left 14px
+
+

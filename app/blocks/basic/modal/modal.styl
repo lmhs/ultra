@@ -1,0 +1,236 @@
+.modal-content
+	box-shadow none
+	border-radius 2px
+
+	@media (min-width: 720px)
+		box-shadow none
+
+.modal-header
+	padding 0 30px
+	border none
+
+.modal-body
+	padding 0 30px
+	background #F9F9F9
+
+	&__content
+		width 340px
+		margin 0 auto
+
+	&__text
+		color #252525
+
+.modal__form
+	margin 0 auto
+
+.modal-dialog .close
+	position absolute
+	width 60px
+	height 60px
+	top 0
+	right 0
+	text-align center
+	margin 0
+	z-index 3
+
+// .modal-close-icon
+	// vertical-align top
+
+.modal-dialog--login
+	width 570px
+	@media (min-width: 1100px)
+		width 570px
+	.modal-body
+		padding-bottom 65px
+		background  url(../images/pattern-color-bones-147x146.png) repeat-x,
+								#f9f9f9
+		background-position 0 calc(100%+34px)
+
+.login-modal
+	&__heading
+		text-align center
+		margin-top 70px
+		margin-bottom 40px
+
+	&__form
+		width 410px
+
+		.col-sm-1
+			width 15%
+
+		.col-sm-4
+			width 75%
+
+		.col-sm-offset-1
+			margin-left 15%
+
+		.form-group
+			margin-bottom 10px
+
+		&__checkbox-wrap
+			display inline-block
+			vertical-align bottom
+			margin-left 10px
+
+		&__actions
+			margin-bottom 22px
+			clearfix()
+
+			&__or
+				font-size 16px
+				line-height 1
+				margin-top 10px
+				margin-bottom 20px
+				color #111
+				text-align center
+				position relative
+				&::before
+				&::after
+					content ''
+					display block
+					height 1px
+					width calc(50% - 40px)
+					background-color #D7D7D7
+					position absolute
+					top 3px
+				&::before
+					left 0
+				&::after
+					right 0
+
+			&--foot
+				margin-bottom 0
+				text-align center
+
+			&__social
+				display inline-block
+				vertical-align top
+				font-size 0
+				&-link
+					display inline-block
+					vertical-align top
+					i
+						display block
+					& + &
+						margin-left 10px
+
+
+
+.hello-modal
+	&__heading
+		margin-top 34px
+		margin-bottom 20px
+		text-align center
+
+	&__people-icons
+		text-align center
+		margin-top 48px
+
+	&__people-icon
+		vertical-align top
+		& + &
+			margin-left 10px
+
+
+.modal-dialog--hello
+	width 570px
+	@media (min-width: 1100px)
+		width 570px
+
+	.modal-body
+		padding-bottom 113px
+		background  url(../images/pattern-color-bones-147x146.png) repeat-x,
+								#f9f9f9
+		background-position 0 calc(100% + 66px)
+
+.forgot-modal
+	&__heading
+		margin-top 78px
+		margin-bottom 20px
+		text-align center
+	&__form
+		margin-top 12px
+
+.modal-dialog--forgot
+	width 570px
+	@media (min-width: 1100px)
+		width 570px
+
+	.modal-body
+		padding-bottom 100px
+		background  url(../images/pattern-color-bones-147x146.png) repeat-x,
+								#f9f9f9
+		background-position 0 calc(100% + 64px)
+
+
+.modal-dialog--subscribe
+	width 1100px
+	@media (min-width: 1100px)
+		width 1100px
+	width 1100px
+	@media (min-width: 1100px)
+		width 1100px
+	.modal-header
+		min-height 0
+		padding-right 0
+		padding-left 0
+	.modal-body
+		padding-right 0
+		padding-left 0
+		background 	url(../images/subscribe-girl.png) 23px 100% no-repeat,
+								url(../images/pattern-color-175.png) 0 265px no-repeat,
+								url(../images/pattern-color-bones-178x175.png) -2px 265px repeat-x,
+								#F9F9F9
+
+.subscribe-popup__text
+	margin-left 50%
+	width 50%
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	color #252525
+	line-height 1
+	padding-top 95px
+	text-transform uppercase
+	position relative
+	&::after
+		content ''
+		background url(../images/subscribe-stripe.png) no-repeat;
+		display block
+		width 281px
+		height 171px
+		position absolute
+		right -47px
+		top 143px
+	&-1
+		font-size 37px
+		font-weight semibold
+		margin-bottom 32px
+	&-2
+		font-size 65px
+		font-weight bold
+		margin-bottom 20px
+	&-3
+		font-size 28px
+		font-weight light
+		text-transform none
+		margin-bottom 5px
+	&-4
+		color #FFF
+		font-size 30px
+		padding 10px
+		display inline-block
+		background-color #252525
+	&-5
+		position absolute
+		font-weight extrabold
+		font-size 70px
+		color #FFF
+		top 181px
+		right 76px
+		z-index 2
+		transform rotate(-15deg)
+		// 15
+
+.subscribe-popup__form
+	padding-top 45px
+	padding-bottom 103px
+	text-transform none

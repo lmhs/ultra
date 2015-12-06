@@ -163,7 +163,7 @@ mixin productPage()
 											oldPrice: '45 000 BYR'
 										})
 				.col-md-20-4
-					+navTabs({
+					+navTabsProduct({
 										type:'small',
 										links: [
 											{
@@ -209,13 +209,17 @@ mixin productPage()
 							+description()
 						#features.tab-pane(role='tabpanel')
 							+features()
-						#reviews.tab-pane(role='tabpanel')
+						#review.tab-pane(role='tabpanel')
 							+reviews()
 						#questions.tab-pane(role='tabpanel')
 							+questions()
 						#delivery.tab-pane(role='tabpanel')
 							+delivery()
-	+expert()
+	+expert({
+						heading: 'Мнение эксперта',
+						subheading: 'кратко о главном'
+					}).product__expert
+		| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
 	+pattern()
 	+productPageSet()
 	+recent()

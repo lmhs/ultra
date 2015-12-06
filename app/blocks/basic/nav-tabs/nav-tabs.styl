@@ -1,4 +1,4 @@
-.nav-tabs
+.nav-tabs.product-nav-tabs
 	display table
 	width 100%
 	& > li
@@ -93,3 +93,77 @@
 	&__text
 		display inline-block
 		vertical-align bottom
+
+.tablet__social-nav
+	width 100px
+	padding-top 23px
+	border none
+	& > li
+		margin-bottom 9px
+
+		& > a
+			&
+			&:hover
+			&:focus
+				margin 0
+				padding 0
+				height 76px
+				border none
+				background none
+		&.active > a
+			&
+			&:hover
+			&:focus
+				border none
+				background none
+
+.subheader-nav-tabs
+	display inline-block
+	vertical-align top
+	border-bottom none
+	&-outer
+		text-align center
+
+	&.nav-tabs > li
+		display inline-block
+		margin-bottom 0
+		vertical-align top
+
+		& > a
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			text-decoration none
+			font-size 14px
+			color #333
+			border none
+			border-radius 0
+			margin-right 0
+			margin-top -1px
+			padding 15px 9px 14px
+			&:hover
+			&:focus
+					background-color #EBEBEB
+
+		&.active > a
+			background-color #E14013
+			color #FFF
+			border-radius 2px
+			position relative
+			&:hover
+			&:focus
+				border none
+			&::after
+				position absolute
+				z-index 1
+				left 50%
+				margin-left -6px
+				bottom -5px
+				content ''
+				width 0
+				height 0
+				border-width 5px 5.5px 0 5.5px
+				border-style solid
+				border-color #E14013 transparent transparent transparent
+				-webkit-transform rotate(360deg)
+
+
+

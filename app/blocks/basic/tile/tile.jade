@@ -1,0 +1,10 @@
+include ../link/link
+
+mixin tile(args)
+	.tile&attributes(attributes)
+		+link().tile__content
+			h4.tile__heading
+				| !{args.heading}
+				small !{args.subheading}
+			.tile__img-wrap
+				block

@@ -1,3 +1,4 @@
+// http://www.littlewebthings.com/projects/countdown/index.php
 'use strict';
 
 (function (factory) {

@@ -1,0 +1,77 @@
+include ../content/content
+include ../../basic/button/button
+include ../../basic/product/product
+include ../../basic/carousel/carousel
+
+mixin promo()
+	section.promo
+		+content()
+			.col-md-4.promo__col-md-4
+				+carousel.slide.js-carousel
+					.slide-item
+						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
+						.slide__content
+							h2.slide__heading Как правильно выбрать велосипед?
+								small Научим, расскажем, покажем
+							.slide__actions
+								+button().btn-lg.btn--dark.btn--more.slide__btn
+									| Читать обзор
+									i.icon-arrow-gt.btn-more__icon
+								+button().btn-lg.btn--red.slide__btn(data-toggle="modal", data-target="#subscribePopup")
+									| Выбрать велосипед
+					.slide-item
+						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
+						.slide__content
+							h2.slide__heading Как правильно выбрать велосипед?
+								small Научим, расскажем, покажем
+							.slide__actions
+								+button().btn-lg.btn--dark.btn--more.slide__btn
+									| Читать обзор
+									i.icon-arrow-gt.btn-more__icon
+								+button().btn-lg.btn--red.slide__btn
+									| Выбрать 2
+					.slide-item
+						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
+						.slide__content
+							h2.slide__heading Как правильно выбрать велосипед?
+								small Научим, расскажем, покажем
+							.slide__actions
+								+button().btn-lg.btn--dark.btn--more.slide__btn
+									| Читать обзор
+									i.icon-arrow-gt.btn-more__icon
+								+button().btn-lg.btn--red.slide__btn
+									| Выбрать 3
+			.col-md-2.promo__col-md-2
+				.promo__right
+					img(src="http://dummyimage.com/140x290/4d494d/686a82.gif&text=iphone-6",width="140",height="290", alt="iphone-6").promo__right__img
+					h2.promo__right__heading iPhone 6
+						small уже в продаже
+		.promo__foot
+			+content()
+				.col-md-3
+					.promo__main
+						.promo__main__icons
+							i.icon-person-female-red-63x96.promo__main__icon
+							i.icon-person-male-dark-63x96.promo__main__icon
+						.promo__main__text
+							h5.promo__main__heading
+								strong 10
+								|  лет в Беларуси
+							p.promo__main__caption Дождь, гром и молния нас не остановят. Работаем без выходных, даже в Новый Год.
+				.col-md-3
+					ul.promo__link-list
+						li
+							+link('/index-delivery.html').promo__link-item
+								span.promo__link-item__icon-wrap
+									i.icon-truck-delivery.promo__link-item__icon
+								span.promo__link-item__desc
+									strong Быстрая доставка
+									| По Минску и другим регионам Беларуси
+						li
+							+link('/index-guarantee.html').promo__link-item
+								span.promo__link-item__icon-wrap
+									i.icon-security.promo__link-item__icon
+								span.promo__link-item__desc
+									strong Сделка без рисков
+									| Плати наличными при получении или денежным переводом
+

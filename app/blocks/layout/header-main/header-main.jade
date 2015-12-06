@@ -2,13 +2,15 @@ include ../../basic/nav/nav
 include ../../basic/logo/logo
 include ../../basic/search/search
 include ../../basic/phone/phone
+include ../../basic/link/link
 
 mixin header-main()
 	block vars
 	- var	order = pageId === 'order'
 	.col-md-6
 		.header__main
-			+logo().header__logo
+			+link('./index.html')
+				+logo().header__logo
 			.header__inner
 				+phone({type:'header'}).header__phone
 				if !order

@@ -12,7 +12,7 @@ mixin search(args)
 					input(type='search',placeholder='Быстрый поиск товара').form-control
 					//- span.input-group-addon.header__search-input-group-addon
 					.input-group-btn.header__search-input-group-addon
-						+select({default:'Все категории',items:getData('navigation')[0].main}).select2-container--bootstrap
+						+select({default:'Все категории',items:getData('navigation')[0].main}).select2-container--bootstrap.header__search-select
 				+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
 					| Найти
 				.search__list

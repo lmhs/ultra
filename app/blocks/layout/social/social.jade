@@ -1,0 +1,14 @@
+include ../content/content
+include ../tablet/tablet
+include ../../basic/product/product
+
+mixin indexSocial()
+	section.index__social
+		+content()
+			.col-md-6
+				.index__social__inner
+					h2.h1.index__social__heading Ваши друзья уже покупают
+						small в социальных сетях
+					+tablet().index__social__tablet
+
+

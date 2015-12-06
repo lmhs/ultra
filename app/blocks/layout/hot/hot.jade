@@ -1,0 +1,33 @@
+include ../content/content
+include ../../basic/product/product
+include ../../basic/button/button
+
+mixin hot()
+	section.hot
+		.container-20
+			.row-20
+				.col-md-20-5
+					h2.h1.h2--red.hot__heading Горящие предложения
+						small максимальные скидки
+			.row-20
+				.col-md-20-3
+					+product({
+										type:'hot',
+										position: 'horizontal',
+										oldPrice: '45 000 BYR',
+										limit: true
+									}).hot__product
+					+product({
+										type:'hot',
+										position: 'horizontal',
+										oldPrice: '45 000 BYR'
+									}).hot__product
+				.col-md-20-2
+					+product({
+										type:'hot',
+										oldPrice: '45 000 BYR'
+									}).hot__product
+			.row-20
+				.col-md-20-5
+					.hot__more
+						+buttonMore({itemCount:10})

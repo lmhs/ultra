@@ -11,6 +11,17 @@ mixin button(args)
 				input.btn(type='button',value=args.name)&attributes(attributes)
 			when 'submit'
 				input.btn(type='submit',value=args.name)&attributes(attributes)
+			default
+				a.btn(href= jv0, role='button')&attributes(attributes)
+					block
 	else
 		a.btn(href= jv0, role='button')&attributes(attributes)
 			block
+
+mixin buttonMore(args)
+	+button({}).btn-lg.btn--dark.show-more-btn.js-more-btn&attributes(attributes)(data-loading-text="Загрузка...")
+		| Загрузить еще
+		|  !{args.itemCount}
+		|  товаров
+		i.icon-arrow-down-10-f.show-more-btn__icon
+	// button more end

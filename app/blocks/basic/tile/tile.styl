@@ -1,0 +1,103 @@
+.tile
+	position relative
+	height 0
+	margin-bottom 12px
+	&-2x2
+		padding-bottom 100%
+	&-2x1
+		padding-bottom 50%
+	&-4x2
+		padding-bottom calc(50% + 6px)
+		// padding-bottom 50%
+
+	&__content
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		text-decoration none
+		background-color #FFF
+		border-top 4px solid #f8f8f8
+		overflow hidden
+		padding 20px
+
+		// perfomance issues solution:
+		// http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+		&::after
+			content ''
+			box-shadow inset 0px 0px 0px 1px rgba(174,174,174,1)
+			opacity 0
+			// transition opacity 0.3s ease-in-out
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+
+
+		&:hover
+			border-top-color #C0C0C0
+			&::after
+				opacity 1
+
+		.tile-2x2 &
+		.tile-4x2 &
+			text-align center
+
+		.tile--lavender-blush &
+			background-color #fef4f3
+			border-top-color #fdedeb
+			&:hover
+				border-top-color #C0C0C0
+
+		.tile--white-smoke &
+			background-color #f6f6f6
+			border-top-color #eeeeee
+			&:hover
+				border-top-color #C0C0C0
+
+		.tile--alice-blue &
+			background-color #effafe
+			border-top-color #e5f6fd
+			&:hover
+				border-top-color #C0C0C0
+
+		.tile--ivory &
+			background-color #fafef3
+			border-top-color #f4fde6
+			&:hover
+				border-top-color #C0C0C0
+
+	&__img-wrap
+		overflow hidden
+		.tile--no-padding &
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			top 114px
+
+	&__heading
+		font-weight extrabold
+		margin-top 24px
+		small
+			display block
+			font-weight light
+			color #111
+		.tile-2x2 &
+			font-size 30px
+			small
+				font-size 24px
+		.tile-2x1 &
+			font-size 24px
+			padding-left 20px
+			float right
+			small
+				font-size 18px
+		.tile-4x2 &
+			font-size 28px
+			small
+				display inline
+				font-size 28px
+

@@ -11,18 +11,18 @@ mixin subscribe()
 			.subscribe__form
 				.subscribe__head
 					span.subscribe__head__txt.subscribe__head__txt--red Для женщин
-					i.icon-woman
+					i.icon-person-female-49x74
 				.subscribe__body
-					input(type="email",placeholder='woman@gmail.com').subscribe__input
+					input(type="email",placeholder='female@gmail.com').subscribe__input
 				.subscribe__foot
 					+button({type:'buttonSubmit'}).btn-med.btn--ghost.subscribe__btn.subscribe__btn--red
 						| Подписаться
 			.subscribe__form
 				.subscribe__head
-					i.icon-man
+					i.icon-person-male-49x74
 					span.subscribe__head__txt.subscribe__head__txt--white Для мужчин
 				.subscribe__body
-					input(type="email",placeholder='man@gmail.com').subscribe__input
+					input(type="email",placeholder='male@gmail.com').subscribe__input
 				.subscribe__foot
 					+button({type:'buttonSubmit'}).btn-med.btn--ghost.subscribe__btn.subscribe__btn--white
 						| Подписаться

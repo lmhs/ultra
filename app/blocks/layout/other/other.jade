@@ -41,7 +41,5 @@ mixin other()
 											labels:'new'
 										}).other__product
 		.other__more
-			+button().btn-lg.btn--dark.show-more-btn
-				| Загрузить еще 10 товаров
-				i.icon-arrow-down-10-f.show-more-btn__icon
+			+buttonMore({itemCount:10})
 

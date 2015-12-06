@@ -2,7 +2,7 @@
 	border-radius 2px
 	border 1px solid #E1E1E1
 	background-color #FFF
-	padding 20px 16px 19px
+	padding 20px 0 0
 	position relative
 
 	&:hover
@@ -65,14 +65,18 @@
 		font-size 15px
 		line-height 18px
 
+	&__head
+		padding-left 16px
+		padding-right 16px
+
 	&__body
-		padding-top 32px
+		padding 32px 16px 19px
 
 	&-sidebar__body
 		padding 12px 15px 14px
 
 	&__foot
-		padding-top 30px
+		padding 11px 16px 19px
 
 	&-sidebar__foot
 		padding 16px 15px
@@ -80,6 +84,22 @@
 
 	&__image
 		overflow hidden
+		// position relative
+		// display block
+		// padding 0
+		// padding-bottom calc(100% - 60px)
+		// border 30px solid rgba(0,0,0,0)
+
+		// img
+		// 	position absolute
+		// 	top 0
+		// 	right 0
+		// 	bottom 0
+		// 	left 0
+		// 	max-width 100%
+		// 	max-height 100%
+		// 	margin auto
+		// 	transform translateZ(0)
 
 	&__price
 		margin-top 12px
@@ -143,6 +163,58 @@
 		&:last-child
 			margin-bottom 0
 
+	&__video
+
+		&__heading
+			padding 8px 11px
+			background-color #252525
+			color #F6F6F6
+			font-size 13px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			position relative
+			&::before
+				content ''
+				position absolute
+				top -8px
+				right 21px
+				width 0
+				height 0
+				border-style solid
+				border-width 0 9px 8px 9px
+				border-color transparent transparent #252525 transparent
+
+		&__content
+			position relative
+			height 122px
+			overflow hidden
+
+
+		&-link
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			&__inner
+				display block
+				position absolute
+				top 50%
+				left 50%
+				margin-top -14px
+				margin-left -21px
+				width 42px
+				height 27px
+				background-color #252525
+				border-radius 2px
+
+		&__icon
+			position absolute
+			top 50%
+			left 50%
+			margin-top -7px
+			margin-left -5px
+
+
 
 .similar__product
 	padding-bottom 0
@@ -176,5 +248,78 @@
 		margin 10px auto 0
 		padding-left 13px
 		text-align left
+
+.hot__product
+	border none
+	padding 0
+	// min-height 678px
+
+	&.product--horizontal
+		margin-bottom 20px
+
+	.product
+		&__body
+			border 1px solid #ebebeb
+			border-top none
+			padding 27px 0 27px
+			min-height 588px
+			clearfix()
+
+			.product--horizontal&
+				min-height 238px
+
+		&__image
+			text-align center
+			.product--horizontal&
+				width 300px
+				float left
+
+		&__info
+			padding 30px
+
+			.product--horizontal&
+				margin-left 300px
+				padding-left 0
+				padding-top 0
+
+			&__left
+			&__right
+				width 50%
+
+			&__left
+				float left
+
+			&__right
+				float right
+
+		&__rating
+			margin-bottom 20px
+
+		&__price
+			text-align left
+			margin-top 0
+			margin-bottom 20px
+			&-old
+				font-size 16px
+				margin-bottom 5px
+			&-special
+				font-size 24px
+				line-height 1.2
+				color #E14013
+
+		&__buy-btn
+			padding 10px 45px
+			font-weight normal
+
+		&__info
+			&__item
+				font-size 13px
+				color #111
+			&__value
+				color #555
+
+		&__title-text
+			font-size 24px
+			line-height 1.2
 
 

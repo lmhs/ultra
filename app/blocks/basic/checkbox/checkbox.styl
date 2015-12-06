@@ -43,15 +43,26 @@
 
 
 	&:checked
-		&:before
+		&::before
 			background-color #E14013
 			border-color #E14013
-		&:after
+		&::after
 			visibility visible
 
 input[type='checkbox'].checkbox-element
 	margin-left -34px
+	top 0
+	margin-top 0
 
 .checkbox label
 	padding-left 34px
 	min-height 22px
+
+.login-modal__form__checkbox
+	.checkbox-element:checked::before
+		background-color #39B54A
+		border-color #39B54A
+	.checkbox-text
+		font-size 13px
+		line-height 1
+		vertical-align baseline
