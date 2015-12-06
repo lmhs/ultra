@@ -1,5 +1,4 @@
-// http://www.littlewebthings.com/projects/countdown/index.php
-import '../third-party/jquery.countdown.js';
+import '../third-party/bootstrap-button.js';
 import $ from 'jquery';
 
 (function (factory) {
@@ -14,17 +13,12 @@ import $ from 'jquery';
 		factory(jQuery);
 	}
 }(function ($) {
-	if ($('#phone1').length) {
-		$('#phone1').countDown({
-			targetOffset: {
-				'day': 		18,
-				'month': 	0,
-				'year': 	0,
-				'hour': 	6,
-				'min': 		23,
-				'sec': 		54
-			},
-		   omitWeeks: true
-		})
-	}
+	$('.js-more-btn').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    setTimeout(() => {
+    	alert("Загружено!");
+    	$btn.button('reset')
+    }, 4000)
+  })
 }));
