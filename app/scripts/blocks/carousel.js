@@ -1,3 +1,4 @@
+// http://kenwheeler.github.io/slick/
 import 'slick-carousel';
 import $ from 'jquery';
 

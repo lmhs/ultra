@@ -19,7 +19,7 @@ mixin button(args)
 			block
 
 mixin buttonMore(args)
-	+button({}).btn-lg.btn--dark.show-more-btn&attributes(attributes)
+	+button({}).btn-lg.btn--dark.show-more-btn.js-more-btn&attributes(attributes)(data-loading-text="Загрузка...")
 		| Загрузить еще
 		|  !{args.itemCount}
 		|  товаров
