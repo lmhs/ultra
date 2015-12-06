@@ -1,0 +1,30 @@
+.live
+	&__head
+		text-align center
+	&__heading
+		margin-top 85px
+		small
+			margin-top 10px
+			padding-left 0
+	&__people-icon
+		vertical-align bottom
+		margin-bottom 2px
+		margin-right 3px
+	&__count
+		color #E14013
+	&__body
+		padding-bottom 95px
+		.col-md-20-1
+			position relative
+			& + .col-md-20-1
+				&::before
+					content ''
+					position absolute
+					top 0
+					bottom 0
+					right -1px
+					width 1px
+					background-color #EBEBEB
+				&:nth-child(5n+5)
+					&::before
+						content none

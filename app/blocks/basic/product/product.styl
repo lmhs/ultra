@@ -13,6 +13,44 @@
 		border-top-width 4px
 		padding 0
 
+	&__present
+		border-top 4px solid #ebebeb
+		position relative
+		&__label
+			position absolute
+			left 20px
+			width 38px
+			height 34px
+			top -4px
+			border-top 4px solid transparent
+			text-align center
+			&--cart
+				border-top-color #B72800
+				background-color #e14013
+			&--compare
+				border-top-color #4cb7e1
+				background-color #6DCFF6
+			&--favorite
+				border-top-color #e26702
+				background-color #ff7300
+		&-icon
+			vertical-align top
+			&--favorite
+				margin-top 4px
+			&--compare
+				margin-top 6px
+			&--cart
+				margin-top 3px
+		&__text
+			margin-left 70px
+			font-size 13px
+			color #999
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-style italic
+			line-height 30px
+			display inline-block
+			vertical-align top
+
 	&__link
 		&::after
 			position absolute
@@ -22,32 +60,6 @@
 			bottom -1px
 			left -1px
 			z-index 1
-
-	&__labels
-		position absolute
-		top 78px
-		left -1px
-
-	&__label
-		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-		font-weight semibold
-		font-size 18px
-		display inline-block
-		color #FFF
-		line-height 1
-		padding 10px 12px 10px 8px
-		background-color #FF503F
-		border-left 4px solid #f13d2b
-		margin-bottom 2px
-		&--discount
-			background-color #FF503F
-			border-left-color #f13d2b
-		&--new
-			background-color #8DC63F
-			border-left-color #6CA61C
-		&--hit
-			background-color #FF7300
-			border-left-color #E26702
 
 	&__title-text
 		color #333
@@ -321,5 +333,9 @@
 		&__title-text
 			font-size 24px
 			line-height 1.2
+
+.live__product
+	border none
+
 
 

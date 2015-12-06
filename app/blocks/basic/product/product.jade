@@ -1,5 +1,6 @@
 include ../rating/rating
 include ../action/action
+include ../aside-label/aside-label
 include ../../layout/timer/timer
 include ../available/available
 include ../review-small/review-small
@@ -8,20 +9,7 @@ mixin product(args)
 	if ((args.type !== 'sidebar') && (args.type !== 'hot'))
 		.product.js-product(class= (args.position === 'horizontal') ? 'product--horizontal' : '' )&attributes(attributes)
 			if args.labels
-				aside.product__labels
-					case args.labels
-						when 'discount'
-							.product__label.product__label--discount
-								| -20%
-							br
-						when 'hit'
-							.product__label.product__label--hit
-								| Хит!
-							br
-						when 'new'
-							.product__label.product__label--new
-								| Новинка
-							br
+				+aside-label({'label': args.labels}).aside__labels--product
 			a(href="/index-product.html").product__link
 				.product__head
 					.product__title-text
@@ -56,16 +44,17 @@ mixin product(args)
 								img(src="./assets/images/4-cores-icon.png", alt="4-cores")
 							span.product__features__icon-wrap
 								img(src="./assets/images/gps-icon.png", alt="gps")
-					.product__actions
-						if args.type !== 'set'
-							+button().btn-sm.btn--red.product__buy-btn
-								| Купить
-						else
-							+button().btn-sm.btn--red.product__set-btn
-								| В комплект
-						.product__actions__links
-							+action({type:'compare'}).product__action
-							+action({type:'favorite'}).product__action
+					if args.live !== true
+						.product__actions
+							if args.type !== 'set'
+								+button().btn-sm.btn--red.product__buy-btn
+									| Купить
+							else
+								+button().btn-sm.btn--red.product__set-btn
+									| В комплект
+							.product__actions__links
+								+action({type:'compare'}).product__action
+								+action({type:'favorite'}).product__action
 			if args.video
 				.product__video
 					.product__video__heading
@@ -101,7 +90,20 @@ mixin product(args)
 
 			if args.present
 				.product__present
-					| Present
+					case args.present
+						when 'favorite'
+							.product__present__label.product__present__label--favorite
+								i.icon-star-fff-18x18.product__present-icon.product__present-icon--favorite
+							span.product__present__text Добавлено в избранное
+						when 'compare'
+							.product__present__label.product__present__label--compare
+								i.icon-libra-fff-19x14.product__present-icon.product__present-icon--compare
+							span.product__present__text Добавлено к сравнению
+						when 'cart'
+							.product__present__label.product__present__label--cart
+								i.icon-cart-fff-22x19.product__present-icon.product__present-icon--cart
+							span.product__present__text Добавлено в корзину
+
 			if args.added
 				case args.added
 					when 'compare'

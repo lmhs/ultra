@@ -2,9 +2,10 @@ include ../content/content
 include ../../basic/button/button
 include ../../basic/product/product
 include ../../basic/carousel/carousel
+include ../../basic/aside-label/aside-label
 
-mixin promo()
-	section.promo
+mixin promoSlides(args)
+	.promo__head
 		+content()
 			.col-md-4.promo__col-md-4
 				+carousel.slide.js-carousel
@@ -43,9 +44,17 @@ mixin promo()
 									| Выбрать 3
 			.col-md-2.promo__col-md-2
 				.promo__right
-					img(src="http://dummyimage.com/140x290/4d494d/686a82.gif&text=iphone-6",width="140",height="290", alt="iphone-6").promo__right__img
+					if (args && args.label)
+						+aside-label({label : args.label}).aside__labels--promo
+						img(src="http://dummyimage.com/140x290/4d494d/686a82.gif&text=iphone-6",width="140",height="290", alt="iphone-6").promo__right__img
+					else
+						img(src="http://dummyimage.com/140x290/4d494d/686a82.gif&text=iphone-6",width="140",height="290", alt="iphone-6").promo__right__img
 					h2.promo__right__heading iPhone 6
 						small уже в продаже
+
+mixin promo(args)
+	section.promo
+		+promoSlides()
 		.promo__foot
 			+content()
 				.col-md-3
