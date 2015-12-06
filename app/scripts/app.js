@@ -9,6 +9,7 @@ import './blocks/tooltip.js';
 import './blocks/countdown.js';
 import './blocks/spinner.js';
 import './blocks/carousel.js';
+import './blocks/header-menu.js';
 
 $(() => {
 

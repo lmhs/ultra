@@ -89,20 +89,7 @@
 			border-bottom-style solid
 
 .header-main__link
-	// width 187px
-	width 100%
-	height 90px
-	display block
-	float left
-	color #FFF
-	font-size 13px
-	line-height 18px
-	text-align center
-	text-decoration none
-	background-color #252525
-	position relative
-	// border-left 1px solid #363636
-	&:before
+	&::before
 		content ''
 		position absolute
 		left -1px
@@ -113,6 +100,21 @@
 		height 100%
 		background #363636
 
+	&
+	&:focus
+		width 100%
+		height 90px
+		display block
+		float left
+		color #FFF
+		font-size 13px
+		line-height 18px
+		text-align center
+		text-decoration none
+		background-color #252525
+		position relative
+
+	.nav-list-item--header-main.is-selected &
 	&:hover
 		box-shadow inset 0px 0px 0px 1px #E14013
 		color #fff
@@ -123,9 +125,12 @@
 		border-right 1px solid #363636
 
 	&--sale
-		background-color #E14013
-		&:hover
+		&
 		&:focus
+			background-color #E14013
+
+		.nav-list-item--header-main.is-selected &
+		&:hover
 			background-color #EE3C0A
 			border-bottom 0
 			box-shadow none

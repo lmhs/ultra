@@ -22,7 +22,13 @@ import $ from 'jquery';
 		e.preventDefault();
 		$(this).tab('show')
 	});
+
 	$('.js-subheader-nav-tab').on('click','.js-category-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
+	});
+
+	$('.js-menu-popup-nav').on('click','.js-menu-popup-nav-tab', function (e) {
 		e.preventDefault();
 		$(this).tab('show')
 	});
