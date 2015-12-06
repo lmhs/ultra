@@ -58,7 +58,7 @@ mixin modalLogin(id)
 						+input-horizontal({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
 						.login-modal__form__actions
 							.col-sm-4.col-sm-offset-1
-								+button().btn-med.btn--red.login-modal__form__login-btn.js-login-btn
+								+button().btn-med.btn--red.login-modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
 									| Войти
 								.login-modal__form__checkbox-wrap
 									+checkbox({
@@ -82,4 +82,24 @@ mixin modalLogin(id)
 									i.icon-vk-42x43
 								+link().login-modal__form__actions__social-link.js-google-login
 									i.icon-google-42x43
+
+mixin modalHello(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--hello
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					.hello-modal__people-icons
+						i.icon-person-female-red-43x64.hello-modal__people-icon
+						i.icon-person-male-dark-43x64.hello-modal__people-icon
+					h4.hello-modal__heading
+						| Здравствуйте,
+						span.js-username  Наталья
+						| !
+				.modal-body
+					.hello-modal__greeting
+						p.hello-modal__text Рады снова видеть Вас на сайте.
 

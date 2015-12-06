@@ -9,5 +9,10 @@ import './blocks/countdown.js';
 import './blocks/spinner.js';
 
 $(() => {
-
+	$('.js-login-btn').on('click',() => {
+		$('#loginPopup').modal('hide');
+	})
+	$('.js-register-btn').on('click',() => {
+		$('#loginPopup').modal('hide');
+	})
 })
