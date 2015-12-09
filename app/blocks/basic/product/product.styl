@@ -2,20 +2,17 @@
 	border-radius 2px
 	border 1px solid #E1E1E1
 	background-color #FFF
-	padding 20px 0 0
 	position relative
 
 	&:hover
 		border-color #AAAAAC
 
-	&-sidebar
-		border-radius 0
-		border-top-width 4px
-		padding 0
 
-	&__present
+
+	&__added
 		border-top 4px solid #ebebeb
 		position relative
+		margin-bottom 5px
 		&__label
 			position absolute
 			left 20px
@@ -65,58 +62,85 @@
 		color #333
 		font-size 13px
 		line-height 16px
+		&--hot
+			font-size 24px
+			line-height 1.2
 
-	&-sidebar__head
-		padding 20px 16px
-		background-color #F6F6F6
-
-	&-sidebar__title-text
-		color #111
-		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-		font-weight bold
-		font-size 15px
-		line-height 18px
+	product-head-top = 20px
+	product-head-height = 56px
+	product-hot-head-height = 66px
 
 	&__head
 		padding-left 16px
 		padding-right 16px
+		position absolute
+		top product-head-top
+		height product-head-height
 
 	&__body
-		padding 32px 16px 19px
+		// 56 + 20
+		padding-top = product-head-top + product-head-height
+		padding-top-hot = product-head-top + product-hot-head-height
 
-	&-sidebar__body
-		padding 12px 15px 14px
+		padding padding-top 10px 0
+		&--hot
+			padding-top padding-top-hot
+			font-size 0
 
-	&__foot
-		padding 11px 16px 19px
-
-	&-sidebar__foot
-		padding 16px 15px
-		background-color #F6F6F6
+	&__inner
+		border 1px solid #EBEBEB
 
 	&__image
-		overflow hidden
-		// position relative
-		// display block
-		// padding 0
-		// padding-bottom calc(100% - 60px)
-		// border 30px solid rgba(0,0,0,0)
+		position relative
+		display block
+		padding 0
+		padding-bottom calc(100% - 20px)
+		border 10px solid rgba(0,0,0,0)
+		&-outer
+			width 350px
+			margin 0 auto
+			padding-top 10px
+			padding-bottom 10px
+			&--horizontal
+				padding 10px
+				float left
+				width 240px
+				margin-left 30px
 
-		// img
-		// 	position absolute
-		// 	top 0
-		// 	right 0
-		// 	bottom 0
-		// 	left 0
-		// 	max-width 100%
-		// 	max-height 100%
-		// 	margin auto
-		// 	transform translateZ(0)
+		img
+			position absolute
+			background #F0FF0F
+			top 0
+			right 0
+			bottom 0
+			left 0
+			max-width 100%
+			max-height 100%
+			margin auto
+			transform translateZ(0)
+
+	&__info-outer
+		padding 20px 30px 30px
+		position relative
+		&--horizontal
+			margin-left 300px
+
+	&__info
+		&__left
+		&__right
+			width 50%
+			display inline-block
+			vertical-align top
+		&__item
+			font-size 13px
+			color #111
+		&__value
+			color #555
 
 	&__price
-		margin-top 12px
 		line-height 18px
 		text-align center
+		margin-bottom 12px
 		&-old
 		&-special
 			display block
@@ -129,7 +153,47 @@
 
 		&-special
 			color #333
+			font-family $font-family-sans-serif
 			font-size 14px
+
+		&--hot
+			text-align left
+			margin-top 0
+			margin-bottom 20px
+			.product__price-old
+				font-size 16px
+			.product__price-special
+				font-size 24px
+				line-height 1.2
+				color #E14013
+
+
+	&-sidebar
+		border-radius 0
+		border-top-width 4px
+
+	&-sidebar__head
+		padding 20px 16px
+		background-color #F6F6F6
+
+	&-sidebar__title-text
+		color #111
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight bold
+		font-size 15px
+		line-height 18px
+
+
+	&-sidebar__body
+		padding 12px 15px 14px
+
+	&__foot
+		padding 11px 16px 19px
+
+	&-sidebar__foot
+		padding 16px 15px
+		background-color #F6F6F6
+
 
 	&-sidebar__price
 		text-align left
@@ -142,7 +206,10 @@
 			margin-top 3px
 			margin-bottom 16px
 
-	&__features
+	&__features-text
+		font-size 13px
+
+	&__features-icons
 		padding-top 10px
 		display flex
 		justify-content space-between
@@ -261,81 +328,24 @@
 		padding-left 13px
 		text-align left
 
-.hot__product
+.hot-product
 	border none
-	padding 0
-	// min-height 678px
+	margin-bottom 20px
 
-	&.product--horizontal
-		margin-bottom 20px
 
-	.product
-		&__body
-			border 1px solid #ebebeb
-			border-top none
-			padding 27px 0 27px
-			min-height 588px
-			clearfix()
-
-			.product--horizontal&
-				min-height 238px
-
-		&__image
-			text-align center
-			.product--horizontal&
-				width 300px
-				float left
-
-		&__info
-			padding 30px
-
-			.product--horizontal&
-				margin-left 300px
-				padding-left 0
-				padding-top 0
-
-			&__left
-			&__right
-				width 50%
-
-			&__left
-				float left
-
-			&__right
-				float right
-
-		&__rating
-			margin-bottom 20px
-
-		&__price
-			text-align left
-			margin-top 0
-			margin-bottom 20px
-			&-old
-				font-size 16px
-				margin-bottom 5px
-			&-special
-				font-size 24px
-				line-height 1.2
-				color #E14013
-
-		&__buy-btn
-			padding 10px 45px
-			font-weight normal
-
-		&__info
-			&__item
-				font-size 13px
-				color #111
-			&__value
-				color #555
-
-		&__title-text
-			font-size 24px
-			line-height 1.2
-
-.live__product
+.live-product
 	border none
+
+	&::after
+		content ''
+		position absolute
+		top 0
+		bottom 0
+		right -9px
+		width 1px
+		background-color #EBEBEB
+
+
 
 
 

@@ -2,6 +2,7 @@ include ../../layout/expert/expert
 include ../../layout/promo/promo
 include ../../layout/categories/categories
 include ../../layout/breadcrumb/breadcrumb
+include ../../layout/popular-categories/popular-categories
 include ../../layout/live/live
 
 mixin showcase()
@@ -9,6 +10,8 @@ mixin showcase()
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Бытовая техника'])
 	+categoriesHeader().showcase__category__header
+	+categoriesNav().showcase__category__nav
+	+popular-categories()
 	+promoSlides({label : 'new'})
 	+live()
 

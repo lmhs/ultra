@@ -2,7 +2,7 @@ include ../link/link
 
 mixin tile(args)
 	.tile&attributes(attributes)
-		+link().tile__content
+		+link().tile__content(class= args.border === 'bottom' ? 'tile__content--bottom' : 'tile__content--top')
 			h4.tile__heading
 				| !{args.heading}
 				small !{args.subheading}

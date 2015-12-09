@@ -2,18 +2,17 @@ include ../content/content
 include ../../basic/product/product
 include ../../basic/form/form
 include ../../basic/nav-tabs/nav-tabs
+include ../select-lg/select-lg
 
 mixin categoriesHeader()
 	.category__header&attributes(attributes)
 		.container-20
 			.row-20
 				.col-md-20-5
-					.category__select-wrap
-						.category__select__inner
-							+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.category__select
-					// category select end
-		// category select and filter wrap end
-	.category__nav-wrap
+					+select-lg().category__select--lg-container
+
+mixin categoriesNav()
+	.category__nav&attributes(attributes)
 		.container-20
 			.row-20
 				.col-md-20-5
@@ -61,11 +60,11 @@ mixin categoriesHeader()
 mixin categories()
 	section.categories
 		+categoriesHeader()
+		+categoriesNav()
 		.category__filter-wrap
 			.container-20
 				.row-20
 					.col-md-20-5
-
 						.category__filter
 							strong.category__filter__title
 								| Выберите цену

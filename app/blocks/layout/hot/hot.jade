@@ -1,5 +1,5 @@
 include ../content/content
-include ../../basic/product/product
+include ../../basic/product/product-new
 include ../../basic/button/button
 
 mixin hot()
@@ -7,26 +7,29 @@ mixin hot()
 		.container-20
 			.row-20
 				.col-md-20-5
-					h2.h1.h2--red.hot__heading Горящие предложения
+					h1.h1--red.hot__heading Горящие предложения
 						small максимальные скидки
 			.row-20
 				.col-md-20-3
-					+product({
+					+product-new({
 										type:'hot',
 										position: 'horizontal',
 										oldPrice: '45 000 BYR',
+										rating: true,
 										limit: true
-									}).hot__product
-					+product({
+									})
+					+product-new({
 										type:'hot',
 										position: 'horizontal',
+										rating: true,
 										oldPrice: '45 000 BYR'
-									}).hot__product
+									})
 				.col-md-20-2
-					+product({
+					+product-new({
 										type:'hot',
+										rating: true,
 										oldPrice: '45 000 BYR'
-									}).hot__product
+									})
 			.row-20
 				.col-md-20-5
 					.hot__more

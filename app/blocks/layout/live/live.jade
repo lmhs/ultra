@@ -1,5 +1,5 @@
 include ../content/content
-include ../../basic/product/product
+include ../../basic/product/product-new
 include ../../basic/tag/tag
 include ../../basic/button/button
 
@@ -9,7 +9,7 @@ mixin live()
 			.container-20
 				.row-20
 					.col-md-20-5
-						h2.h1.live__heading ULTRA.BY в прямом эфире
+						h1.live__heading ULTRA.BY в прямом эфире
 							small
 								i.icon-people-red-16x12.live__people-icon
 								span.live__count  247
@@ -18,63 +18,75 @@ mixin live()
 			.container-20
 				.row-20.js-live-carousel
 					.col-md-20-1
-						+product({
-											present: 'favorite',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'favorite'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'cart',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'cart'
+											})
 					.col-md-20-1
-						+product({
-											present: 'favorite',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'favorite'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'cart',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'cart'
+											})
 					.col-md-20-1
-						+product({
-											present: 'favorite',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'favorite'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'compare',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'compare'
+											})
 					.col-md-20-1
-						+product({
-											present: 'cart',
-											live: true
-											}).live__product
+						+product-new({
+											type: 'live',
+											rating: true,
+											added: 'cart'
+											})
 
