@@ -46,7 +46,6 @@
 		height 100%
 		display table
 		background-color #FFF
-		padding 20px
 
 		&--top
 			border-top 4px solid #f8f8f8
@@ -100,7 +99,6 @@
 		overflow hidden
 		display table-cell
 		vertical-align middle
-		padding-top 20px
 
 		.tile-2x1 &
 			position relative
@@ -124,17 +122,31 @@
 
 
 
-	&__heading
-		font-weight extrabold
+	&__heading-wrap
 		display table-row
 		height 0
-		margin-top 24px
+		.tile-2x1 &
+			float right
+			display table
+			height 100%
+			width 50%
+
+
+	&__heading
+		margin-bottom 20px
+		margin-top 0
+		padding-top 20px
+		font-weight extrabold
 		.showcase__tile &
 		.showcase__tile.tile-2x2 &
 		.showcase__tile.tile-2x1 &
 		.showcase__tile.tile-4x2 &
 			font-weight semibold
 			font-size 24px
+
+		.showcase__tile.tile-2x2 &
+			text-align left
+			padding 20px 20px 0
 
 		small
 			display block
@@ -157,11 +169,10 @@
 
 
 		.tile-2x1 &
+			padding-top 0
+			display table-cell
+			vertical-align middle
 			font-size 24px
-			float right
-			display block
-			height auto
-			width 50%
 			small
 				font-size 18px
 
