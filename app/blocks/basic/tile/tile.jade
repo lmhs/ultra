@@ -2,9 +2,11 @@ include ../link/link
 
 mixin tile(args)
 	.tile&attributes(attributes)
-		+link().tile__content(class= args.border === 'bottom' ? 'tile__content--bottom' : 'tile__content--top')
-			h4.tile__heading
-				| !{args.heading}
-				small !{args.subheading}
-			.tile__img-wrap
-				block
+		+link().tile__link
+			.tile__inner(class= args.border === 'bottom' ? 'tile__inner--bottom' : 'tile__inner--top')
+				h4.tile__heading
+					| !{args.heading}
+					small !{args.subheading}
+				.tile__img-wrap
+					.tile__img-outer
+						block
