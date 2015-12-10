@@ -99,25 +99,62 @@ mixin categories()
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
 												video: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'new'
 											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'discount',
+												oldPrice: '45 000 BYR'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'discount',
 												oldPrice: '45 000 BYR'
 											}).categories__product
 						.col-md-20-1
-							+product({type:'categories'}).categories__product
+							+product({
+												type:'categories',
+												rating: true
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true
+											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'hit'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'hit'
 											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'new'
 											}).categories__product
 			#kitchen-appliances.tab-pane(role='tabpanel')

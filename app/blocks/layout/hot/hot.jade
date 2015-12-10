@@ -1,5 +1,5 @@
 include ../content/content
-include ../../basic/product/product-new
+include ../../basic/product/product
 include ../../basic/button/button
 
 mixin hot()
@@ -11,21 +11,21 @@ mixin hot()
 						small максимальные скидки
 			.row-20
 				.col-md-20-3
-					+product-new({
+					+product({
 										type:'hot',
 										position: 'horizontal',
 										oldPrice: '45 000 BYR',
 										rating: true,
 										limit: true
 									})
-					+product-new({
+					+product({
 										type:'hot',
 										position: 'horizontal',
 										rating: true,
 										oldPrice: '45 000 BYR'
 									})
 				.col-md-20-2
-					+product-new({
+					+product({
 										type:'hot',
 										rating: true,
 										oldPrice: '45 000 BYR'

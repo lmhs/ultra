@@ -155,14 +155,15 @@ mixin productPage()
 	+similar()
 	section.product-page__info
 		.container-20
-			.row-20
-				.col-md-20-1
-					aside
+			.row-20.product-page__info__row
+				.col-md-20-1.product-page__info__col
+					aside.product-page__aside.sticky
 						+product({
 											type:'sidebar',
+											rating: true,
 											oldPrice: '45 000 BYR'
 										})
-				.col-md-20-4
+				.col-md-20-4.product-page__info__col
 					+navTabsProduct({
 										type:'small',
 										links: [

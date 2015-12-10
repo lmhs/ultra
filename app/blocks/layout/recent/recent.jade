@@ -7,27 +7,34 @@ mixin recent()
 			.row-20
 				.col-md-20-5
 					h2.recent__heading Недавно вы просматривали
-			.row-20
+			.row-20.js-recent-carousel
 				.col-md-20-1
 					+product({
 										type:'recent',
+										rating: true,
 										labels:'new'
-									}).recent__product
+									})
 				.col-md-20-1
 					+product({
 										type:'recent',
+										rating: true,
 										labels:'discount',
 										oldPrice: '45 000 BYR'
-									}).recent__product
-				.col-md-20-1
-					+product({type:'recent'}).recent__product
+									})
 				.col-md-20-1
 					+product({
 										type:'recent',
+										rating: true
+									})
+				.col-md-20-1
+					+product({
+										type:'recent',
+										rating: true,
 										labels:'hit'
-									}).recent__product
+									})
 				.col-md-20-1
 					+product({
 										type:'recent',
+										rating: true,
 										labels:'new'
-									}).recent__product
+									})

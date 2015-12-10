@@ -4,10 +4,10 @@
 	background-color #FFF
 	position relative
 
+	margin-bottom 20px
+
 	&:hover
 		border-color #AAAAAC
-
-
 
 	&__added
 		border-top 4px solid #ebebeb
@@ -65,6 +65,12 @@
 		&--hot
 			font-size 24px
 			line-height 1.2
+		&--sidebar
+			color #111
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight bold
+			font-size 15px
+			line-height 1.2
 
 	product-head-top = 20px
 	product-head-height = 56px
@@ -77,6 +83,12 @@
 		top product-head-top
 		height product-head-height
 
+		&--sidebar
+			position static
+			height auto
+			padding 20px 16px 40px
+			background-color #F6F6F6
+
 	&__body
 		// 56 + 20
 		padding-top = product-head-top + product-head-height
@@ -86,6 +98,8 @@
 		&--hot
 			padding-top padding-top-hot
 			font-size 0
+		&--sidebar
+			padding 12px 15px 4px
 
 	&__inner
 		border 1px solid #EBEBEB
@@ -97,10 +111,16 @@
 		padding-bottom calc(100% - 20px)
 		border 10px solid rgba(0,0,0,0)
 		&-outer
-			width 350px
 			margin 0 auto
-			padding-top 10px
-			padding-bottom 10px
+			&--hot
+				width 350px
+				padding-top 10px
+				padding-bottom 10px
+			&--recent
+				width 190px
+				// padding-top 10px
+				// padding-bottom 10px
+
 			&--horizontal
 				padding 10px
 				float left
@@ -140,7 +160,7 @@
 	&__price
 		line-height 18px
 		text-align center
-		margin-bottom 12px
+		margin-bottom 30px
 		&-old
 		&-special
 			display block
@@ -167,50 +187,32 @@
 				line-height 1.2
 				color #E14013
 
+		&--sidebar
+			text-align left
+			.product__price-old
+				font-size 16px
+			.product__price-special
+				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+				color #111
+				font-size 20px
+				margin-top 3px
+				margin-bottom 16px
 
-	&-sidebar
-		border-radius 0
-		border-top-width 4px
-
-	&-sidebar__head
-		padding 20px 16px
-		background-color #F6F6F6
-
-	&-sidebar__title-text
-		color #111
-		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-		font-weight bold
-		font-size 15px
-		line-height 18px
-
-
-	&-sidebar__body
-		padding 12px 15px 14px
+		&--live
+			margin-bottom 12px
 
 	&__foot
 		padding 11px 16px 19px
 
-	&-sidebar__foot
-		padding 16px 15px
-		background-color #F6F6F6
+		&--sidebar
+			padding 16px 15px
+			background-color #F6F6F6
 
-
-	&-sidebar__price
-		text-align left
-		&-old
-			font-size 16px
-		&-special
-			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-			color #111
-			font-size 20px
-			margin-top 3px
-			margin-bottom 16px
 
 	&__features-text
 		font-size 13px
 
 	&__features-icons
-		padding-top 10px
 		display flex
 		justify-content space-between
 		flex-wrap wrap
@@ -228,11 +230,28 @@
 
 	&__actions
 		font-size 0
+		padding-left 6px
+		padding-right 6px
+		padding-bottom 18px
 		&__links
 			max-width 50%
 			padding-left 20px
 			display inline-block
 			vertical-align top
+			&--similar
+				display block
+				margin 10px auto 0
+				padding-left 13px
+				text-align left
+
+		&--similar
+			display none
+			position absolute
+			bottom 0
+			left 0
+			right 0
+			text-align center
+			padding-bottom 36px
 
 	&__action
 		position relative
@@ -295,57 +314,42 @@
 
 
 
-.similar__product
+.similar-product
 	padding-bottom 0
 
 	&:hover
 		border-color #C2C2C2
 		box-shadow 0px 2px 0px 0px rgba(1, 2, 2, 0.3)
 
-		.product__features
+		.product__features-icons
 			visibility hidden
 		.product__actions
 			display block
 
-	.product__features
-		display flex
-
-	.no-flexbox & .product__features
+	.no-flexbox & .product__features-icons
 		display block
 
-	.product__actions
-		display none
-		position absolute
-		bottom 0
-		left 0
-		right 0
-		text-align center
-		padding-bottom 36px
 
-	.product__actions__links
-		display block
-		margin 10px auto 0
-		padding-left 13px
-		text-align left
 
 .hot-product
 	border none
-	margin-bottom 20px
 
 
 .live-product
 	border none
+	margin-bottom 0
 
 	&::after
 		content ''
 		position absolute
 		top 0
 		bottom 0
-		right -9px
+		right -8px
 		width 1px
 		background-color #EBEBEB
 
-
-
+.sidebar-product
+	border-radius 0
+	border-top-width 4px
 
 
