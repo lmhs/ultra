@@ -1,0 +1,41 @@
+include ../link/link
+include ../product/product
+include ../button/button
+
+mixin category-tile(args)
+	.category-tile&attributes(attributes)
+		if args.type === 'super offer'
+			.category-tile__head
+			.category-tile__body
+				.category-tile-super__img-wrap
+					.category-tile-super__img-outer
+						img(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image",width="800",height="600", alt="placeholder+image").category-tile-super__img
+				.category-tile-super__info
+					.category-tile__label
+						.category-tile__label-text Суперпредложение
+						.category-tile__label-percent -25%
+					span.category-tile__title !{args.title}
+					+product-rating().category-tile__rating
+					.category-tile__actions
+						.category-tile__price
+							s.category-tile__price-old 6 000 500 BYR
+							strong.category-tile__price-special 5 023 550 BYR
+						.category-tile__btn-wrap
+							+button().btn-sm.btn--red.btn-block.category-tile__buy-btn
+								| Купить
+
+
+
+		else
+			.category-tile__head
+				h6.category-tile__heading !{args.title}
+			.category-tile__body
+				.category-tile__img-wrap
+					.category-tile__img-outer
+						img(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image",width="800",height="600", alt="placeholder+image").category-tile__img
+				.category-tile__info
+					ul.category-tile__list
+						each item in args.items
+							li.category-tile__list-item !{item}
+
+

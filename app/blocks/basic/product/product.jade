@@ -23,7 +23,7 @@ mixin product-title()
 		| Advance White
 
 mixin product-rating()
-	.product__rating
+	.product__rating&attributes(attributes)
 		+reviewSmall().product__review-small
 		+rating()
 

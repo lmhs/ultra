@@ -5,6 +5,7 @@ include ../../layout/breadcrumb/breadcrumb
 include ../../layout/buyers-choice/buyers-choice
 include ../../layout/subscribe-section/subscribe-section
 include ../../layout/popular-categories/popular-categories
+include ../../layout/showcase-categories/showcase-categories
 include ../../layout/live/live
 
 mixin showcase()
@@ -14,7 +15,7 @@ mixin showcase()
 	+categoriesHeader().showcase__category__header
 	+categoriesNav().showcase__category__nav
 	+promoSlides({label : 'new'})
-
+	+showcase-categories()
 	+buyers-choice()
 	+popular-categories()
 	+subscribe-section()

@@ -36,13 +36,10 @@ import $ from 'jquery';
 					let pageOffset = window.pageYOffset;
 					let windowHeight = $(window).height();
 
-
 					if (pageOffset >= ( modalOffset - windowHeight ) ) {
 						$('#subscribePopup').modal('show');
 						shown = true;
 					}
-						console.log(pageOffset);
-						console.log(modalOffset - windowHeight);
 				}
 			});
 
