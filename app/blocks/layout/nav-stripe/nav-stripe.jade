@@ -8,6 +8,7 @@ mixin nav-stripe(args)
 		ul.nav-stripe-list
 			each item in args.elements
 				li.nav-stripe-list__item
-					+link().nav-stripe-list__link
-						| !{item}
+					a(href=jv0)
+						span.nav-stripe-list__link
+							| !{item}
 	// nav-stripe end

@@ -10,6 +10,9 @@
 		position relative
 		bottom -10px
 		display inline-block
+		&:hover
+			text-decoration underline
+
 	&__body
 		border 1px solid #EBEBEB
 		border-top-width 4px
@@ -46,6 +49,10 @@
 		display block
 		margin-top 5px
 		margin-bottom 5px
+		text-decoration none
+		&:hover
+			color #111
+			text-decoration underline
 
 	&-super__info
 		margin-right 150px
@@ -101,9 +108,6 @@
 		vertical-align top
 
 	&__list
-		font-size 13px
-		line-height 1.4
-		color #666
 		height 150px
 		padding-top 25px
 		padding-right 10px
@@ -125,7 +129,7 @@
 				-webkit-transform rotate(360deg)
 				position absolute
 				left 0
-				top 4px
+				top 5px
 		&::after
 			content ''
 			position absolute

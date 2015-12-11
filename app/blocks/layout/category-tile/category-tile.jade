@@ -1,6 +1,6 @@
-include ../link/link
-include ../product/product
-include ../button/button
+include ../../basic/link/link
+include ../../basic/product/product
+include ../../basic/button/button
 
 mixin category-tile(args)
 	.category-tile&attributes(attributes)
@@ -14,7 +14,9 @@ mixin category-tile(args)
 					.category-tile__label
 						.category-tile__label-text Суперпредложение
 						.category-tile__label-percent -25%
-					span.category-tile__title !{args.title}
+					a(href=jv0)
+						span.category-tile__title
+							| !{args.title}
 					+product-rating().category-tile__rating
 					.category-tile__actions
 						.category-tile__price
@@ -28,7 +30,9 @@ mixin category-tile(args)
 
 		else
 			.category-tile__head
-				h6.category-tile__heading !{args.title}
+				a(href=jv0)
+					h6.category-tile__heading
+						| !{args.title}
 			.category-tile__body
 				.category-tile__img-wrap
 					.category-tile__img-outer
@@ -36,6 +40,9 @@ mixin category-tile(args)
 				.category-tile__info
 					ul.category-tile__list
 						each item in args.items
-							li.category-tile__list-item !{item}
+							li.category-tile__list-item
+								a(href=jv0)
+									span.category-tile__list-item__link
+										| !{item}
 
 
