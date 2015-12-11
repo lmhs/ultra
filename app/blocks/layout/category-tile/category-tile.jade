@@ -26,6 +26,19 @@ mixin category-tile(args)
 							+button().btn-sm.btn--red.btn-block.category-tile__buy-btn
 								| Купить
 
+		else if args.type === 'assistant'
+			.category-tile__head
+			.category-tile__body.category-tile__body--assistant
+				.category-tile__body__inner
+					.category-tile-assistant__img-wrap
+						.category-tile-assistant__img-outer
+							img(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image",width="800",height="600", alt="placeholder+image").category-tile-assistant__img
+					.category-tile-assistant__info
+						h5.category-tile-assistant__heading Универсальный помощник
+							small оставь время на себя
+						.category-tile-assistant__price от 1 950 000 BYR
+						+button().btn-sm.btn--red.category-tile__select-btn
+							| Выбрать
 
 
 		else

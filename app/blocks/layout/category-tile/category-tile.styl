@@ -13,12 +13,44 @@
 		&:hover
 			text-decoration underline
 
+	&-assistant
+		&__heading
+			margin-top 0
+			margin-bottom 30px
+			small
+				display block
+				font-weight light
+				margin-top 5px
+				color #111
+				font-size 66.6%
+		&-price
+			color #898989
+			font-size 14px
+			font-weight normal
+
+
 	&__body
 		border 1px solid #EBEBEB
 		border-top-width 4px
 		min-height 200px
 		padding-top 11px
 		padding 11px 10px 20px 20px
+		&__inner
+			position relative
+		&--assistant
+			background-color #F6F6F6
+			position relative
+			overflow hidden
+			&::before
+				content ''
+				position absolute
+				top -136px
+				left 43px
+				width 200%
+				height 80px
+				transform rotate(127deg)
+				background url(../images/pattern-color-bones-83x80.png) repeat-x
+				background-size 83px 80px
 
 	&__label
 		display table
@@ -55,12 +87,14 @@
 			text-decoration underline
 
 	&-super__info
+	&-assistant__info
 		margin-right 150px
 	&__info
 		margin-left 180px
 
 	&__img
 	&-super__img
+	&-assistant__img
 		position absolute
 		top 0
 		right 0
@@ -79,6 +113,7 @@
 			border 10px solid rgba(0,0,0,0)
 
 	&-super__img-wrap
+	&-assistant__img-wrap
 		float right
 		width 150px
 
