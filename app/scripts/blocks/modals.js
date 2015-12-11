@@ -25,6 +25,28 @@ import $ from 'jquery';
 	$('.js-forgot-return').on('click',() => {
 		$('#forgotPopup').modal('hide');
 		$('#loginPopup').modal('show');
-	})
+	});
+	if ($('.js-open-subscribe-modal').length) {
+		let modalOffset = Math.floor($('.js-open-subscribe-modal').offset().top);
+		let subscribeSectionHeight = $('.js-open-subscribe-modal').outerHeight();
+		let shown = false;
+
+			$(window).on('scroll resize', function() {
+				if (!shown) {
+					let pageOffset = window.pageYOffset;
+					let windowHeight = $(window).height();
+
+
+					if (pageOffset >= ( modalOffset - windowHeight ) ) {
+						$('#subscribePopup').modal('show');
+						shown = true;
+					}
+						console.log(pageOffset);
+						console.log(modalOffset - windowHeight);
+				}
+			});
+
+
+	}
 
 }));

@@ -249,7 +249,7 @@ mixin product(args)
 					+product-video()
 
 		when 'set'
-			+product-layout(args).other-product
+			+product-layout(args).set-product
 				+product-head()
 					+product-title()
 					+product-rating()
@@ -260,8 +260,33 @@ mixin product(args)
 				if args.video
 					+product-video()
 
+		when 'other'
+			+product-layout(args).other-product
+				+product-head()
+					+product-title()
+					+product-rating()
+				+product-body(args)
+					+product-image(args)
+					+product-price(args).product__price--other
+					+product-actions(args).product__actions--other
+				if args.video
+					+product-video()
+
 		when 'similar'
 			+product-layout(args).similar-product
+				+product-head()
+					+product-title()
+					+product-rating()
+				+product-body(args)
+					+product-image(args)
+					+product-price(args)
+					+product-features-icons()
+					+product-actions(args).product__actions--similar
+				if args.video
+					+product-video()
+
+		when 'basic'
+			+product-layout(args).basic-product
 				+product-head()
 					+product-title()
 					+product-rating()
