@@ -1,0 +1,68 @@
+.categories-promo
+	padding-top 80px
+	margin-bottom 80px
+	&__col
+		position relative
+		& + &
+			&::before
+				content ''
+				display block
+				position absolute
+				top 0
+				left -6px
+				height 100%
+				width 1px
+				background-color #ccc
+
+	&__tile
+		&-link
+			display block
+			width 430px
+
+
+			&--left
+				float right
+				margin-right 80px
+
+				& + &
+					margin-top 43px
+
+				.categories-promo__tile__text
+					width 300px
+
+			&--right
+				float left
+				margin-left 80px
+				margin-top 8px
+
+				& + &
+					margin-top 30px
+
+				.categories-promo__tile__text
+					width 230px
+
+		&__img
+			min-width 120px
+			padding-right 0
+			text-align center
+		&__body
+			vertical-align middle
+			padding-left 16px
+		&__heading
+			font-size 14px
+			margin-top 0
+			margin-bottom 0
+			color #111
+			strong
+				font-size 24px
+		&__text
+			margin-top 10px
+			font-size 14px
+			line-height 17px
+			color #666
+		&__icons
+			white-space nowrap
+		&__icon
+			&-person
+				& + &
+					margin-left 10px

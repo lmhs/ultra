@@ -7,7 +7,7 @@ mixin hot()
 		.container-20
 			.row-20
 				.col-md-20-5
-					h2.h1.h2--red.hot__heading Горящие предложения
+					h1.h1--red.hot__heading Горящие предложения
 						small максимальные скидки
 			.row-20
 				.col-md-20-3
@@ -15,18 +15,21 @@ mixin hot()
 										type:'hot',
 										position: 'horizontal',
 										oldPrice: '45 000 BYR',
+										rating: true,
 										limit: true
-									}).hot__product
+									})
 					+product({
 										type:'hot',
 										position: 'horizontal',
+										rating: true,
 										oldPrice: '45 000 BYR'
-									}).hot__product
+									})
 				.col-md-20-2
 					+product({
 										type:'hot',
+										rating: true,
 										oldPrice: '45 000 BYR'
-									}).hot__product
+									})
 			.row-20
 				.col-md-20-5
 					.hot__more

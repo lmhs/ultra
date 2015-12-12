@@ -33,49 +33,42 @@
 		"main" : [
 			{
 				"name" : "Фото, телефония, мультимедиа",
-				"href" : "/index-goods.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : "multimedia"
 			},
 			{
 				"name" : "Бытовая техника",
-				"href" : "/goods.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : "household"
 			},
 			{
 				"name" : "Туризм, спорт, отдых",
-				"href" : "/goods.html",
 				"menu" : true,
 				"sale" : false,
 				"icon" : "sport"
 			},
 			{
 				"name" : "Товары для детей, игры",
-				"href" : "/goods.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : "children"
 			},
 			{
 				"name" : "Автотовары",
-				"href" : "/goods.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : "auto"
 			},
 			{
 				"name" : "Дом, сад, ремонт",
-				"href" : "/goods.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : "repair"
 			},
 			{
 				"name" : "Акции, скидки, уценка",
-				"href" : "/goods.html",
 				"menu" : false,
 				"sale" : true,
 				"icon" : "sale"

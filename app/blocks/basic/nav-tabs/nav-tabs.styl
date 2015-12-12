@@ -117,6 +117,73 @@
 				border none
 				background none
 
+.menu-popup__nav-tabs
+	position absolute
+	top 0
+	bottom 0
+	left 0
+	width 300px
+	border 1px solid #ddd
+	border-bottom none
+
+	padding-top 10px
+	background-color #F5F5F5
+	& > li
+		margin-bottom 0
+		border-bottom 1px solid #ddd
+		float none
+
+		& > a
+			line-height 54px
+			text-decoration none
+			font-size 14px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			color #333
+			padding-left 54px
+			border-radius 0
+			position relative
+			&::after
+
+				position absolute
+				top 50%
+				margin-top -7px
+				width 0
+				height 0
+				border-style solid
+				border-width 7px 11px 7px 0
+				border-color transparent #fff transparent transparent
+				right -1px
+			&
+			&:hover
+			&:focus
+				margin 0
+				padding 0
+				height 54px
+				border none
+				background transparent
+		&.active > a
+			&::after
+				content ''
+			&
+			&:hover
+			&:focus
+				color #FFF
+				border none
+				background #E14013
+
+.menu-popup__icon-wrap
+	position relative
+	float left
+	width 54px
+	height 54px
+	display block
+	text-align center
+
+.menu-popup__icon
+	vertical-align middle
+
+
+
 .subheader-nav-tabs
 	display inline-block
 	vertical-align top

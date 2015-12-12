@@ -1,3 +1,4 @@
+// default
 .select2-container
 	box-sizing border-box
 	display inline-block
@@ -765,3 +766,17 @@
 			.select2-container
 				margin-left 1px
 				margin-right -1px
+
+// user
+
+.select2-dropdown
+	border-radius 0
+	border 1px solid #acacac
+	border-top none
+
+.select2-container--default .select2-results > .select2-results__options
+	max-height 400px
+	padding-bottom 10px
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+	background-color #111

@@ -18,14 +18,14 @@ import $ from 'jquery';
 		minimumResultsForSearch: Infinity
 	});
 
-	if ($('.category__select').length) {
-		var categorySelect = $('.category__select').select2({
+	if ($('.js-select-category').length) {
+		var categorySelect = $('.js-select-category').select2({
 		dropdownAutoWidth : 'true',
 		width: "460px",
 		minimumResultsForSearch: Infinity
 				// containerCssClass : "category__select__dropdown"
 			});
 
-		categorySelect.data('select2').$results.addClass("category__select__dropdown")
+		categorySelect.data('select2').$results.addClass("select--big__dropdown")
 	}
 }));

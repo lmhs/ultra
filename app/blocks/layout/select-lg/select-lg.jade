@@ -1,0 +1,6 @@
+import ../../basic/select/select
+
+mixin select-lg()
+	.select--lg-container&attributes(attributes)
+		.select--lg-wrap
+			+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.select--lg.js-select-category

@@ -48,6 +48,31 @@
 	vertical-align top
 	padding 9px 13px 7px
 	text-decoration none
+	&--user-menu
+		padding-right 0
+		padding-left 0
+	&--user-quit
+		padding-left 30px
+		padding-right 40px
+
+.cart__label
+	border-radius 50%
+	display block
+	width 16px
+	height 16px
+	line-height 16px
+	position absolute
+	top -8px
+	right -8px
+	z-index 1
+	font-size 11px
+	font-style normal
+	color #FFF
+	text-align center
+	background-color #ACACAC
+	&--not-empty
+		background-color #ff503f
+
 
 .link-small--pseudo
 	display inline-block
@@ -89,20 +114,7 @@
 			border-bottom-style solid
 
 .header-main__link
-	// width 187px
-	width 100%
-	height 90px
-	display block
-	float left
-	color #FFF
-	font-size 13px
-	line-height 18px
-	text-align center
-	text-decoration none
-	background-color #252525
-	position relative
-	// border-left 1px solid #363636
-	&:before
+	&::before
 		content ''
 		position absolute
 		left -1px
@@ -113,6 +125,21 @@
 		height 100%
 		background #363636
 
+	&
+	&:focus
+		width 100%
+		height 90px
+		display block
+		float left
+		color #FFF
+		font-size 13px
+		line-height 18px
+		text-align center
+		text-decoration none
+		background-color #252525
+		position relative
+
+	.nav-list-item--header-main.is-selected &
 	&:hover
 		box-shadow inset 0px 0px 0px 1px #E14013
 		color #fff
@@ -123,9 +150,12 @@
 		border-right 1px solid #363636
 
 	&--sale
-		background-color #E14013
-		&:hover
+		&
 		&:focus
+			background-color #E14013
+
+		.nav-list-item--header-main.is-selected &
+		&:hover
 			background-color #EE3C0A
 			border-bottom 0
 			box-shadow none
@@ -184,4 +214,11 @@
 			top 13px
 			left 14px
 
-
+.category-tile__list-item__link
+	text-decoration none
+	font-size 13px
+	line-height 1.4
+	color #666
+	&:hover
+		color #666
+		text-decoration underline

@@ -2,66 +2,69 @@ include ../content/content
 include ../../basic/product/product
 include ../../basic/form/form
 include ../../basic/nav-tabs/nav-tabs
+include ../select-lg/select-lg
 
-mixin categories()
-	section.categories
+mixin categoriesHeader()
+	.category__header&attributes(attributes)
 		.container-20
 			.row-20
 				.col-md-20-5
-					.category__select-wrap
-						.category__select__inner
-							+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.category__select
-					// category select end
-		// category select and filter wrap end
-		.category__nav-wrap
-			.container-20
-				.row-20
-					.col-md-20-5
-						+navSubheader({
-										links: [
-											{
-												isActive: true,
-												href: '#large-appliances',
-												class: 'js-category-nav-tab',
-												icon: 'feather',
-												content: 'Крупная бытовая техника'
-												},
-											{
-												isActive: false,
-												href: '#kitchen-appliances',
-												class: 'js-category-nav-tab',
-												icon: 'info',
-												content: 'Техника для кухни'
-												},
-											{
-												isActive: false,
-												href: '#home-appliances',
-												class: 'js-category-nav-tab',
-												icon: 'review',
-												content: 'Техника для дома'
-												},
-											{
-												isActive: false,
-												href: '#health-and-beauty-appliances',
-												class: 'js-category-nav-tab',
-												icon: 'help',
-												content: 'Техника для красоты и здоровья'
-												},
-											{
-												isActive: false,
-												href: '#climate-equipment',
-												class: 'js-category-nav-tab',
-												icon: 'delivery',
-												content: 'Климатическая техника'
-												}
-										]
-									}).js-subheader-nav-tab
-		// category subheader end
+					+select-lg().category__select--lg-container
+
+mixin categoriesNav()
+	.category__nav&attributes(attributes)
+		.container-20
+			.row-20
+				.col-md-20-5
+					+navSubheader({
+									links: [
+										{
+											isActive: true,
+											href: '#large-appliances',
+											class: 'js-category-nav-tab',
+											icon: 'feather',
+											content: 'Крупная бытовая техника'
+											},
+										{
+											isActive: false,
+											href: '#kitchen-appliances',
+											class: 'js-category-nav-tab',
+											icon: 'info',
+											content: 'Техника для кухни'
+											},
+										{
+											isActive: false,
+											href: '#home-appliances',
+											class: 'js-category-nav-tab',
+											icon: 'review',
+											content: 'Техника для дома'
+											},
+										{
+											isActive: false,
+											href: '#health-and-beauty-appliances',
+											class: 'js-category-nav-tab',
+											icon: 'help',
+											content: 'Техника для красоты и здоровья'
+											},
+										{
+											isActive: false,
+											href: '#climate-equipment',
+											class: 'js-category-nav-tab',
+											icon: 'delivery',
+											content: 'Климатическая техника'
+											}
+									]
+								}).js-subheader-nav-tab
+	// category subheader end
+
+mixin categories()
+	section.categories
+		+categoriesHeader()
+		+categoriesNav()
 		.category__filter-wrap
 			.container-20
 				.row-20
 					.col-md-20-5
-
 						.category__filter
 							strong.category__filter__title
 								| Выберите цену
@@ -96,25 +99,62 @@ mixin categories()
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
 												video: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'new'
 											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'discount',
+												oldPrice: '45 000 BYR'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'discount',
 												oldPrice: '45 000 BYR'
 											}).categories__product
 						.col-md-20-1
-							+product({type:'categories'}).categories__product
+							+product({
+												type:'categories',
+												rating: true
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true
+											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'hit'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'hit'
 											}).categories__product
 						.col-md-20-1
 							+product({
 												type:'categories',
+												rating: true,
+												labels:'new'
+											}).categories__product
+							+product({
+												type:'categories',
+												rating: true,
 												labels:'new'
 											}).categories__product
 			#kitchen-appliances.tab-pane(role='tabpanel')
