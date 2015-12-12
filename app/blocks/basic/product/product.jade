@@ -11,11 +11,14 @@ include ../review-small/review-small
 			specialPrice: 0,
 			rating: false,
 			added: ['favorite','compare','cart'],
-			limit: true
+			limit: true,
+			video: true,
+			present: true,
+			info: true
 			}
 
 mixin product-label(label)
-	+aside-label({'label': label}).aside__labels--product
+	+aside-label(label).aside__labels--product
 
 mixin product-title()
 	.product__title-text&attributes(attributes)

@@ -1,6 +1,8 @@
 include ../breadcrumb/breadcrumb
 include ../banner/banner
 include ../../basic/nav-tabs/nav-tabs
+include ../../basic/pagination/pagination
+include ../../basic/product/product
 
 mixin content-catalogue()
 	+b.content-catalogue
@@ -51,4 +53,26 @@ mixin content-catalogue()
 									]
 								}).js-subheader-filter-tab
 		+e.body
+			+e.items-wrap.js-catalogue-items
+				.col-md-20-1
+					+product({
+											labels: ['new','hot'],
+											type: 'basic',
+											rating: true,
+											oldPrice: '44 443 334 BYR',
+											video: true
+					})
+					+product({
+											type: 'basic',
+											rating: true,
+											present: true
+					})
+					+product({
+											type: 'basic',
+											rating: true,
+											oldPrice: '44 443 334 BYR',
+											present: true
+					})
+			+e.pagination-wrap
+				+pagination(12)
 
