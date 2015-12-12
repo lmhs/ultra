@@ -54,25 +54,85 @@ mixin content-catalogue()
 								}).js-subheader-filter-tab
 		+e.body
 			+e.items-wrap.js-catalogue-items
-				.col-md-20-1
-					+product({
-											labels: ['new','hot'],
-											type: 'basic',
-											rating: true,
-											oldPrice: '44 443 334 BYR',
-											video: true
-					})
-					+product({
-											type: 'basic',
-											rating: true,
-											present: true
-					})
-					+product({
-											type: 'basic',
-											rating: true,
-											oldPrice: '44 443 334 BYR',
-											present: true
-					})
+				+content-20
+					.col-md-25-1.col-sm-25-2
+						+product({
+												labels: ['new','hot'],
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												video: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												present: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												present: true
+						})
+					.col-md-25-1.col-sm-25-2
+						+product({
+												labels: ['new', 'discount', 'hit'],
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												info: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												present: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												present: true
+						})
+					.col-md-25-1.col-sm-25-2
+						+product({
+												labels: ['new','discount'],
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												info: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												present: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												present: true
+						})
+					.col-md-25-1.col-sm-25-2
+						+product({
+												labels: ['new','discount'],
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												info: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												present: true
+						})
+						+product({
+												type: 'basic',
+												rating: true,
+												oldPrice: '44 443 334 BYR',
+												present: true
+						})
+			+e.load-more-wrap
+				+buttonMore({itemCount:16})
 			+e.pagination-wrap
 				+pagination(12)
 
