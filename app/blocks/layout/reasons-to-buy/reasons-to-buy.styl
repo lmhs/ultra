@@ -1,0 +1,54 @@
+.reasons
+	background-color #F6F6F6
+	border 1px solid #CCC
+	padding-top 60px
+	padding-bottom 65px
+	&-article
+		position relative
+		&--is-hidden
+			height 250px
+			overflow hidden
+			&::after
+				content ''
+				position absolute
+				bottom -24px
+				left 0
+				width 100%
+				height 74px
+
+				background linear-gradient(to top, #F6F6F6 0%, rgba(246, 246, 246, 0.5) 100%)
+
+	&__showmore
+		line-height 1
+
+	&__showmore-icon
+		display inline-block
+		vertical-align baseline
+		margin-right 14px
+
+	&__showmore-link
+		display inline-block
+		vertical-align baseline
+
+
+	h4
+		font-size 20px
+		margin-top 0
+		margin-bottom 20px
+
+	h5
+		font-size 18px
+		color #333
+		margin-top 30px
+		margin-bottom 20px
+
+	p
+		font-size 14px
+		line-height 1.4
+		color #4C4C4C
+
+	a
+		text-decoration underline
+		&:hover
+		&:focus
+			text-decoration none
