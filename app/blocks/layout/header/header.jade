@@ -8,15 +8,15 @@ mixin header()
 	- var	order = pageId === 'order'
 	header.header(class= order ? 'header--w-border' : '')
 		.header__top-wrap
-			+content()
+			+content-outer()
 				.col-md-6
 					+header-top()
 		.header__main-wrap
-			+content()
+			+content-outer()
 				+header-main()
 		if !order
 			.header__nav-wrap
-				+content()
+				+content-outer()
 					.col-md-6
 						+nav(getData('navigation')[0],'main')#js-top-menu.nav-list--inline.clearfix
 

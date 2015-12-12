@@ -37,5 +37,14 @@ mixin navSubheader(args)
 		ul.nav.nav-tabs.subheader-nav-tabs&attributes(attributes)
 			each item in args.links
 				li(role='presentation', class= (item.isActive) ? 'active' : '')
-					+link(item.href)(class= item.class)
+					a(href=item.href, class= item.class)
 						span.nav-tabs__text !{item.content}
+
+mixin navSubheaderSmall(args)
+	.subheader-nav-tabs-outer--small
+		ul.nav.nav-tabs.subheader-nav-tabs.subheader-nav-tabs--small&attributes(attributes)
+			each item in args.links
+				li(role='presentation', class= (item.isActive) ? 'active' : '')
+					a(href=item.href, class= item.class)
+						span.nav-tabs__text !{item.content}
+

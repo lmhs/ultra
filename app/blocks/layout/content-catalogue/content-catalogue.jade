@@ -1,0 +1,54 @@
+include ../breadcrumb/breadcrumb
+include ../banner/banner
+include ../../basic/nav-tabs/nav-tabs
+
+mixin content-catalogue()
+	+b.content-catalogue
+		+e.breadcrumb-outer
+			+breadcrumb(['Главная', 'Фото, телефония, мультимедиа', 'Телефония', 'Мобильные телефоны'])
+		+e.head
+			+e.banner-small-outer
+				+banner-small()
+			+e('h1').heading Мобильные телефоны
+			+e.subheader
+				+navSubheaderSmall({
+									links: [
+										{
+											isActive: true,
+											href: 'javascript:void(0);',
+											class: 'js-product-filter-tab js-product-filter-expensive',
+											icon: 'feather',
+											content: 'Самые дорогие'
+											},
+										{
+											isActive: false,
+											href: 'javascript:void(0);',
+											class: 'js-product-filter-tab js-product-filter-cheap',
+											icon: 'info',
+											content: 'Самые дешевые'
+											},
+										{
+											isActive: false,
+											href: 'javascript:void(0);',
+											class: 'js-product-filter-tab js-product-filter-new',
+											icon: 'review',
+											content: 'Новинки'
+											},
+										{
+											isActive: false,
+											href: 'javascript:void(0);',
+											class: 'js-product-filter-tab js-product-filter-popular',
+											icon: 'help',
+											content: 'Популярные'
+											},
+										{
+											isActive: false,
+											href: 'javascript:void(0);',
+											class: 'js-product-filter-tab js-product-filter-sale',
+											icon: 'delivery',
+											content: 'Акции'
+											}
+									]
+								}).js-subheader-filter-tab
+		+e.body
+
