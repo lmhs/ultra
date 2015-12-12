@@ -40,6 +40,20 @@ mixin category-tile(args)
 						+button().btn-sm.btn--red.category-tile__select-btn
 							| Выбрать
 
+		else if args.type === 'columns'
+			.category-tile__head
+				a(href=jv0)
+					h6.category-tile__heading
+						| !{args.title}
+			.category-tile__body.category-tile__body--columns
+				+content()
+					each item in args.items
+						div(class='col-md-'+ Math.floor(6/args.items.length))
+							a(href=jv0).category-tile-column__item
+								.category-tile-column__title !{item}
+								.category-tile-column__img-wrap
+									.category-tile-column__img-outer
+										img(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image",width="800",height="600", alt="placeholder+image").category-tile-column__img
 
 		else
 			.category-tile__head
