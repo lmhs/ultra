@@ -2,6 +2,7 @@ include ../../layout/content/content
 include ../../layout/recent/recent
 include ../../layout/breadcrumb/breadcrumb
 include ../../layout/reasons-to-buy/reasons-to-buy
+include ../../layout/subscribe-section-big/subscribe-section
 include ../../layout/categories-promo/categories-promo
 
 mixin catalogue()
@@ -10,6 +11,7 @@ mixin catalogue()
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Бытовая техника'])
 	+recent()
+	+subscribe-section()
 	+categories-promo()
 	+reasons()
 
