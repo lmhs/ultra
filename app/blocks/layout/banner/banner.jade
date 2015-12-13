@@ -24,3 +24,16 @@ mixin banner-big()
 						+button().banner__show-btn.btn-med.btn--ghost.btn--ghost-white
 							| Подробнее
 
+mixin banner-vertical
+	+b.banner-vertical
+		+e('img')(src="./assets/images/banner-galaxy-background.png", alt="background").background
+		+e('a')(href=jv0).link
+		+e.product-info
+			+e('img')(src="./assets/images/s6-edge-logo.png", alt="product logo").product-logo
+			+e.heading для тех, кто желает !{''}
+				strong большего
+			+e.actions
+				+button().banner-vertical__show-btn.btn-med.btn--ghost.btn--ghost-white
+					| Подробнее
+		+e.product-img-wrap
+			+e('img')(src="./assets/images/s6-edge-product.png", alt="product").product-img

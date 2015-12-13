@@ -8,7 +8,7 @@ include ../../layout/categories-promo/categories-promo
 include ../../layout/banner/banner
 
 mixin catalogue(type)
-	//- +catalogue-section()
+	+catalogue-section(type)
 	if type === 'banner'
 		+banner-big()
 	+recent()

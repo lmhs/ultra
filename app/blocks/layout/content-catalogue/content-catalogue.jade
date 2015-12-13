@@ -4,7 +4,7 @@ include ../../basic/nav-tabs/nav-tabs
 include ../../basic/pagination/pagination
 include ../../basic/product/product
 
-mixin content-catalogue()
+mixin content-catalogue(type)
 	+b.content-catalogue
 		+e.breadcrumb-outer
 			+breadcrumb(['Главная', 'Фото, телефония, мультимедиа', 'Телефония', 'Мобильные телефоны'])
@@ -101,11 +101,14 @@ mixin content-catalogue()
 												oldPrice: '44 443 334 BYR',
 												info: true
 						})
-						+product({
-												type: 'basic',
-												rating: true,
-												present: true
-						})
+						if type === 'banner'
+							+banner-vertical()
+						else
+							+product({
+													type: 'basic',
+													rating: true,
+													present: true
+							})
 						+product({
 												type: 'basic',
 												rating: true,
