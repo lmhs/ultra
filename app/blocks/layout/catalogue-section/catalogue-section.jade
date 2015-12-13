@@ -4,9 +4,10 @@ include ../content/content
 
 mixin catalogue-section()
 	+b.catalogue-section
-		+content-20-outer()
-			.col-md-20-1
-				+aside-catalogue()
-			.col-md-20-4
-				+content-catalogue()
+		.container-20
+			.row-20
+				.col-md-20-1
+					+aside-catalogue()
+				.col-md-20-4
+					+content-catalogue()
 

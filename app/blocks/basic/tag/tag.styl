@@ -12,26 +12,28 @@
 	vertical-align top
 	cursor pointer
 	margin-bottom 4px
-	&+&
-		margin-left 4px
+	margin-right 4px
 
 	&:hover
 		text-decoration line-through
+		.tag-close-icon
+			sprite($icon_close_fff_12x12)
 
 	&--red
 		background-color #E14013
 		&:hover
 			text-decoration none
 
-	.icon-plus-11
-		vertical-align top
-		margin-top 8px
-		margin-right 8px
+.tag-plus-icon
+	vertical-align top
+	margin-top 8px
+	margin-right 8px
 
-	.icon-close-12
-		vertical-align top
-		margin-top 7px
-		margin-left 8px
+.tag-close-icon
+	vertical-align top
+	margin-top 7px
+	margin-left 8px
+	sprite($icon_close_89_12x12)
 
 .other__tag
 	display inline-block

@@ -43,3 +43,29 @@
 	font-style italic
 	background-color #FDFDFD
 
+.details-section
+	position relative
+	padding 9px 20px
+
+	&[open]
+	&.open
+		.details-section__summary
+			padding-right 57px
+
+		.icon-details-marker
+			sprite($icon_arrow_up_e1_17x9)
+
+	&__summary
+		cursor pointer
+		outline none
+		&::-webkit-details-marker
+			display none
+
+.icon-details-marker
+	position absolute
+	right 21px
+	top 17px
+	sprite($icon_arrow_down_e1_17x9)
+
+
+
