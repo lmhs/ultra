@@ -26,7 +26,7 @@ mixin navList(elements, type)
 						if (element.sale === true)
 							span.sale-icon-text %
 						else
-							i(class= 'icon-' + element.icon).icon-nav
+							i(class= 'icon-' + element.icon + ' nav-icon-' + element.icon)
 						span.nav__text !{element.name}
 					+menu-popup({name: element.name})
 			else

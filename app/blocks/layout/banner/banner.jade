@@ -1,4 +1,26 @@
+include ../content/content
+
 mixin banner-small()
 	+b('a')(href=jv0).banner-small
 		+e('strong').strong Как выбрать
 		+e('span').text мобильный телефон?
+
+mixin banner-big()
+	+content-outer()
+		.col-md-6
+			+b.banner-big
+				+e('img')(src="./assets/images/guy-with-htc-background.png", alt="background").background
+				+e('a')(href=jv0).link
+				+e.product-img-wrap
+					+e('img')(src="./assets/images/htc-product.png", alt="product").product-img
+				+e.product-info
+					+e('img')(src="./assets/images/htc-logo.png", alt="product logo").product-logo
+					+e('h2').heading Притягивай взгляды
+					+e.icons
+						+e('img')(src="./assets/images/20-mp-icon.png", alt="product").icon
+						+e('img')(src="./assets/images/8-cores-icon.png", alt="product").icon
+						+e('img')(src="./assets/images/2804-battery-icon.png", alt="product").icon
+					+e.actions
+						+button().banner__show-btn.btn-med.btn--ghost.btn--ghost-white
+							| Подробнее
+
