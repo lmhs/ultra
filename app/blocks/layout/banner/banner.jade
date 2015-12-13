@@ -24,8 +24,8 @@ mixin banner-big()
 						+button().banner__show-btn.btn-med.btn--ghost.btn--ghost-white
 							| Подробнее
 
-mixin banner-vertical
-	+b.banner-vertical
+mixin banner-vertical()
+	+b.banner-vertical&attributes(attributes)
 		+e('img')(src="./assets/images/banner-galaxy-background.png", alt="background").background
 		+e('a')(href=jv0).link
 		+e.product-info
@@ -37,3 +37,16 @@ mixin banner-vertical
 					| Подробнее
 		+e.product-img-wrap
 			+e('img')(src="./assets/images/s6-edge-product.png", alt="product").product-img
+
+mixin banner-horizontal()
+	+b.banner-horizontal&attributes(attributes)
+		+e.background
+		+e('a')(href=jv0).link
+		+e.product-info
+			+e('h2').heading iPhone 6
+				small уже в продаже
+			+e.actions
+				+button().banner-horizontal__buy-btn.btn-sm.btn--dark
+					| Купить
+		+e.product-img-wrap
+			+e('img')(src="./assets/images/iphone-6-product.jpg", alt="product").product-img

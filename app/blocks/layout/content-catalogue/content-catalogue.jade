@@ -9,8 +9,12 @@ mixin content-catalogue(type)
 		+e.breadcrumb-outer
 			+breadcrumb(['Главная', 'Фото, телефония, мультимедиа', 'Телефония', 'Мобильные телефоны'])
 		+e.head
-			+e.banner-small-outer
-				+banner-small()
+			if type === 'banner'
+				+e.banner-outer
+					+banner-horizontal().content-catalogue__banner-horizontal
+			else
+				+e.banner-small-outer
+					+banner-small()
 			+e('h1').heading Мобильные телефоны
 			+e.subheader
 				+navSubheaderSmall({

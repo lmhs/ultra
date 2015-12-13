@@ -112,4 +112,55 @@
 		top 200px
 		right 0
 		z-index 1
+	&__link
+		&::after
+			position absolute
+			content ''
+			top 0
+			right 0
+			bottom 0
+			left 0
+			z-index 1
+
+.banner-horizontal
+	position relative
+	overflow hidden
+	height 130px
+	&__background
+		position absolute
+		left 0
+		top 0
+		width 100%
+		height 100%
+		background #EEE
+	&__product-info
+		position absolute
+		top 0
+		left 0
+		width 100%
+		padding 20px
+		z-index 2
+	&__heading
+		font-size 28px
+		line-height 1
+		color #111
+		margin-top 0
+		margin-bottom 10px
+		text-align left
+		small
+			margin-top 0
+			font-size 22px
+			color #111
+			display block
+			font-weight light
+
+	&__product-img-wrap
+		position absolute
+		top 0
+		right 80px
+		z-index 1
+
+.content-catalogue__banner-horizontal
+	width 722px
+	float right
 
