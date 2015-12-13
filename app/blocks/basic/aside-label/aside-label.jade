@@ -1,15 +1,16 @@
 mixin aside-label(args)
 	aside.aside__labels&attributes(attributes)
-		case args.label
-			when 'discount'
-				.aside__label.aside__label--discount
-					| -20%
-				br
-			when 'hit'
-				.aside__label.aside__label--hit
-					| Хит!
-				br
-			when 'new'
-				.aside__label.aside__label--new
-					| Новинка
-				br
+		each item in args
+			case item
+				when 'discount'
+					.aside__label.aside__label--discount
+						| -20%
+					br
+				when 'hit'
+					.aside__label.aside__label--hit
+						| Хит
+					br
+				when 'new'
+					.aside__label.aside__label--new
+						| Новинка
+					br

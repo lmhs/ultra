@@ -1,5 +1,6 @@
 include ../rating/rating
 include ../action/action
+include ../label/label
 include ../aside-label/aside-label
 include ../../layout/timer/timer
 include ../available/available
@@ -11,11 +12,14 @@ include ../review-small/review-small
 			specialPrice: 0,
 			rating: false,
 			added: ['favorite','compare','cart'],
-			limit: true
+			limit: true,
+			video: true,
+			present: true,
+			info: true
 			}
 
-mixin product-label(label)
-	+aside-label({'label': label}).aside__labels--product
+mixin product-label(labels)
+	+aside-label(labels).aside__labels--product
 
 mixin product-title()
 	.product__title-text&attributes(attributes)
@@ -120,6 +124,26 @@ mixin product-video()
 						player.playVideo()
 					});
 				}
+
+mixin product-info()
+	+b.product__info
+		+e('strong').info__strong Особенности
+		+e('ul').info__list
+			+e.info__list-item смартфон
+			+e.info__list-item операционная система Android
+			+e.info__list-item размер экрана 5.9 дюймов
+
+mixin product-present()
+	+b.product__info
+		+e.info__img-wrap-outer
+			+e.info__img-wrap
+				+e('img')(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="20",height="30", alt="placeholder+image").info__img
+		+e.info__present-info
+			+e.info__label
+				+label-info('Подарок')
+			+e.info__text Дарим портативную зарядку #{''}
+				a(href=jv0) Genius
+
 
 mixin product-added(added)
 	.product__added
@@ -293,10 +317,13 @@ mixin product(args)
 				+product-body(args)
 					+product-image(args)
 					+product-price(args)
-					+product-features-icons()
-					+product-actions(args).product__actions--similar
+					+product-actions(args)
 				if args.video
 					+product-video()
+				if args.info
+					+product-info()
+				if args.present
+					+product-present()
 
 		default
 			+product-layout(args)

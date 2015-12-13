@@ -1,0 +1,38 @@
+.pagination
+	border-radius 0
+	& > li
+		& > a
+			border-top-width 4px
+			padding 5px 0 5px
+			text-align center
+			width 50px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight light
+			font-size 18px
+			position relative
+			z-index 1
+			&::before
+				content ''
+				width 1px
+				background-color #F0F0F0
+				position absolute
+				left -1px
+				top 0
+				bottom -1px
+			&::after
+				content ''
+				width 1px
+				background-color #F0F0F0
+				position absolute
+				right -1px
+				top 0
+				bottom -1px
+			&:hover
+				&::before
+				&::after
+					background-color #ebebeb
+		&:last-child
+			& > a
+			& > span
+				border-top-right-radius 0
+				border-bottom-right-radius 0
