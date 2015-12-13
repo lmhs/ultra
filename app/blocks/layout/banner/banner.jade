@@ -5,6 +5,12 @@ mixin banner-small()
 		+e('strong').strong Как выбрать
 		+e('span').text мобильный телефон?
 
+mixin banner-medium()
+	+b('a')(href=jv0).banner-medium&attributes(attributes)
+		+e('span').inner
+			+e('strong').strong Как выбрать
+			+e('span').text мобильный телефон?
+
 mixin banner-big()
 	+content-outer()
 		.col-md-6
@@ -41,12 +47,12 @@ mixin banner-vertical()
 mixin banner-horizontal()
 	+b.banner-horizontal&attributes(attributes)
 		+e.background
-		+e('a')(href=jv0).link
 		+e.product-info
 			+e('h2').heading iPhone 6
 				small уже в продаже
 			+e.actions
 				+button().banner-horizontal__buy-btn.btn-sm.btn--dark
 					| Купить
+		+e('a')(href=jv0).link
 		+e.product-img-wrap
 			+e('img')(src="./assets/images/iphone-6-product.jpg", alt="product").product-img

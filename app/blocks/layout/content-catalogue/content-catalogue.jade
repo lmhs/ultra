@@ -11,6 +11,7 @@ mixin content-catalogue(type)
 		+e.head
 			if type === 'banner'
 				+e.banner-outer
+					+banner-medium().content-catalogue__banner-medium
 					+banner-horizontal().content-catalogue__banner-horizontal
 			else
 				+e.banner-small-outer

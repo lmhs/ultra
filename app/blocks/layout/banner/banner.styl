@@ -1,7 +1,7 @@
 .banner-small
 	color #111
 	display inline-block
-	border 3px solid rgb(246, 246, 246)
+	border 3px solid #f6f6f6
 	border-radius 2px
 	background-color #FFF
 	background 	url(../images/pattern-color-232x57.png) no-repeat,
@@ -12,6 +12,32 @@
 
 	&__strong
 		font-size 20px
+		display block
+		line-height 1
+	&__text
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 16px
+
+.banner-medium
+	color #111
+	display table
+	height 130px
+	border 3px solid #f6f6f6
+	border-radius 2px
+	background-color #FFF
+	background 	url(../images/pattern-color-123x125.png) no-repeat,
+							#FFF
+	background-position right 0 top 0
+	padding-left 25px
+	width 300px
+
+	&__inner
+		display table-cell
+		vertical-align middle
+		text-align left
+
+	&__strong
+		font-size 24px
 		display block
 		line-height 1
 	&__text
@@ -139,7 +165,15 @@
 		left 0
 		width 100%
 		padding 20px
-		z-index 2
+	&__link
+		&::after
+			position absolute
+			content ''
+			top 0
+			right 0
+			bottom 0
+			left 0
+			z-index 1
 	&__heading
 		font-size 28px
 		line-height 1
@@ -154,6 +188,7 @@
 			display block
 			font-weight light
 
+
 	&__product-img-wrap
 		position absolute
 		top 0
@@ -161,6 +196,10 @@
 		z-index 1
 
 .content-catalogue__banner-horizontal
-	width 722px
+	width 70%
+	float right
+.content-catalogue__banner-medium
+	width 30%
+	float right
 	float right
 
