@@ -1,27 +1,40 @@
 .phone
 	font-family 'PT Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 	color #999
+	+tablet()
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight light
+		display flex
+		flex-direction column
 
-.phone__area
-.phone__number
-	font-size 52px
-	letter-spacing -4px
+	&__area
+	&__number
+		font-size 52px
+		letter-spacing -4px
+		+tablet()
+			font-size 42px
 
-.phone__area
-	margin-right 5px
+	&__area
+		margin-right 5px
 
-.phone__code
-	display inline-block
+	&__code
+		display inline-block
 
 	&-item
 		font-size 14px
 		line-height 14px
+		+tablet()
+			font-size 12px
+			line-height 12px
 		&::before
 			content ''
 			display inline-block
 			vertical-align top
 			margin-top 1px
 			margin-right 4px
+			+tablet()
+				content none
+
 		&--vel::before
 			sprite($icon_vel_13)
 		&--mts::before
@@ -29,15 +42,21 @@
 		&--life::before
 			sprite($icon_life_13)
 
-.phone__number
-	margin-left 4px
-	color #252525
-	text-decoration none
+	&__number
+		margin-left 4px
+		color #252525
+		text-decoration none
+		&-wrap
+			+tablet()
+				order 1
 
-.phone__extra
-	font-size 12px
-	line-height 21px
-	color #888
+	&__extra
+		font-size 12px
+		line-height 21px
+		color #888
+		+tablet()
+			order 2
+
 
 .header__phone
 	float right

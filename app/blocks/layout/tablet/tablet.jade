@@ -37,9 +37,21 @@ mixin tablet()
 							| Подписаться на страницу
 
 				#tabletVK.tab-pane(role='tabpanel')
-					| vk
+					.tablet__page
+					.tablet__friends
+						strong.tablet__heading Вконтакте
+						.tablet__friends__frame
+						+link().follow-link.follow-link--fb
+							i.icon-vk.follow-link__icon
+							| Подписаться на страницу
 				#tabletGoogle.tab-pane(role='tabpanel')
-					| google
+					.tablet__page
+					.tablet__friends
+						strong.tablet__heading google
+						.tablet__friends__frame
+						+link().follow-link.follow-link--fb
+							i.icon-google.follow-link__icon
+							| Подписаться на страницу
 
 				#fb-root
 				script.

@@ -216,12 +216,42 @@ button
 .not-found__search-btn
 	padding 14px 35px
 	vertical-align top
+	+tablet()
+		display none
 
 .not-found__btn-callback
 	padding 14px 35px
 	vertical-align top
 	margin-top 15px
 	margin-bottom 12px
+	+tablet()
+		order 3
+		padding 9px 25px
+		text-transform uppercase
+		font-weight normal
+		&
+		&:focus
+		&.focus
+			background-color #c93005
+			color #fff
+
+		&:hover
+			background-color #ee3c0a
+
+		&:active
+			&
+			&:focus
+			&.focus
+				background-color #c93005
+				color #FFF
+				box-shadow none
+		&.active
+			&
+			&:focus
+			&.focus
+				background-color #c93005
+				color #FFF
+				box-shadow none
 
 .more-videos-btn
 	padding-top 4px

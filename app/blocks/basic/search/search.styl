@@ -24,8 +24,16 @@
 	margin-bottom 19px
 	display inline-block
 	width auto
+	+tablet()
+		input[type='search']
+			width 216px
+			padding-right 50px
+			padding-left 12px
 	&::before
 		left 18px
+		+tablet()
+			left auto
+			right 17px
 
 .header__search-select
 	font-size 14px
