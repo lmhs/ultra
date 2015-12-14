@@ -1,0 +1,161 @@
+.social-not-found
+	+tablet()
+		.container-outer
+			width 100%
+		clearfix()
+		.index__social
+			width 50%
+			float left
+			background none
+			padding 0
+			.container-outer
+				padding-right 10px
+			.row
+				margin-right -10px
+			.col-md-6
+				padding-right 10px
+			&__heading
+				font-weight semibold
+				font-size 22px
+				line-height 24px
+				text-align left
+				margin-top 0
+				margin-bottom 20px
+				small
+					font-weight semibold
+					font-size 22px
+					line-height 24px
+					text-align left
+					display inline
+					color #111
+					margin-top 0
+					&::before
+						content ' '
+			&__inner
+				background none
+				border-top none
+			&__tablet
+				background none
+				width auto
+				height auto
+				padding 0
+			.tablet
+				&__page
+				&__heading
+				&__social-nav
+					display none
+				&__friends
+					padding 0
+					margin 0
+					position relative
+					padding-left 50px
+			.tab-content > .tab-pane
+				display block
+			.follow-link
+				text-indent -100%
+				width 42px
+				position absolute
+				left 0
+				top 0
+				padding 0
+				&::before
+					content none
+				&--fb
+					background none
+				&--vk
+					background none
+				&--google
+					background none
+				&__icon
+					&.icon-fb-10x16
+						sprite($icon_fb_42x43)
+						top 0
+						left 0
+					&.icon-vk
+						sprite($icon_vk_42x43)
+						top 0
+						left 0
+					&.icon-google
+						sprite($icon_google_42x43)
+						top 0
+						left 0
+		.not-found
+			width 50%
+			float left
+			padding 0
+			background none
+			padding-top 30px
+			&__heading
+				font-size 22px
+				color #111
+				font-weight semibold
+				text-align left
+				margin-bottom 20px
+			&__search-wrap
+				padding-left 0
+			&__heading3
+				display none
+			&__search-input-label
+				input[type='search']
+					width 216px
+					padding-right 50px
+					padding-left 12px
+				&::before
+					left auto
+					right 17px
+			&__search-btn
+				display none
+			.phone
+				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+				font-weight light
+				display flex
+				flex-direction column
+				&__area
+				&__number
+					font-size 42px
+				&__code
+					&-item
+						font-size 12px
+						line-height 12px
+						&::before
+							content none
+				&__number-wrap
+					order 1
+				&__extra
+					order 2
+			&__btn-callback
+				order 3
+				padding 9px 25px
+				text-transform uppercase
+				font-weight normal
+				&
+				&:focus
+				&.focus
+					background-color #c93005
+					color #fff
+
+				&:hover
+					background-color #ee3c0a
+
+				&:active
+					&
+					&:focus
+					&.focus
+						background-color #c93005
+						color #FFF
+						box-shadow none
+				&.active
+					&
+					&:focus
+					&.focus
+						background-color #c93005
+						color #FFF
+						box-shadow none
+			.search__list
+				display none
+			.container-outer
+				padding-left 10px
+			.row
+				margin-left -10px
+			.col-md-6
+				padding-left 10px
