@@ -1,0 +1,8 @@
+mixin tag(text,type)
+	span.tag(class= type ? 'tag--red' : '')&attributes(attributes)
+		if type
+			i.icon-plus-11.tag-plus-icon
+		| !{text}
+		if !type
+			i.icon-close-12.tag-close-icon
+

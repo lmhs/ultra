@@ -1,5 +1,5 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../layout/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
@@ -8,11 +8,11 @@ include ../../basic/phone/phone
 mixin credit()
 	+content()
 		.col-md-6
-			+nav-small(['Главная', pageTitle])
+			+breadcrumb(['Главная', pageTitle])
 	section.credit__head
 		+content()
 			.col-md-6
-				h2.h1.credit__heading-main Кредит
+				h1.credit__heading-main Кредит
 	section.credit__intro
 		+content()
 			.col-md-6
@@ -69,7 +69,7 @@ mixin credit()
 	section.credit__documents
 		+content()
 			.col-md-2
-				h2.h1.h1--red.documents__heading Документы
+				h1.h1--red.documents__heading Документы
 					small необходимые при оформлении кредита
 				p.caption Для оформления покупки в кредит, необходимо предъявить следующий минимум документов
 			.col-md-4
@@ -91,6 +91,6 @@ mixin credit()
 					.help__call
 						h2.help__heading Нужна помощь?
 						h3.help__subheading Звони сейчас
-						+phone
+						+phone({})
 
 

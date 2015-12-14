@@ -2,6 +2,45 @@
 	&__heading
 		margin-top 54px
 		margin-bottom 32px
+		text-align left
+
+	&__body
+		padding-bottom 50px
+
+	&__items
+		padding-top 50px
+		&__text
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 15px
+			color #7C7C7C
+			margin-bottom 14px
+			strong
+				font-size 18px
+				color #333
+
+	&__table
+		td
+			height 133px
+
+		.table > thead > tr > th&__desc
+			padding-left 100px
+
+		&__price
+		&__amount
+		&__total
+			&
+			&-value
+				text-align center
+
+		&__price-value
+		&__total-value
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 14px
+
+		&__price-value
+			color #7C7C7C
+		&__total-value
+			color #292929
 
 	&__form
 		&__input
@@ -32,19 +71,15 @@
 			padding-left 60px
 			vertical-align bottom
 
-	&__border
-		margin-top 50px
-		margin-bottom 50px
-		height 84px
-		background url(../images/pattern-color-w1360.png) no-repeat center center
-
 	&__fast
 		border 1px solid #d7d7d7
 		border-radius 2px
 		margin-left 10px
 		height 300px
 		padding 38px 28px
-		background #F9F9F9 url(../images/pattern-color-vertical.png) repeat-y 100% 0
+		background 	url(../images/pattern-color-vertical.png) no-repeat 100% 0,
+								url(../images/pattern-gray-vertical.png) repeat-y 100% 0,
+								#F9F9F9
 		&__inner
 			width 276px
 		&__heading
@@ -88,6 +123,57 @@
 			li
 				margin-bottom 0
 
+	&-item
+		&__description
+			&__name
+				display block
+				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			&__text
+				color #555
+				font-size 14px
+		&__link-more
+			color #888
+			border-bottom-color #888
+			font-size 12px
+		&__checkbox__text
+			display block
+			font-size 12px
+			color #333
+			margin-top 8px
+			line-height 1
+			strong
+				font-size 14px
+
+.order__foot
+	overflow hidden
+	margin-top 20px
+	margin-bottom 62px
+
+.order__return
+	float left
+
+.order__cart
+	float right
+	&__refresh
+		height 44px
+		display inline-block
+		vertical-align top
+		line-height 44px
+	&__final
+		margin-left 47px
+		display inline-block
+		vertical-align top
+		border 1px solid #e14013
+		border-radius 2px
+		height 44px
+		line-height 44px
+		color #7C7C7C
+		padding 0 33px
+		font-size 14px
+		strong
+			color #292929
+
+
 .icon-order-delivery-wrap
 	display inline-block
 	vertical-align bottom
@@ -98,3 +184,6 @@
 
 .icon-order-truck-delivery
 	vertical-align bottom
+
+.order-item__icon-trash
+	vertical-align top

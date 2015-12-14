@@ -1,0 +1,116 @@
+.timer
+	background-color #F6F6F6
+	position relative
+	border-bottom 4px solid #EBEBEB
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+
+	&__label
+		border-top 4px solid #B72800
+		background-color #E14013
+		width 127px
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		text-align center
+		background 	url(../images/pattern-color-timer-right.png) repeat-y top right,
+								url(../images/pattern-color-timer-left.png) repeat-y top left,
+								#E14013
+		&__text
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight extrabold
+			font-size 32px
+			line-height 80px
+			color #fff
+
+		&-inner
+			display flex
+			justify-content center
+			align-items center
+			width 100%
+			height 100%
+
+		&--present
+			background #e14013
+			width 84px
+			padding 4px
+			.timer__label-inner
+				background #FFF
+
+	&__img
+		display inline-block
+
+	&__body
+		border-top 4px solid #EBEBEB
+		min-height 86px
+		font-size 0
+		margin-left 127px
+
+		&--present
+			margin-left 84px
+
+		&--coupon
+			.timer__caption
+				padding-left 9px
+				min-width 200px
+				width calc(100% - 325px)
+
+	&__caption
+		display inline-block
+		vertical-align top
+		padding-top 10px
+		padding-left 14px
+		line-height 1
+		font-size 16px
+
+	&__strong
+		display block
+		text-transform uppercase
+
+		&__info
+			text-transform none
+			&--red
+				color #E14013
+
+	&__link
+		color #111
+		border-bottom-color #111
+		font-size 14px
+		padding-top 4px
+		line-height 1.5
+		&:hover
+		&:active
+			color #111
+			border-bottom-color #111
+			border-bottom-style solid
+
+
+
+	&__countdown-wrap
+		padding-top 17px
+		padding-left 25px
+		padding-bottom 6px
+		display inline-block
+		vertical-align top
+
+	&__limit
+		font-style italic
+		color #999
+		font-size 14px
+		padding-left 25px
+
+		&__icon
+			vertical-align top
+			margin-right 12px
+
+		.product &
+			position absolute
+			right 0
+			top 50%
+			margin-top -13px
+			line-height 27px
+			padding-right 25px
+
+	&__scissors
+		vertical-align middle
+		// margin-top 12px

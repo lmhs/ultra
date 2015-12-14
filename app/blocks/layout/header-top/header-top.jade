@@ -1,5 +1,6 @@
 include ../../basic/nav/nav
 include ../../basic/link/link
+include ../../basic/modal/modal
 
 mixin header-top()
 	block vars
@@ -7,20 +8,29 @@ mixin header-top()
 		if pageId !== 'order'
 			+nav(getData('navigation')[0],'top').nav-list--inline
 		else
-			+link('/index').header-top__link-small--pseudo
-				i.icon-return
-				span.link__text.header-top__link-text--pseudo В магазин
-		.user__menu
-			+link('/cart').header-top__link
+			+link('/index').link-small--pseudo
+				i.icon-return.link-icon-return
+				span.link__text.link-text--pseudo В магазин
+		.user__block
+			+link('/cart').header-top__link.header-top__link--cart
 				i.icon-cart.header-top__icon-cart
+					//- span.cart__label.cart__label--not-empty 5
+					span.cart__label 0
 				span.link__text Корзина
-			+link('').header-top__link.js-login(data-toggle="modal", data-target=".bs-example-modal-sm")
-				i.icon-enter.header-top__icon-enter
-				span.link__text Войти
-			//- button.btn.btn-primary.btn-lg(type='button', data-toggle='modal', data-target='#myModal')
-				| Launch demo modal
-
-	//- #myModal.modal.fade.bs-example-modal-sm(tabindex='-1', role='dialog', aria-labelledby='mySmallModalLabel')
-	//- 	.modal-dialog.modal-sm
-	//- 		.modal-content
-	//- 			| ...
+			if registered
+				.header-top__menu.js-user-menu-wrap
+					+link().header-top__link.header-top__link--user-menu.js-user-menu
+						i.icon-user-86-17x19.user-menu__icon-user
+						span.user-menu__name Наталья
+						i.icon-arrow-down-95-12x8.user-menu__icon-menu
+					span.user-menu__menu
+						+link().header-top__link.header-top__link--user-quit.js-quit
+							i.icon-exit-7d-18x17.user-menu__icon-quit
+							span.user-menu__menu__text Выйти
+			else
+				+link().header-top__link.js-login(data-toggle="modal", data-target="#loginPopup")
+					i.icon-enter.header-top__icon-enter
+					span.link__text Войти
+				+modalLogin('loginPopup')
+				+modalHello('helloPopup')
+				+modalForgot('forgotPopup')

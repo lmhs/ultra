@@ -1,17 +1,83 @@
 //- include ../input/input
 include ../button/button
 include ../link/link
+include ../label/label
+include ../select/select
 
-mixin search()
-	input(type='search',placeholder='Быстрый поиск товара')&attributes(attributes)
-	+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
-		| Найти
-	.search__list
-		| Часто ищут:
-		| &#32;
-		+link().search__list__link
-			| мультиварка
-		| ,
-		| &#32;
-		+link().search__list__link
-			| фотоаппарат
+mixin search(args)
+	if args
+		case args.type
+			when 'header'
+				label.search-input-label.header__search-input-label.input-group.select2-bootstrap-append&attributes(attributes)
+					input(type='search',placeholder='Быстрый поиск товара').form-control
+					//- span.input-group-addon.header__search-input-group-addon
+					.input-group-btn.header__search-input-group-addon
+						+select({default:'Все категории',items:getData('navigation')[0].main}).select2-container--bootstrap.header__search-select
+				+button({type:'buttonSubmit'}).btn-sm.btn--dark.header__search-btn
+					| Найти
+				.search__list
+					| Часто ищут:
+					| &#32;
+					+link().search__list__link
+						| мультиварка
+					| ,
+					| &#32;
+					+link().search__list__link
+						| фотоаппарат
+
+			when 'not-found'
+				label.search-input-label&attributes(attributes)
+					input(type='search',placeholder='Быстрый поиск товара').form-control
+				+button({type:'buttonSubmit'}).btn-med.btn--dark.not-found__search-btn
+					| Найти
+				.search__list
+					+label('default','Часто ищут:').not-found__label
+					| &#32;
+					+link().search__list__link.search__list__link--large
+						| мультиварка
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--large
+						| фотоаппарат
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--medium
+						| соковыжималка
+					| ,
+					| &#32;
+					+link().search__list__link.search__list__link--medium
+						| планшет
+					| ,
+					| &#32;
+					+link().search__list__link
+						| ноутбук
+					| ,
+					| &#32;
+					+link().search__list__link
+						| скороварка
+					| ,
+					| &#32;
+					+link().search__list__link
+						| электропечь
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Samsung S4
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Philips
+					| ,
+					| &#32;
+					+link().search__list__link
+						| Apple
+					| ,
+					| &#32;
+					+link().search__list__link
+						| iPhone 6
+					| ,
+					| &#32;
+					+link().search__list__link
+						| газонокосилка
+
+

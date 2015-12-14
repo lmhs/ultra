@@ -1,0 +1,70 @@
+.menu-popup
+	display none
+	position absolute
+	top 100%
+	left 0
+	z-index 1020
+	right 0
+	background #FFF
+	border-bottom 4px solid #E14013
+	border-right 1px solid #DDD
+
+	.nav-list-item--header-main.is-selected &
+		display block
+
+	&__content
+		margin-left 300px
+		padding 10px 0 10px 10px
+
+	&__ad-wrap
+		float right
+		width 300px
+
+	&__links
+		display flex
+		align-items center
+		justify-content space-around
+		flex-wrap wrap
+		margin-right 300px
+
+		.no-flexbox &
+			text-align center
+
+
+	&__link
+		display inline-block
+		vertical-align top
+		padding 20px
+		width 160px
+		text-decoration none
+		text-align center
+		margin-bottom 8px
+		margin-right 8px
+
+
+	&__title
+		font-size 14px
+		line-height 1
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		color #111
+		font-weight semibold
+		display block
+		height 35px
+
+	&__img-wrap
+		position relative
+		display block
+		padding 0
+		padding-bottom calc(100% - 24px)
+		border 12px solid rgba(0,0,0,0)
+
+	&__img
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		max-width 100%
+		max-height 100%
+		margin auto
+		transform translateZ(0)

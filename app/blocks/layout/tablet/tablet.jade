@@ -1,0 +1,57 @@
+include ../../basic/nav-tabs/nav-tabs
+
+mixin tablet()
+	.tablet&attributes(attributes)
+		.tablet__content
+			+navSocial({
+										links: [
+											{
+												isActive: true,
+												href: '#tabletFacebook',
+												class: 'js-tablet-social-nav-tab',
+												icon: 'tablet-facebook'
+												},
+											{
+												isActive: false,
+												href: '#tabletVK',
+												class: 'js-tablet-social-nav-tab',
+												icon: 'tablet-vk'
+												},
+											{
+												isActive: false,
+												href: '#tabletGoogle',
+												class: 'js-tablet-social-nav-tab',
+												icon: 'tablet-google'
+												}
+										]
+									}).tablet__social-nav.js-tablet-social-nav
+			.tab-content.tablet__social__tab-content
+				#tabletFacebook.tab-pane.active(role='tabpanel')
+					.tablet__page
+					.tablet__friends
+						strong.tablet__heading facebook
+						.tablet__friends__frame
+							.fb-page(data-href='https://www.facebook.com/Vip-Market-%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD-%D1%86%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D0%BE%D0%B9-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8-%D0%9C%D0%98%D0%9D%D0%A1%D0%9A-157455890994914', data-small-header='true', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+						+link().follow-link.follow-link--fb
+							i.icon-fb-10x16.follow-link__icon
+							| Подписаться на страницу
+
+				#tabletVK.tab-pane(role='tabpanel')
+					| vk
+				#tabletGoogle.tab-pane(role='tabpanel')
+					| google
+
+				#fb-root
+				script.
+					(function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0];
+						if (d.getElementById(id)) return;
+						js = d.createElement(s); js.id = id;
+						js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.5&appId=275626742458392";
+						fjs.parentNode.insertBefore(js, fjs);
+					}(document, 'script', 'facebook-jssdk'));
+
+
+
+
+

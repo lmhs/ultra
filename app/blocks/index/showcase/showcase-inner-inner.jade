@@ -1,0 +1,25 @@
+include ../../layout/expert/expert
+include ../../layout/promo/promo
+include ../../layout/categories/categories
+include ../../layout/breadcrumb/breadcrumb
+include ../../layout/buyers-choice/buyers-choice
+include ../../layout/subscribe-section/subscribe-section
+include ../../layout/popular-categories/popular-categories
+include ../../layout/categories-promo/categories-promo
+include ../../layout/showcase-categories-inner/showcase-categories-inner
+include ../../layout/live/live
+
+mixin showcase()
+	+content()
+		.col-md-6
+			+breadcrumb(['Главная', 'Каталог товаров', 'Бытовая техника'])
+	+categoriesHeader().showcase__category__header
+	+categoriesNav().showcase__category__nav
+	+showcase-categories-inner()
+	+buyers-choice()
+	+categories-promo()
+	+subscribe-section()
+	+live()
+
+
+

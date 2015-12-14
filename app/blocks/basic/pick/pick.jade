@@ -1,0 +1,11 @@
+include ../button/button
+
+mixin pick()
+	+b.pick
+		+e('span').text Выбрано !{''}
+			+e('span').count.js-pick-count 28
+			|  товаров !{''}
+		+button().btn-sm.btn--dark.pick__show-btn
+			| Показать
+		+e('a')(href=jv0).close-link.js-pick-close-link
+			+e('i').close-icon.icon-close-11-12x12

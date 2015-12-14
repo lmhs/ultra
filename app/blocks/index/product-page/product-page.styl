@@ -1,0 +1,225 @@
+.product-page__head
+	margin-bottom 70px
+
+.product-page__heading-main
+	font-size 34px
+	text-align center
+	margin-bottom 17px
+
+.product-page__icons
+	font-size 0
+	text-align center
+	height 40px
+	display flex
+	justify-content center
+	align-items center
+	&-wrap
+		&+& img
+			margin-left 40px
+
+
+.no-flexbox
+	.product-page__icons
+		font-size 0
+		text-align center
+		height 40px
+		display table
+		margin 0 auto
+		&-wrap
+			display table-cell
+			vertical-align middle
+			&+& img
+				margin-left 40px
+
+.product-page__offers
+	padding-bottom 50px
+	&__spec--unavailable
+		.spec__price
+		.spec__available
+			color #B7B7B7
+		.spec__available-icon
+			sprite($icon_check_gray)
+
+.product-page__info
+	padding-top 63px
+	border-top 1px solid #e1e1e1
+
+.spec__label__caption
+	margin-top 4px
+	font-size 13px
+	line-height 16px
+	color #888
+
+.product-page__timer
+	margin-top 20px
+	margin-bottom 30px
+
+.spec__left
+	float left
+	width 240px
+	padding-bottom 28px
+
+.spec__right
+	width 240px
+	margin-left 44+240px
+	padding-bottom 28px
+
+.spec__price
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	&--old
+		font-weight light
+		color #898989
+		display block
+	&--new
+		font-size 24px
+	&__text
+		font-size 12px
+		color #B7B7B7
+		margin-bottom 16px
+
+.spec__available
+	display block
+
+.spec__warranty
+	font-size 12px
+	color #333
+	.checkbox-text
+		display block
+		line-height 1
+		margin-top 4px
+	&-price
+		// nb PT Sans?
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 14px
+		color #333
+
+.spec__buy
+	.checkbox
+		margin-bottom 0
+
+.spec__buy__info
+	font-size 12px
+	margin-left 8px
+	color #888
+	border-bottom-color #888
+
+.spec__rating-number
+	margin-left 11px
+	font-size 16px
+	color #888
+	strong
+		color #333
+
+.spec__rating-votes
+	color #888
+	display block
+	font-size 11px
+	margin 0
+	line-height 1
+
+.spec__credit__link-text
+	display inline-block
+	margin-left 10px
+	vertical-align top
+	line-height 26px
+	font-size 16px
+	color #333
+	text-decoration underline
+
+.spec__one-click
+	clear both
+	margin-bottom 22px
+
+.spec__one-click__input-wrap
+	display inline-block
+	vertical-align top
+	width 240px
+
+.spec__phone-input
+	background-color #F9F9F9
+	height 44px
+	padding-top 7px
+	padding-bottom 7px
+
+.spec__icon-arrow
+	vertical-align top
+	margin-top 20px
+	margin-left 12px
+	margin-right 14px
+
+.spec__one-click__btn
+	vertical-align top
+	width 240px
+	padding-top 11px
+	padding-bottom 11px
+
+.product-page__conditions
+	border-top 1px solid #EBEBEB
+	background-color #F9F9F9
+	border-bottom 4px solid #EBEBEB
+	padding-top 50px
+	padding-bottom 50px
+	&__inner
+		display flex
+		flex-direction row
+		justify-content space-around
+
+.product-page__condition
+	width 282px
+	margin-top 0
+	&__heading
+		color #E14013
+		font-size 14px
+		margin-top 0
+		margin-bottom 10px
+	&__caption
+		font-size 14px
+		line-height 16px
+		color #666
+		margin-top 0
+		margin-bottom 0
+	&__link
+		font-size 12px
+		color #888
+		margin-top 4px
+		border-bottom-color #888
+	&__left
+		padding-right 40px
+
+.product-page__unavailable-divider
+	margin-top 15px
+	border-top 4px solid #ebebeb
+	margin-bottom 30px
+
+.product-page__tab-content
+	width 75%
+	padding-bottom 80px
+
+.product-page__aside
+	margin-top 10px
+	top 10px
+
+	&.affix
+		top 30px
+		width 250px
+		bottom 30px
+
+	&.affix-bottom
+		position absolute
+
+.sticky
+	position sticky
+
+.product-page__info__row
+	display flex
+
+.no-flexbox
+	.product-page__info__row
+		display table
+	.product-page__info__col
+		display table-cell
+		vertical-align top
+		float none
+
+
+

@@ -1,0 +1,126 @@
+include ../../basic/tag/tag
+include ../../basic/details/details
+include ../../basic/form/form
+include ../../basic/pick/pick
+include ../../basic/checkbox/checkbox
+
+mixin aside-catalogue()
+	+b('aside').aside-catalogue
+		+pick().aside-catalogue__pick
+		+e('section').section--filters
+			+e('strong').strong Вы выбрали:
+			+e.tags
+				+tag('Samsung')
+				+tag('Android')
+				+tag('micro-SIM')
+			+e.tags-clear
+				+e('a')(href=jv0).tags-clear-action
+					+e('i').tags-clear-icon.icon-close-89-12x12
+					+e('span').tags-clear-text Сбросить все фильтры
+		+e('section').section
+			+details-section({title:'Цена'})
+				+b.aside-catalogue-section__forms
+					.aside-catalogue-section__inputs-wrap
+						+e.input
+							+e.input-text
+								| от
+							+e.input-money
+								+input-simple-money({
+															type: 'text',
+															label: 'BYR'
+															//- min: 0,
+															//- max: 25999900,
+															//- step: 100
+														}).aside-catalogue-section__input-field#js-slider-from
+						+e.input
+							+e.input-text
+								| до
+							+e.input-money
+								+input-simple-money({
+															type: 'text',
+															label: 'BYR'
+															//- min: 100,
+															//- max: 26000000,
+															//- step: 100
+														}).aside-catalogue-section__input-field#js-slider-to
+				+e.price-slider-wrap
+					#slider.noUi-extended
+		+e('section').section
+			+details-section({title:'Производитель'})
+				+b.aside-catalogue-section__forms
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| FLY
+						+e('span').count.js-count  (15)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Gigabyte
+						+e('span').count.js-count  (1)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| HTC
+						+e('span').count.js-count  (119)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| LG
+						+e('span').count.js-count  (15)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Lenovo
+						+e('span').count.js-count  (1)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Nokia
+						+e('span').count.js-count  (119)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Samsung
+						+e('span').count.js-count  (1)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Sigma
+						+e('span').count.js-count  (119)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| Sony
+						+e('span').count.js-count  (15)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| THL
+						+e('span').count.js-count  (1)
+					.aside-catalogue-section__showmore-wrap
+						+showmore().aside-catalogue-section__showmore
+		+e('section').section
+			+details-section({title:'Тип'})
+				+b.aside-catalogue-section__forms
+		+e('section').section
+			+details-section({title:'Размер экрана'})
+				+b.aside-catalogue-section__forms
+		+e('section').section
+			+details-section({title:'Материал корпуса'})
+				+b.aside-catalogue-section__forms
+		+e('section').section
+			+details-section({title:'Камера'})
+				+b.aside-catalogue-section__forms
+		+e('section').section
+			+details-section({title:'Операционная система'})
+				+b.aside-catalogue-section__forms
+		+e('section').section
+			+details-section({title:'Формат SIM-карты'})
+				+b.aside-catalogue-section__forms
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| micro-SIM
+						+e('span').count.js-count  (15)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| nano-SIM
+						+e('span').count.js-count  (1)
+					+checkbox({}).aside-catalogue-section__checkbox
+						+e('span').pseudo
+							| обычная
+						+e('span').count.js-count  (119)
+		+e.button-pick-wrap
+			+button().btn-sm.btn--dark.pick__btn
+				| Подобрать
+

@@ -1,0 +1,20 @@
+include ../content/content
+include ../other/other
+include ../set/set
+include ../../basic/product/product
+include ../../basic/tag/tag
+include ../../basic/button/button
+
+mixin productPageSet()
+	section.product-page__set
+		.container-20
+			.row-20
+				.col-md-20-5
+					h1.product-page__set__heading
+						| Чехлы для телефонов
+						small собери комплект и получи скидку
+		.product-page__set__items
+			+set()
+		+other()
+
+

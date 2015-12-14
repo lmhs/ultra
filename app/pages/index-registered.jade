@@ -1,0 +1,14 @@
+block vars
+	- var pageId = -1;
+	- var registered = true;
+
+include ../blocks/index/registered/registered
+
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Главная';
+
+block content
+	+registered()
+

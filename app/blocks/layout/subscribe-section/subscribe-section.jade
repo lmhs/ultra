@@ -1,0 +1,32 @@
+include ../content/content
+include ../../basic/product/product
+include ../../basic/form/form
+include ../../basic/nav-tabs/nav-tabs
+include ../select-lg/select-lg
+include ../../basic/modal/modal
+
+mixin subscribe-section()
+	.subscribe-section.js-open-subscribe-modal
+		.modal-dialog.modal-dialog--subscribe
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+				.modal-body
+					.subscribe-popup__text
+						.subscribe-popup__text-1 Подписывайся сейчас
+						.subscribe-popup__text-2 получи
+						.subscribe-popup__text-3 от нынешней покупки
+						.subscribe-popup__text-4 на следующую
+						.subscribe-popup__text-5 -5%
+						.subscribe-popup__form
+							+input-simple({
+												type: 'email',
+												placeholder: 'Email'
+											}).subscribe-popup__form__input
+							+button().btn-med.btn--red.subscribe-popup__form__btn
+								| Подписаться
+		+modalSubscribe('subscribePopup')
+

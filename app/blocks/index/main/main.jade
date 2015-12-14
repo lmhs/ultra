@@ -1,0 +1,28 @@
+include ../../layout/expert/expert
+include ../../layout/promo/promo
+include ../../layout/hot/hot
+include ../../layout/announce/announce
+include ../../layout/categories/categories
+include ../../layout/social/social
+include ../../layout/recent/recent
+include ../../layout/not-found/not-found
+include ../../basic/pattern/pattern
+include ../../basic/modal/modal
+
+mixin index()
+	+modalSubscribe('subscribePopup')
+	+promo()
+	+hot()
+	+announce()
+	+pattern()
+	+expert({
+						heading: 'Лучший выбор',
+						subheading: 'цена и качество'
+
+				}).main__expert
+		| Я изучил товар и могу Вам помочь с выбором в соотношении цены и качества. Вам всего лишь нужно выбрать категорию товара и ценовой диапазон. <br/> <br/> Если вы меня не знаете, посмотрите <a class="link" href="javascript:void(0);">видеообзоры со мной</a>.
+	+categories()
+	+recent()
+	+indexSocial
+	+not-found()
+

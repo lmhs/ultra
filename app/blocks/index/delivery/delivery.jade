@@ -1,5 +1,5 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../layout/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
@@ -9,9 +9,9 @@ mixin delivery()
 	+content()
 		.inner.inner--w1360
 			.col-md-6
-				+nav-small(['Главная', pageTitle])
+				+breadcrumb(['Главная', pageTitle])
 	section.delivery__payment
-		h2.h1.delivery__heading-main Оплата
+		h1.delivery__heading-main Оплата
 		p.caption
 			| Наша задача — предоставить Вам максимально комфортные условия по минимальной цене.
 			| Поэтому, мы исключаем всех посредников и не работаем с банковскими терминалами для оплаты пластиковыми картами, т.к это увеличивает стоимость товара на несколько процентов.
@@ -27,6 +27,6 @@ mixin delivery()
 				.help__call
 					h2.help__heading Нужна помощь?
 					h3.help__subheading Звони сейчас
-					+phone
+					+phone({})
 
 

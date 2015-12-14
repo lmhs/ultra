@@ -1,0 +1,23 @@
+include ../link/link
+
+mixin tile(args)
+	.tile&attributes(attributes)
+		+link().tile__link
+			.tile__inner(class= args.border === 'bottom' ? 'tile__inner--bottom' : 'tile__inner--top')
+				if args.type === 'text-bottom'
+					.tile__img-wrap
+						.tile__img-outer
+							block
+					.tile__heading-wrap
+						h4.tile__heading
+							| !{args.heading}
+							small !{args.subheading}
+				else
+					.tile__heading-wrap
+						h4.tile__heading
+							| !{args.heading}
+							small !{args.subheading}
+					.tile__img-wrap
+						.tile__img-outer
+							block
+

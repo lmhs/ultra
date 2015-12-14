@@ -1,0 +1,19 @@
+include ../../basic/link/link
+
+mixin breadcrumb(elements)
+	nav.breadcrumb-nav-wrap
+		ul.breadcrumb.breadcrumb-nav
+			- var length = elements.length
+			- var i = 0
+			each item in elements
+					- var last = i === length-1
+					- i++
+					if !last
+						li.breadcrumb-nav__item
+							+link().breadcrumb-nav__link
+								| !{item}
+							//- i.icon-gt
+					else
+						li.breadcrumb-nav__item.active
+							| !{item}
+	// breadcrumb end

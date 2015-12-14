@@ -2,6 +2,7 @@ button
 .btn
 	text-decoration none
 	font-weight light
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 
 	&:focus
 	&:active
@@ -19,10 +20,12 @@ button
 	&-xsm
 		font-size 12px
 		padding 2px 12px
+		border-radius 2px
 	// 34
 	&-sm
 		font-size 15px
 		padding 5px 24px
+		border-radius 2px
 	// 48
 	&-med
 		font-size 16px
@@ -30,7 +33,8 @@ button
 	// 56
 	&-lg
 		font-size 18px
-		padding 16px 31px
+		padding 15px 31px
+		border-radius 4px
 
 	&--default
 		border 0
@@ -65,24 +69,24 @@ button
 		&
 		&:focus
 		&.focus
-			background-color #E14013
+			background-color #c93005
 			color #fff
 
 		&:hover
-			background-color #111
+			background-color #ee3c0a
 
 		&:active
 			&
 			&:focus
 			&.focus
-				background-color #000
+				background-color #c93005
 				color #FFF
 				box-shadow none
 		&.active
 			&
 			&:focus
 			&.focus
-				background-color #000
+				background-color #c93005
 				color #FFF
 				box-shadow none
 
@@ -121,6 +125,7 @@ button
 			border-color #d7d7d7
 
 			&:hover
+			&:active
 				color #555
 				background-color #d7d7d7
 
@@ -130,8 +135,31 @@ button
 			border-color #111
 
 			&:hover
+			&:active
 				background-color #111
 				color #FFF
+
+		&-brown
+			font-weight light
+			color #111
+			border-color #363636
+
+			&:hover
+			&:active
+				background-color #363636
+				color #FFF
+
+		&-white
+			font-weight normal
+			color #FFF
+			border-color #FFF
+
+			&:hover
+			&:active
+				background-color #FFF
+				color #111
+
+
 
 		&:active
 			&
@@ -145,10 +173,12 @@ button
 				box-shadow none
 
 .header__search-btn
-	vertical-align top
+	position absolute
+	top 0
+	right 0
 	font-size 13px
 	padding-top 7px
-	padding-bottom 6px
+	padding-bottom 7px
 
 .btn--callback
 	margin-left 10px
@@ -170,3 +200,144 @@ button
 		&:hover
 			background-color #E14013
 			color #191919
+
+.not-found__search-btn
+	padding 14px 35px
+	vertical-align top
+
+.not-found__btn-callback
+	padding 14px 35px
+	vertical-align top
+	margin-top 15px
+	margin-bottom 12px
+
+.more-videos-btn
+	padding-top 4px
+	padding-bottom 4px
+	&__icon-arrow
+		vertical-align top
+		margin-left 11px
+		margin-top 7px
+	&:hover
+		.more-videos-btn__icon-arrow
+			sprite($icon_arrow_down_f)
+
+.product__buy-btn
+.product__set-btn
+	display inline-block
+	vertical-align top
+	position relative
+	z-index 2
+	max-width 50%
+
+.product__buy-btn
+	font-weight normal
+	padding-right 20px
+	padding-left 20px
+	&--hot
+		padding 10px 45px
+		font-weight normal
+		max-width 100%
+
+.product__set-btn
+	padding-left 14px
+	padding-right 14px
+	width 50%
+
+.product__buy-btn--sidebar
+	border-radius 2px
+	font-weight normal
+
+
+.show-more-btn
+	padding-top 14px
+	padding-bottom 14px
+	font-weight light
+
+	&__icon
+		vertical-align top
+		margin-left 18px
+		margin-top 10px
+
+.set-all__result__buy-set-btn
+	font-size 14px
+	font-weight normal
+	padding-top 9px
+	padding-bottom 9px
+
+.btn-more__icon
+	margin-left 9px
+
+.subscribe-popup__form__btn
+	height 44px
+	padding 11px 38px
+	font-weight normal
+
+.category-tile__buy-btn
+	padding-left 0
+	padding-right 0
+	text-align center
+	font-weight normal
+
+.subscribe-section-big__form__btn
+	font-weight normal
+	padding-top 13px
+	padding-bottom 13px
+	margin-top 10px
+
+.modal__form
+	&__login-btn
+	&__forgot-btn
+	&__register-btn
+		font-weight normal
+
+	&__login-btn
+		font-size 18px
+		padding-top 9px
+		padding-bottom 10px
+		vertical-align bottom
+
+	&__forgot-btn
+		font-size 14px
+		padding-left 14px
+		padding-right 14px
+
+	&__register-btn
+		margin-left 6px
+		font-weight semibold
+		font-size 14px
+		padding-left 17px
+		padding-right 17px
+
+.pick__btn
+	font-size 14px
+	padding 6px 30px
+	border-radius 3px
+	font-weight normal
+
+.pick__show-btn
+	font-size 14px
+	font-weight normal
+	padding 4px 20px 5px
+	margin-left 13px
+	margin-right 6px
+	vertical-align baseline
+
+.banner__show-btn
+	border-width 2px
+	padding-top 10px
+	padding-bottom 10px
+
+.banner-horizontal__buy-btn
+	font-weight normal
+	padding-top 5px
+	padding-bottom 5px
+	border-radius 3px
+	position relative
+	z-index 2
+
+.banner-vertical__show-btn
+	font-size 15px
+	background #111
+	padding-top 6px
+	padding-bottom 6px

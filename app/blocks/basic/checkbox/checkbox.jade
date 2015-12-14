@@ -1,9 +1,11 @@
 mixin checkbox(args)
 	.checkbox
-		label
+		label&attributes(attributes)
 			input.checkbox-element(
 				type='checkbox',
 				name= args.name ? args.name : '',
 				id= args.id ? args.id : '',
-				value= args.value ? args.value : '')&attributes(attributes)
-			| #{args.label}
+				class= args.class ? args.class : '',
+				value= args.value ? args.value : '')
+			span.checkbox-text #{args.label}
+			block

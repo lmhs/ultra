@@ -1,6 +1,6 @@
 mixin details(intro,summary)
 
-	details.details-item()&attributes(attributes)
+	details.details-item&attributes(attributes)
 		summary.summary
 			span.summary-intro !{intro}
 			.summary-txt-wrap
@@ -8,3 +8,11 @@ mixin details(intro,summary)
 		.details-content
 			.details-content-txt
 				block
+
+mixin details-section(args)
+	details.details-section&attributes(attributes)
+		summary.details-section__summary
+			+e('span').details-section__summary__title !{args.title}
+			i.icon-details-marker
+		+e.details-section__summary__content
+			block

@@ -1,7 +1,7 @@
 include ../link/link
 include ../button/button
 
-mixin phone()
+mixin phone(args)
 	.phone&attributes(attributes)
 		span.phone__area
 			| +375
@@ -14,7 +14,15 @@ mixin phone()
 				| (25)
 		+link('tel:7825555').phone__number
 				| 782 55 55
-		.phone__extra
-			| Время работы магазина: Пн-Пт с 9 до 20
-			+button().btn-xsm.btn--dark.btn--callback
-				| Обратный звонок
+		if (args.type)
+			case args.type
+				when 'not-found'
+					+button().btn-med.btn--dark.not-found__btn-callback
+							| Заказать обратный звонок
+					.phone__extra
+						| Время работы магазина: Пн-Пт с 9 до 20
+				default
+					.phone__extra
+						| Время работы магазина: Пн-Пт с 9 до 20
+						+button().btn-xsm.btn--dark.btn--callback
+							| Обратный звонок
