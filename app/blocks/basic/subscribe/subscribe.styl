@@ -5,6 +5,8 @@
 	&__heading
 		font-size 32px
 		color #FFF
+		margin-top 0
+		margin-bottom 8px
 
 	&__arrows__caption
 		font-style italic
@@ -12,16 +14,16 @@
 		color #636363
 		vertical-align top
 
+	&__forms
+		text-align center
+
 	&__form
-		width 50%
-		float left
+		display inline-block
 		padding-right 81px
-		padding-left 107px
-		margin-top 50px
 
 		&+&
 			padding-left 81px
-			padding-right 107px
+			padding-right 0
 			border-left 1px solid #363636
 
 	&__head
@@ -35,6 +37,12 @@
 				color #FFF
 			&--red
 				color #E14013
+		&__icon
+			vertical-align middle
+			&--person-male
+				margin-right 75px
+			&--person-female
+				margin-left 65px
 
 	&__body
 		padding-top 17px
