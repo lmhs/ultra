@@ -6,14 +6,14 @@ include ../select-lg/select-lg
 
 mixin categoriesHeader()
 	.category__header&attributes(attributes)
-		.container-20
+		.container-20-outer
 			.row-20
 				.col-md-20-5
 					+select-lg().category__select--lg-container
 
 mixin categoriesNav()
 	.category__nav&attributes(attributes)
-		.container-20
+		.container-20-outer
 			.row-20
 				.col-md-20-5
 					+navSubheader({
@@ -62,7 +62,7 @@ mixin categories()
 		+categoriesHeader()
 		+categoriesNav()
 		.category__filter-wrap
-			.container-20
+			.container-20-outer
 				.row-20
 					.col-md-20-5
 						.category__filter
@@ -94,7 +94,7 @@ mixin categories()
 		// category filter end
 		.tab-content.category__tab-content
 			#large-appliances.tab-pane.active(role='tabpanel')
-				.container-20
+				.container-20-outer
 					.row-20
 						.col-md-20-1
 							+product({
@@ -158,22 +158,22 @@ mixin categories()
 												labels:'new'
 											}).categories__product
 			#kitchen-appliances.tab-pane(role='tabpanel')
-				.container-20
+				.container-20-outer
 					.row-20
 						.col-md-20-6
 							| Техника для кухни
 			#home-appliances.tab-pane(role='tabpanel')
-				.container-20
+				.container-20-outer
 					.row-20
 						.col-md-20-5
 							| Техника для дома
 			#health-and-beauty-appliances.tab-pane(role='tabpanel')
-				.container-20
+				.container-20-outer
 					.row-20
 						.col-md-20-5
 							| Техника для красоты и здоровья
 			#climate-equipment.tab-pane(role='tabpanel')
-				.container-20
+				.container-20-outer
 					.row-20
 						.col-md-20-5
 							| Климатическая техника
