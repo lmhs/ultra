@@ -2,17 +2,23 @@
 	text-align center
 	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 
+
 	&__heading
 		font-size 32px
 		color #FFF
 		margin-top 0
 		margin-bottom 8px
+		+tablet()
+			margin-bottom 40px
 
-	&__arrows__caption
-		font-style italic
-		font-size 18px
-		color #636363
-		vertical-align top
+	&__arrows
+		+tablet()
+			display none
+		&__caption
+			font-style italic
+			font-size 18px
+			color #636363
+			vertical-align top
 
 	&__forms
 		text-align center
@@ -21,10 +27,19 @@
 		display inline-block
 		padding-right 81px
 
+		+tablet()
+			width 280px
+			text-align left
+			padding-right 40px
+
 		&+&
 			padding-left 81px
 			padding-right 0
 			border-left 1px solid #363636
+			+tablet()
+				padding-right 0
+				padding-left 40px
+				border none
 
 	&__head
 		text-align left
@@ -32,6 +47,10 @@
 			font-size 22px
 			font-weight light
 			vertical-align middle
+			+tablet()
+				font-size 16px
+				font-weight normal
+				vertical-align bottom
 
 			&--white
 				color #FFF
@@ -39,16 +58,28 @@
 				color #E14013
 		&__icon
 			vertical-align middle
+			+tablet()
+				float right
+				margin-right 0
+				margin-top -15px
 			&--person-male
 				margin-right 75px
+				+tablet()
+					sprite($icon_person_male_fff_24x37)
+					margin-right 0
 			&--person-female
 				margin-left 65px
+				+tablet()
+					sprite($icon_person_female_red_24x37)
 
 	&__body
 		padding-top 17px
 
 	&__foot
 		padding-top 5px
+		+tablet()
+			padding-top 20px
+			text-align left
 
 	&__input
 		border-radius 2px

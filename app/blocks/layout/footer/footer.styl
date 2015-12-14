@@ -1,6 +1,12 @@
 .footer
 	background-color #191919
+	border-top 3px solid #464646
 	padding-top 40px
+
+	+tablet()
+		border-top-width 4px
+		border-color #4B4B4B
+		padding-top 20px
 
 	&__bottom-nav
 		padding-top 128px
@@ -9,3 +15,7 @@
 		padding-top 100px
 		background url(../images/pattern-color-footer.png) no-repeat
 		background-position bottom 0 center
+
+		+tablet()
+			padding-top 25px
+			background none

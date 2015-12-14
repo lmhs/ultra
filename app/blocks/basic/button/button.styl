@@ -185,7 +185,19 @@ button
 
 .subscribe__btn
 	width 100%
-	font-weight regular
+	font-weight normal
+	border-width 2px
+	padding-top 10px
+	padding-bottom 10px
+
+	+tablet()
+		border-width 1px
+		font-size 18px
+		text-transform uppercase
+		padding-top 7px
+		padding-bottom 7px
+		width auto
+		border-radius 2px
 
 	&--white
 		border-color #fff
