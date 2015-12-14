@@ -100,19 +100,41 @@ input[type='search']
 
 	.header__search-input-label &
 		// width 454px
-		height 33px
-		padding-top 12px
-		padding-bottom 10px
+		width calc(100% - 48px)
+		height 31px
+		padding-top 0
+		padding-bottom 0
+		line-height 31px
 
 	.not-found__search-input-label &
-		width 296px
+		width 236px
 		height 50px
+		padding-top 0
+		padding-bottom 0
+		line-height 50px
 		padding-left 50px
+		&::placeholder
+			line-height 13px
+			padding-top 18px
+			display block
+			padding-bottom 19px
+		&:-moz-placeholder
+			line-height 50px
+		&::-moz-placeholder
+			line-height 50px
+
 
 	&::placeholder
 		color #888
 		font-size 13px
+		line-height 13px
+		padding-top 9px
+		padding-bottom 9px
 		font-style italic
+	&:-moz-placeholder
+		line-height 31px
+	&::-moz-placeholder
+		line-height 31px
 
 .input-number
 	width 100px
