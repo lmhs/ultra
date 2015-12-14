@@ -1,0 +1,35 @@
+include ../content/content
+
+mixin footer-legal()
+	+b('section').footer-legal
+		.container-outer
+			.row
+				.col-md-6
+					+e.info
+						| ИП Левитан Артур Борисович проживающий по адресу !{''}
+						address г.&nbsp;Минск, ул.&nbsp;Романовская&nbsp;Слобода&nbsp;11, кв.&nbsp;45!{''}
+						| , зарегистрирован Минским горисполкомом решением от 8&nbsp;сентября 2006&nbsp;года №&nbsp;1798 в едином государственном регистре юридических лиц и индивидуальных предпринимателей
+						br
+						| Свидетельство №190751859
+						br
+						| Зарегистрирован в торговом реестре 30.06.2010
+					+b.footer-social
+						+e('a')(href=jv0).social-link
+							i.icon-fb-42x43
+						+e('a')(href=jv0).social-link
+							i.icon-vk-42x43
+						+e('a')(href=jv0).social-link
+							i.icon-google-42x43
+	+b.footer-info
+		.container-outer
+			.row
+				.col-md-2
+					+e.copyright
+						| © 2004–2015 Интернет-магазин «Ultra.by»
+				.col-md-1.col-md-offset-3
+					+e.author
+						+e('i').icon.icon-sensepro-logo-51x30
+						+e.txt
+							| проектирование и дизайн от !{''}
+							a(href=jv0)
+								| Sense Production
