@@ -17,30 +17,41 @@
 	&__area
 		margin-right 5px
 
+	&__txt
+		color #D74125
+		font-size 18px
+		font-weight bold
+		margin-bottom 4px
+		display none
+		+below(4)
+			display block
+			order 1
+
+
 	&__code
 		display inline-block
 
-	&-item
-		font-size 14px
-		line-height 14px
-		+tablet()
-			font-size 12px
-			line-height 12px
-		&::before
-			content ''
-			display inline-block
-			vertical-align top
-			margin-top 1px
-			margin-right 4px
+		&-item
+			font-size 14px
+			line-height 14px
 			+tablet()
-				content none
+				font-size 12px
+				line-height 12px
+			&::before
+				content ''
+				display inline-block
+				vertical-align top
+				margin-top 1px
+				margin-right 4px
+				+tablet()
+					content none
 
-		&--vel::before
-			sprite($icon_vel_13)
-		&--mts::before
-			sprite($icon_mts_13)
-		&--life::before
-			sprite($icon_life_13)
+			&--vel::before
+				sprite($icon_vel_13)
+			&--mts::before
+				sprite($icon_mts_13)
+			&--life::before
+				sprite($icon_life_13)
 
 	&__number
 		margin-left 4px
@@ -48,14 +59,14 @@
 		text-decoration none
 		&-wrap
 			+tablet()
-				order 1
+				order 2
 
 	&__extra
 		font-size 12px
 		line-height 21px
 		color #888
 		+tablet()
-			order 2
+			order 3
 
 
 .header__phone

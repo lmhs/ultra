@@ -84,6 +84,11 @@
 		position absolute
 		top product-head-top
 		height product-head-height
+		+below(4)
+			top 10px
+			padding-left 10px
+			padding-right 10px
+			height product-head-height - 10px
 
 		&--sidebar
 			position static
@@ -102,6 +107,10 @@
 			font-size 0
 		&--sidebar
 			padding 12px 15px 4px
+		+below(4)
+			padding-top 56px
+			display flex
+			flex-direction column
 
 	&__inner
 		border 1px solid #EBEBEB
@@ -114,6 +123,10 @@
 		border 10px solid rgba(0,0,0,0)
 		&-outer
 			margin 0 auto
+			+below(4)
+				order 2
+				width 100%
+
 			&--hot
 				width 350px
 				padding-top 10px
@@ -162,6 +175,10 @@
 		line-height 18px
 		text-align center
 		margin-bottom 30px
+		+below(4)
+			order 1
+			text-align left
+			margin-bottom 10px
 		&-old
 		&-special
 			display block
@@ -171,11 +188,16 @@
 			font-size 12px
 			color #898989
 			font-weight light
+			+below(4)
+				display none
 
 		&-special
 			color #333
 			font-family $font-family-sans-serif
 			font-size 14px
+			+below(4)
+				color #E14013
+				font-size 13px
 
 		&--hot
 			text-align left
