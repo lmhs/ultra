@@ -48,10 +48,31 @@ import $ from 'jquery';
 			settings: {
 				slidesToShow: 4,
 				slidesToScroll: 4,
-				infinite: true,
 				arrows: false,
 				dots: false
 			}
+		},{
+			breakpoint: 720,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				arrows: false,
+				dots: false
+			}
+		},{
+			breakpoint: 490,
+			settings: 'unslick'
 		}]
 	});
+	// $(window).on('resize', function () {
+	// 	let recentSlick = true;
+	// 	if (recentSlick && $(window).width() < 480) {
+	// 		$('.js-recent-carousel').slick('unslick');
+	// 		recentSlick = false;
+	// 	} else if (!recentSlick && $(window).width() > 480) {
+	// 		$('.js-recent-carousel').slick('unslick');
+	// 		recentSlick = true;
+	// 	}
+
+	// })
 }));
