@@ -60,7 +60,7 @@ import $ from 'jquery';
 				dots: false
 			}
 		},{
-			breakpoint: 490,
+			breakpoint: 480,
 			settings: 'unslick'
 		}]
 	});
