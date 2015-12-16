@@ -5,6 +5,9 @@
 							url(../images/pattern-color-bones-165x163.png) 165px 0 repeat-y,
 	 						#F6F6F6
 
+	+below(4)
+		border-bottom none
+
 	&__inner
 		border-top 1px solid #EBEBEB
 		padding-top 30px
@@ -12,11 +15,38 @@
 		background 	url(../images/pattern-color-black-110x109.png) 100% 434px no-repeat,
 							 	url(../images/pattern-color-gray-110x109.png) 100% 0 repeat-y
 
+		+below(4)
+			background none
+			border-top none
+			padding-top 0
+
 
 
 	&__heading
 		margin-bottom 46px
 		text-align center
 
+		+tablet()
+			text-align left
+
+		+below(4)
+			font-weight semibold
+			font-size 22px
+			line-height 24px
+			margin-top 0
+			margin-bottom 20px
+
+
 		small
 			margin-top 5px
+
+			+below(4)
+				font-weight semibold
+				font-size 22px
+				line-height 24px
+				text-align left
+				display inline
+				color #111
+				margin-top 0
+				&::before
+					content ' '

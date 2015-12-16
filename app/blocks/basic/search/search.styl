@@ -23,15 +23,17 @@
 .not-found__search-input-label
 	margin-bottom 19px
 	display inline-block
-	width auto
+	width 236px
+
 	+tablet()
-		input[type='search']
-			width 216px
-			padding-right 50px
-			padding-left 12px
+		width 280px
+	+mobile()
+		width 100%
+
 	&::before
 		left 18px
-		+tablet()
+
+		+below(4)
 			left auto
 			right 17px
 

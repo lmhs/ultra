@@ -1,59 +1,43 @@
 .social-not-found
+
 	+tablet()
-		padding-top 12px
-		clearfix()
-		.container-outer
-			width 100%
+
 		.index__social
+		.not-found
 			width 50%
 			float left
-			background none
-			padding 0
-			border-bottom none
+
+		.index__social
 			.container-outer
 				padding-right 10px
 			.row
 				margin-right -10px
 			.col-md-6
 				padding-right 10px
-			&__heading
-				font-weight semibold
-				font-size 22px
-				line-height 24px
-				text-align left
-				margin-top 0
-				margin-bottom 20px
-				small
-					font-weight semibold
-					font-size 22px
-					line-height 24px
-					text-align left
-					display inline
-					color #111
-					margin-top 0
-					&::before
-						content ' '
-			&__inner
-				background none
-				border-top none
-				padding-top 0
-			&__tablet
-				background none
-				width auto
-				height auto
-				padding 0
-			.tablet
-				&__page
-				&__heading
-				&__social-nav
-					display none
-				&__friends
-					padding 0
-					margin 0
-					position relative
-					padding-left 50px
-			.tab-content > .tab-pane
-				display block
+
+		.not-found
+			.container-outer
+				padding-left 10px
+			.row
+				margin-left -10px
+			.col-md-6
+				padding-left 10px
+
+	+below(4)
+
+		padding-top 12px
+		clearfix()
+
+		.container-outer
+			width 100%
+
+		.index__social
+		.not-found
+			padding 0
+			background none
+
+		.index__social
+
 			.follow-link
 				text-indent -100%
 				width 42px
@@ -61,15 +45,19 @@
 				left 0
 				top 0
 				padding 0
+
 				&::before
 					content none
+
 				&--fb
 					background none
 				&--vk
 					background none
 				&--google
 					background none
+
 				&__icon
+
 					&.icon-fb-10x16
 						sprite($icon_fb_42x43)
 						top 0
@@ -82,17 +70,11 @@
 						sprite($icon_google_42x43)
 						top 0
 						left 0
+
+
+	+below(3)
+
+		.index__social
 		.not-found
-			width 50%
-			float left
-			padding 0
-			background none
-			padding-top 0
-			.search__list
-				display none
-			.container-outer
-				padding-left 10px
-			.row
-				margin-left -10px
-			.col-md-6
-				padding-left 10px
+			width 100%
+			float none
