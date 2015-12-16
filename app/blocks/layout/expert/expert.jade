@@ -11,9 +11,13 @@ mixin expert(args)
 					.media
 						.media-left.expert__avatar
 							img(src="http://dummyimage.com/110x110/4d494d/686a82.gif&text=expert-photo",width="110",height="110", alt="expert-photo").img-circle
-						.media-body
+							if args.namePosition === 'below'
+								em.expert__name Алексеев Юрий
+								em.expert__position Эксперт-товаровед
+						.media-body.expert__body
 							blockquote.expert__blockquote
 								p
 									block
-								footer
-									em Алексеев Юрий
+								if args.namePosition !== 'below'
+									footer
+										em Алексеев Юрий

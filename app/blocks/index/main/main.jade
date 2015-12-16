@@ -14,10 +14,11 @@ mixin index()
 	+promo()
 	+hot()
 	+announce()
-	+pattern()
+	+pattern().visible-md-block
 	+expert({
 						heading: 'Лучший выбор',
-						subheading: 'цена и качество'
+						subheading: 'цена и качество',
+						namePosition: 'below'
 
 				}).main__expert
 		| Я изучил товар и могу Вам помочь с выбором в соотношении цены и качества. Вам всего лишь нужно выбрать категорию товара и ценовой диапазон. <br/> <br/> Если вы меня не знаете, посмотрите <a class="link" href="javascript:void(0);">видеообзоры со мной</a>.
