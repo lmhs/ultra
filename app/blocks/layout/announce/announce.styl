@@ -1,3 +1,25 @@
 .announce
 	padding-top 50px
 	padding-bottom 48px
+	+below(4)
+		padding-top 35px
+		padding-bottom 10px
+	+below(2)
+		.container-outer
+			padding-left 0
+			padding-right 0
+		.row
+			margin-left 0
+			margin-right 0
+
+	&__heading
+		+below(4)
+			font-size 22px
+			color #333232
+			margin-top 0
+			margin-bottom 0
+		+tablet()
+			font-size 24px
+			margin-bottom 10px
+		+above(5)
+			display none

@@ -31,15 +31,26 @@ import $ from 'jquery';
 		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
 		dots: false,
-		infinite: true,
 		slidesToShow: 5,
 		slidesToScroll: 5
+	});
+	$('.js-announce-carousel').slick({
+		mobileFirst: true,
+		centerMode: true,
+		centerPadding: '20px',
+		arrows: false,
+		dots: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		responsive: [{
+			breakpoint: 481,
+			settings: 'unslick'
+		}]
 	});
 	$('.js-recent-carousel').slick({
 		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
 		dots: false,
-		infinite: true,
 		slidesToShow: 5,
 		slidesToScroll: 5,
 		responsive: [
