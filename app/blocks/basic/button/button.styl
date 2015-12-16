@@ -190,7 +190,7 @@ button
 	padding-top 10px
 	padding-bottom 10px
 
-	+tablet()
+	+below(4)
 		border-width 1px
 		font-size 18px
 		text-transform uppercase
@@ -198,6 +198,9 @@ button
 		padding-bottom 7px
 		width auto
 		border-radius 2px
+
+	+at(3)
+		float right
 
 	&--white
 		border-color #fff
@@ -219,11 +222,6 @@ button
 	+below(4)
 		display none
 
-.not-found__btn-wrap
-	display inline-block
-	+below(4)
-		order 4
-		margin-bottom 25px
 .not-found__btn-callback
 	padding 14px 35px
 	vertical-align top

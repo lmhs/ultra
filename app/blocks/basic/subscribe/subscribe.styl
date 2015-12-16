@@ -10,9 +10,11 @@
 		margin-bottom 8px
 		+tablet()
 			margin-bottom 40px
+		+mobile()
+			margin-bottom 25px
 
 	&__arrows
-		+tablet()
+		+below(4)
 			display none
 		&__caption
 			font-style italic
@@ -32,14 +34,23 @@
 			text-align left
 			padding-right 40px
 
+		+mobile()
+			display block
+			padding-right 0
+			padding-top 30px
+
+
 		&+&
 			padding-left 81px
 			padding-right 0
 			border-left 1px solid #363636
-			+tablet()
+			+below(4)
 				padding-right 0
 				padding-left 40px
 				border none
+			+mobile()
+				display block
+				padding-left 0
 
 	&__head
 		text-align left
@@ -47,7 +58,7 @@
 			font-size 22px
 			font-weight light
 			vertical-align middle
-			+tablet()
+			+below(4)
 				font-size 16px
 				font-weight normal
 				vertical-align bottom
@@ -58,28 +69,45 @@
 				color #E14013
 		&__icon
 			vertical-align middle
-			+tablet()
+			+below(4)
 				float right
 				margin-right 0
 				margin-top -15px
 			&--person-male
 				margin-right 75px
-				+tablet()
+				+below(4)
 					sprite($icon_person_male_fff_24x37)
 					margin-right 0
 			&--person-female
 				margin-left 65px
-				+tablet()
+				+below(4)
 					sprite($icon_person_female_red_24x37)
+
+	&__form__inner
+		+at(3)
+			display table
+			width 100%
 
 	&__body
 		padding-top 17px
+		+mobile()
+			padding-top 12px
+		+at(3)
+			display table-cell
+			vertical-align top
 
 	&__foot
 		padding-top 5px
 		+tablet()
 			padding-top 20px
 			text-align left
+		+mobile()
+			padding-top 12px
+		+at(3)
+			display table-cell
+			vertical-align top
+			width 200px
+
 
 	&__input
 		border-radius 2px
@@ -95,6 +123,11 @@
 		&::placeholder
 			font-size 14px
 			color #D7D7D7
+
+		+below(4)
+			height 40px
+			padding-top 15px
+			padding-bottom 11px
 
 .icon-right-arrow--footer
 	vertical-align top

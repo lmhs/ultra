@@ -14,7 +14,7 @@ mixin phone(args)
 				li.phone__code-item.phone__code-item--life
 					| (25)
 			+link('tel:7825555').phone__number
-					| 782 55 55
+					| 782&nbsp;55&nbsp;55
 		.phone__txt
 			| Звони сейчас
 		if (args.type)
@@ -24,10 +24,10 @@ mixin phone(args)
 						+button().btn-med.btn--dark.not-found__btn-callback
 							| Заказать обратный звонок
 					.phone__extra
-						| Время работы магазина: Пн-Пт с 9 до 20
+						| Время работы магазина: Пн-Пт с&nbsp;9&nbsp;до&nbsp;20
 				default
 					.phone__extra
-						| Время работы магазина: Пн-Пт с 9 до 20
+						| Время работы магазина: Пн-Пт с&nbsp;9&nbsp;до&nbsp;20
 					.not-found__btn-wrap
 						+button().btn-xsm.btn--dark.btn--callback
 							| Обратный звонок
