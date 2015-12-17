@@ -1,0 +1,13 @@
+mixin header-mobile-menu(elements)
+	+b.header-mobile-menu
+		+e.head
+			+e.search-wrap
+			+e.menu
+		+e.body
+			+e('ul').list
+				each element in elements
+					+e('li').list-item
+						+e('a')(href=jv0).list-item-link
+							+e('i')(class= 'icon-' + element.icon + ' header-mobile-menu-icon-' + element.icon)
+							+e('span').name !{element.name}
+
