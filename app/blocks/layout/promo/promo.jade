@@ -42,7 +42,7 @@ mixin promoSlides(args)
 									i.icon-arrow-gt.btn-more__icon
 								+button().btn-lg.btn--red.slide__btn
 									| Выбрать 3
-			.col-md-2.promo__col-md-2.visible-md-block
+			.col-md-2.promo__col-md-2.visible-md-block.visible-lg-block
 				.promo__right
 					if (args && args.label)
 						+aside-label({label : args.label}).aside__labels--promo
@@ -55,7 +55,7 @@ mixin promoSlides(args)
 mixin promo(args)
 	section.promo
 		+promoSlides()
-		.promo__foot.visible-md-block
+		.promo__foot.visible-md-block.visible-lg-block
 			+content-outer()
 				.col-md-3
 					.promo__main

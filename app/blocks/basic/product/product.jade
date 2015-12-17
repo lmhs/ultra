@@ -27,7 +27,7 @@ mixin product-title()
 		| Advance White
 
 mixin product-rating()
-	.product__rating.visible-md-block&attributes(attributes)
+	.product__rating.visible-md-block.visible-lg-block&attributes(attributes)
 		+reviewSmall().product__review-small
 		+rating()
 
@@ -56,7 +56,7 @@ mixin product-price(args)
 			| !{args.specialPrice ? args.specialPrice : '350 415 BYR'}
 
 mixin product-features-icons()
-	.product__features-icons.visible-md-block
+	.product__features-icons.visible-md-block.visible-lg-block
 		span.product__features__icon-wrap
 			img(src="./assets/images/android-icon.png", alt="android")
 		span.product__features__icon-wrap
@@ -71,7 +71,7 @@ mixin product-features-icons()
 			img(src="./assets/images/gps-icon.png", alt="gps")
 
 mixin product-actions(args)
-	.product__actions.visible-md-block&attributes(attributes)
+	.product__actions.visible-md-block.visible-lg-block&attributes(attributes)
 		if args.type !== 'set'
 			+button().btn-sm.btn--red.product__buy-btn
 				| Купить
@@ -83,7 +83,7 @@ mixin product-actions(args)
 			+action({type:'favorite'}).product__action
 
 mixin product-features-text()
-	ul.product__features-text.visible-md-block
+	ul.product__features-text.visible-md-block.visible-lg-block
 		li.product__info__item Экран
 			span.product__info__value  3"
 		li.product__info__item Матрица
@@ -95,7 +95,7 @@ mixin product-features-text()
 		li.product__info__item Wi-Fi
 
 mixin product-video()
-	.product__video.visible-md-block
+	.product__video.visible-md-block.visible-lg-block
 		.product__video__heading
 			| Видео
 		.product__video__content
@@ -126,7 +126,7 @@ mixin product-video()
 				}
 
 mixin product-info()
-	+b.product__info.visible-md-block
+	+b.product__info.visible-md-block.visible-lg-block
 		+e('strong').info__strong Особенности
 		+e('ul').info__list
 			+e.info__list-item смартфон
@@ -134,7 +134,7 @@ mixin product-info()
 			+e.info__list-item размер экрана 5.9 дюймов
 
 mixin product-present()
-	+b.product__info.visible-md-block
+	+b.product__info.visible-md-block.visible-lg-block
 		+e.info__img-wrap-outer
 			+e.info__img-wrap
 				+e('img')(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="20",height="30", alt="placeholder+image").info__img
@@ -146,7 +146,7 @@ mixin product-present()
 
 
 mixin product-added(added)
-	.product__added.visible-md-block
+	.product__added.visible-md-block.visible-lg-block
 		case added
 			when 'favorite'
 				.product__added__label.product__added__label--favorite
@@ -191,9 +191,9 @@ mixin product(args)
 				when 'horizontal'
 					+product-layout(args).hot-product
 						if args.limit
-							+timer({type:'discount',limit: args.limit})
+							+timer({type:'discount',limit: args.limit}).hot-product__timer
 						else
-							+timer({type:'discount'})
+							+timer({type:'discount'}).hot-product__timer
 						.product__inner
 							+product-image-hot(args)
 							.product__info-outer.product__info-outer--horizontal
@@ -210,9 +210,9 @@ mixin product(args)
 				default
 					+product-layout(args).hot-product.hot-product--horizontal
 						if args.limit
-							+timer({type:'discount',limit: args.limit})
+							+timer({type:'discount',limit: args.limit}).hot-product__timer
 						else
-							+timer({type:'discount'})
+							+timer({type:'discount'}).hot-product__timer
 						.product__inner
 							+product-image-hot(args)
 							.product__info-outer
