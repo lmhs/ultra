@@ -2,7 +2,7 @@ include ../content/content
 
 mixin footer-legal()
 	+b('section').footer-legal
-		.container-outer
+		.container-outer.visible-md-block.visible-lg-block
 			.row
 				.col-md-6
 					+e.info
@@ -23,13 +23,13 @@ mixin footer-legal()
 	+b.footer-info
 		.container-outer
 			.row
-				.col-md-2
+				.col-md-2.col-xs-25-2.footer-info__col
 					+e.copyright
-						| © 2004–2015 Интернет-магазин «Ultra.by»
-				.col-md-1.col-md-offset-3
+						| ©&nbsp;2004–2015 Интернет-магазин&nbsp;«Ultra.by»
+				.col-md-1.col-md-offset-3.col-xs-25-2.footer-info__col
 					+e.author
 						+e('i').icon.icon-sensepro-logo-51x30
 						+e.txt
 							| проектирование и дизайн от !{''}
 							a(href=jv0)
-								| Sense Production
+								| Sense&nbsp;Production

@@ -74,6 +74,86 @@
 				"icon" : "sale"
 			}
 		],
+		"mobile" : [
+			{
+				"name" : "Фото, телефония, мультимедиа",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "multimedia-mobile"
+			},
+			{
+				"name" : "Бытовая техника",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "household-mobile"
+			},
+			{
+				"name" : "Туризм, спорт, отдых",
+				"menu" : true,
+				"sale" : false,
+				"icon" : "sport-mobile"
+			},
+			{
+				"name" : "Товары для детей, игры",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "children-mobile"
+			},
+			{
+				"name" : "Автотовары",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "auto-mobile"
+			},
+			{
+				"name" : "Дом, сад, ремонт",
+				"menu" : false,
+				"sale" : false,
+				"icon" : "repair-mobile"
+			},
+			{
+				"name" : "Акции, скидки, уценка",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "sale-mobile"
+			},
+			{
+				"name" : "Оплата и доставка",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "delivery-mobile"
+			},
+			{
+				"name" : "Про нас",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "about-mobile"
+			},
+			{
+				"name" : "Гарантия",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "guarantee-mobile"
+			},
+			{
+				"name" : "Дисконтная прогамма",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "discont-mobile"
+			},
+			{
+				"name" : "Сервисные центры",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "service-mobile"
+			},
+			{
+				"name" : "Блог",
+				"menu" : false,
+				"sale" : true,
+				"icon" : "blog-mobile"
+			}
+		],
 		"footer-left" : [
 			{
 				"name" : "О магазине",

@@ -1,4 +1,15 @@
-rupture.mobile-cutoff = 540px
+rupture.scale =        0        320px       480px       720px       990px      1360px
+//                     └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
+// Slice numbers:           1           2           3           4           5           6
+// rupture.scale-names:    'xs'        's'         'm'         'l'         'xl'        'hd'
+//							               						   mobile       |   tablet  |  desktop  |  hd ...
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
+rupture.mobile-cutoff = 720px
+rupture.desktop-cutoff = 990px
+rupture.hd-cutoff = 1360px
+// rupture.mobile-cutoff = 480px
+// rupture.desktop-cutoff = 720px
+// rupture.hd-cutoff = 990px
 
 @import 'helpers/sprite'
 @import 'helpers/svg'
@@ -10,6 +21,7 @@ rupture.mobile-cutoff = 540px
 @import 'base/fonts'
 @import 'base/optimize'
 @import 'base/base'
+@import 'base/grid-20-25'
 @import 'base/icons'
 
 @import '../blocks/**/*'

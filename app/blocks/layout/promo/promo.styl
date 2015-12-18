@@ -1,6 +1,12 @@
 .promo
 	padding-bottom 79px
 
+	+below(4)
+		padding-bottom 0
+		.row
+			margin-left -20px
+			margin-right -20px
+
 	&__heading
 		margin-top 0
 		margin-bottom 30px
@@ -11,6 +17,8 @@
 
 	&__col-md-4
 		padding-right 0
+		+below(4)
+			padding-left 0
 
 	&__col-md-2
 		padding-left 0
@@ -134,6 +142,8 @@
 		text-align left
 		margin-top 0
 		margin-bottom 87px
+		+tablet()
+			font-size 40px
 		small
 			text-transform none
 			font-size 32px
@@ -141,6 +151,9 @@
 			font-weight light
 			margin-top 15px
 			color #111
+			+tablet()
+				font-size 24px
+				font-weight regular
 	&__btn
 		& + &
 			margin-left 10px
