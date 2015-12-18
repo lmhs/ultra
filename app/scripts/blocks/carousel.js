@@ -32,7 +32,28 @@ import $ from 'jquery';
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
 		dots: false,
 		slidesToShow: 5,
-		slidesToScroll: 5
+		slidesToScroll: 5,
+		responsive: [
+		{
+			breakpoint: 990,
+			settings: {
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				arrows: false,
+				dots: false
+			}
+		},{
+			breakpoint: 720,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				arrows: false,
+				dots: false
+			}
+		},{
+			breakpoint: 480,
+			settings: 'unslick'
+		}]
 	});
 	$('.js-announce-carousel').slick({
 		mobileFirst: true,
