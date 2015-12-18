@@ -27,9 +27,11 @@ import $ from 'jquery';
 		$('#loginPopup').modal('show');
 	});
 	if ($('.js-open-subscribe-modal').length) {
-		let modalOffset = Math.floor($('.js-open-subscribe-modal').offset().top);
-		let subscribeSectionHeight = $('.js-open-subscribe-modal').outerHeight();
-		let shown = false;
+		let subscribeSection = $('.js-open-subscribe-modal');
+		if (subscribeSection.is(':visible')) {
+			let modalOffset = Math.floor(subscribeSection.offset().top);
+			let subscribeSectionHeight = subscribeSection.outerHeight();
+			let shown = false;
 
 			$(window).on('scroll resize', function() {
 				if (!shown) {
@@ -42,8 +44,7 @@ import $ from 'jquery';
 					}
 				}
 			});
-
-
+		}
 	}
 
 }));
