@@ -6,12 +6,12 @@ include ../../basic/aside-label/aside-label
 
 mixin promoSlides(args)
 	.promo__head
-		+content()
+		+content-outer()
 			.col-md-4.promo__col-md-4
 				+carousel.slide.js-carousel
 					.slide-item
 						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
-						.slide__content
+						.slide__content.visible-sm-block
 							h2.slide__heading Как правильно выбрать велосипед?
 								small Научим, расскажем, покажем
 							.slide__actions
@@ -22,7 +22,7 @@ mixin promoSlides(args)
 									| Выбрать велосипед
 					.slide-item
 						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
-						.slide__content
+						.slide__content.visible-sm-block
 							h2.slide__heading Как правильно выбрать велосипед?
 								small Научим, расскажем, покажем
 							.slide__actions
@@ -33,7 +33,7 @@ mixin promoSlides(args)
 									| Выбрать 2
 					.slide-item
 						img(src="./assets/images/slide-1.jpg", alt="slide-1").slide__bg
-						.slide__content
+						.slide__content.visible-sm-block
 							h2.slide__heading Как правильно выбрать велосипед?
 								small Научим, расскажем, покажем
 							.slide__actions
@@ -42,7 +42,7 @@ mixin promoSlides(args)
 									i.icon-arrow-gt.btn-more__icon
 								+button().btn-lg.btn--red.slide__btn
 									| Выбрать 3
-			.col-md-2.promo__col-md-2
+			.col-md-2.promo__col-md-2.visible-md-block.visible-lg-block
 				.promo__right
 					if (args && args.label)
 						+aside-label({label : args.label}).aside__labels--promo
@@ -55,8 +55,8 @@ mixin promoSlides(args)
 mixin promo(args)
 	section.promo
 		+promoSlides()
-		.promo__foot
-			+content()
+		.promo__foot.visible-md-block.visible-lg-block
+			+content-outer()
 				.col-md-3
 					.promo__main
 						.promo__main__icons

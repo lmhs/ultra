@@ -12,6 +12,7 @@ import './blocks/carousel.js';
 import './blocks/sticky.js';
 import './blocks/catalogue-reason.js';
 import './blocks/header-menu.js';
+import './blocks/mobile-menu.js';
 
 $(() => {
 

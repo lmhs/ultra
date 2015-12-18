@@ -98,23 +98,35 @@ input[type='search']
 	border-radius 2px
 	padding-top 7px
 
+	&::placeholder
+		color #888
+		font-size 13px
+		line-height 13px
+		padding-top 9px
+		padding-bottom 9px
+		font-style italic
+	&:-moz-placeholder
+		line-height 33px
+	&::-moz-placeholder
+		line-height 33px
+
+
 	.header__search-input-label &
 		// width 454px
-		width calc(100% - 48px)
-		height 31px
+		width 100%
+		height 33px
 		padding-top 0
 		padding-bottom 0
-		line-height 31px
+		line-height 33px
 
 	.not-found__search-input-label &
-		width 236px
 		height 50px
 		padding-top 0
 		padding-bottom 0
 		line-height 50px
 		padding-left 50px
+
 		&::placeholder
-			line-height 13px
 			padding-top 18px
 			display block
 			padding-bottom 19px
@@ -124,20 +136,32 @@ input[type='search']
 			line-height 50px
 
 
-	&::placeholder
-		color #888
-		font-size 13px
-		line-height 13px
-		padding-top 9px
-		padding-bottom 9px
-		font-style italic
-	&:-moz-placeholder
-		line-height 31px
-	&::-moz-placeholder
-		line-height 31px
+		+below(4)
+
+			padding-right 50px
+			padding-left 12px
+
+		+at(3)
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			height 48px
+			line-height 48px
+			padding-right 48px
+			padding-top 15px
+			padding-bottom 17px
+			background-color #FFF
+			&::placeholder
+				font-size 16px
+				line-height 16px
+
+			&:-moz-placeholder
+				line-height 48px
+			&::-moz-placeholder
+				line-height 48px
+
 
 .input-number
 	width 100px
+
 	input
 		background-color #F9F9F9
 		text-align center

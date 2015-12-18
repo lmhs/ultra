@@ -1,0 +1,129 @@
+.header__mobile
+	display none
+	z-index 1500
+
+	position fixed
+	top 0
+	left 0
+	width 100%
+	height 0
+	background-color rgba(0,0,0,0)
+	-webkit-backface-visibility hidden
+
+	+above(5)
+		display none
+
+	&.is-opened
+		display block
+		height 100%
+		background-color rgba(0,0,0,0.5)
+
+		.header-mobile-menu__overlay
+			height 100%
+
+.header-mobile-menu
+	padding-left 15px
+	background #F5F5F5
+	padding-right 16px
+	position relative
+	z-index 2
+
+	width 300px
+
+	box-shadow 0px 1px 6px 0px rgba(196, 196, 196, 0.004)
+
+
+	&__head
+		padding-top 15px
+		padding-bottom 17px
+
+	&.is-opened
+		display block
+
+	&__search-wrap
+		padding-right 70px
+
+
+	&__search-input-label
+		margin-bottom 0
+		&::before
+			left auto
+			right 7px
+		input[type='search']
+			padding-left 7px
+			padding-right 31px
+			height 28px
+			line-height 1
+			&::placeholder
+				padding-top 4px
+
+	&__list-item
+		border-top 1px solid #d6d6d6
+		height 47px
+		line-height 46px
+
+	&__list-item-link
+		font-size 14px
+		color #151515
+		&:hover
+		&:focus
+		&:active
+			color #151515
+	&__name
+		display block
+		margin-left 50px
+		&:hover
+		&:focus
+		&:active
+			color #151515
+			text-decoration underline
+	&__overlay
+		position absolute
+		width 100%
+		top 0
+		z-index 1
+
+
+.icon-mobile-menu
+	float left
+	vertical-align middle
+
+.icon-household-mobile
+	vertical-align top
+	margin-top 9px
+.icon-multimedia-mobile
+	vertical-align top
+	margin-top 13px
+.icon-sport-mobile
+	vertical-align top
+	margin-top 13px
+.icon-about-mobile
+	vertical-align top
+	margin-top 11px
+.icon-auto-mobile
+	vertical-align top
+	margin-top 12px
+.icon-blog-mobile
+	vertical-align top
+	margin-top 15px
+.icon-children-mobile
+	vertical-align top
+	margin-top 11px
+.icon-delivery-mobile
+	vertical-align top
+	margin-top 11px
+.icon-discont-mobile
+	vertical-align top
+	margin-top 14px
+.icon-guarantee-mobile
+	vertical-align top
+	margin-top 12px
+.icon-repair-mobile
+	vertical-align top
+	margin-top 12px
+.icon-sale-mobile
+	vertical-align top
+	margin-top 10px
+.icon-service-mobile
+	vertical-align top
+	margin-top 9px

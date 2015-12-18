@@ -25,6 +25,10 @@ mixin search(args)
 					+link().search__list__link
 						| фотоаппарат
 
+			when 'mobile'
+				label.search-input-label&attributes(attributes)
+					input(type='search',placeholder='Поиск по сайту').form-control
+
 			when 'not-found'
 				label.search-input-label&attributes(attributes)
 					input(type='search',placeholder='Быстрый поиск товара').form-control
