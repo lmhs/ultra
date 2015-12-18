@@ -1,22 +1,79 @@
 .showcase__category__header
 	padding-top 60px
 
+.category__title
+	font-size 16px
+	color #252525
+	line-height 32px
+	display inline-block
+	vertical-align top
+	+below(4)
+		margin-bottom 4px
+	&--price
+		white-space nowrap
+	&-currency
+		color #E14013
+		font-weight light
+		display none
+		+tablet()
+			display inline-block
+
+.category__col-50p
+	+at(3)
+		width 50%
+
 .category__filter
 	display inline-block
 	padding 25px 0 26px
 	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	&__input--from
+	&__input--to
+		display inline-block
+		+below(4)
+			width 50%
+
 	+below(4)
 		padding-bottom 10px
+		padding-top 0
+		display block
+
+		&__input--from
+			padding-right 14px
+
+		&__input--to
+			padding-left 14px
+			position relative
+			&::before
+				content '-'
+				font-size 16px
+				position absolute
+				left -3px
+				width 28px
+				top 0
+				line-height 40px
+
+	+below(3)
+		margin-top 10px
+
+	.input-money
+		+below(4)
+			margin-left 0
+			text-align center
+			display block
+		+tablet()
+			&-label
+				display none
+			.category__filter__input-field
+				padding-right 12px
+		+below(3)
+			&-label
+				top 13px
+				font-size 16px
+
 	&-wrap
 		border-bottom 1px solid #EBEBEB
 		+below(4)
 			border-bottom none
-	&__title
-		font-size 16px
-		color #252525
-		line-height 32px
-		display inline-block
-		vertical-align top
 	&__slider-wrap
 		display inline-block
 		vertical-align top
@@ -26,12 +83,20 @@
 	&__inputs
 		display inline-block
 		vertical-align top
+		+below(4)
+			display block
+			font-size 0
 	&__input
 		display inline-block
 		vertical-align top
 		height 32px
 		line-height 32px
 		margin-left 34px
+		+below(4)
+			&-field
+				width 100%
+				height 40px
+				line-height 40px
 		&-text
 			font-size 13px
 			color #999
@@ -67,3 +132,17 @@
 			margin-top 5px
 		+mobile()
 			margin-top 0
+
+
+.visible-mobile
+	&
+	&-inline-block
+		display none
+	+below(4)
+		display block
+		&-inline-block
+			display inline-block
+
+.hidden-mobile
+	+below(4)
+		display none
