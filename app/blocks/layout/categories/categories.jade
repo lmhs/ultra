@@ -3,16 +3,17 @@ include ../../basic/product/product
 include ../../basic/form/form
 include ../../basic/nav-tabs/nav-tabs
 include ../select-lg/select-lg
+include ../select-sm/select-sm
 
 mixin categoriesHeader()
-	.category__header&attributes(attributes)
+	.category__header&attributes(attributes).visible-md-block.visible-lg-block
 		.container-20-outer
 			.row-20
 				.col-md-20-5
 					+select-lg().category__select--lg-container
 
 mixin categoriesNav()
-	.category__nav&attributes(attributes)
+	.category__nav&attributes(attributes).visible-md-block.visible-lg-block
 		.container-20-outer
 			.row-20
 				.col-md-20-5
@@ -64,33 +65,51 @@ mixin categories()
 		.category__filter-wrap
 			.container-20-outer
 				.row-20
-					.col-md-20-5
-						.category__filter
-							strong.category__filter__title
-								| Выберите цену
-							.category__filter__slider-wrap.visible-md-block.visible-lg-block
-								#slider.noUi-extended
-							.category__filter__inputs
-								.category__filter__input
-									.category__filter__input-text
-										| от
-								+input-simple-money({
-																	type: 'text',
-																	label: 'BYR'
-																	//- min: 0,
-																	//- max: 25999900,
-																	//- step: 100
-																}).category__filter__input-field#js-slider-from
-								.category__filter__input
-									.category__filter__input-text
-										| до
-								+input-simple-money({
-																	type: 'text',
-																	label: 'BYR'
-																	//- min: 100,
-																	//- max: 26000000,
-																	//- step: 100
-																}).category__filter__input-field#js-slider-to
+					.col-sm-4.visible-mobile
+						.row-25
+							.col-sm-25-2.col-xs-25-4.category__col-50p
+								strong.category__title Категория
+								.categories__select-sm-wrap
+									+select-sm()
+							.col-sm-25-2.col-xs-25-4.category__col-50p
+								strong.category__title Подкатегория
+								.categories__select-sm-wrap
+									+select-sm()
+					.col-md-20-5.col-sm-2
+						.row-25
+							.col-sm-25-4
+								.category__filter
+									strong.category__title.hidden-mobile
+										| Выберите цену
+									strong.category__title.category__title--price.visible-mobile-inline-block
+										| Диапазон цен (от — до) !{''}
+										span.category__title-currency
+											| BYR
+									.category__filter__slider-wrap.visible-md-inline-block.visible-lg-inline-block
+										#slider.noUi-extended
+									.category__filter__inputs
+										.category__filter__input--from
+											.category__filter__input.hidden-mobile
+												.category__filter__input-text
+													| от
+											+input-simple-money({
+																				type: 'text',
+																				label: 'BYR'
+																				//- min: 0,
+																				//- max: 25999900,
+																				//- step: 100
+																			}).category__filter__input-field#js-slider-from
+										.category__filter__input--to
+											.category__filter__input.hidden-mobile
+												.category__filter__input-text
+													| до
+											+input-simple-money({
+																		type: 'text',
+																		label: 'BYR'
+																		//- min: 100,
+																		//- max: 26000000,
+																		//- step: 100
+																	}).category__filter__input-field#js-slider-to
 		// category filter end
 		.tab-content.category__tab-content
 			#large-appliances.tab-pane.active(role='tabpanel')
