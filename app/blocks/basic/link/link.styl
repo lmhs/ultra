@@ -137,7 +137,9 @@
 		&:focus
 			border-bottom-style solid
 
-.header-main__link
+.main__link
+	padding-left 10px
+	padding-right 10px
 	&::before
 		content ''
 		position absolute
@@ -162,15 +164,37 @@
 		text-decoration none
 		background-color #252525
 		position relative
+		+below(4)
+			border 1px solid #e4e4e4
+			border-left none
+			padding-top 10px
+			background none
+			font-size 12px
+			line-height 14px
+			font-weight semibold
+			color #0B0B0B
+			height 127px
+			&::before
+				content none
+		+below(3)
+			border-left 1px solid #e4e4e4
 
-	.nav-list-item--header-main.is-selected &
+	.nav-list-item--main.is-selected &
 	&:hover
 		box-shadow inset 0px 0px 0px 1px #E14013
 		color #fff
 		border-bottom 3px solid #E14013
 		background-color #363636
+		+below(4)
+			box-shadow none
+			color #0B0B0B
+			background none
+			border 1px solid #e4e4e4
+			border-left none
+		+below(3)
+			border-left 1px solid #e4e4e4
 
-	.nav-list-item--header-main:last-child &
+	.nav-list-item--main:last-child &
 		border-right 1px solid #363636
 
 	&--sale
@@ -178,7 +202,7 @@
 		&:focus
 			background-color #E14013
 
-		.nav-list-item--header-main.is-selected &
+		.nav-list-item--main.is-selected &
 		&:hover
 			background-color #EE3C0A
 			border-bottom 0

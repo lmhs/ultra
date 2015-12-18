@@ -14,8 +14,12 @@ html(lang='ru')
 	include ../head/head
 	body
 		+header()
-		+main()
-			block content
+		if pageType === 'index page'
+			+main().index-main
+				block content
+		else
+			+main()
+				block content
 		+footer()
 
 		+scripts()
