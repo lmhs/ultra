@@ -8,7 +8,10 @@ mixin header()
 	block vars
 	- var	order = pageId === 'order'
 	header.header(class= order ? 'header--w-border' : '')
-		.header__mobile
+		+button({type:'button'}).js-toggle-mobile-menu.header__toggle-btn
+			i.toggle-btn-icon.icon-burger-menu-252525-18x12
+
+		.header__mobile#js-header-mobile-menu
 			+header-mobile-menu(getData('navigation')[0]['mobile'])
 		.header__top-wrap.visible-md-block.visible-lg-block
 			+content-outer()

@@ -1,13 +1,18 @@
+include ../../basic/form/form
+include ../../basic/button/button
+
 mixin header-mobile-menu(elements)
-	+b.header-mobile-menu
+	+b('nav').header-mobile-menu
 		+e.head
 			+e.search-wrap
+				+search({type:'mobile'}).header-mobile-menu__search-input-label
 			+e.menu
+				+button({type:'button'}).header-mobile-menu__toggle-btn.js-toggle-mobile-menu
+					i.toggle-btn-icon.icon-burger-menu-434141-18x12
 		+e.body
 			+e('ul').list
 				each element in elements
 					+e('li').list-item
 						+e('a')(href=jv0).list-item-link
-							+e('i')(class= 'icon-' + element.icon + ' header-mobile-menu-icon-' + element.icon)
+							+e('i')(class= 'icon-' + element.icon + ' icon-mobile-menu icon-' + element.icon)
 							+e('span').name !{element.name}
-
