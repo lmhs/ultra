@@ -1,13 +1,41 @@
-.header-main__nav-list
+.main__nav-list
 	position relative
 
 .nav--main
 	clear right
 
-.nav-list-item--header-main
+.nav-list-item--main
 	float left
 	width 14.28%
 	padding-left 1px
+
+	+tablet()
+		width 16.66%
+
+	+below(4)
+		padding-left 0
+
+
+	+below(3)
+		margin-bottom 20px
+		padding-left 10px
+		padding-right 10px
+
+	+at(3)
+		width 33.33%
+		&:first-child
+		&:nth-child(4n+4)
+			padding-left 0
+		&:nth-child(3n+3)
+			padding-right 0
+
+	+at(2)
+		width 50%
+
+
+.nav-list-item--sale
+	+below(4)
+		display none
 
 
 .nav-list-item--header-top
@@ -47,6 +75,8 @@
 	sprite($icon_bear_fff_37x38)
 	margin-top 13px
 	margin-bottom 10px
+	+below(4)
+		sprite($icon_bear_111_37x39)
 
 .nav-icon-auto
 	sprite($icon_wheel_fff_37x37)
