@@ -10,7 +10,15 @@ include ../../basic/pattern/pattern
 include ../../basic/modal/modal
 
 mixin index()
+	block vars
+	- var	order = pageId === 'order'
+
 	+modalSubscribe('subscribePopup')
+	if !order
+		.main__nav-wrap
+			+content-outer()
+				.col-md-6
+					+nav(getData('navigation')[0],'main')#js-top-menu.nav-list--inline.clearfix
 	+promo()
 	+hot()
 	+announce()

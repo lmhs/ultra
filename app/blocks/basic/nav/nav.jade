@@ -13,7 +13,7 @@ mixin nav(elements, type)
 	nav.nav(class=classes)&attributes(attributes)
 		if (listItems.length > 1)
 			if type === 'main'
-				+navList(listItems, type).header-main__nav-list
+				+navList(listItems, type).main__nav-list
 			else
 				+navList(listItems, type)
 
