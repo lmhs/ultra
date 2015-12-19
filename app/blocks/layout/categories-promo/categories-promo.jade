@@ -1,7 +1,7 @@
 include ../content/content
 
 mixin categories-promo()
-	section.categories-promo
+	section.categories-promo&attributes(attributes)
 		+content()
 			.col-md-3.categories-promo__col
 				a(href=jv0).categories-promo__tile-link.categories-promo__tile-link--left

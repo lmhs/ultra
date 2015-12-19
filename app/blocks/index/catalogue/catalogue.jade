@@ -12,15 +12,15 @@ mixin catalogue(type)
 	block vars
 	- var	order = pageId === 'order'
 
-	+nav-main()
+	+nav-main().hidden-xs
 	+catalogue-section(type)
 	if type === 'banner'
-		+banner-big()
-	+recent()
+		+banner-big().hidden-xs
+	+recent().hidden-xs
 	if type === 'banner'
-		+subscribe-section()
+		+subscribe-section().hidden-xs
 	else
-		+subscribe-section-big()
-	+categories-promo()
-	+reasons()
+		+subscribe-section-big().hidden-xs
+	+categories-promo().hidden-xs
+	+reasons().hidden-xs
 

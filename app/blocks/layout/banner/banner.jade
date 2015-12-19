@@ -1,7 +1,7 @@
 include ../content/content
 
 mixin banner-small()
-	+b('a')(href=jv0).banner-small
+	+b('a')(href=jv0).banner-small&attributes(attributes)
 		+e('strong').strong Как выбрать
 		+e('span').text мобильный телефон?
 
@@ -12,7 +12,7 @@ mixin banner-medium()
 			+e('span').text мобильный телефон?
 
 mixin banner-big()
-	+content-outer()
+	+content-outer()&attributes(attributes)
 		.col-md-6
 			+b.banner-big
 				+e('img')(src="./assets/images/guy-with-htc-background.png", alt="background").background
