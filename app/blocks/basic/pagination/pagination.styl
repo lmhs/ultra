@@ -1,6 +1,11 @@
 .pagination
 	border-radius 0
+	font-size 0
 	& > li
+		display inline-block
+		+below(2)
+			margin-right 18px
+
 		& > a
 			border-top-width 4px
 			padding 5px 0 5px
@@ -11,6 +16,17 @@
 			font-size 18px
 			position relative
 			z-index 1
+			+below(2)
+				color #e14013
+				padding 0
+				width 40px
+				height 40px
+				line-height 40px
+				border-top-width 1px
+				border 1px solid #a1a1a1
+				border-radius 2px
+
+
 			&::before
 				content ''
 				width 1px
@@ -19,6 +35,9 @@
 				left -1px
 				top 0
 				bottom -1px
+				+below(2)
+					content none
+
 			&::after
 				content ''
 				width 1px
@@ -27,12 +46,36 @@
 				right -1px
 				top 0
 				bottom -1px
+				+below(2)
+					content none
+
 			&:hover
 				&::before
 				&::after
 					background-color #ebebeb
+
+		&.active
+			& > a
+			& > span
+				&
+				&:hover
+				&:focus
+					+below(2)
+						border 1px solid #a1a1a1
+						color #A8A8A8
+		&:first-child
+			+below(2)
+				& > a
+				& > span
+					border-top-left-radius 2px
+					border-bottom-left-radius 2px
 		&:last-child
+			+below(2)
+				margin-right 0
 			& > a
 			& > span
 				border-top-right-radius 0
 				border-bottom-right-radius 0
+				+below(2)
+					border-top-right-radius 2px
+					border-bottom-right-radius 2px
