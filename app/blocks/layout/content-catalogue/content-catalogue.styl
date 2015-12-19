@@ -6,6 +6,13 @@
 	padding-left 16px
 	padding-right 20px
 	padding-bottom 98px
+	+below(2)
+		margin-left 0
+		border-left none
+		margin-right 0
+		padding-left 0
+		padding-right 0
+		padding-bottom 0
 
 	&__breadcrumb-outer
 		padding-top 4px
@@ -31,10 +38,26 @@
 	&__pagination-wrap
 		margin-top 11px
 		text-align center
+		+below(2)
+			margin-top 0
+			.pagination
+				margin-top 23px
+				margin-bottom 43px
 
 	&__items-wrap
 		padding-top 25px
+		+below(2)
+			background-color #F5F5F5
+			margin-left -20px
+			margin-right -20px
+			padding-left 20px
+			padding-right 20px
+			padding-bottom 80px
+			border-bottom 1px solid #c0c0c0
 
 	&__load-more-wrap
 		margin-top 60px
 		text-align center
+		+below(2)
+			margin-top -74px
+			margin-bottom 20px
