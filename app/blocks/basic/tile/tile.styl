@@ -10,6 +10,10 @@
 			padding-bottom calc(75% - 6px)
 		+below(2)
 			padding-bottom 100%
+		.showcase__tile&
+			+below(2)
+				padding-bottom 0
+				height 80px
 	&-4x2
 		padding-bottom calc(50% - 6px)
 		+tablet()
@@ -63,6 +67,19 @@
 		&--bottom
 			border-bottom 4px solid #f8f8f8
 
+			.showcase__tile &
+				+below(2)
+					border 1px solid #CDCDCD
+					border-bottom-width 4px
+					border-bottom-color #CDCDCD
+
+
+
+			.showcase__tile.tile-2x1 &
+				+below(2)
+					border-left-width 4px
+					border-bottom-width 1px
+
 		.tile-2x2 &
 		.tile-4x2 &
 			text-align center
@@ -71,6 +88,8 @@
 			padding 0
 			display block
 			padding-right 20px
+
+		.tile-2x1:not(.showcase__tile) &
 			+below(4)
 				display table
 				text-align center
@@ -108,6 +127,12 @@
 			width 50%
 			overflow hidden
 			display block
+
+		.tile-2x1.showcase__tile &
+			+below(2)
+				width 80px
+
+		.tile-2x1:not(.showcase__tile) &
 			+below(4)
 				display table-row
 				width auto
@@ -130,18 +155,28 @@
 			padding 0
 			padding-bottom 100%
 
-			+below(4)
-				display table-cell
-				padding 0
-
 			img
 				position absolute
 				top 0
 				right 0
 				bottom 0
 				left 0
-				+below(4)
-					position static
+
+				.tile-2x1:not(.showcase__tile) &
+					+below(4)
+						position static
+
+		.tile-2x1.showcase__tile &
+			+below(2)
+				border 10px solid rgba(0, 0, 0, 0)
+				padding-bottom calc(100% - 20px)
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				display table-cell
+				padding 0
+
+
 
 
 
@@ -154,6 +189,12 @@
 			display table
 			height 100%
 			width 50%
+		.tile-2x1.showcase__tile &
+			+below(2)
+				width calc(100% - 80px)
+
+
+		.tile-2x1:not(.showcase__tile) &
 			+below(4)
 				float none
 				display table-row
@@ -179,6 +220,8 @@
 		.showcase__tile.tile-4x2 &
 			font-weight semibold
 			font-size 24px
+			+below(2)
+				font-size 18px
 
 		.showcase__tile.tile-2x2 &
 			text-align left
@@ -201,14 +244,19 @@
 			display table-cell
 			vertical-align middle
 			font-size 24px
+			small
+				font-size 18px
+
+				.tile-2x1:not(.showcase__tile) &
+					+below(4)
+						font-size 14px
+
+		.tile-2x1:not(.showcase__tile) &
 			+below(4)
 				display block
 				padding-top 20px
 				font-size 20px
-			small
-				font-size 18px
-				+below(4)
-					font-size 14px
+
 
 		.tile-4x2 &
 			font-size 28px

@@ -4,9 +4,9 @@ include ../../basic/tag/tag
 include ../../basic/button/button
 
 mixin live()
-	section.live
+	section.live&attributes(attributes)
 		.live__head
-			.container-20
+			.container-20-outer
 				.row-20
 					.col-md-20-5
 						h1.live__heading ULTRA.BY в прямом эфире
@@ -15,7 +15,7 @@ mixin live()
 								span.live__count  247
 								|  покупателей онлайн
 		.live__body
-			.container-20
+			.container-20-outer
 				.row-20.js-live-carousel
 					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 						+product({

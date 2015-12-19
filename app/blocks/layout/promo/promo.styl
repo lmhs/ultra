@@ -125,6 +125,8 @@
 .slide
 	height 460px
 	overflow hidden
+	+below(2)
+		height auto
 	&-item
 		overflow hidden
 		position relative
@@ -135,6 +137,12 @@
 		left 0
 		right 0
 		padding 100px 62px 77px
+		margin-bottom 53px
+		+below(2)
+			position static
+			background-color #1e1e1e
+			text-align center
+			padding 17px
 	&__heading
 		font-size 46px
 		line-height 1.2
@@ -144,6 +152,12 @@
 		margin-bottom 87px
 		+tablet()
 			font-size 40px
+		+below(2)
+			font-size 16px
+			text-transform uppercase
+			color #fffefe
+			margin-bottom 13px
+			text-align center
 		small
 			text-transform none
 			font-size 32px
@@ -154,8 +168,38 @@
 			+tablet()
 				font-size 24px
 				font-weight regular
+			+below(2)
+				font-size 12px
+				font-weight regular
+				color #fffefe
+
 	&__btn
+		&--review
+			+below(2)
+				border 1px solid #fff
+
+				font-size 14px
+				text-transform uppercase
+				font-weight regular
+				color #FFF
+				background none
+				.btn-more__icon
+					display none
+		&--pick
+			+below(2)
+				position absolute
+				bottom 0
+				left 0
+				right 0
+				background-color #E14013
+				font-size 14px
+				font-weight semibold
+				text-transform uppercase
+				padding-top 12px
+				padding-bottom 13px
 		& + &
 			margin-left 10px
+			+below(2)
+				margin-left 0
 
 

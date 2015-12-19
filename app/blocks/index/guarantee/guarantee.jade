@@ -3,9 +3,14 @@ include ../../layout/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
+include ../../layout/nav-main/nav-main
 
 mixin guarantee()
-	+content()
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main()
+	+content-outer()
 		.inner.inner--w1360
 			.col-md-6
 				+breadcrumb(['Главная', pageTitle])

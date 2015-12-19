@@ -6,8 +6,13 @@ include ../../layout/subscribe-section-big/subscribe-section
 include ../../layout/subscribe-section/subscribe-section
 include ../../layout/categories-promo/categories-promo
 include ../../layout/banner/banner
+include ../../layout/nav-main/nav-main
 
 mixin catalogue(type)
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main()
 	+catalogue-section(type)
 	if type === 'banner'
 		+banner-big()

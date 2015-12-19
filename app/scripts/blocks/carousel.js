@@ -22,8 +22,13 @@ import $ from 'jquery';
 		{
 			breakpoint: 720,
 			settings: {
-				infinite: true,
 				arrows: false
+			}
+		},{
+			breakpoint: 480,
+			settings: {
+				arrows: true,
+				dots: false
 			}
 		}]
 	});
