@@ -3,21 +3,22 @@ include ../banner/banner
 include ../../basic/nav-tabs/nav-tabs
 include ../../basic/pagination/pagination
 include ../../basic/product/product
+include ../../layout/select-sm/select-sm
 
 mixin content-catalogue(type)
 	+b.content-catalogue
-		+e.breadcrumb-outer
+		+e.breadcrumb-outer.hidden-xs
 			+breadcrumb(['Главная', 'Фото, телефония, мультимедиа', 'Телефония', 'Мобильные телефоны'])
 		+e.head
 			if type === 'banner'
-				+e.banner-outer
+				+e.banner-outer.hidden-xs
 					+banner-medium().content-catalogue__banner-medium
 					+banner-horizontal().content-catalogue__banner-horizontal
 			else
-				+e.banner-small-outer
+				+e.banner-small-outer.hidden-xs
 					+banner-small()
-			+e('h1').heading Мобильные телефоны
-			+e.subheader
+			+e('h1').heading.hidden-xs Мобильные телефоны
+			+e.subheader.hidden-xs
 				+navSubheaderSmall({
 									links: [
 										{
@@ -59,8 +60,14 @@ mixin content-catalogue(type)
 								}).js-subheader-filter-tab
 		+e.body
 			+e.items-wrap.js-catalogue-items
+				.row.visible-xs
+					.col-xs-6
+						+e.heading-filter
+							+e.txt Вывод товаров
+							.categories__select-sm-wrap
+								+select-sm()
 				.row
-					.col-md-25-1.col-sm-25-2
+					.col-md-25-1.col-sm-25-2.col-xs-2.product__col
 						+product({
 												labels: ['new','hot'],
 												type: 'basic',
@@ -79,7 +86,7 @@ mixin content-catalogue(type)
 												oldPrice: '44 443 334 BYR',
 												present: true
 						})
-					.col-md-25-1.col-sm-25-2
+					.col-md-25-1.col-sm-25-2.col-xs-2.product__col
 						+product({
 												labels: ['new', 'discount', 'hit'],
 												type: 'basic',
@@ -98,7 +105,7 @@ mixin content-catalogue(type)
 												oldPrice: '44 443 334 BYR',
 												present: true
 						})
-					.col-md-25-1.col-sm-25-2
+					.col-md-25-1.col-sm-25-2.col-xs-2.product__col
 						+product({
 												labels: ['new','discount'],
 												type: 'basic',
@@ -120,7 +127,7 @@ mixin content-catalogue(type)
 												oldPrice: '44 443 334 BYR',
 												present: true
 						})
-					.col-md-25-1.col-sm-25-2
+					.col-md-25-1.col-sm-25-2.col-xs-2.product__col
 						+product({
 												labels: ['new','discount'],
 												type: 'basic',

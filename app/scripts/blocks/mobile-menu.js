@@ -34,10 +34,8 @@ import $ from 'jquery';
 			},
 			closeClickFn = function( ev ) {
 				resetMenu();
-				consoele.log('close');
 				menu.off( eventtype, '.header-mobile-menu__overlay' );
 			};
-		console.log(trigger);
 
 		var overlay = $('<div class="header-mobile-menu__overlay"></div>');
 		menu.append(overlay);
@@ -45,8 +43,6 @@ import $ from 'jquery';
 		trigger.on(eventtype, function( ev ) {
 			ev.stopPropagation();
 			ev.preventDefault();
-
-			console.log('clicked');
 
 			if (menu.hasClass('is-opened')) {
 				resetMenu();

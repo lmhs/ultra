@@ -11,6 +11,8 @@
 	height 22px
 
 	position relative
+	+below(2)
+		border-radius 0
 
 	&::before
 		visibility visible
@@ -23,6 +25,8 @@
 		border 1px solid #e1e1e1
 		border-radius 2px
 		cursor pointer
+		+below(2)
+			border-radius 0
 
 	&::after
 		position absolute
@@ -74,3 +78,5 @@ input[type='checkbox'].checkbox-element
 	&:hover
 		.aside-catalogue-section__pseudo
 			border-bottom-style solid
+			+below(2)
+				border-bottom-style none

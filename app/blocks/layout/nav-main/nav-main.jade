@@ -1,0 +1,9 @@
+include ../../basic/nav/nav
+include ../content/content
+
+mixin nav-main()
+	if !order
+		.main__nav-wrap&attributes(attributes)
+			+content-outer()
+				.col-md-6
+					+nav(getData('navigation')[0],'main')#js-top-menu.nav-list--inline.clearfix

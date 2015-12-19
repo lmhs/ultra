@@ -4,17 +4,22 @@ include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
 include ../../basic/phone/phone
+include ../../layout/nav-main/nav-main
 
 mixin registered()
-	+content()
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main()
+	+content-outer()
 		.col-md-6
 			+breadcrumb(['Главная', pageTitle])
 	section.credit__head
-		+content()
+		+content-outer()
 			.col-md-6
 				h1.credit__heading-main Кредит
 	section.credit__intro
-		+content()
+		+content-outer()
 			.col-md-6
 				.credit__headlines.cf
 					.credit__headlines-left
@@ -23,11 +28,11 @@ mixin registered()
 					.credit__headlines-right
 						h3.credit__intro__heading-light Кредит За 30 минут
 	section.credit__conditions
-		+content()
+		+content-outer()
 			.col-md-6
 				//- .inner.inner--w1100
 				h2.credit__conditions__heading Условия приобретения товара в кредит
-		+content()
+		+content-outer()
 			.col-md-3
 				.conditions-wrap.cf
 					.conditions.push-right
@@ -67,7 +72,7 @@ mixin registered()
 									li при приобретении товара стоимостью свыше 14 000 000 BYR — 10% от стоимости
 
 	section.credit__documents
-		+content()
+		+content-outer()
 			.col-md-2
 				h1.h1--red.documents__heading Документы
 					small необходимые при оформлении кредита
@@ -76,13 +81,13 @@ mixin registered()
 
 
 	section.credit__location
-		+content()
+		+content-outer()
 			.col-md-6
 				h2.credit__location__heading Место оформления кредита
 		.credit__location-map
 			<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=FhX9G4kYS8Rdm3YQ0A8_WP4a0Jqu6IcG&width=100%&height=100%&lang=ru_RU&sourceType=constructor"></script>
 	section.help
-		+content()
+		+content-outer()
 			.col-md-4.col-md-offset-1
 				//- .inner.inner--w900
 				.help__center

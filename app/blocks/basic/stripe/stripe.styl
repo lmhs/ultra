@@ -19,9 +19,14 @@
 		display block
 
 		font-weight extrabold
+		+below(3)
+			font-size 26px
 	&__span
 		font-size 24px
 		font-weight light
+		+below(3)
+			font-size 19px
+			font-weight normal
 	&::before
 		content ''
 		position absolute
@@ -45,6 +50,8 @@
 	position absolute
 	left 84px
 	top -4px
+	+below(2)
+		left 0
 
 
 

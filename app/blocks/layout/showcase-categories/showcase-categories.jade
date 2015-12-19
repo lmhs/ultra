@@ -3,7 +3,7 @@ include ../category-tile/category-tile
 
 mixin showcase-categories()
 	section.showcase__categories
-		+content()
+		+content-outer()
 			.col-md-2
 				+category-tile({
 												title: 'Крупная бытовая техника',
@@ -54,8 +54,8 @@ mixin showcase-categories()
 				+category-tile({
 												type: 'super offer',
 												title: 'Посудомоечная машина Electrolux ESL94300LO'
-				})
+				}).category-tile--super-offer
 				+category-tile({
 												type: 'assistant'
-				})
+				}).hidden-xs
 
