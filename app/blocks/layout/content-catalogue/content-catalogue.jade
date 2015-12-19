@@ -3,6 +3,7 @@ include ../banner/banner
 include ../../basic/nav-tabs/nav-tabs
 include ../../basic/pagination/pagination
 include ../../basic/product/product
+include ../../layout/select-sm/select-sm
 
 mixin content-catalogue(type)
 	+b.content-catalogue
@@ -59,6 +60,12 @@ mixin content-catalogue(type)
 								}).js-subheader-filter-tab
 		+e.body
 			+e.items-wrap.js-catalogue-items
+				.row.visible-xs
+					.col-xs-6
+						+e.heading-filter
+							+e.txt Вывод товаров
+							.categories__select-sm-wrap
+								+select-sm()
 				.row
 					.col-md-25-1.col-sm-25-2.col-xs-2.product__col
 						+product({

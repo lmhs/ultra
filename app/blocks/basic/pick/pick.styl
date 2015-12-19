@@ -9,6 +9,18 @@
 	left calc( 100% - 38px)
 	z-index 1000
 	white-space nowrap
+
+	+below(2)
+		background-color rgba(0, 0, 0, .75)
+		border none
+		left -12px
+		right -12px
+		padding 8px 20px
+		border-radius 0
+		display table
+		width calc(100% + 24px)
+
+
 	&::before
 		content ''
 		position absolute
@@ -20,6 +32,8 @@
 		border-style solid
 		border-width 7.5px 8px 7.5px 0
 		border-color transparent #b2b3b3 transparent transparent
+		+below(2)
+			content none
 	&::after
 		content ''
 		position absolute
@@ -31,9 +45,18 @@
 		border-style solid
 		border-width 7.5px 8px 7.5px 0
 		border-color transparent #E1E1E1 transparent transparent
+		+below(2)
+			content none
 	&__text
 		font-size 13px
 		color #111
 		vertical-align baseline
+		+below(2)
+			display table-cell
+			vertical-align middle
+			color #FFF
+			font-size 14px
+			padding-right 10px
+			margin-right 200px
 	&__close-link
 		vertical-align middle

@@ -2,41 +2,109 @@
 	background #FFF
 	margin-left -20px
 	margin-right 9px
+	+below(2)
+		margin-left 0
+		margin-right 0
+		padding-bottom 20px
+
+	&__heading
+		margin-left -20px
+		margin-right -20px
+		padding-left 20px
+		padding-right 20px
+		padding-top 16px
+		margin-top 0
+		margin-bottom 0
+		border-top 1px solid #c6c6c6
+
+	&__title--price
+		color #252525
+		font-size 14px
+		line-height 1
+		margin-top 10px
+		margin-bottom 13px
+
+	&__price
+		.aside-catalogue-section__inputs-wrap
+			padding-top 0
+			padding-bottom 0
 
 	&__section
 		border-bottom 3px solid #F6F6F6
+		+below(2)
+			margin-bottom 15px
+			border-bottom none
+
 		&--filters
 			padding 30px 20px 50px
+			+below(2)
+				padding 3px 0 7px
+				border-bottom none
 	&__strong
 		font-size 14px
 		font-weight semibold
 		display block
 		margin-bottom 2px
+		+below(2)
+			font-size 13px
+			font-weight regular
+			margin-bottom 6px
 	&__tags
 		clearfix()
 		padding-bottom 17px
+		+below(2)
+			padding-bottom 0
 		&-clear
 			&-icon
 				margin-right 5px
 				margin-bottom 5px
 				vertical-align bottom
+				+below(2)
+					sprite($icon_close_red_12x12)
+					vertical-align baseline
+					margin-bottom 0
 			&-action
 				color #CCC
 				font-size 14px
 			&-text
 				text-decoration underline
 				vertical-align bottom
+				+below(2)
+					color #F44336
+					text-decoration none
 
 	&-section
 		&__inputs-wrap
 			padding-top 27px
 			padding-bottom 21px
+			+below(2)
+				font-size 0
 		&__input
 			display inline-block
 			vertical-align top
 			height 32px
 			line-height 32px
 			margin-bottom 6px
+			+below(2)
+				position relative
+				height 40px
+				line-height 40px
+				width 50%
+				padding-right 6px
+				& + &
+					padding-left 6px
+					&::before
+						content '-'
+						font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+						font-size 16px
+						line-height 40px
+						position absolute
+						width 12px
+						left -3px
+						top 0
+				.input-money-label
+					font-size 16px
+					top 12px
 			&-text
 				font-size 13px
 				color #999
@@ -44,6 +112,8 @@
 				float left
 			&-money
 				margin-left 24px
+				+below(2)
+					margin-left 0
 				.input-money
 					margin-left 0
 			&-field
@@ -51,9 +121,14 @@
 				line-height 32px
 				padding-right 40px
 				width 100%
+				+below(2)
+					height 40px
+					line-height 40px
 		&__pseudo
 			display inline-block
 			border-bottom 1px dashed #555
+			+below(2)
+				border-bottom none
 		&__count
 			color #ccc
 
@@ -65,3 +140,6 @@
 		padding-top 30px
 		padding-bottom 30px
 
+.catalogue__title-heading
+	margin-top 16px
+	margin-bottom 0
