@@ -5,8 +5,8 @@ include ../../basic/button/button
 mixin category-tile(args)
 	.category-tile&attributes(attributes)
 		if args.type === 'super offer'
-			.category-tile__head
-			.category-tile__body
+			.category-tile__head.category-tile__head--super-offer
+			.category-tile__body.category-tile__body--super-offer
 				.category-tile-super__img-wrap
 					.category-tile-super__img-outer
 						img(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image",width="800",height="600", alt="placeholder+image").category-tile-super__img
@@ -18,13 +18,14 @@ mixin category-tile(args)
 						span.category-tile__title
 							| !{args.title}
 					+product-rating().category-tile__rating
-					.category-tile__actions
+					.category-tile__actions.category-tile__actions--super-offer
 						.category-tile__price
 							s.category-tile__price-old 6 000 500 BYR
 							strong.category-tile__price-special 5 023 550 BYR
 						.category-tile__btn-wrap
 							+button().btn-sm.btn--red.btn-block.category-tile__buy-btn
 								| Купить
+								span.visible-xs-inline  сейчас!
 
 		else if args.type === 'assistant'
 			.category-tile__head
@@ -42,7 +43,7 @@ mixin category-tile(args)
 
 		else if args.type === 'columns'
 			.category-tile__head
-				a(href=jv0)
+				a(href=jv0).category-tile__head-link
 					h6.category-tile__heading
 						| !{args.title}
 			.category-tile__body.category-tile__body--columns
@@ -57,7 +58,7 @@ mixin category-tile(args)
 
 		else
 			.category-tile__head
-				a(href=jv0)
+				a(href=jv0).category-tile__head-link
 					h6.category-tile__heading
 						| !{args.title}
 			.category-tile__body

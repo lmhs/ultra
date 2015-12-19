@@ -14,6 +14,8 @@
 			right calc(100% - 51px)
 			background  url(../images/pattern-color-55.png) 100% center no-repeat
 			background-size 167px 55px
+			+below(3)
+				display none
 			&::before
 				content ''
 				position absolute
@@ -33,12 +35,21 @@
 		font-weight bold
 		text-transform uppercase
 		margin-left 260px
+		+below(3)
+			font-size 16px
+			font-weight extrabold
+		+at(3)
+			margin-left 210px
+		+below(2)
+			margin-left 130px
 		small
 			margin-top 0
 			font-size 16px
 			font-weight normal
 			text-align left
 			text-transform none
+			+below(3)
+				font-size 13px
 	&__body
 		padding-top 18px
 		padding-bottom 60px

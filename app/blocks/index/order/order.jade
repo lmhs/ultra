@@ -14,11 +14,11 @@ include ../../basic/checkbox/checkbox
 
 mixin order()
 	section.order__head
-		+content()
+		+content-outer()
 			.col-md-6
 				h1.order__heading !{pageTitle}
 	section.order__body
-		+content()
+		+content-outer()
 			.col-md-4
 				.order__form-wrap
 					form.order__form.form-horisontal
@@ -106,7 +106,7 @@ mixin order()
 							li Дешевая доставка по РБ
 	+pattern()
 	section.order__items
-		+content()
+		+content-outer()
 			.col-md-6
 				.order__items__text
 					strong Вы заказываете
