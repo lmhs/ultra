@@ -131,6 +131,31 @@ mixin order()
 						ul.default-ul.order__delivery__default-ul
 							li Бесплатная доставка по Минску
 							li Дешевая доставка по РБ
+				+b('section').order-info
+					+e('h6').heading.small Оформление заказа не обязывает к покупке
+					+e('p').text
+						| Заказ будет направлен вам только после подтверждения по телефону.
+					+e('p').text
+						| Менеджер свяжется с вами для уточнения деталей в течении 30 минут после оформления заказa.
+					+e.promo
+						.media.categories-promo__tile-link__inner
+							.media-left.media-middle.categories-promo__tile__img
+								i.icon-wire-transfer
+							.media-body.categories-promo__tile__body
+								h5.media-heading.categories-promo__tile__heading
+									| Гарантия возврата денег
+								p.categories-promo__tile__text
+									| Выгодные условия кредита.
+									| Не откладывай на потом!
+						.media.categories-promo__tile-link__inner
+							.media-left.media-middle.categories-promo__tile__img
+								i.icon-security.categories-promo__tile__icon-security
+							.media-body.categories-promo__tile__body
+								h5.media-heading.categories-promo__tile__heading
+									| Сделка без рисков
+								p.categories-promo__tile__text
+									| Плати наличными при получении или денежным переводом
+
 	+pattern().visible-md-block.visible-lg-block
 	section.order__items.visible-md-block.visible-lg-block
 		+content-outer()
