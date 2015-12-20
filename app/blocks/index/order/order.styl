@@ -14,8 +14,8 @@
 			margin-top 23px
 			margin-bottom 13px
 		+mobile()
-			margin-top 38px
-			margin-bottom 10px
+			margin-top 18px
+			margin-bottom 17px
 
 	&__body
 		padding-bottom 50px
@@ -82,6 +82,12 @@
 				top -25px
 				width auto
 
+		+below(2)
+			.help-block--inline
+				display none
+			.help-block-city--inline
+				display block
+
 		&__foot
 			padding-top 30px
 			padding-bottom 20px
@@ -111,11 +117,15 @@
 			width 60%
 			+at(3)
 				text-align right
+			+below(2)
+				width 100%
 		&__submit-btn--mobile
 			text-transform uppercase
 			font-weight semibold
 			padding-top 9px
 			padding-bottom 9px
+			+below(2)
+				width 100%
 		&__return-link
 			margin-top 20px
 			display inline-block
@@ -141,9 +151,13 @@
 				margin-bottom 0
 			.radio--express
 				margin-top 0
-			.radio--self-pickup
+		.radio--self-pickup
+			+below(4)
 				margin-top 0
 				margin-bottom 5px
+			+below(2)
+				margin-bottom 0
+
 
 		+tablet()
 			.form-group
@@ -155,9 +169,18 @@
 			margin-top 11px
 			display inline-block
 			z-index 1050
+
 			+below(4)
 				margin-top 4px
-
+			+below(2)
+				&.right
+					display block
+					float none
+					position static
+					margin-left 10px
+					margin-top -3px
+					.tooltip-inner
+						display inline
 			.tooltip-inner
 				border-radius 0
 				padding-top 2px
@@ -167,6 +190,8 @@
 					color #E14013
 					text-transform uppercase
 					font-size 11px
+
+
 			&-arrow
 				top 50%
 				+below(4)
@@ -181,6 +206,8 @@
 			+below(4)
 				height 40px
 				line-height 40px
+			+below(2)
+				width 100%
 		&__price
 			display inline-block
 			color #292929
