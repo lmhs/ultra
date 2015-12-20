@@ -7,6 +7,18 @@
 		font-weight bold
 		font-size 20px
 		line-height 64px
+		+tablet()
+			height 48px
+			line-height 48px
+			font-size 18px
+			color #010101
+		+mobile()
+			background none
+			font-size 18px
+			color #010101
+			line-height 1
+			height auto
+
 	&__number
 		width 76px
 		height 66px
@@ -19,9 +31,41 @@
 		font-size 24px
 		float left
 		margin-right 39px
+		+tablet()
+			border-left none
+			width 57px
+			height 48px
+			font-size 18px
+			line-height 48px
+			border-left none
+			margin-right 18px
+		+mobile()
+			background none
+			font-size 18px
+			color #010101
+			line-height 1
+			height auto
+			width auto
+			text-align left
+			color #E14013
+			border none
+			margin-right 5px
+			&::after
+				content '. '
+
+
 	&__body
 		background-color #F6F6F6
 		// nb! в дизайне inner shadow why?
 		border-left 4px solid #eeeeee
 		padding-top 30px
 		padding-bottom 40px
+		+tablet()
+			padding-top 20px
+			padding-bottom 1px
+			border-left none
+		+mobile()
+			background none
+			border none
+			padding-top 6px
+			padding-bottom 10px
