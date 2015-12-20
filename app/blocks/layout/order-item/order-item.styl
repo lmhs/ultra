@@ -1,0 +1,168 @@
+.order-item-mobile
+	background-color #FFF
+	border 1px solid #c2c1c1
+	position relative
+	margin-bottom 20px
+
+	&__close
+		position absolute
+		top 0px
+		right 0px
+
+		&-link
+			display block
+			width 40px
+			height 40px
+			line-height 40px
+			text-align center
+
+	&__image-outer
+		float right
+		+tablet()
+			width 126px
+			float left
+			margin-left 6px
+		+mobile()
+			margin-right 30px
+		+at(3)
+			width 140px
+		+below(2)
+			width 110px
+	&__image-wrap
+		position relative
+		display block
+		padding 0
+		padding-bottom calc(100%)
+	&__image
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		max-width 100%
+		max-height 100%
+		margin auto
+		transform translateZ(0)
+
+	&__info-outer
+		+tablet()
+			margin-left 132px
+			padding-bottom 16px
+		+at(3)
+			margin-right 180px
+			padding-bottom 17px
+		+mobile()
+			padding-left 16px
+			padding-bottom 19px
+
+	&__head
+		padding-top 10px
+		padding-right 30px
+		+mobile()
+			padding-right 0
+
+	&__body
+		font-size 0
+		+tablet()
+			margin-top 20px
+		+at(3)
+			margin-top 4px
+		+below(2)
+			clear right
+
+
+	&__description__name
+		font-size 14px
+		color #111
+		+tablet()
+			font-size 16px
+	&__description__price
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 12px
+		color #E14013
+		line-height 1
+		font-weight semibold
+		+tablet()
+			font-size 16px
+		+mobile()
+			display block
+	&__description__text
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 12px
+		line-height 1.2
+		color #555
+		display block
+		+tablet()
+			font-size 14px
+			font-family $font-family-sans-serif
+		+at(3)
+			margin-top 2px
+
+	&__count
+	&__extra
+		display inline-block
+		vertical-align top
+		width 50%
+		+mobile()
+			display block
+			width 100%
+
+	&__count
+		+at(3)
+			margin-top 7px
+
+	&__extra
+		font-size 13px
+
+		.checkbox
+			margin-top 0
+			+mobile()
+				margin-top 20px
+
+	&__checkbox__text
+		display block
+		line-height 1.2
+		+mobile()
+			display none
+		strong
+			font-weight semibold
+			color #333
+			color #E14013
+
+	&__link-more
+		color #333
+		font-weight semibold
+		border-bottom-style dotted
+		border-bottom-color #333
+		&:hover
+		&:active
+		&.active
+		&:focus
+			color #333
+			border-bottom-style solid
+			border-bottom-color #333
+
+
+	&__select-sm-wrap
+		// width 80px
+		display inline-block
+		vertical-align top
+		margin-right 14px
+		width 74px
+
+		&.select-sm-wrap .select2-container .select2-selection--single .select2-selection__rendered
+			padding-left 9px
+			padding-right 23px
+
+	&__total
+		display inline-block
+		vertical-align top
+		line-height 1
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 14px
+		color #111
+		padding-top 4px
+		&-price
+			display block
+			font-size 18px
+			color #E14013

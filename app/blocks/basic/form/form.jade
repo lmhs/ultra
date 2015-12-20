@@ -87,10 +87,10 @@ mixin input-horizontal(args)
 	- if (args.name)
 		- var label= args.name
 	.form-group
-		label.control-label.col-sm-1(
+		label.control-label.col-sm-20-1(
 			for=attributes.id ? attributes.id : null,
 			class=args.required ? 'is-required' : '') #{label}
-		.col-sm-4
+		.col-sm-20-4
 			input.form-control(
 				type=args.type ? args.type : 'text'
 				name=args.name ? args.name : null
@@ -132,8 +132,8 @@ mixin checkbox-inline(text)
 mixin radio(args)
 	- if (args.text)
 		- var label= args.text
-	.radio
-		label&attributes(attributes)
+	.radio&attributes(attributes)
+		label
 			input(
 			type="radio",
 			name=args.name ? args.name : null).radio-element

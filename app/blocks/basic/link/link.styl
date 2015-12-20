@@ -216,6 +216,22 @@
 	margin-top 0
 	margin-bottom 0
 	font-style normal
+	+below(4)
+		font-size 13px
+
+		&
+		&:hover
+		&:active
+		&.acitve
+		&:focus
+			color #333
+			border-bottom-color #333
+
+	+tablet()
+		font-weight light
+
+	+mobile()
+		font-weight semibold
 
 .order__return-link
 	font-size 12px

@@ -1,0 +1,29 @@
+mixin order-item()
+	+b.order-item-mobile
+		+e.close
+			+link().order-item-mobile__close-link.js-remove-item
+				+e('i').icon-trash.icon-trash
+		+e.image-outer
+			+e.image-wrap
+				+e('img')(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image").image
+		+e.info-outer
+			+e.head
+				a(href="/index-good.html")
+					+e('strong').description__name Nokia Lumia 630 Yellow (Black)
+					+e('span').description__price 1 950 000 BYR
+					+e('span').description__text Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM
+			+e.body
+				+e.count
+					+e.select-sm-wrap.select-sm-wrap
+						+select-sm-count()
+					+e.total
+						| Итого:
+						+e('strong').total-price 1 950 000 BYR
+				+e.extra
+					.checkbox
+						label
+							input.checkbox-element(type='checkbox')
+							+link().link--pseudo.order-item-mobile__link-more Дополнительный сервис
+							+e('span').checkbox__text
+								strong + 150 400 BYR
+
