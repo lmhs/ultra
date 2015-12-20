@@ -187,3 +187,28 @@
 
 .order-item__icon-trash
 	vertical-align top
+
+
+.order-items-text-mobile
+	background-color #FFECB3
+	border-bottom 1px solid #FFCA28
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+
+	&__inner
+		padding 10px 0 8px
+	&__text
+		font-size 14px
+		color #000
+		line-height 1
+
+		+below(3)
+			display block
+	&__strong
+		line-height 1
+		+tablet()
+			font-size 14px
+			font-weight semibold
+			color #E14013
+		+mobile()
+			font-size 16px
+			color #000
