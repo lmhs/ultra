@@ -25,6 +25,35 @@ mixin order()
 						span.js-order-items-price 1 212 000 BYR
 	+b('section').order-items-mobile.hidden-md.hidden-lg
 		+content-outer()
+			+e.order-items
+				+b.order-item-mobile
+					+e.close
+						+link().js-remove-item
+							+e('i').icon-trash.icon-trash
+					+e.image-outer
+						+e.image-wrap
+							+e('img')(src="http://dummyimage.com/217x143/4d494d/686a82.gif&text=placeholder+image",width="217",height="143", alt="placeholder+image").image
+					+e.info-outer
+						+e.head
+							a(href="/index-good.html")
+								+e('strong').description__name Nokia Lumia 630 Yellow (Black)
+								+e('span').description__price 1 950 000 BYR
+								+e('span').description__text Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM
+						+e.body
+							+e.count
+								.select-sm-wrap
+									+select-sm-count()
+							+e.extra
+								.checkbox
+									label
+										input.checkbox-element(type='checkbox')
+										+e('span').checkbox__text
+											span Продлить гарантию еще на 1 год !{''}
+											strong + 50 400 BYR
+										+link().link--pseudo.order-item-mobile__link-more узнать подробнее
+
+
+
 
 	section.order__head
 		+content-outer()
@@ -45,8 +74,8 @@ mixin order()
 								label.control-label.col-sm-1
 									| Город
 								.col-sm-4
-									.categories__select-sm-wrap.order__form__input
-										+select-sm()
+									.select-sm-wrap.order__form__input
+										+select-city()
 									//- +select-sm().order__form__input
 									//- select.form-control.order__form__input
 									//- 	option
@@ -168,7 +197,7 @@ mixin order()
 								+inputNumber({value:"2",min:"0",max:"999"})#id1
 							td.order__table__total-value 712 000 BYR
 							td
-								+link()
+								+link().js-remove-item
 									i.icon-trash.order-item__icon-trash
 						tr
 							td
@@ -192,7 +221,7 @@ mixin order()
 								+inputNumber({value:"2",min:"0",max:"999"})#id2
 							td.order__table__total-value 712 000 BYR
 							td
-								+link()
+								+link().js-remove-item
 									i.icon-trash.order-item__icon-trash
 						tr
 							td
@@ -216,7 +245,7 @@ mixin order()
 								+inputNumber({value:"2",min:"0",max:"999"})#id3
 							td.order__table__total-value 712 000 BYR
 							td
-								+link()
+								+link().js-remove-item
 									i.icon-trash.order-item__icon-trash
 				.order__foot
 					.order__return

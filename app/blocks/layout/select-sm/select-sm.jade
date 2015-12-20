@@ -2,3 +2,39 @@ import ../../basic/select/select
 
 mixin select-sm(args)
 	+select({default:'Бытовая техника',items:getData('navigation')[0].main}).select2-container--bootstrap.select--sm.js-select-sm
+
+mixin select-city(args)
+	+select({
+						default:'Минск',
+						items:[
+										{
+											icon: 'brest',
+											name: 'Брест'
+										},{
+											icon: 'grodno',
+											name: 'Гродно'
+										},{
+											icon: 'vitebsk',
+											name: 'Витебск'
+										},{
+											icon: 'mogilev',
+											name: 'Могилев'
+										}]}).select2-container--bootstrap.select--sm.js-select-sm
+
+mixin select-sm-count(args)
+	+select({
+						default:'1 шт.',
+						items:[
+										{
+											icon: '2',
+											name: '2 шт.'
+										},{
+											icon: '3',
+											name: '3 шт.'
+										},{
+											icon: '4',
+											name: '4 шт.'
+										},{
+											icon: '5',
+											name: '5 шт.'
+										}]}).select2-container--bootstrap.select--sm.js-select-sm
