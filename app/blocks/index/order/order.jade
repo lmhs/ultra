@@ -1,4 +1,3 @@
-include ../../layout/content/content
 include ../../basic/link/link
 include ../../basic/order-form-section/order-form-section
 include ../../basic/button/button
@@ -11,6 +10,8 @@ include ../../basic/dropdown/dropdown
 include ../../basic/pattern/pattern
 include ../../basic/table/table
 include ../../basic/checkbox/checkbox
+include ../../layout/content/content
+include ../../layout/select-sm/select-sm
 
 mixin order()
 	+b('section').order-items-text-mobile.hidden-md.hidden-lg
@@ -22,6 +23,9 @@ mixin order()
 						span.js-order-items-count 2
 						|  товара на сумму !{''}
 						span.js-order-items-price 1 212 000 BYR
+	+b('section').order-items-mobile.hidden-md.hidden-lg
+		+content-outer()
+
 	section.order__head
 		+content-outer()
 			.col-md-6
@@ -41,19 +45,22 @@ mixin order()
 								label.control-label.col-sm-1
 									| Город
 								.col-sm-4
-									select.form-control.order__form__input
-										option
-											| Минск
-										option
-											| Брест
-										option
-											| Витебск
-										option
-											| Гродно
-										option
-											| Гомель
-										option
-											| Могилев
+									.categories__select-sm-wrap.order__form__input
+										+select-sm()
+									//- +select-sm().order__form__input
+									//- select.form-control.order__form__input
+									//- 	option
+									//- 		| Минск
+									//- 	option
+									//- 		| Брест
+									//- 	option
+									//- 		| Витебск
+									//- 	option
+									//- 		| Гродно
+									//- 	option
+									//- 		| Гомель
+									//- 	option
+									//- 		| Могилев
 									+helpInlineBlock
 										+link.link--pseudo.help-link--inline
 											| Нет Вашего города в списке?
@@ -66,13 +73,20 @@ mixin order()
 
 							.form-group
 								.col-sm-4.col-sm-offset-1
-									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
+									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'}).radio--with-tooltip
+									.tooltip.right.in(role='tooltip').order__form__tooltip
+										.tooltip-arrow.order__form__tooltip-arrow
+										.tooltip-inner Бесплатно
 							+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address.order__form__input
 
 							.form-group
 								.col-sm-4.col-sm-offset-1
-									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'})(data-toggle="tooltip",data-placement="right",title="Бесплатно")
+									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'}).radio--with-tooltip
+									.tooltip.right.in(role='tooltip').order__form__tooltip
+										.tooltip-arrow.order__form__tooltip-arrow
+										.tooltip-inner Бесплатно
 									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'})
+										|  !{''}
 										strong.order__form__price.js-order-price 41 612 BYR
 
 						+order-form-section(3,'Способ оплаты')
@@ -114,7 +128,7 @@ mixin order()
 							li Бесплатная доставка по Минску
 							li Дешевая доставка по РБ
 	+pattern().visible-md-block.visible-lg-block
-	section.order__items
+	section.order__items.visible-md-block.visible-lg-block
 		+content-outer()
 			.col-md-6
 				.order__items__text

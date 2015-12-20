@@ -132,8 +132,8 @@ mixin checkbox-inline(text)
 mixin radio(args)
 	- if (args.text)
 		- var label= args.text
-	.radio
-		label&attributes(attributes)
+	.radio&attributes(attributes)
+		label
 			input(
 			type="radio",
 			name=args.name ? args.name : null).radio-element
