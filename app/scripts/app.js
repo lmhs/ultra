@@ -13,6 +13,7 @@ import './blocks/sticky.js';
 import './blocks/catalogue-reason.js';
 import './blocks/header-menu.js';
 import './blocks/mobile-menu.js';
+import './blocks/maskedInput.js';
 
 $(() => {
 

@@ -77,7 +77,7 @@ mixin order()
 
 							.form-group
 								.col-sm-4.col-sm-offset-1
-									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'}).radio--with-tooltip
+									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'}).radio--with-tooltip.radio--courier
 									.tooltip.right.in(role='tooltip').order__form__tooltip
 										.tooltip-arrow.order__form__tooltip-arrow
 										.tooltip-inner Бесплатно
@@ -85,11 +85,11 @@ mixin order()
 
 							.form-group
 								.col-sm-4.col-sm-offset-1
-									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'}).radio--with-tooltip
+									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'}).radio--with-tooltip.radio--self-pickup
 									.tooltip.right.in(role='tooltip').order__form__tooltip
 										.tooltip-arrow.order__form__tooltip-arrow
 										.tooltip-inner Бесплатно
-									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'})
+									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'}).radio--express
 										|  !{''}
 										strong.order__form__price.js-order-price 41 612 BYR
 
@@ -99,12 +99,35 @@ mixin order()
 									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios'})
 									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios'})
 									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios'})
-							.form-group
+							.form-group.visible-md-block.visible-lg-block
 								.col-sm-4.col-sm-offset-1
 									+link().link--pseudo.order__form__back-link.js-return-order
 										| Вернуться назад
 									+button({type:'buttonSubmit'}).btn-lg.btn--dark.order__form__submit-btn.js-submit-order
 										| Оформить заказ
+						.order__form__foot.hidden-md.hidden-lg
+							.form-group
+								.col-sm-4.col-sm-offset-1
+									.order__form__final.hidden-xs
+										span.js-order-items-count 3
+										|  товара на сумму
+										strong.order__form__final__price 3 374 000 BYR
+									.order__form__submit-wrap
+										+button({type:'buttonSubmit'}).btn-med.btn--red.order__form__submit-btn--mobile.js-submit-order
+											| Оформить заказ
+							.form-group
+								.col-sm-4.col-sm-offset-1
+									+link().link--pseudo.link--pseudo-with-icon.order__form__return-link.js-back
+										i.icon-left-555-5x9.link__icon.order__form__return-link-icon
+										| !{''}
+										span.link__text Вернуться к покупкам
+
+
+
+
+
+
+
 			.col-md-2.visible-md-block.visible-lg-block
 				section.order__fast
 					.order__fast__inner

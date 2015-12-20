@@ -62,12 +62,88 @@
 			color #292929
 
 	&__form
+		&__foot
+			padding-top 30px
+			padding-bottom 20px
+			font-size 0
+
+		&__final
+			font-size 14px
+			color #000
+			line-height 1
+			width 40%
+			display inline-block
+			vertical-align top
+			padding-top 4px
+			&__price
+				display block
+				color #000
+				font-size 18px
+				margin-top 5px
+		&__submit-wrap
+			display inline-block
+			vertical-align top
+			width 60%
+		&__submit-btn--mobile
+			text-transform uppercase
+			font-weight semibold
+			padding-top 9px
+			padding-bottom 9px
+		&__return-link
+			margin-top 20px
+			display inline-block
+			font-size 13px
+			.link__text
+				margin-left 10px
+				&
+				&:hover
+				&.active
+				&:active
+				&:focus
+					color #555
+					border-bottom-color #555
+
+		+below(4)
+			.control-label
+				color #010101
+			.radio label
+				font-size 13px
+				line-height 25px
+			.radio--courier
+				margin-top 0
+				margin-bottom 0
+			.radio--express
+				margin-top 0
+			.radio--self-pickup
+				margin-top 0
+				margin-bottom 5px
+
+		+tablet()
+			.form-group
+				margin-bottom 20px
+		+mobile()
+			.form-group
+				margin-bottom 15px
 		&__tooltip
-			margin-top 10px
+			margin-top 11px
 			display inline-block
 			z-index 1050
+			+below(4)
+				margin-top 4px
+
+			.tooltip-inner
+				border-radius 0
+				padding-top 2px
+				padding-bottom 2px
+				+below(4)
+					background none
+					color #E14013
+					text-transform uppercase
+					font-size 11px
 			&-arrow
 				top 50%
+				+below(4)
+					display none
 		&__input
 			width 270px
 			height 44px
@@ -75,11 +151,17 @@
 			display inline-block
 			vertical-align top
 			border-color #EBEBEB
+			+below(4)
+				height 40px
+				line-height 40px
 		&__price
 			display inline-block
 			color #292929
 			font-size 14px
 			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			+below(4)
+				font-size 11px
+				color #E14013
 		&__back-link
 			// nb! PT Sans?
 			font-size 12px
