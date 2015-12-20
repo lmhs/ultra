@@ -19,6 +19,8 @@
 
 	&__body
 		padding-bottom 50px
+		+mobile()
+			padding-bottom 0
 
 	&__items
 		padding-top 50px
@@ -62,10 +64,31 @@
 			color #292929
 
 	&__form
+		.col-sm-20-4
+			padding-left 0
+			padding-right 0
+		+mobile()
+			.control-label
+				font-size 13px
+				padding-top 10px
+
+				&.is-required::after
+					top -3px
+
+			.help-block-city--inline
+				display block
+				position absolute
+				right 0
+				top -25px
+				width auto
+
 		&__foot
 			padding-top 30px
 			padding-bottom 20px
 			font-size 0
+			+mobile()
+				padding-top 0
+				padding-bottom 10px
 
 		&__final
 			font-size 14px
@@ -75,6 +98,8 @@
 			display inline-block
 			vertical-align top
 			padding-top 4px
+			+below(2)
+				display none
 			&__price
 				display block
 				color #000
@@ -84,6 +109,8 @@
 			display inline-block
 			vertical-align top
 			width 60%
+			+at(3)
+				text-align right
 		&__submit-btn--mobile
 			text-transform uppercase
 			font-weight semibold
@@ -123,7 +150,7 @@
 				margin-bottom 20px
 		+mobile()
 			.form-group
-				margin-bottom 15px
+				margin-bottom 5px
 		&__tooltip
 			margin-top 11px
 			display inline-block

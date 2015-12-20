@@ -46,9 +46,9 @@ mixin order()
 
 						+order-form-section(2,'Город и способ доставки')
 							.form-group
-								label.control-label.col-sm-1
+								label.control-label.col-sm-20-1
 									| Город
-								.col-sm-4
+								.col-sm-20-4
 									.select-sm-wrap.select-sm-city-wrap.order__form__input
 										+select-city()
 									//- +select-sm().order__form__input
@@ -65,7 +65,7 @@ mixin order()
 									//- 		| Гомель
 									//- 	option
 									//- 		| Могилев
-									+helpInlineBlock
+									+helpInlineBlock.help-block-city--inline
 										+link.link--pseudo.help-link--inline
 											| Нет Вашего города в списке?
 							//- +dropdown("Город",[
@@ -76,7 +76,7 @@ mixin order()
 							//- +input-horizontal({name:'Город',placeholder:'Город',required:true})#city.order__form__input
 
 							.form-group
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'}).radio--with-tooltip.radio--courier
 									.tooltip.right.in(role='tooltip').order__form__tooltip
 										.tooltip-arrow.order__form__tooltip-arrow
@@ -84,7 +84,7 @@ mixin order()
 							+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address.order__form__input
 
 							.form-group
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'}).radio--with-tooltip.radio--self-pickup
 									.tooltip.right.in(role='tooltip').order__form__tooltip
 										.tooltip-arrow.order__form__tooltip-arrow
@@ -95,20 +95,20 @@ mixin order()
 
 						+order-form-section(3,'Способ оплаты')
 							.form-group
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios'})
 									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios'})
 									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios'})
 							.form-group.visible-md-block.visible-lg-block
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+link().link--pseudo.order__form__back-link.js-return-order
 										| Вернуться назад
 									+button({type:'buttonSubmit'}).btn-lg.btn--dark.order__form__submit-btn.js-submit-order
 										| Оформить заказ
 						.order__form__foot.hidden-md.hidden-lg
 							.form-group
-								.col-sm-4.col-sm-offset-1
-									.order__form__final.hidden-xs
+								.col-sm-20-4.col-sm-20-offset-1
+									.order__form__final
 										span.js-order-items-count 3
 										|  товара на сумму
 										strong.order__form__final__price 3 374 000 BYR
@@ -116,7 +116,7 @@ mixin order()
 										+button({type:'buttonSubmit'}).btn-med.btn--red.order__form__submit-btn--mobile.js-submit-order
 											| Оформить заказ
 							.form-group
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+link().link--pseudo.link--pseudo-with-icon.order__form__return-link.js-back
 										i.icon-left-555-5x9.link__icon.order__form__return-link-icon
 										| !{''}
