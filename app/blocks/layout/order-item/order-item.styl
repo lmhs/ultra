@@ -1,0 +1,50 @@
+.order-item-mobile
+	background-color #FFF
+	border 1px solid #c2c1c1
+	position relative
+	margin-bottom 20px
+	padding-right 40px
+
+	&__close
+		position absolute
+		top 0px
+		right 0px
+
+		&-link
+			display block
+			width 40px
+			height 40px
+			line-height 40px
+			text-align center
+
+
+	&__description__name
+		font-size 14px
+		color #111
+		+tablet()
+			font-size 16px
+	&__description__price
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 12px
+		color #E14013
+		font-weight semibold
+		+tablet()
+			font-size 16px
+	&__description__text
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 12px
+		color #555
+		display block
+		+tablet()
+			font-size 14px
+			font-family $font-family-sans-serif
+	&__select-sm-wrap
+		width 80px
+		// width 74px
+	&__total
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 14px
+		color #111
+		&-price
+			font-size 18px
+			color #E14013
