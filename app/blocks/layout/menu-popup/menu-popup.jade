@@ -1,0 +1,91 @@
+include ../../basic/nav-tabs/nav-tabs
+
+mixin menu-popup(args)
+	.menu-popup&attributes(attributes)
+		+navMenu({
+							links: [
+								{
+									isActive: true,
+									href: '#menu0',
+									content: 'Популярные категории',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									},
+								{
+									isActive: false,
+									href: '#menu1',
+									content: 'Крупная бытовая техника',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									},
+								{
+									isActive: false,
+									href: '#menu2',
+									content: 'Техника для кухни',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									},
+								{
+									isActive: false,
+									href: '#menu3',
+									content: 'Техника для дома',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									},
+								{
+									isActive: false,
+									href: '#menu4',
+									content: 'Техника для красоты и здоровья',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									},
+								{
+									isActive: false,
+									href: '#menu5',
+									content: 'Климатическая техника',
+									class: 'js-menu-popup-nav-tab',
+									icon: 'star-fff-20x20'
+									}
+							]
+						}).menu-popup__nav-tabs.js-menu-popup-nav
+		.tab-content.menu-popup__content
+			#menu0.tab-pane.active(role='tabpanel')
+				.menu-popup__ad-wrap
+					img(src="http://dummyimage.com/245x370/4d494d/686a82.gif&text=Philips+GC+ad",width="245",height="370", alt="Philips+GC+ad")
+				.menu-popup__links
+					+link().menu-popup__link
+						span.menu-popup__title Стиральные машины
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/145x88/4d494d/686a82.gif&text=placeholder+image",width="145",height="88", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Мультиварки
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/88x88/4d494d/686a82.gif&text=placeholder+image",width="88",height="88", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Чайники
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/88x200/4d494d/686a82.gif&text=placeholder+image",width="88",height="200", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Утюги
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/145x88/4d494d/686a82.gif&text=placeholder+image",width="145",height="88", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Микроволновые печи
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/145x88/4d494d/686a82.gif&text=placeholder+image",width="145",height="88", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Пылесосы
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/88x88/4d494d/686a82.gif&text=placeholder+image",width="88",height="88", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Блендеры
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/88x200/4d494d/686a82.gif&text=placeholder+image",width="88",height="200", alt="placeholder+image").menu-popup__img
+					+link().menu-popup__link
+						span.menu-popup__title Домашние обогреватели
+						.menu-popup__img-wrap
+							img(src="http://dummyimage.com/145x88/4d494d/686a82.gif&text=placeholder+image",width="145",height="88", alt="placeholder+image").menu-popup__img
+			#menu1.tab-pane(role='tabpanel')
+				| menu1
+			#menu2.tab-pane(role='tabpanel')
+				| menu2

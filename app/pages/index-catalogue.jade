@@ -1,0 +1,13 @@
+block vars
+	- var pageId = -1;
+
+include ../blocks/index/catalogue/catalogue
+
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Каталог';
+
+block content
+	+catalogue()
+

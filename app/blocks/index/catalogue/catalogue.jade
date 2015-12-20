@@ -1,0 +1,26 @@
+include ../../layout/content/content
+include ../../layout/recent/recent
+include ../../layout/catalogue-section/catalogue-section
+include ../../layout/reasons-to-buy/reasons-to-buy
+include ../../layout/subscribe-section-big/subscribe-section
+include ../../layout/subscribe-section/subscribe-section
+include ../../layout/categories-promo/categories-promo
+include ../../layout/banner/banner
+include ../../layout/nav-main/nav-main
+
+mixin catalogue(type)
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main().hidden-xs
+	+catalogue-section(type)
+	if type === 'banner'
+		+banner-big().hidden-xs
+	+recent().hidden-xs
+	if type === 'banner'
+		+subscribe-section().hidden-xs
+	else
+		+subscribe-section-big().hidden-xs
+	+categories-promo().hidden-xs
+	+reasons().hidden-xs
+

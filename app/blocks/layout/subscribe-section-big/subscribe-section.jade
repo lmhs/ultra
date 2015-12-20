@@ -1,0 +1,38 @@
+include ../content/content
+include ../../basic/product/product
+include ../../basic/form/form
+include ../../basic/nav-tabs/nav-tabs
+include ../select-lg/select-lg
+include ../../basic/modal/modal
+
+mixin subscribe-section-big()
+	.subscribe-section-big&attributes(attributes)
+		+content()
+			.col-md-2.col-md-offset-3
+				.subscribe-section-big__girl
+				.subscribe-section-big__inner
+					.subscribe-section-big__head
+						h1.subscribe-section-big__heading Не пропусти!
+						strong.subscribe-section-big__label Закрытая распродажа
+						i.icon-padlock-30x37.subscribe-section-big__padlock-icon
+						i.icon-arrow-right-48x110.subscribe-section-big__arrow-icon
+					.subscribe-section-big__body
+						i.icon-envelope-percent-70x68.subscribe-section-big__envelope-icon
+						ul.subscribe-section-big__list
+							li.subscribe-section-big__list-item
+								strong.subscribe-section-big__list-item__strong Неприличные скидки
+							li.subscribe-section-big__list-item Узнаете раньше всех
+							li.subscribe-section-big__list-item Только для подписчиков
+						form.subscribe-section-big__form
+							h2.subscribe-section-big__form__heading Подписаться на рассылку
+							+input({
+												type: 'text',
+												placeholder: 'Имя'
+											}).subscribe-section-big__form__input
+							+input({
+												type: 'email',
+												placeholder: 'Email'
+											}).subscribe-section-big__form__input
+							+button().btn-lg.btn-block.btn--red.subscribe-section-big__form__btn
+								| Узнать о распродаже
+

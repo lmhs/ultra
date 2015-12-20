@@ -6,13 +6,30 @@
 	text-align center
 	margin-bottom 17px
 
-.product-page__head__icons
+.product-page__icons
 	font-size 0
 	text-align center
-	img
-		vertical-align bottom
-	img + img
-		margin-left 40px
+	height 40px
+	display flex
+	justify-content center
+	align-items center
+	&-wrap
+		&+& img
+			margin-left 40px
+
+
+.no-flexbox
+	.product-page__icons
+		font-size 0
+		text-align center
+		height 40px
+		display table
+		margin 0 auto
+		&-wrap
+			display table-cell
+			vertical-align middle
+			&+& img
+				margin-left 40px
 
 .product-page__offers
 	padding-bottom 50px
@@ -23,6 +40,9 @@
 		.spec__available-icon
 			sprite($icon_check_gray)
 
+.product-page__info
+	padding-top 63px
+	border-top 1px solid #e1e1e1
 
 .spec__label__caption
 	margin-top 4px
@@ -58,9 +78,7 @@
 		margin-bottom 16px
 
 .spec__available
-	font-size 11px
-	color #888
-	margin-left 4px
+	display block
 
 .spec__warranty
 	font-size 12px
@@ -85,9 +103,6 @@
 	color #888
 	border-bottom-color #888
 
-.spec__rating-stars
-	white-space nowrap
-
 .spec__rating-number
 	margin-left 11px
 	font-size 16px
@@ -101,33 +116,6 @@
 	font-size 11px
 	margin 0
 	line-height 1
-
-.spec__action-link--pseudo
-	font-size 12px
-	line-height 1.8
-	text-decoration none
-	color #888
-	display block
-	&:hover
-		color #888
-		.spec__action-link-text
-			border-bottom-style solid
-
-.spec__action-link-text
-	border-bottom 1px dashed #888
-	display inline-block
-	vertical-align bottom
-	line-height 1
-	margin-left 5px
-
-.spec__actions
-	margin-top 32px
-	margin-bottom 19px
-
-.spec__icon-price-label
-.spec__icon-price-compare
-.spec__icon-price-favorites
-	vertical-align bottom
 
 .spec__credit__link-text
 	display inline-block
@@ -198,23 +186,40 @@
 	&__left
 		padding-right 40px
 
-.product-page__similar
-	&__head
-		padding-top 68px
-		padding-bottom 31px
-		text-align center
-	&__heading
-		margin-top 0
-		margin-bottom 0
-		display inline-block
-		vertical-align top
-		margin-right 15px
-	&__tag
-		vertical-align top
-		display inline-block
-		float none
-
 .product-page__unavailable-divider
 	margin-top 15px
 	border-top 4px solid #ebebeb
 	margin-bottom 30px
+
+.product-page__tab-content
+	width 75%
+	padding-bottom 80px
+
+.product-page__aside
+	margin-top 10px
+	top 10px
+
+	&.affix
+		top 30px
+		width 250px
+		bottom 30px
+
+	&.affix-bottom
+		position absolute
+
+.sticky
+	position sticky
+
+.product-page__info__row
+	display flex
+
+.no-flexbox
+	.product-page__info__row
+		display table
+	.product-page__info__col
+		display table-cell
+		vertical-align top
+		float none
+
+
+

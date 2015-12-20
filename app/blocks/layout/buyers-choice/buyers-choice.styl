@@ -1,0 +1,59 @@
+.buyers-choice
+	background-color #F6F6F6
+	border-top 4px solid #EBEBEB
+	&__head
+		&__inner
+			position relative
+			padding-top 20px
+			padding-bottom 56px
+		&__pattern
+			position absolute
+			width 100%
+			height 55px
+			top 25px
+			right calc(100% - 51px)
+			background  url(../images/pattern-color-55.png) 100% center no-repeat
+			background-size 167px 55px
+			+below(3)
+				display none
+			&::before
+				content ''
+				position absolute
+				width 100%
+				height 55px
+				top 50%
+				margin-top -28px
+				left -167px
+				background  url(../images/pattern-color-bones-55x55.png) 100% center repeat-x
+				background-size 55px 55px
+	&__heading
+		margin-top 0
+		margin-bottom 0
+		text-align left
+		color #333
+		font-size 34px
+		font-weight bold
+		text-transform uppercase
+		margin-left 260px
+		+below(3)
+			font-size 16px
+			font-weight extrabold
+		+at(3)
+			margin-left 210px
+		+below(2)
+			margin-left 130px
+		small
+			margin-top 0
+			font-size 16px
+			font-weight normal
+			text-align left
+			text-transform none
+			+below(3)
+				font-size 13px
+	&__body
+		padding-top 18px
+		padding-bottom 60px
+
+
+
+

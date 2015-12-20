@@ -1,43 +1,87 @@
 .phone
 	font-family 'PT Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 	color #999
+	+below(4)
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight light
+		display flex
+		flex-direction column
+	+at(3)
+		flex-direction row
+		flex-wrap wrap
+	+below(3)
+		text-align center
 
-.phone__area
-.phone__number
-	font-size 52px
-	letter-spacing -4px
+	&__area
+	&__number
+		font-size 52px
+		letter-spacing -4px
+		+below(4)
+			font-size 42px
 
-.phone__area
-	margin-right 5px
+	&__area
+		margin-right 5px
 
-.phone__code
-	display inline-block
+	&__txt
+		color #D74125
+		font-size 18px
+		font-weight bold
+		margin-bottom 4px
+		display none
+		+tablet()
+			display block
+			order 1
 
-	&-item
-		font-size 14px
-		line-height 14px
-		&::before
-			content ''
-			display inline-block
-			vertical-align top
-			margin-top 1px
-			margin-right 4px
-		&--vel::before
-			sprite($icon_vel_13)
-		&--mts::before
-			sprite($icon_mts_13)
-		&--life::before
-			sprite($icon_life_13)
 
-.phone__number
-	margin-left 4px
-	color #252525
-	text-decoration none
 
-.phone__extra
-	font-size 12px
-	line-height 21px
-	color #888
+	&__code
+		display inline-block
+
+		&-item
+			font-size 14px
+			line-height 14px
+			+below(4)
+				font-size 12px
+				line-height 12px
+			&::before
+				content ''
+				display inline-block
+				vertical-align top
+				margin-top 1px
+				margin-right 4px
+				+below(4)
+					content none
+
+			&--vel::before
+				sprite($icon_vel_13)
+			&--mts::before
+				sprite($icon_mts_13)
+			&--life::before
+				sprite($icon_life_13)
+
+	&__number
+		margin-left 4px
+		color #252525
+		text-decoration none
+		&-wrap
+			+below(4)
+				order 2
+			+at(3)
+				width 280px
+
+
+	&__extra
+		font-size 12px
+		line-height 21px
+		color #888
+		display inline-block
+		+below(4)
+			order 3
+		+at(3)
+			padding-left 30px
+			text-align right
+			width calc(100% - 280px)
+
 
 .header__phone
 	float right

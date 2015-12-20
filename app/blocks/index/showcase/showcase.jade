@@ -1,0 +1,40 @@
+include ../../layout/expert/expert
+include ../../layout/promo/promo
+include ../../layout/categories/categories
+include ../../layout/breadcrumb/breadcrumb
+include ../../layout/buyers-choice/buyers-choice
+include ../../layout/subscribe-section/subscribe-section
+include ../../layout/popular-categories/popular-categories
+include ../../layout/showcase-categories/showcase-categories
+include ../../layout/live/live
+include ../../layout/nav-main/nav-main
+
+mixin showcase()
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main().hidden-xs
+	+content-outer().visible-md-block.visible-lg-block
+		.col-md-6
+			+breadcrumb(['Главная', 'Каталог товаров', 'Бытовая техника'])
+	section.showcase__category.visible-mobile
+		+content-outer()
+			.col-sm-25-2.col-xs-25-4.category__col-50p
+				strong.category__title Категория
+				.select-sm-wrap
+					+select-sm()
+			.col-sm-25-2.col-xs-25-4.category__col-50p
+				strong.category__title Подкатегория
+				.select-sm-wrap
+					+select-sm()
+	+categoriesHeader().showcase__category__header
+	+categoriesNav().showcase__category__nav
+	+promoSlides({label : 'new'})
+	+showcase-categories()
+	+buyers-choice()
+	+popular-categories()
+	+subscribe-section()
+	+live().hidden-xs
+
+
+

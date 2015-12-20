@@ -1,12 +1,81 @@
-.user__menu
+.user__block
 	float right
 
 .header-top__icon-cart
 	margin-top 2px
 	margin-right 16px
 	vertical-align top
+	position relative
 
 .header-top__icon-enter
 	margin-top 3px
 	margin-right 12px
 	vertical-align top
+
+.user-menu__menu
+	display none
+	position absolute
+	white-space nowrap
+	z-index 1
+	top 100%
+	right -8px
+	background-color #F9F9F9
+	border 1px solid #ACACAC
+	box-shadow inset 0px -4px 0px 0px #b7b7b7
+	&::before
+		content ''
+		position absolute
+		width 0
+		height 0
+		border-style solid
+		border-width 0 7.5px 8px 7.5px
+		border-color transparent transparent #acacac transparent
+		top -8px
+		right 6px
+		z-index 1
+
+
+	&::after
+		content ''
+		position absolute
+		width 0
+		height 0
+		border-style solid
+		border-width 0 5.5px 6px 5.5px
+		border-color transparent transparent #f9f9f9 transparent
+		top -6px
+		right 8px
+		z-index 2
+
+.user-menu__icon-menu
+	vertical-align top
+	margin-top 7px
+
+.user-menu__icon-quit
+	vertical-align top
+	margin-right 10px
+	margin-top 2px
+
+.user-menu__menu__text
+	vertical-align top
+
+.user-menu__icon-user
+	margin 2px 0 0
+	vertical-align top
+
+.user-menu__name
+	display inline-block
+	vertical-align top
+	margin 0 10px
+
+.header-top__menu
+	display inline-block
+	vertical-align top
+	position relative
+	margin-right 20px
+	margin-left 10px
+	&.is-opened
+		.user-menu__menu
+			display block
+		.user-menu__icon-menu
+			sprite($icon_arrow_down_e1_12x8)

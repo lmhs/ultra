@@ -1,0 +1,297 @@
+.tile
+	position relative
+	height 0
+	margin-top 12px
+	&-2x2
+		padding-bottom 100%
+	&-2x1
+		padding-bottom calc(50% - 6px)
+		+between(3,4)
+			padding-bottom calc(75% - 6px)
+		+below(2)
+			padding-bottom 100%
+		.showcase__tile&
+			+below(2)
+				padding-bottom 0
+				height 80px
+	&-4x2
+		padding-bottom calc(50% - 6px)
+		+tablet()
+			padding-bottom calc(75% - 9px)
+		+at(3)
+			padding-bottom calc(67% - 6px)
+		+below(2)
+			padding-bottom 100%
+
+	&__link
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		text-decoration none
+		overflow hidden
+
+		// perfomance issues solution:
+		// http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+		&::after
+			content ''
+			box-shadow inset 0px 0px 0px 1px rgba(174,174,174,1)
+			opacity 0
+			// transition opacity 0.3s ease-in-out
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+
+
+		&:hover
+			.tile__inner
+				border-color #C0C0C0
+			&::after
+				opacity 1
+
+	&__inner
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		display table
+		background-color #FFF
+
+		&--top
+			border-top 4px solid #f8f8f8
+
+		&--bottom
+			border-bottom 4px solid #f8f8f8
+
+			.showcase__tile &
+				+below(2)
+					border 1px solid #CDCDCD
+					border-bottom-width 4px
+					border-bottom-color #CDCDCD
+
+
+
+			.showcase__tile.tile-2x1 &
+				+below(2)
+					border-left-width 4px
+					border-bottom-width 1px
+
+		.tile-2x2 &
+		.tile-4x2 &
+			text-align center
+
+		.tile-2x1 &
+			padding 0
+			display block
+			padding-right 20px
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				display table
+				text-align center
+				padding 0
+
+		.tile--lavender-blush &
+			background-color #fef4f3
+			border-color #fdedeb
+			&:hover
+				border-color #C0C0C0
+
+		.tile--white-smoke &
+			background-color #f6f6f6
+			border-color #eeeeee
+			&:hover
+				border-color #C0C0C0
+
+		.tile--alice-blue &
+			background-color #effafe
+			border-color #e5f6fd
+			&:hover
+				border-color #C0C0C0
+
+		.tile--ivory &
+			background-color #fafef3
+			border-color #f4fde6
+			&:hover
+				border-color #C0C0C0
+
+	&__img-wrap
+		display table-row
+		height 100%
+
+		.tile-2x1 &
+			width 50%
+			overflow hidden
+			display block
+
+		.tile-2x1.showcase__tile &
+			+below(2)
+				width 80px
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				display table-row
+				width auto
+
+	&__img-outer
+		overflow hidden
+		display table-cell
+		vertical-align middle
+
+		img
+			max-width 100%
+			max-height 100%
+			margin auto
+			transform translateZ(0)
+
+		.tile-2x1 &
+			position relative
+			overflow hidden
+			display block
+			padding 0
+			padding-bottom 100%
+
+			img
+				position absolute
+				top 0
+				right 0
+				bottom 0
+				left 0
+
+				.tile-2x1:not(.showcase__tile) &
+					+below(4)
+						position static
+
+		.tile-2x1.showcase__tile &
+			+below(2)
+				border 10px solid rgba(0, 0, 0, 0)
+				padding-bottom calc(100% - 20px)
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				display table-cell
+				padding 0
+
+
+
+
+
+
+	&__heading-wrap
+		display table-row
+		height 0
+		.tile-2x1 &
+			float right
+			display table
+			height 100%
+			width 50%
+		.tile-2x1.showcase__tile &
+			+below(2)
+				width calc(100% - 80px)
+
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				float none
+				display table-row
+				height 0
+				width auto
+
+
+	&__heading
+		margin-bottom 20px
+		margin-top 0
+		padding-top 20px
+		font-weight extrabold
+		+below(4)
+			font-size 20px
+			font-weight semibold
+		+below(2)
+			font-weight extrabold
+
+
+		.showcase__tile &
+		.showcase__tile.tile-2x2 &
+		.showcase__tile.tile-2x1 &
+		.showcase__tile.tile-4x2 &
+			font-weight semibold
+			font-size 24px
+			+below(2)
+				font-size 18px
+
+		.showcase__tile.tile-2x2 &
+			text-align left
+			padding 20px 20px 0
+
+
+
+		.tile-2x2 &
+			font-size 30px
+			+below(4)
+				font-size 20px
+			small
+				font-size 24px
+				+below(4)
+					font-size 14px
+
+
+		.tile-2x1 &
+			padding-top 0
+			display table-cell
+			vertical-align middle
+			font-size 24px
+			small
+				font-size 18px
+
+				.tile-2x1:not(.showcase__tile) &
+					+below(4)
+						font-size 14px
+
+		.tile-2x1:not(.showcase__tile) &
+			+below(4)
+				display block
+				padding-top 20px
+				font-size 20px
+
+
+		.tile-4x2 &
+			font-size 28px
+			+below(4)
+				font-size 18px
+				font-weight extrabold
+			+tablet()
+				font-size 20px
+			.showcase__tile &
+				font-size 24px
+			small
+				display inline
+				font-size 28px
+				+below(4)
+					font-size 18px
+				+tablet()
+					font-size 20px
+
+
+		small
+			display block
+			font-weight light
+			color #111
+
+			+below(4)
+				font-size 14px
+
+
+			.showcase__tile &
+			.showcase__tile.tile-2x2 &
+			.showcase__tile.tile-2x1 &
+			.showcase__tile.tile-4x2 &
+				font-weight normal
+				font-size 13px
+				padding-left 0
+				margin-top 6px
+				color #888
+

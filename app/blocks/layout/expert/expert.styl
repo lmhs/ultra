@@ -1,20 +1,76 @@
 .expert
-	background-color #F9F9F9
-	padding-top 72px
-	padding-bottom 100px
+	background-color #FFF
+
+	padding-top 100px
+	padding-bottom 30px
+	+below(4)
+		padding-bottom 20px
+		border-top 1px solid #e3e3e3
+	+tablet()
+		padding-top 20px
+	+below(3)
+		padding-top 15px
 
 	&__heading
 		margin-top 0
 		margin-bottom 30px
 		text-align center
+		+tablet()
+			font-size 24px
+		+below(3)
+			font-size 22px
 
 		small
-			padding-left 0
 			margin-top 5px
+			+below(4)
+				display none
 
 	&__avatar
-		padding-right 44px
+		padding-right 0
+		text-align center
 		padding-top 2px
+		padding-right 25px
+
+		+below(4)
+
+			display inline-block
+			padding-right 0
+
+			.img-circle
+				height 43px
+				width 43px
+				float left
+
+	&__block
+		+below(4)
+			text-align center
+
+	&__name
+		margin-top 10px
+		display block
+		color #111
+		font-weight semibold
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+
+		+below(4)
+			font-weight bold
+			font-size 16px
+			margin-top 0
+			line-height 21px
+			margin-left 55px
+			text-align left
+
+	&__position
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		color #555
+		font-size 12px
+		line-height 21px
+		margin-left 55px
+		display block
+		text-align left
+
+		+above(5)
+			display none
 
 	&__blockquote
 		border-left 0
@@ -35,6 +91,21 @@
 			sprite($icon_rd_quote)
 			top 3px
 			left 0
+
+		+tablet()
+			width 540px
+			margin 0 auto
+
+		+below(4)
+			font-size 13px
+			padding 0
+			min-width 0
+			font-weight regular
+			color #2C2C2C
+			line-height 1.4
+			&::before
+				content none
+
 		footer
 			margin-top 20px
 			color #111
@@ -42,3 +113,19 @@
 			font-weight semibold
 			&::before
 				content ''
+
+	&__body
+		width 520px
+
+		+below(4)
+			display block
+			width 100%
+			text-align center
+			margin-top 12px
+
+.product__expert
+	border-top 1px solid #EBEBEB
+	background-color #F9F9F9
+	padding-top 72px
+	padding-bottom 100px
+

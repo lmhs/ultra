@@ -1,0 +1,52 @@
+include ../content/content
+
+mixin categories-promo()
+	section.categories-promo&attributes(attributes)
+		+content()
+			.col-md-3.categories-promo__col
+				a(href=jv0).categories-promo__tile-link.categories-promo__tile-link--left
+					.media.categories-promo__tile-link__inner
+						.media-left.media-middle.categories-promo__tile__img
+							.categories-promo__tile__icons
+								i.icon-person-female-red-38x56.categories-promo__tile__icon-person
+								i.icon-person-male-dark-38x56.categories-promo__tile__icon-person
+						.media-body.categories-promo__tile__body
+							h5.media-heading.categories-promo__tile__heading
+								strong 10
+								|  лет в Беларуси
+							p.categories-promo__tile__text
+								| Дождь, гром и молния нас не остановят.
+								br
+								| Работаем без выходных, даже в Новый Год.
+				a(href='./index-delivery.html').categories-promo__tile-link.categories-promo__tile-link--left
+					.media.categories-promo__tile-link__inner
+						.media-left.media-middle.categories-promo__tile__img
+							i.icon-truck-delivery.categories-promo__tile__icon-delivery
+						.media-body.categories-promo__tile__body
+							h5.media-heading.categories-promo__tile__heading
+								| Быстрая доставка
+							p.categories-promo__tile__text
+								| По Минску и другим регионам Беларуси
+
+			.col-md-3.categories-promo__col
+				a(href='./index-credit.html').categories-promo__tile-link.categories-promo__tile-link--right
+					.media.categories-promo__tile-link__inner
+						.media-left.media-middle.categories-promo__tile__img
+							.categories-promo__tile-icons
+								i.icon-clock-dc-49x51.categories-promo__tile__icon
+						.media-body.categories-promo__tile__body
+							h5.media-heading.categories-promo__tile__heading
+								| Быстрая доставка
+							p.categories-promo__tile__text
+								| Выгодные условия кредита.
+								br
+								| Не откладывай на потом!
+				a(href='./index-guarantee.html').categories-promo__tile-link.categories-promo__tile-link--right
+					.media.categories-promo__tile-link__inner
+						.media-left.media-middle.categories-promo__tile__img
+							i.icon-security.categories-promo__tile__icon-security
+						.media-body.categories-promo__tile__body
+							h5.media-heading.categories-promo__tile__heading
+								| Сделка без рисков
+							p.categories-promo__tile__text
+								| Плати наличными при получении или денежным переводом

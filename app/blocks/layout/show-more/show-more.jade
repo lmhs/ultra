@@ -1,0 +1,9 @@
+include ../../basic/link/link
+
+mixin showmore()
+	+b.showmore&attributes(attributes)
+		i.icon-dots-22x6.showmore-icon
+		+link().link--pseudo.link--pseudo-with-icon.showmore-link.js-show-reasons-article
+			span.link__text Показать все
+			| !{''}
+			span.link__icon ↓

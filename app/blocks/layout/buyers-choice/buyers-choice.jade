@@ -1,0 +1,63 @@
+include ../content/content
+include ../../basic/stripe/stripe
+include ../../basic/product/product
+include ../nav-stripe/nav-stripe
+
+mixin buyers-choice()
+	section.buyers-choice
+		.buyers-choice__head
+			.container-outer
+				.row
+					.col-md-4.col-md-offset-1
+						.buyers-choice__head__inner
+							.buyers-choice__head__pattern
+							+stripe().buyers-choice__stripe
+							.buyers-choice__heading-wrap
+								h1.buyers-choice__heading Выбор покупателей
+									small Самые популярные товары за все время
+				.row.visible-xs-block
+					.col-xs-6
+						strong.category__title Популярные категории
+						.select-sm-wrap
+							+select-sm()
+		+nav-stripe({
+									main: 'Популярные категории',
+									elements: ['Мультиварки',
+														 'Стайлеры',
+														 'Пылесосы',
+														 'Блендеры',
+														 'Электробритвы мужские',
+														 'Варочные повехности',
+														 'Холодильники']
+								}).buyers-choice__nav-stripe.hidden-xs
+		.buyers-choice__body
+			.container-20-outer
+				.row-20
+					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
+						+product({
+													type:'other',
+													labels: 'hot',
+													rating: true
+												})
+					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
+						+product({
+													type:'other',
+													labels: 'new',
+													rating: true
+												})
+					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
+						+product({
+													type:'other',
+													labels: 'discount',
+													rating: true
+												})
+					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
+						+product({
+													type:'other',
+													rating: true
+												})
+					.col-md-20-1.col-sm-25-1.col-xs-2.product__col
+						+product({
+													type:'other',
+													rating: true
+												})

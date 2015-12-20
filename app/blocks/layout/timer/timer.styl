@@ -4,6 +4,8 @@
 	border-bottom 4px solid #EBEBEB
 	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 
+
+
 	&__label
 		border-top 4px solid #B72800
 		background-color #E14013
@@ -16,12 +18,28 @@
 		background 	url(../images/pattern-color-timer-right.png) repeat-y top right,
 								url(../images/pattern-color-timer-left.png) repeat-y top left,
 								#E14013
+
+		.hot-product__timer &
+			+below(4)
+				position static
+				width auto
+				border none
+				background none
+
+
 		&__text
 			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 			font-weight extrabold
 			font-size 32px
 			line-height 80px
 			color #fff
+			+below(4)
+				sprite($icon_sale_sticker_40x40)
+				font-size 13px
+				line-height 40px
+				font-weight bold
+				text-align center
+				display block
 
 		&-inner
 			display flex
@@ -45,6 +63,11 @@
 		min-height 86px
 		font-size 0
 		margin-left 127px
+
+		.hot-product__timer &
+			+below(4)
+				display none
+
 
 		&--present
 			margin-left 84px
@@ -93,6 +116,35 @@
 		display inline-block
 		vertical-align top
 
+	&__limit
+		font-style italic
+		color #999
+		font-size 14px
+		padding-left 25px
+
+		&__icon
+			vertical-align top
+			margin-right 12px
+
+		.product &
+			position absolute
+			right 0
+			top 50%
+			margin-top -13px
+			line-height 27px
+			padding-right 25px
+
 	&__scissors
 		vertical-align middle
 		// margin-top 12px
+
+.hot-product__timer
+	+below(4)
+		position absolute
+		left 11px
+		bottom 8px
+		background none
+		border none
+		z-index 1
+
+

@@ -1,0 +1,57 @@
+.stripe
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	text-align center
+	text-transform uppercase
+	padding 17px 16px 20px
+	display inline-block
+	position relative
+	color #FFF
+	line-height 1
+	border-top 4px solid #B72800
+	background-color #E14013
+	background 	url(../images/pattern-color-timer-right.png) no-repeat top right,
+							url(../images/pattern-color-timer-left.png) no-repeat top left,
+							#E14013
+
+	&__strong
+		font-size 33px
+		color #FFF
+		display block
+
+		font-weight extrabold
+		+below(3)
+			font-size 26px
+	&__span
+		font-size 24px
+		font-weight light
+		+below(3)
+			font-size 19px
+			font-weight normal
+	&::before
+		content ''
+		position absolute
+		top 100%
+		left 0
+		height 21px
+		width 50%
+		background linear-gradient(to left bottom, #e14013 49%, rgba(225, 64, 19, 0) 51%)
+
+	&::after
+		content ''
+		position absolute
+		top 100%
+		right 0
+		height 21px
+		width 50%
+		background linear-gradient(to right bottom, #e14013 49%, rgba(225, 64, 19, 0) 51%)
+
+.buyers-choice__stripe
+
+	position absolute
+	left 84px
+	top -4px
+	+below(2)
+		left 0
+
+
+

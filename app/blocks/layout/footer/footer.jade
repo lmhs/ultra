@@ -2,29 +2,34 @@ include ../../basic/nav/nav
 include ../../basic/subscribe/subscribe
 include ../../basic/link/link
 
+include ../footer-legal/footer-legal
+
 mixin footer()
-	footer.footer
-		.container
-			.row
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-left')
-				.col-md-4
-					+subscribe()
-				.col-md-1
-					+link('/sale.html').footer__link--red
-						| Акции, скидки, уценка
-					+nav(getData('navigation')[0],'footer-right')
-			.row.footer__bottom-nav
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
-				.col-md-1
-					+nav(getData('navigation')[0],'footer-bottom')
+	+b('footer').footer
+		+e.navigation
+			.container-outer
+				.row
+					.col-md-1.visible-md-block.visible-lg-block
+						+nav(getData('navigation')[0],'footer-left')
+					.col-md-4
+						+subscribe()
+					.col-md-1.visible-md-block.visible-lg-block
+						+link('/sale.html').footer__link--red
+							| Акции, скидки, уценка
+						+nav(getData('navigation')[0],'footer-right')
+				.row.footer__bottom-nav.visible-md-block.visible-lg-block
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+					.col-md-1
+						+nav(getData('navigation')[0],'footer-bottom')
+		+e.bottom
+			+footer-legal()
 

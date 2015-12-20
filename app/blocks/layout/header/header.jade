@@ -1,27 +1,36 @@
 include ../header-top/header-top
 include ../header-main/header-main
+include ../header-mobile-menu/header-mobile-menu
+include ../../layout/content/content
 include ../../basic/nav/nav
 
 mixin header()
 	block vars
 	- var	order = pageId === 'order'
 	header.header(class= order ? 'header--w-border' : '')
-		.header__top-wrap
-			.container
-				.row
-					.col-md-6
-						+header-top()
+		+button({type:'button'}).js-toggle-mobile-menu.header__toggle-btn
+			i.toggle-btn-icon.icon-burger-menu-252525-18x12
+
+		.header__mobile#js-header-mobile-menu
+			+header-mobile-menu(getData('navigation')[0]['mobile'])
+		.header__top-wrap.visible-md-block.visible-lg-block
+			+content-outer()
+				.col-md-6
+					+header-top()
 		.header__main-wrap
-			.container
-				.row
-					.col-md-6
-						+header-main()
-		if !order
-			.header__nav-wrap
-				.container
-					.row
-						.col-md-6
-							+nav(getData('navigation')[0],'main').nav-list--inline.clearfix
+			+content-outer()
+				+header-main()
+		.header__right
+			a(href=jv0).header-mobile__link.hidden-mobile
+				i.icon-sale-sticker-22x22.header-mobile-icon.header-mobile__sale-sticker-icon
+			a(href=jv0).header-mobile__link.hidden-mobile
+				i.icon-phone-19x19.header-mobile-icon.header-mobile__phone-icon
+			a(href=jv0).header-mobile__link
+				i.icon-search-17x17.header-mobile-icon.header-mobile__search-icon
+			+link('/cart').header-mobile__link
+				i.icon-cart.header-mobile-icon.header-mobile__cart-icon
+					//- span.cart__label.cart__label--not-empty 5
+					span.cart__label 0
 
 
 

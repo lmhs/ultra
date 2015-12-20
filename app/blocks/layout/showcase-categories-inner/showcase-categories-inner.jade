@@ -1,0 +1,19 @@
+include ../content/content
+include ../category-tile/category-tile
+
+mixin showcase-categories-inner()
+	section.showcase-categories-columns
+		+content-outer()
+			.col-md-6
+				+category-tile({
+												type: 'columns',
+												title: 'Приготовление еды',
+												items: [
+																	'Мультиварки',
+																	'Аэрогрили',
+																	'Электрогрили',
+																	'Пароварки',
+																	'Хлебопечки',
+																	'Шашлычницы'
+																]
+				})

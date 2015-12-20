@@ -1,0 +1,14 @@
+include ../../basic/link/link
+
+mixin nav-stripe(args)
+	nav.nav-stripe&attributes(attributes)
+		strong.nav-stripe__main
+			| !{args.main}
+			|  →
+		ul.nav-stripe-list
+			each item in args.elements
+				li.nav-stripe-list__item
+					a(href=jv0)
+						span.nav-stripe-list__link
+							| !{item}
+	// nav-stripe end

@@ -1,3 +1,8 @@
+include ../form/form
+include ../checkbox/checkbox
+include ../link/link
+include ../button/button
+
 //- modal
 mixin modal(title,id)
 	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
@@ -12,3 +17,115 @@ mixin modal(title,id)
 					block
 				.modal-footer
 					button.btn.btn-default(type="button",data-dismiss="modal") Close
+
+mixin modalSubscribe(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--subscribe
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+				.modal-body
+					.subscribe-popup__text
+						.subscribe-popup__text-1 Подписывайся сейчас
+						.subscribe-popup__text-2 получи
+						.subscribe-popup__text-3 от нынешней покупки
+						.subscribe-popup__text-4 на следующую
+						.subscribe-popup__text-5 -5%
+						.subscribe-popup__form
+							+input-simple({
+												type: 'email',
+												placeholder: 'Email'
+											}).subscribe-popup__form__input
+							+button().btn-med.btn--red.subscribe-popup__form__btn
+								| Подписаться
+
+mixin modalLogin(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--login
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					h4.login-modal__heading Вход в личный кабинет
+				.modal-body
+					form.modal__form.login-modal__form.js-login-form
+						+input-horizontal({name:'Email',placeholder:'Email'})#email.login-modal__form__input
+						+input-horizontal({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
+						.login-modal__form__actions
+							.col-sm-4.col-sm-offset-1
+								+button().btn-med.btn--red.modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
+									| Войти
+								.login-modal__form__checkbox-wrap
+									+checkbox({
+														label:'Запомнить меня',
+														checked: true
+														}).login-modal__form__checkbox.js-remember-checkbox
+
+						.login-modal__form__actions
+							.col-sm-4.col-sm-offset-1
+								+button().btn-sm.btn--ghost.btn--ghost-gray.modal__form__forgot-btn.js-forgot-btn(data-toggle="modal", data-target="#forgotPopup")
+									| Вспомнить пароль
+								+button().btn-sm.btn--ghost.btn--ghost-dark.modal__form__register-btn.js-register-btn
+									| Регистрация
+						.login-modal__form__actions.login-modal__form__actions--foot
+							.login-modal__form__actions__or
+								| или
+							.login-modal__form__actions__social
+								+link().login-modal__form__actions__social-link.js-fb-login
+									i.icon-fb-42x43
+								+link().login-modal__form__actions__social-link.js-vk-login
+									i.icon-vk-42x43
+								+link().login-modal__form__actions__social-link.js-google-login
+									i.icon-google-42x43
+
+mixin modalHello(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--hello
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					.hello-modal__people-icons
+						i.icon-person-female-red-43x64.hello-modal__people-icon
+						i.icon-person-male-dark-43x64.hello-modal__people-icon
+					h4.hello-modal__heading
+						| Здравствуйте,
+						span.js-username  Наталья
+						| !
+				.modal-body
+					.modal-body__content
+						p.modal-body__text Рады снова видеть Вас на сайте.
+
+mixin modalForgot(id)
+	.modal.fade(id="#{id}",tabindex="-1",role="dialog",aria-labelledby="#{id}Label" aria-hidden="true")
+		.modal-dialog.modal-dialog--forgot
+			.modal-content
+				.modal-header
+					button.close(type="button",data-dismiss="modal")
+						span(aria-hidden="true")
+							i.icon-close-20-b7.modal-close-icon
+						span.sr-only Close
+					h4.forgot-modal__heading
+						| Напомнить пароль
+				.modal-body
+					.modal-body__content
+						p.modal-body__text Введите Email, который вы указывали при регистрации. На него мы вышлем инструкции по восстановлению пароля
+						form.modal__form.forgot-modal__form.js-forgot-form
+							+input-horizontal({name:'Email',placeholder:'Email'})#forgotEmail.forgot-modal__form__input
+							.form-group
+								.col-sm-4.col-sm-offset-1
+									+button().btn-med.btn--red.modal__form__forgot-btn.js-forgot-btn
+										| Напомнить пароль
+							.form-group
+								+link().link-small--pseudo.js-forgot-return
+									i.icon-return.link-icon-return
+									span.link__text.link-text--pseudo Вернуться
+
+

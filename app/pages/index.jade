@@ -1,13 +1,13 @@
 block vars
 	- var pageId = -1;
 
-include ../blocks/index/index
-include ../blocks/basic/nav-small/nav-small
+include ../blocks/index/main/main
 
 extends ../blocks/layout-default/layout-default
 
 block head
 	- var pageTitle = 'Главная';
+	- var pageType = 'index page';
 
 block content
 	+index()

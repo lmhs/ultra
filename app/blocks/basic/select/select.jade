@@ -1,0 +1,6 @@
+//- select
+mixin select(args)
+	select.selectpicker&attributes(attributes)
+		option(value='all',selected) !{args.default}
+			each item in args.items
+				option(value=item.icon) !{item.name}

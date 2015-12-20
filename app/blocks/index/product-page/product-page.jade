@@ -1,6 +1,10 @@
 include ../../layout/content/content
 include ../../layout/expert/expert
 include ../../layout/timer/timer
+include ../../layout/similar/similar
+include ../../layout/other/other
+include ../../layout/recent/recent
+include ../../layout/product-page-set/product-page-set
 include ../../layout/not-found/not-found
 include ../../basic/link/link
 include ../../basic/pattern/pattern
@@ -10,7 +14,7 @@ include ../../basic/details/details
 include ../../basic/phone/phone
 include ../../basic/form/form
 include ../../basic/label/label
-include ../../basic/nav-small/nav-small
+include ../../layout/breadcrumb/breadcrumb
 include ../../basic/help-block/help-block
 include ../../basic/tooltip/tooltip
 include ../../basic/dropdown/dropdown
@@ -18,27 +22,49 @@ include ../../basic/tag/tag
 include ../../basic/table/table
 include ../../basic/checkbox/checkbox
 include ../../basic/countdown/countdown
+include ../../basic/product/product
+include ../../basic/rating/rating
+include ../../basic/action/action
+include ../../basic/available/available
+include ../../basic/nav-tabs/nav-tabs
+include ../../layout/nav-main/nav-main
+
+include description/description
+include features/features
+include reviews/reviews
+include questions/questions
+include delivery/delivery
 
 
 mixin productPage()
+	block vars
+	- var	order = pageId === 'order'
 	- var available = productState !== 'notAvailable';
-	+content()
+
+	+nav-main()
+	+content-outer()
 		.col-md-6
-			+nav-small(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
+			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
 	section.product-page__head
-		+content()
+		+content-outer()
 			.col-md-6
 				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
-				.product-page__head__icons
-					img(src="/assets/images/android-icon.png", alt="android")
-					img(src="/assets/images/2-sim-icon.png", alt="2-sim")
-					img(src="/assets/images/3g-icon.png", alt="3g")
-					img(src="/assets/images/ips-icon.png", alt="ips")
-					img(src="/assets/images/4-cores-icon.png", alt="4-cores")
-					img(src="/assets/images/gps-icon.png", alt="gps")
+				.product-page__icons
+					span.product-page__icons-wrap
+						img(src="./assets/images/android-icon.png", alt="android")
+					span.product-page__icons-wrap
+						img(src="./assets/images/2-sim-icon.png", alt="2-sim")
+					span.product-page__icons-wrap
+						img(src="./assets/images/3g-icon.png", alt="3g")
+					span.product-page__icons-wrap
+						img(src="./assets/images/ips-icon.png", alt="ips")
+					span.product-page__icons-wrap
+						img(src="./assets/images/4-cores-icon.png", alt="4-cores")
+					span.product-page__icons-wrap
+						img(src="./assets/images/gps-icon.png", alt="gps")
 
 	section.product-page__offers
-		+content()
+		+content-outer()
 			.col-md-3
 				.product-page__offers__gallery
 
@@ -66,15 +92,10 @@ mixin productPage()
 								| 2 610 000 BYR
 							strong.spec__price.spec__price--new
 								| 1 950 000 BYR
-						.spec__available
-							i.icon-check-green.spec__available-icon
-							span.spec__available
-								| В наличии —
-								if available
-									span.js-available-count  5
-								else
-									span.js-available-count  0
-								|  шт.
+							if available
+								+available({count:5}).spec__available
+							else
+								+available({count:0}).spec__available
 						if available
 							.spec__buy
 								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
@@ -85,12 +106,7 @@ mixin productPage()
 										| узнать подробнее
 					.spec__right
 						.spec__rating-wrap
-							span.spec__rating-stars
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
-								i.icon-star-rating
+							+rating()
 							span.spec__rating-number
 								strong 4,8
 								|  из 5
@@ -98,15 +114,9 @@ mixin productPage()
 								| (8 голосов)
 						.spec__actions
 							if available
-								+link().spec__action-link--pseudo
-									i.icon-price-label.spec__icon-price-label
-									span.spec__action-link-text Узнать о снижении цены
-							+link().spec__action-link--pseudo
-								i.icon-price-compare.spec__icon-price-compare
-								span.spec__action-link-text Сравнить
-							+link().spec__action-link--pseudo
-								i.icon-price-favorites.spec__icon-price-favorites
-								span.spec__action-link-text В избранном
+								+action({type:'drop'})
+							+action({type:'compare'})
+							+action({type:'favorite'})
 						if available
 							.spec__credit
 								+link()
@@ -120,7 +130,7 @@ mixin productPage()
 							+button({type:'buttonSubmit'}).btn-med.btn--dark.spec__one-click__btn.js-one-click-buy
 								| Купить в один клик
 	section.product-page__conditions
-		+content()
+		+content-outer()
 			.col-md-6
 				.product-page__conditions__inner
 					.media.product-page__condition
@@ -147,72 +157,77 @@ mixin productPage()
 								br
 								| Ежедневно в другие регионы
 							+link().link--pseudo.product-page__condition__link Условия доставки
-	section.product-page__similar
-		+content()
-			.col-md-6
-				.product-page__similar__head
-					h4.product-page__similar__heading Похожие велосипеды с
-					+tag('2014 год',false).product-page__similar__tag
-					+tag('горный',false).product-page__similar__tag
-					+tag('мужской',false).product-page__similar__tag
-					+tag('еще параметр',true).product-page__similar__tag
+	+similar()
 	section.product-page__info
-		+content()
-			.col-md-1
-				aside(style='width:100%;height:631px;background:gray;')
-					| Samsung i9300 Galaxy S III Garnet
-			.col-md-5
-				ul.nav.nav-tabs.js-product-nav
-					li.active(role='presentation')
-						+link('#description').js-product-nav-tab
-							i.icon-feather.nav__icon-feather
-							| Описание
-					li(role='presentation')
-						+link('#features').js-product-nav-tab
-							i.icon-info.nav__icon-info
-							| Характеристики
-					li(role='presentation')
-						+link('#reviews').js-product-nav-tab
-							i.icon-review.nav__icon-review
-							| Отзывы
-					li(role='presentation')
-						+link('#questions').js-product-nav-tab
-							i.icon-question.nav__icon-question
-							| Вопрос – ответ
-					li(role='presentation')
-						+link('#delivery').js-product-nav-tab
-							i.icon-delivery.nav__icon-delivery
-							| Доставка и оплата
+		.container-20-outer
+			.row-20.product-page__info__row
+				.col-md-20-1.product-page__info__col
+					aside.product-page__aside.sticky
+						+product({
+											type:'sidebar',
+											rating: true,
+											oldPrice: '45 000 BYR'
+										})
+				.col-md-20-4.product-page__info__col
+					+navTabsProduct({
+										type:'small',
+										links: [
+											{
+												isActive: true,
+												href: '#description',
+												class: 'js-product-nav-tab',
+												icon: 'feather',
+												content: 'Описание'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
+												},
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-nav-tab',
+												icon: 'review',
+												content: 'Отзывы'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												},
+											{
+												isActive: false,
+												href: '#delivery',
+												class: 'js-product-nav-tab',
+												icon: 'delivery',
+												content: 'Доставка и оплата'
+												}
+										]
+									}).js-product-nav
 
-				.tab-content
-					#description.tab-pane.active(role='tabpanel')
-						article.description
-							h2 Видео обзор SAMSUNG I9300 Galaxy S III Garnet Red
-							iframe(src="https://www.youtube.com/watch?v=0-T3FC0rWsc", width="790", height="514", frameborder="0")
-							.description__center
-								+button().btn-xsm.btn--ghost.btn--ghost-gray.more-videos-btn.js-more-videos
-									| Еще 2 видео обзора
-									i.icon-arrow-down.more-videos-btn__icon-arrow
-							h2 Спутник в твоем мире
-							figure
-								img(src="http://dummyimage.com/786x336/4d494d/686a82.gif&text=placeholder+image",width="786",height="336", alt="placeholder+image")
-							p Новый смартфон Samsung GALAXY S4 станет твоим истинным компаньоном, который поможет упростить общение с людьми и сохранить самые радостные моменты жизни. Каждая его функция призвана сделать твою жизнь насыщенней и интересней. Кроме того, он может следить за твоим здоровьем и самочувствием. Samsung GALAXY S4 — твой незаменимый помощник.
-					#features.tab-pane(role='tabpanel')
-						| features
-					#reviews.tab-pane(role='tabpanel')
-						| reviews
-					#questions.tab-pane(role='tabpanel')
-						| questions
-					#delivery.tab-pane(role='tabpanel')
-						| delivery
-	+expert()
+					.tab-content.product-page__tab-content
+						#description.tab-pane.active(role='tabpanel')
+							+description()
+						#features.tab-pane(role='tabpanel')
+							+features()
+						#review.tab-pane(role='tabpanel')
+							+reviews()
+						#questions.tab-pane(role='tabpanel')
+							+questions()
+						#delivery.tab-pane(role='tabpanel')
+							+delivery()
+	+expert({
+						heading: 'Мнение эксперта',
+						subheading: 'кратко о главном'
+					}).product__expert
+		| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
 	+pattern()
-	section.product-page__set
-		+content()
-			.col-md-1
-				.product-temp(style="width:100%;height:420px;background: gray;")
-			.col-md-5
+	+productPageSet()
+	+recent()
 	+not-found()
-
-
 

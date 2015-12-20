@@ -1,18 +1,23 @@
 include ../../layout/content/content
-include ../../basic/nav-small/nav-small
+include ../../layout/breadcrumb/breadcrumb
 include ../../basic/link/link
 include ../../basic/button/button
 include ../../basic/details/details
+include ../../layout/nav-main/nav-main
 
 mixin guarantee()
-	+content()
+	block vars
+	- var	order = pageId === 'order'
+
+	+nav-main()
+	+content-outer()
 		.inner.inner--w1360
 			.col-md-6
-				+nav-small(['Главная', pageTitle])
+				+breadcrumb(['Главная', pageTitle])
 
 	section.guarantee__terms
 		.inner.inner--w900
-			h2.h1 Условия возврата и замены товаров
+			h1 Условия возврата и замены товаров
 			p.caption.terms__caption
 				| Иногда, купив товар, у покупателя возникает необходимость или желание вернуть товар или обменять его на другой. Это может случиться по ряду разных причин, но все они в итоге сводятся к двум:
 			.terms__reasons.cf
@@ -103,7 +108,7 @@ mixin guarantee()
 
 	section.guarantee__obligation
 		.inner.inner--w1100
-			h2.h1 Обязательства продавца
+			h1 Обязательства продавца
 			.obligation__sections.cf
 				section.section-half.obligation__left
 					p.caption
@@ -133,7 +138,7 @@ mixin guarantee()
 	section.guarantee__sample
 		.inner.inner--w900
 			img(src="./assets/images/check.png").sample__check
-			h2.h1.h1--red.sample__heading
+			h1.h1--red.sample__heading
 				| Образцы документов
 				small подтверждающие факт приобретения товара
 			ol.list-round
@@ -150,8 +155,8 @@ mixin guarantee()
 
 	section.guarantee__thanks
 		.thanks__icons
-			i.icon-woman-red-big.thanks__icon-left
-			i.icon-man-dark-big
+			i.icon-person-female-red-41x62.thanks__icon-left
+			i.icon-person-male-dark-41x62
 		p.thanks__caption Спасибо, что выбрали наш магазин, и будьте внимательны при осуществлении покупок!
 
 	hr.divider-red
@@ -159,7 +164,7 @@ mixin guarantee()
 	section.guarantee__law
 		.inner.inner--w787
 			.law__head
-				h2.h1.law__heading
+				h1.law__heading
 					| Законодательство РБ
 					small регламентация актов на замену или возврат товара
 				span.dash

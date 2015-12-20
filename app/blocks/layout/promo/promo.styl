@@ -1,0 +1,206 @@
+.promo
+	padding-bottom 79px
+
+	+below(4)
+		padding-bottom 0
+		.row
+			margin-left -20px
+			margin-right -20px
+
+	&__heading
+		margin-top 0
+		margin-bottom 30px
+		text-align center
+
+		small
+			margin-top 5px
+
+	&__col-md-4
+		padding-right 0
+		+below(4)
+			padding-left 0
+
+	&__col-md-2
+		padding-left 0
+
+	&__right
+		border 1px solid #ebebeb
+		text-align center
+		padding-top 43px
+		height 460px
+		position relative
+		background 	url(../images/pattern-color-vertical-reversed.png) 100% 0 no-repeat
+
+		// for repeating pattern
+		&::after
+			content ''
+			position absolute
+			top 271px
+			bottom 0
+			width 90px
+			right 0
+			background url(../images/pattern-color-bones-90x96.png) 100% 0 repeat-y
+		&__heading
+			font-size 30px
+			line-height 1.2
+			margin-top 30px
+			margin-bottom 0
+			small
+				display block
+				color #111
+				font-size 28px
+				font-weight light
+
+	&__foot
+		padding-top 84px
+
+	&__main
+		text-align center
+
+		&__icons
+			display inline-block
+			margin-right 40px
+			vertical-align bottom
+
+		&__text
+			width 60%
+			display inline-block
+			vertical-align bottom
+			text-align left
+
+		&__icon
+			& + &
+				margin-left 14px
+
+		&__heading
+			margin-top 18px
+			margin-bottom 10px
+			strong
+				font-size 42px
+
+		&__caption
+			font-size 16px
+			color #666
+			line-height 20px
+			margin-bottom 0
+	&__link-list
+		position relative
+		height 100%
+		padding-top 8px
+		padding-left 78px
+
+		&::before
+			content ''
+			position absolute
+			top 0
+			bottom 0
+			left -5px
+			width 1px
+			background-color #CCC
+
+
+	&__link-item
+		text-decoration none
+		font-size 14px
+		color #666
+		display block
+		margin-bottom 37px
+		&__icon-wrap
+			width 132px
+			text-align center
+		&__icon
+			display inline-block
+			vertical-align middle
+		&__desc
+			width 60%
+			display inline-block
+			vertical-align middle
+			line-height 1.2
+			strong
+				display block
+				color #111
+				line-height 1
+				margin-bottom 10px
+
+.slide
+	height 460px
+	overflow hidden
+	+below(2)
+		height auto
+	&-item
+		overflow hidden
+		position relative
+
+	&__content
+		position absolute
+		bottom 0
+		left 0
+		right 0
+		padding 100px 62px 77px
+		margin-bottom 53px
+		+below(2)
+			position static
+			background-color #1e1e1e
+			text-align center
+			padding 17px
+	&__heading
+		font-size 46px
+		line-height 1.2
+		text-transform uppercase
+		text-align left
+		margin-top 0
+		margin-bottom 87px
+		+tablet()
+			font-size 40px
+		+below(2)
+			font-size 16px
+			text-transform uppercase
+			color #fffefe
+			margin-bottom 13px
+			text-align center
+		small
+			text-transform none
+			font-size 32px
+			display block
+			font-weight light
+			margin-top 15px
+			color #111
+			+tablet()
+				font-size 24px
+				font-weight regular
+			+below(2)
+				font-size 12px
+				font-weight regular
+				color #fffefe
+
+	&__btn
+		&--review
+			+below(2)
+				border 1px solid #fff
+
+				font-size 14px
+				text-transform uppercase
+				font-weight regular
+				color #FFF
+				background none
+				.btn-more__icon
+					display none
+		&--pick
+			+below(2)
+				position absolute
+				bottom 0
+				left 0
+				right 0
+				background-color #E14013
+				font-size 14px
+				font-weight semibold
+				text-transform uppercase
+				padding-top 12px
+				padding-bottom 13px
+		& + &
+			margin-left 10px
+			+below(2)
+				margin-left 20px
+				margin-right 20px
+
+

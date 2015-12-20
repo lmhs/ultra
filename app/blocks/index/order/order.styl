@@ -1,18 +1,221 @@
 .order
+	&__head
+		+below(4)
+			border-top 1px solid #DCDCDC
+		+tablet()
+			border-top-color #D9D9D9
 	&__heading
 		margin-top 54px
 		margin-bottom 32px
+		text-align left
+		+below(4)
+			font-size 22px
+		+tablet()
+			margin-top 23px
+			margin-bottom 13px
+		+mobile()
+			margin-top 18px
+			margin-bottom 17px
+
+	&__body
+		padding-bottom 50px
+		+mobile()
+			padding-bottom 0
+
+	&__items
+		padding-top 50px
+		&__text
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 15px
+			color #7C7C7C
+			margin-bottom 14px
+			strong
+				font-size 18px
+				color #333
+
+	&-items
+		&-mobile
+			background-color #EEE
+			padding-top 20px
+			padding-bottom 10px
+
+	&__table
+		td
+			height 133px
+
+		.table > thead > tr > th&__desc
+			padding-left 100px
+
+		&__price
+		&__amount
+		&__total
+			&
+			&-value
+				text-align center
+
+		&__price-value
+		&__total-value
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-size 14px
+
+		&__price-value
+			color #7C7C7C
+		&__total-value
+			color #292929
 
 	&__form
-		&__input
-			width 270px
+		.col-sm-20-4
+			padding-left 0
+			padding-right 0
+		+mobile()
+			.control-label
+				font-size 13px
+				padding-top 10px
+
+				&.is-required::after
+					top -3px
+
+			.help-block-city--inline
+				display block
+				position absolute
+				right 0
+				top -25px
+				width auto
+
+		+below(2)
+			.help-block--inline
+				display none
+			.help-block-city--inline
+				display block
+
+		&__foot
+			padding-top 30px
+			padding-bottom 20px
+			font-size 0
+			+mobile()
+				padding-top 0
+				padding-bottom 10px
+
+		&__final
+			font-size 14px
+			color #000
+			line-height 1
+			width 40%
 			display inline-block
 			vertical-align top
+			padding-top 4px
+			+below(2)
+				display none
+			&__price
+				display block
+				color #000
+				font-size 18px
+				margin-top 5px
+		&__submit-wrap
+			display inline-block
+			vertical-align top
+			width 60%
+			+at(3)
+				text-align right
+			+below(2)
+				width 100%
+		&__submit-btn--mobile
+			text-transform uppercase
+			font-weight semibold
+			padding-top 9px
+			padding-bottom 9px
+			+below(2)
+				width 100%
+		&__return-link
+			margin-top 20px
+			display inline-block
+			font-size 13px
+			.link__text
+				margin-left 10px
+				&
+				&:hover
+				&.active
+				&:active
+				&:focus
+					color #555
+					border-bottom-color #555
+
+		+below(4)
+			.control-label
+				color #010101
+			.radio label
+				font-size 13px
+				line-height 25px
+			.radio--courier
+				margin-top 0
+				margin-bottom 0
+			.radio--express
+				margin-top 0
+		.radio--self-pickup
+			+below(4)
+				margin-top 0
+				margin-bottom 5px
+			+below(2)
+				margin-bottom 0
+
+
+		+tablet()
+			.form-group
+				margin-bottom 20px
+		+mobile()
+			.form-group
+				margin-bottom 5px
+		&__tooltip
+			margin-top 11px
+			display inline-block
+			z-index 1050
+
+			+below(4)
+				margin-top 4px
+			+below(2)
+				&.right
+					display block
+					float none
+					position static
+					margin-left 10px
+					margin-top -3px
+					.tooltip-inner
+						display inline
+			.tooltip-inner
+				border-radius 0
+				padding-top 2px
+				padding-bottom 2px
+				+below(4)
+					background none
+					color #E14013
+					text-transform uppercase
+					font-size 11px
+
+
+			&-arrow
+				top 50%
+				+below(4)
+					display none
+		&__input
+			width 270px
+			height 44px
+			line-height 44px
+			display inline-block
+			vertical-align top
+			border-color #EBEBEB
+			+below(4)
+				height 40px
+				line-height 40px
+			+below(2)
+				width 100%
 		&__price
 			display inline-block
 			color #292929
 			font-size 14px
 			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			+below(4)
+				font-size 11px
+				color #E14013
 		&__back-link
 			// nb! PT Sans?
 			font-size 12px
@@ -32,19 +235,15 @@
 			padding-left 60px
 			vertical-align bottom
 
-	&__border
-		margin-top 50px
-		margin-bottom 50px
-		height 84px
-		background url(../images/pattern-color-w1360.png) no-repeat center center
-
 	&__fast
 		border 1px solid #d7d7d7
 		border-radius 2px
 		margin-left 10px
 		height 300px
 		padding 38px 28px
-		background #F9F9F9 url(../images/pattern-color-vertical.png) repeat-y 100% 0
+		background 	url(../images/pattern-color-vertical.png) no-repeat 100% 0,
+								url(../images/pattern-gray-vertical.png) repeat-y 100% 0,
+								#F9F9F9
 		&__inner
 			width 276px
 		&__heading
@@ -67,6 +266,8 @@
 		&__head
 			// padding-right 90px
 			padding-bottom 20px
+		&__row
+			margin-bottom 10px
 		&__heading
 			display inline-block
 			vertical-align bottom
@@ -76,6 +277,8 @@
 			margin-right 10px
 			font-size 14px
 			color #292929
+			font-family $font-family-sans-serif
+			font-weight regular
 		&__span
 			color #7C7C7C
 			font-size 14px
@@ -88,13 +291,113 @@
 			li
 				margin-bottom 0
 
+	&-item
+		&__description
+			&__name
+				display block
+				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			&__text
+				color #555
+				font-size 14px
+		&__link-more
+			color #888
+			border-bottom-color #888
+			font-size 12px
+		&__checkbox__text
+			display block
+			font-size 12px
+			color #333
+			margin-top 8px
+			line-height 1
+			strong
+				font-size 14px
+
+.order__foot
+	overflow hidden
+	margin-top 20px
+	margin-bottom 62px
+
+.order__return
+	float left
+
+.order__cart
+	float right
+	&__refresh
+		height 44px
+		display inline-block
+		vertical-align top
+		line-height 44px
+	&__final
+		margin-left 47px
+		display inline-block
+		vertical-align top
+		border 1px solid #e14013
+		border-radius 2px
+		height 44px
+		line-height 44px
+		color #7C7C7C
+		padding 0 33px
+		font-size 14px
+		strong
+			color #292929
+
+
 .icon-order-delivery-wrap
 	display inline-block
 	vertical-align bottom
 	margin-left 12px
-	width 276px
+	width 223px
 	border-bottom 2px solid #E1E1E1
 	text-align center
 
 .icon-order-truck-delivery
 	vertical-align bottom
+
+.order-item__icon-trash
+	vertical-align top
+
+
+.order-items-text-mobile
+	background-color #FFECB3
+	border-bottom 1px solid #FFCA28
+	font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+
+	&__inner
+		padding 10px 0 8px
+	&__text
+		font-size 14px
+		color #000
+		line-height 1
+
+		+below(3)
+			display block
+	&__strong
+		line-height 1
+		+tablet()
+			font-size 14px
+			font-weight semibold
+			color #E14013
+		+mobile()
+			font-size 16px
+			color #000
+
+.order-info
+	padding-left 14px
+	max-width 350px
+	margin-top 52px
+
+	&__heading
+		margin-top 0
+		margin-bottom 10px
+	&__txt
+		color #333
+		font-size 14px
+		line-height 1.2
+
+	&__promo
+		margin-top 50px
+		.categories-promo__tile__img
+			min-width 100px
+		.categories-promo__tile__body
+			padding-left 10px
+		line-height 21px

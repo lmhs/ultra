@@ -1,15 +1,59 @@
 .header
-
 	&__title
 		margin-bottom 20px
 	&--w-border
 		border-bottom 3px solid #E14013
 
+	+below(4)
+		border-bottom 1px solid #cccccc
+
+		&--w-border
+			border-bottom 1px solid #ffca28
+
+	&__right
+		display none
+		position absolute
+		top 0
+		right 0
+		height 49px
+		font-size 0
+		padding-right 6px
+		+below(4)
+			display block
+
+.header-mobile__link
+	display inline-block
+	vertical-align top
+	padding 14px 10px 12px
+	position relative
+	.cart__label
+		right 9px
+		top 10px
+
+.hidden-mobile
+	+below(2)
+		display none
+
+.header-mobile-icon
+	vertical-align top
+
+.header-mobile__phone-icon
+	margin-top 2px
+
+.header-mobile__search-icon
+	margin-top 2px
+
+.header-mobile__cart-icon
+	margin-top 1px
+
 .header__top-wrap
 	border-bottom 1px solid #d3d7da
 
-.header__nav-wrap
-	background #252525
 
 .header__main-wrap
 	padding-bottom 16px
+	+below(4)
+		text-align center
+		padding-bottom 3px
+
+

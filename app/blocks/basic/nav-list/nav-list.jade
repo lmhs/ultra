@@ -1,7 +1,8 @@
-include ../../basic/link/link
+include ../link/link
+include ../../layout/menu-popup/menu-popup
 
 mixin navList(elements, type)
-	ul.nav-list&attributes(attributes)
+	ul.nav-list.cf&attributes(attributes)
 		each element in elements
 			if (type == 'footer-left')
 				li.nav-list-item
@@ -20,13 +21,18 @@ mixin navList(elements, type)
 					+link(element.href).header-top__link
 						| !{element.name}
 			else if (type == 'main')
-				li.nav-list-item.nav-list-item--header-main
-					+link(element.href).header-main__link(class= element.sale === true ? 'header-main__link--sale' : '')
-						if (element.sale === true)
+				if (element.sale === true)
+					li.nav-list-item.nav-list-item--main.nav-list-item--sale.js-main-menu-item
+						+link(element.href || jv0).main__link.main__link--sale.js-main-menu-link
 							span.sale-icon-text %
-						else
-							i(class= 'icon-' + element.icon).icon-nav
-						span.nav__text !{element.name}
+							span.nav__text !{element.name}
+						+menu-popup({name: element.name})
+				else
+					li.nav-list-item.nav-list-item--main.js-main-menu-item
+						+link(element.href || jv0).main__link.js-main-menu-link
+							i(class= 'icon-' + element.icon + ' nav-icon-' + element.icon)
+							span.nav__text !{element.name}
+						+menu-popup({name: element.name})
 			else
 				li.nav-list-item
 					+link(element.href)

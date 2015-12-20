@@ -1,0 +1,25 @@
+mixin pagination(count)
+	nav
+		ul.pagination&attributes(attributes)
+			- if (count <= 6) {
+				li.active
+					a(href=jv0) 1
+				- for (i = 1; i < count; i++)
+					li
+						a(href=jv0)
+							| !{i+1}
+			- }
+			- else {
+					li.active
+						a(href=jv0) 1
+				- for (i = 1; i < 4; i++)
+						li
+							a(href=jv0)
+								| !{i+1}
+					li
+						a(href=jv0)
+							| ...
+					li
+						a(href=jv0)
+							| !{count}
+			- }

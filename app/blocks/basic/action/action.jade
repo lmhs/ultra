@@ -1,0 +1,17 @@
+include ../link/link
+
+mixin action(args)
+	+link().action-link--pseudo&attributes(attributes)
+		if args.type
+			case args.type
+				when 'compare'
+					i.icon-price-compare.action__icon-price-compare
+					span.action-link-text Сравнить
+				when 'favorite'
+					i.icon-price-favorites.action__icon-price-favorites
+					span.action-link-text В избранное
+				when 'drop'
+					i.icon-price-label.action__icon-price-label
+					span.action-link-text Узнать о снижении цены
+	// action link end
+

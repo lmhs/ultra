@@ -1,6 +1,7 @@
 - var pageScripts = pageScripts || [['modernizr.custom.min.js'], [], []];
 
 include ../../../node_modules/bemto.jade/bemto.jade
+- bemto_settings_modifier = '--'
 include ../layout/header/header
 include ../main/main
 include ../layout/footer/footer
@@ -13,8 +14,12 @@ html(lang='ru')
 	include ../head/head
 	body
 		+header()
-		+main()
-			block content
+		if pageType === 'index page'
+			+main().index-main
+				block content
+		else
+			+main()
+				block content
 		+footer()
 
 		+scripts()

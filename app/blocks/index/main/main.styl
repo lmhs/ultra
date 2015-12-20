@@ -1,0 +1,114 @@
+
+.main__nav-wrap
+	background #252525
+	+below(4)
+		background none
+
+		.main__nav-list
+			border-left 1px solid #e4e4e4
+			+below(3)
+				border-left none
+
+		.menu-popup
+			display none
+
+	+below(3)
+		padding-top 23px
+
+	+tablet()
+		.container-outer
+			padding-left 0
+			padding-right 0
+		.row
+			margin-left 0
+			margin-right 0
+		.col-md-6
+			padding-left 0
+			padding-right 0
+
+
+.social-not-found
+
+	+tablet()
+
+		.index__social
+		.not-found
+			width 50%
+			float left
+
+		.index__social
+			.container-outer
+				padding-right 10px
+			.row
+				margin-right -10px
+			.col-md-6
+				padding-right 10px
+
+		.not-found
+			.container-outer
+				padding-left 10px
+			.row
+				margin-left -10px
+			.col-md-6
+				padding-left 10px
+
+	+below(4)
+
+		padding-top 12px
+		clearfix()
+
+		.container-outer
+			width 100%
+
+		.index__social
+		.not-found
+			padding 0
+			background none
+
+		.index__social
+
+			.follow-link
+				text-indent -100%
+				width 42px
+				position absolute
+				left 0
+				top 0
+				padding 0
+
+				&::before
+					content none
+
+				&--fb
+					background none
+				&--vk
+					background none
+				&--google
+					background none
+
+				&__icon
+
+					&.icon-fb-10x16
+						sprite($icon_fb_42x43)
+						top 0
+						left 0
+					&.icon-vk
+						sprite($icon_vk_42x43)
+						top 0
+						left 0
+					&.icon-google
+						sprite($icon_google_42x43)
+						top 0
+						left 0
+
+
+	+below(3)
+
+		.index__social
+		.not-found
+			width 100%
+			float none
+
+.product__col
+	+below(2)
+		width 50%
+
