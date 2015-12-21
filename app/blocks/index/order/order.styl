@@ -139,6 +139,9 @@
 				&:focus
 					color #555
 					border-bottom-color #555
+		&__radio
+			margin-top 5px
+			margin-bottom 5px
 
 		+below(4)
 			.control-label
@@ -166,7 +169,7 @@
 			.form-group
 				margin-bottom 5px
 		&__tooltip
-			margin-top 11px
+			margin-top 2px
 			display inline-block
 			z-index 1050
 
@@ -381,6 +384,9 @@
 			font-size 16px
 			color #000
 
+.address--is-hidden
+	display none
+
 .order-info
 	padding-left 14px
 	max-width 350px
@@ -401,3 +407,25 @@
 		.categories-promo__tile__body
 			padding-left 10px
 		line-height 21px
+
+.form-group-radio
+	margin-bottom 0
+
+.order-map
+	border 2px solid #000
+	margin-right 60px
+	+below(4)
+		margin-right 0
+	&__iframe
+		height 400px
+	&__footer
+		background-color #FFF
+		padding 20px 18px 16px
+	&__address
+		display inline-block
+		margin-top 0
+		margin-bottom 0
+		vertical-align middle
+	&__icon-map
+		vertical-align middle
+		margin-right 10px

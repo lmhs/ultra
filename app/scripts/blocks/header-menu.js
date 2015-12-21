@@ -1,4 +1,3 @@
-import './polyfills/jquery.details.min.js';
 import $ from 'jquery';
 
 (function (factory) {
