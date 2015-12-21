@@ -45,7 +45,7 @@ mixin order()
 							+input-horizontal-group({type:'phone',name:'Телефон',placeholder:'+375',required:true,help:{name:'helpPhone','text':'Контактный телефон только на случай вопросов по Вашему заказу'},validate:{'text':'Введите номер телефона'}})#phone.order__form__input.js-phone
 
 						+order-form-section(2,'Город и способ доставки')
-							.form-group
+							.form-group.form-group-city
 								label.control-label.col-sm-20-1
 									| Город
 								.col-sm-20-4
@@ -81,7 +81,7 @@ mixin order()
 										.tooltip.right.in(role='tooltip').order__form__tooltip
 											.tooltip-arrow.order__form__tooltip-arrow
 											.tooltip-inner Бесплатно
-								.js-address
+								.address-block.js-address
 									+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address-courier.order__form__input
 
 							.form-group.form-group-radio.js-radio-address-block
@@ -90,7 +90,7 @@ mixin order()
 										.tooltip.right.in(role='tooltip').order__form__tooltip
 											.tooltip-arrow.order__form__tooltip-arrow
 											.tooltip-inner Бесплатно
-								.address--is-hidden.js-address
+								.address-block.address--is-hidden.js-address
 									.col-sm-20-4.col-sm-20-offset-1
 										+b.order-map
 											+e.iframe
@@ -105,7 +105,7 @@ mixin order()
 									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios', id: 'radio-3'}).order__form__radio.radio--express.js-radio-address
 										|  !{''}
 										strong.order__form__price.js-order-price 41 612 BYR
-								.address--is-hidden.js-address
+								.address-block.address--is-hidden.js-address
 									+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address-express.order__form__input
 
 
