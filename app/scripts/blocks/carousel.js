@@ -101,6 +101,29 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+	$('.js-sidebar-product').slick({
+		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-up-EB-24x12 slick-prev__icon"></i></button>',
+		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-down-EB-24x12 slick-next__icon"></i></button>',
+		dots: false,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		vertical: true,
+		verticalSwiping: true,
+		infinite: false,
+		asNavFor: '.js-gallery-product',
+		centerMode: true,
+  	focusOnSelect: true
+	});
+	$('.js-gallery-product').slick({
+		arrows: false,
+		dots: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		infinite: false,
+  	fade: true,
+		asNavFor: '.js-sidebar-product'
+
+	});
 	// $(window).on('resize', function () {
 	// 	let recentSlick = true;
 	// 	if (recentSlick && $(window).width() < 480) {
