@@ -36,7 +36,7 @@ include questions/questions
 include delivery/delivery
 
 
-mixin productPage()
+mixin productPageLP()
 	block vars
 	- var	order = pageId === 'order'
 	- var available = productState !== 'notAvailable';
@@ -44,7 +44,7 @@ mixin productPage()
 	+nav-main()
 	+content-outer()
 		.col-md-6
-			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
+			+breadcrumb(['Главная', 'Каталог товаров', 'Велосипеды', pageTitle])
 	section.product-page__head
 		+content-outer()
 			.col-md-6
@@ -102,6 +102,7 @@ mixin productPage()
 							+e.main-item__inner
 								+e.img-wrap
 									+e('img')(src='./assets/images/bike-2-small.jpg').img
+
 
 
 			.col-md-3

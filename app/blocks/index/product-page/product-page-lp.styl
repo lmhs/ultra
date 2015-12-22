@@ -1,0 +1,90 @@
+.product-gallery
+	&__sidebar
+		width 130px
+		float left
+
+	&__main
+		margin-left 130px
+
+	&__item
+		position relative
+		border 1px solid rgba(235, 235, 235, 0)
+		margin-right 10px
+		display block
+		&.slick-current
+			border-color #ebebeb
+			border-left-color rgba(235, 235, 235, 0)
+
+			&::before
+				position absolute
+				top 50%
+				margin-top -10px
+				right -10px
+				content ''
+				width 0
+				height 0
+				border-style solid
+				border-width 10px 0 10px 10px
+				border-color transparent transparent transparent #ebebeb
+			&::after
+				position absolute
+				top 50%
+				margin-top -9px
+				right -9px
+				content ''
+				width 0
+				height 0
+				border-style solid
+				border-width 9px 0 9px 9px
+				border-color transparent transparent transparent #FFF
+			.product-gallery__item__inner
+				&::before
+					background-color #e14013
+
+	&__video-icon
+		position absolute
+		top 50%
+		margin-top -22px
+		left 50%
+		margin-left -22px
+		z-index 1
+
+	&__item__inner
+		height 120px
+		width 120px
+		padding-left 4px
+
+
+	&__item__inner
+	&__main-item__inner
+		display block
+		overflow hidden
+
+
+	.product-gallery__item__inner
+		&::before
+			content ''
+			position absolute
+			top -1px
+			bottom -1px
+			left 0
+			width 4px
+			background-color none
+
+	&__img-wrap
+		position relative
+		display block
+		padding 0
+		padding-bottom 100%
+
+	&__img
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		max-width 100%
+		max-height 100%
+		margin auto
+		transform translateZ(0)
+
