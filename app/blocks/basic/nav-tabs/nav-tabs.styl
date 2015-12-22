@@ -296,4 +296,51 @@
 				.nav-tabs__position__icon-rows
 					sprite($icon_burger_red_19x19)
 
+.product-lp-nav
+	border-top 4px solid #dddde0
+	background-color #F3F3F5
+	border-bottom 3px solid #e14013
+	font-size 0
+	white-space nowrap
+	&__item
+		margin-top -4px
+		border-top 4px solid #dddde0
+		display inline-block
+		vertical-align top
+		&.active
+			border-top-color #E14013
+			.product-lp-nav__link
+				background-color #e14013
+				&
+				&:hover
+				&:focus
+				&:active
+					color #fff
+
+	&__link
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 14px
+		display block
+		padding 30px 30px 0
+		height 86px
+
+		&
+		&:hover
+		&:focus
+		&:active
+			text-decoration none
+			color #333
+
+
+		&:hover
+		&:focus
+		&:active
+			background-color #ebebeb
+
+		&:hover
+			.product-lp-nav__text
+				text-decoration underline
+
+	&__text
+		text-decoration none
 
