@@ -19,10 +19,16 @@ mixin navTabsProduct(args)
 mixin navTabsProductLP(args)
 	+b('ul').product-lp-nav&attributes(attributes)
 		each item in args.links
-			+e('li')(role='presentation', class= (item.isActive) ? 'active' : '').item
-				+e('a')(href=item.href, class= item.class).link
-					+e('i')(class= 'icon-' + item.icon + ' nav__icon-' + item.icon).icon
-					+e('span').text !{item.content}
+			if item.isActive
+				+e('li')(role='presentation').item.active
+					+e('a')(href=item.href, class= 'link' + ' ' + item.class)
+						+e('i')(class= 'icon' + ' icon-' + item.icon + ' nav__icon-' + item.icon)
+						+e('span').text !{item.content}
+			else
+				+e('li')(role='presentation').item
+					+e('a')(href=item.href, class= 'link' + ' ' + item.class)
+						+e('i')(class= 'icon' + ' icon-' + item.icon + ' nav__icon-' + item.icon)
+						+e('span').text !{item.content}
 
 mixin navSocial(args)
 	ul.nav.nav-tabs.social&attributes(attributes)
