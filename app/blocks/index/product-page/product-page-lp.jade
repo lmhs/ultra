@@ -196,7 +196,46 @@ mixin productPageLP()
 	+similar()
 	section.product-page-lp__info
 		section.product-page-lp__info__nav.sticky
-			| header
+			+navTabsProductLP({
+										type:'small',
+										links: [
+											{
+												isActive: true,
+												href: '#description',
+												class: 'js-product-lp-nav-tab',
+												icon: 'feather',
+												content: 'Описание'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-lp-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
+												},
+											{
+												isActive: false,
+												href: '#video',
+												class: 'js-product-lp-nav-tab',
+												icon: 'video',
+												content: 'Видео'
+												},
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-lp-nav-tab',
+												icon: 'review',
+												content: 'Отзывы'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-lp-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												}
+										]
+									})
 		.container-20-outer
 			.row-20.product-page__info__row
 				.col-md-20-5
