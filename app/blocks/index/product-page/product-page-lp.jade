@@ -194,69 +194,17 @@ mixin productPageLP()
 								| Ежедневно в другие регионы
 							+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
-	section.product-page__info
+	section.product-page-lp__info
+		section.product-page-lp__info__nav.sticky
+			| header
 		.container-20-outer
 			.row-20.product-page__info__row
-				.col-md-20-1.product-page__info__col
-					aside.product-page__aside.sticky
-						+product({
-											type:'sidebar',
-											rating: true,
-											oldPrice: '45 000 BYR'
-										})
-				.col-md-20-4.product-page__info__col
-					+navTabsProduct({
-										type:'small',
-										links: [
-											{
-												isActive: true,
-												href: '#description',
-												class: 'js-product-nav-tab',
-												icon: 'feather',
-												content: 'Описание'
-												},
-											{
-												isActive: false,
-												href: '#features',
-												class: 'js-product-nav-tab',
-												icon: 'info',
-												content: 'Характеристики'
-												},
-											{
-												isActive: false,
-												href: '#review',
-												class: 'js-product-nav-tab',
-												icon: 'review',
-												content: 'Отзывы'
-												},
-											{
-												isActive: false,
-												href: '#questions',
-												class: 'js-product-nav-tab',
-												icon: 'help',
-												content: 'Вопрос – ответ'
-												},
-											{
-												isActive: false,
-												href: '#delivery',
-												class: 'js-product-nav-tab',
-												icon: 'delivery',
-												content: 'Доставка и оплата'
-												}
-										]
-									}).js-product-nav
+				.col-md-20-5
+					| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
+					| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+					| Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
 
-					.tab-content.product-page__tab-content
-						#description.tab-pane.active(role='tabpanel')
-							+description()
-						#features.tab-pane(role='tabpanel')
-							+features()
-						#review.tab-pane(role='tabpanel')
-							+reviews()
-						#questions.tab-pane(role='tabpanel')
-							+questions()
-						#delivery.tab-pane(role='tabpanel')
-							+delivery()
+
 	+expert({
 						heading: 'Мнение эксперта',
 						subheading: 'кратко о главном'
