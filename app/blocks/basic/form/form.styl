@@ -39,32 +39,21 @@
 		box-shadow none
 		border-color #e14013
 
-.radio--with-tooltip
-	display inline-block
-
 .radio label
-	padding-left 25px
-
-
-.radio-element
-	visibility hidden
-	border 1px solid #e1e1e1
-	border-radius 2px
-
-	appearance none
-	width 20px
-	height 20px
-
 	position relative
+	line-height 20px
+	min-height 20px
+
 	&::before
 		visibility visible
 		content ""
 		display inline-block
 		position absolute
-		width 17px
-		height 17px
-		left -1px
-		top -1px
+		width 15px
+		height 15px
+		left 0
+		top 50%
+		margin-top -8px
 		border 1px solid #cccccc
 		border-radius 50%
 		background-color #fff
@@ -77,15 +66,32 @@
 		width 9px
 		height 9px
 		left 3px
-		top 3px
+		top 50%
+		margin-top -5px
 		border-radius 50%
 		background-color #d9534f
 		transform scale(0, 0)
 		transition transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33)
+
+.radio input[type="radio"]
+.radio-inline input[type="radio"]
+	margin-left 0
+	margin-top 4px
+
+.radio-element
+	opacity 0
+	border 1px solid #e1e1e1
+	border-radius 2px
+
+	appearance none
+	width 15px
+	height 15px
+
+
 	&:checked
-		&::after
-			visibility visible
-			transform scale(1, 1)
+		& + label
+			&::after
+				transform scale(1, 1)
 
 input[type='search']
 	border 1px solid #d3d7da

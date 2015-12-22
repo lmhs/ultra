@@ -38,14 +38,14 @@ mixin order()
 		+content-outer()
 			.col-md-4
 				.order__form-wrap
-					form.order__form.form-horisontal
+					form.order__form.form-horisontal.js-order-form
 						+order-form-section(1,'Введите ваши данные')
-							+input-horizontal({name:'Имя',placeholder:'Имя',required:true,help:{name:'helpName',text:'Например, Иван'}})#name.order__form__input
-							+input-horizontal({type:'email',name:'Email',placeholder:'Email',required:true,help:{name:'helpEmail',text:'На этот почтовый ящик пришлем подробности заказа'}})#email.order__form__input
-							+input-horizontal({type:'phone',name:'Телефон',placeholder:'Телефон',required:true,help:{name:'helpPhone','text':'Контактный телефон только на случай вопросов по Вашему заказу'},validate:{'text':'Введите номер телефона'}})#phone.order__form__input
+							+input-horizontal-group({name:'Имя',placeholder:'Имя',required:true,help:{name:'helpName',text:'Например, Иван'}})#name.order__form__input
+							+input-horizontal-group({type:'email',name:'Email',placeholder:'Email',required:true,help:{name:'helpEmail',text:'На этот почтовый ящик пришлем подробности заказа'}})#email.order__form__input
+							+input-horizontal-group({type:'phone',name:'Телефон',placeholder:'+375',required:true,help:{name:'helpPhone','text':'Контактный телефон только на случай вопросов по Вашему заказу'},validate:{'text':'Введите номер телефона'}})#phone.order__form__input.js-phone
 
 						+order-form-section(2,'Город и способ доставки')
-							.form-group
+							.form-group.form-group-city
 								label.control-label.col-sm-20-1
 									| Город
 								.col-sm-20-4
@@ -73,32 +73,48 @@ mixin order()
 											{text:"Брест",url:jv0,city:"Brest"},
 											{text:"Могилев",url:jv0,city:"Mahiliou"}
 											])
-							//- +input-horizontal({name:'Город',placeholder:'Город',required:true})#city.order__form__input
+							//- +input-horizontal-group({name:'Город',placeholder:'Город',required:true})#city.order__form__input
 
-							.form-group
+							.form-group.form-group-radio.js-radio-address-block
 								.col-sm-20-4.col-sm-20-offset-1
-									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios'}).radio--with-tooltip.radio--courier
-									.tooltip.right.in(role='tooltip').order__form__tooltip
-										.tooltip-arrow.order__form__tooltip-arrow
-										.tooltip-inner Бесплатно
-							+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address.order__form__input
+									+radio({'text':'Курьерская доставка по Минску',name:'addressRadios',checked: true, id: 'radio-1'}).order__form__radio.radio--courier.js-radio-address
+										.tooltip.right.in(role='tooltip').order__form__tooltip
+											.tooltip-arrow.order__form__tooltip-arrow
+											.tooltip-inner Бесплатно
+								.address-block.js-address
+									+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address-courier.order__form__input
 
-							.form-group
+							.form-group.form-group-radio.js-radio-address-block
 								.col-sm-20-4.col-sm-20-offset-1
-									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios'}).radio--with-tooltip.radio--self-pickup
-									.tooltip.right.in(role='tooltip').order__form__tooltip
-										.tooltip-arrow.order__form__tooltip-arrow
-										.tooltip-inner Бесплатно
-									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios'}).radio--express
+									+radio({'text':'Самовывоз со склада в Минске',name:'addressRadios', id: 'radio-2'}).order__form__radio.radio--self-pickup.js-radio-address
+										.tooltip.right.in(role='tooltip').order__form__tooltip
+											.tooltip-arrow.order__form__tooltip-arrow
+											.tooltip-inner Бесплатно
+								.address-block.address--is-hidden.js-address
+									.col-sm-20-4.col-sm-20-offset-1
+										+b.order-map
+											+e.iframe
+												script(type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=400&lang=ru_RU&sourceType=constructor")
+											+e.footer
+												+e('i').icon-map.icon-map-292929-12x18
+												+e('address').address
+													| г.Минск, ул.Ленина 56, оф 7
+
+							.form-group.form-group-radio.js-radio-address-block
+								.col-sm-20-4.col-sm-20-offset-1
+									+radio({'text':'Экспресс доставка по Минску (в течении часа)',name:'addressRadios', id: 'radio-3'}).order__form__radio.radio--express.js-radio-address
 										|  !{''}
 										strong.order__form__price.js-order-price 41 612 BYR
+								.address-block.address--is-hidden.js-address
+									+input-horizontal({name:'Адрес',placeholder:'Адрес'})#address-express.order__form__input
+
 
 						+order-form-section(3,'Способ оплаты')
 							.form-group
 								.col-sm-20-4.col-sm-20-offset-1
-									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios'})
-									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios'})
-									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios'})
+									+radio({'text':'Наличными курьеру при доставке',name:'paymentRadios', id: 'radio-4'}).order__form__radio
+									+radio({'text':'Безналичная оплата согласно выставленному счету',name:'paymentRadios', id: 'radio-5'}).order__form__radio
+									+radio({'text':'Оплата наличными в магазине при самовывозе',name:'paymentRadios', id: 'radio-6'}).order__form__radio
 							.form-group.visible-md-block.visible-lg-block
 								.col-sm-20-4.col-sm-20-offset-1
 									+link().link--pseudo.order__form__back-link.js-return-order
@@ -135,7 +151,7 @@ mixin order()
 						h6.small.order__fast__subheading Не хотите заполнять никаких форм?
 						form
 							label.order__fast__label Просто введите номер:
-							+input({'type':'phone',value:'+375'})
+							+input({'type':'phone', placeholder:'+375'}).js-phone
 							.form-group
 								+button({type:'buttonSubmit'}).btn-lg.btn--dark.btn-block.order-fast__form__submit-btn.js-submit-order-fast
 									| Заказать быстро

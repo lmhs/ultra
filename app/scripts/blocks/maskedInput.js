@@ -16,5 +16,5 @@ import '../third-party/jquery.maskedInput.js';
         factory(jQuery || $);
     }
 }(function($) {
- 	$("#phone").mask("(999) 999-99-99");
+ 	$(".js-phone").mask("+375 (99) 999-99-99");
 }));

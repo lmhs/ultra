@@ -54,8 +54,8 @@ mixin modalLogin(id)
 					h4.login-modal__heading Вход в личный кабинет
 				.modal-body
 					form.modal__form.login-modal__form.js-login-form
-						+input-horizontal({name:'Email',placeholder:'Email'})#email.login-modal__form__input
-						+input-horizontal({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
+						+input-horizontal-group({name:'Email',placeholder:'Email'})#email.login-modal__form__input
+						+input-horizontal-group({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
 						.login-modal__form__actions
 							.col-sm-4.col-sm-offset-1
 								+button().btn-med.btn--red.modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
@@ -118,7 +118,7 @@ mixin modalForgot(id)
 					.modal-body__content
 						p.modal-body__text Введите Email, который вы указывали при регистрации. На него мы вышлем инструкции по восстановлению пароля
 						form.modal__form.forgot-modal__form.js-forgot-form
-							+input-horizontal({name:'Email',placeholder:'Email'})#forgotEmail.forgot-modal__form__input
+							+input-horizontal-group({name:'Email',placeholder:'Email'})#forgotEmail.forgot-modal__form__input
 							.form-group
 								.col-sm-4.col-sm-offset-1
 									+button().btn-med.btn--red.modal__form__forgot-btn.js-forgot-btn

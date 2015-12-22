@@ -83,7 +83,7 @@ mixin input-simple-money(args)
 				placeholder=args.placeholder ? args.placeholder : null)&attributes(attributes)
 
 //- input-horisontal
-mixin input-horizontal(args)
+mixin input-horizontal-group(args)
 	- if (args.name)
 		- var label= args.name
 	.form-group
@@ -107,6 +107,30 @@ mixin input-horizontal(args)
 					| !{args.validate.text}
 			if block
 				block
+
+mixin input-horizontal(args)
+	- if (args.name)
+		- var label= args.name
+	label.control-label.col-sm-20-1(
+		for=attributes.id ? attributes.id : null,
+		class=args.required ? 'is-required' : '') #{label}
+	.col-sm-20-4
+		input.form-control(
+			type=args.type ? args.type : 'text'
+			name=args.name ? args.name : null
+			value=args.value ? args.value : null
+			min=args.min ? args.min : null
+			max=args.max ? args.max : null
+			placeholder=args.placeholder ? args.placeholder : null
+			aria-describedby=args.help ? args.help.name : null)&attributes(attributes)
+		if args.help
+			+helpInlineBlock(args.help.name)
+				| !{args.help.text}
+		if args.validate
+			+helpBlock()
+				| !{args.validate.text}
+		if block
+			block
 
 
 
@@ -133,12 +157,20 @@ mixin radio(args)
 	- if (args.text)
 		- var label= args.text
 	.radio&attributes(attributes)
-		label
+		if args.checked
 			input(
-			type="radio",
-			name=args.name ? args.name : null).radio-element
-			= label
-			block
+				type="radio",
+				checked="checked",
+				id= args.id ? args.id : null,
+				name=args.name ? args.name : null).radio-element
+		else
+			input(
+				type="radio",
+				id= args.id ? args.id : null,
+				name=args.name ? args.name : null).radio-element
+		label(for=args.id ? args.id : null)
+			| !{label}
+		block
 
 //- Radio box - Inline style
 mixin radio-inline(text)
