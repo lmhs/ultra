@@ -15,6 +15,7 @@ import $ from 'jquery';
 		}
 }(function ($) {
 	$('body').scrollspy({
-												target: '#js-product-info-navigation'
+												target: '#js-product-info-navigation',
+												offset: 94
 												 });
 }));
