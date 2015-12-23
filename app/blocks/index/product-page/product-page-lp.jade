@@ -276,6 +276,7 @@ mixin productPageLP()
 					.col-md-20-5
 						+b('article').product-page-lp-video
 							.product-page-lp__inner
+								iframe(width="100%" src="https://www.youtube.com/embed/N3gN9Up6hmc" frameborder="0" allowfullscreen)
 
 							.product-page-lp__right
 								h1 Scott Gambler в Лурде
@@ -284,9 +285,12 @@ mixin productPageLP()
 					.col-md-20-5
 						+b('article').product-page-lp-video
 							.product-page-lp__left
-
+								h1 Gambler 20 и его достоинства в горах
+								p Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
+								+button().btn--red.btn-lg
+									| Смотреть видеообзор
 							.product-page-lp__inner
-
+								iframe(width="100%" src="https://www.youtube.com/embed/7XdYnh729IQ" frameborder="0" allowfullscreen)
 
 
 						| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
@@ -339,14 +343,118 @@ mixin productPageLP()
 									tr
 										td Вилка
 										td Scott
-
-		section.product-page-lp__info__review#review
-		section.product-page-lp__info__questions#questions
-
-	+expert({
+						section.product-page-lp__info__features__foot
+							+buttonMore({text:'Все характеристики'})
+				.row
+					.col-md-20-5
+						+b('article').product-page-lp-features
+							+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
+							+e.inner
+								+e('h1')
+									| Дизайн Шредера
+								+e('p').text
+									| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
+								+e('p').text
+									| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+				.row
+					.col-md-20-3.col-md-20-offset-1
+						+b('article').product-page-lp-features-details
+							+e.left
+								.row
+									.col-md-3
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+									.col-md-3
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+								.row
+									.col-md-3
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+									.col-md-3
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+							+e.right
+								+e('h1') Совершенство в деталях
+								+e('ul').list
+									+e('li').list-item
+										| Материал рамы: 6061 алюминий
+									+e('li').list-item
+										| Ход подвески: 210 мм (8,2 дюймов)
+									+e('li').list-item
+										| Вес рамы: 3,904 кг. без амортизатора
+									+e('li').list-item
+										| Вилка: Fox 40 RC2, 20мм ось
+									+e('li').list-item
+										| Амортизатор: Fox DHX RC2 Coil
+									+e('li').list-item
+										| Вес в сборе: 17,8 кг
+				.row
+					.col-md-20-5
+						+b('article').product-page-lp-features
+							+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
+							+e.inner
+								+e('h1')
+									| На трассе
+								+e('p').text
+									| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
+								+e('p').text
+									| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
+		+expert({
 						heading: 'Мнение эксперта',
 						subheading: 'кратко о главном'
 					}).product__expert
+		section.product-page-lp__info__care
+			+content-20-outer()
+				.col-md-20-2
+					+b('article').product-page-lp-care
+						+e('h1') Уход за товаром
+							small Залог долговечности
+						+e('p').text
+							| Для надежной и качественной работы велосипеда вам необходимо праввильно ухаживать за велосипедом, содержать его в чистоте и следить за еготехническим состоянием.
+						+button().btn--dark.btn-lg
+							| Читать инструкцию
+				.col-md-20-3
+					+b.tooltip-image
+						+e('img')(src="./assets/images/bike-3.jpg", alt="placeholder+image").img
+						+e('a')(href=jv0, data-description='Натяжитель',.data-id='1').tooltip-link
+						+e('a')(href=jv0, data-description='Седло',.data-id='2').tooltip-link
+						+e('a')(href=jv0, data-description='Амортизатор',.data-id='3').tooltip-link
+						+e('a')(href=jv0, data-description='Звезда',.data-id='4').tooltip-link
+						+e('a')(href=jv0, data-description='Педаль',.data-id='5').tooltip-link
+						+e('a')(href=jv0, data-description='Руль',.data-id='6').tooltip-link
+						+e('a')(href=jv0, data-description='Трос',.data-id='7').tooltip-link
+						+e('a')(href=jv0, data-description='Передни амортизатор',.data-id='8').tooltip-link
+						+e('a')(href=jv0, data-description='Тормоза',.data-id='9').tooltip-link
+		section.product-page-lp__info__reviews-questions
+			+content
+				.col-md-20-3.col-md-20-offset-1
+					+navTabsProduct({
+										type:'small',
+										links: [
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-info-nav-tab',
+												icon: 'review',
+												content: 'Комментарии'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-info-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												}
+										]
+									}).js-product-info-nav
+					.product-page-lp__reviews-questions
+						.tab-content.product-page__tab-content
+							#review.tab-pane(role='tabpanel')
+								+reviews()
+							#questions.tab-pane(role='tabpanel')
+								+questions()
+
 		| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
 	+pattern()
 	+productPageSet()

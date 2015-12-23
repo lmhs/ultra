@@ -32,4 +32,8 @@ import $ from 'jquery';
 		e.preventDefault();
 		$(this).tab('show')
 	});
+	$('.js-product-info-nav').on('click','.js-product-info-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
+	});
 }));

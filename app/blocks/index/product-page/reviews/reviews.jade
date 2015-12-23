@@ -1,3 +1,7 @@
+include ../../../layout/review/review
+
 mixin reviews()
-	article.reviews
-		| reviews
+	+b('article').reviews
+		+review({best:true})
+		+e.no-reviews
+

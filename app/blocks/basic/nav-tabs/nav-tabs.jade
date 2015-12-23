@@ -12,7 +12,7 @@ mixin navTabsProduct(args)
 	ul.nav.nav-tabs.product-nav-tabs(class= (args.type === small) ? 'product-nav-tabs--small' : '')&attributes(attributes)
 		each item in args.links
 			li(role='presentation', class= (item.isActive) ? 'active' : '')
-				+link(item.href).js-product-nav-tab
+				+link(item.href)(class= item.class)
 					i(class= 'icon-' + item.icon + ' nav__icon-' + item.icon)
 					span.nav-tabs__text !{item.content}
 
