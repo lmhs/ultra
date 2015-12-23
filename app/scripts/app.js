@@ -15,6 +15,7 @@ import './blocks/header-menu.js';
 import './blocks/mobile-menu.js';
 import './blocks/maskedInput.js';
 import './blocks/order-address.js';
+import './blocks/scrollspy.js';
 
 $(() => {
 

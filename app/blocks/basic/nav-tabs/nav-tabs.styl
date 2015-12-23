@@ -303,23 +303,47 @@
 	font-size 0
 	white-space nowrap
 	text-align center
-	z-index 1
-	&__item
+	position relative
+	&.nav > &__item
 		margin-top -4px
 		border-top 4px solid #dddde0
 		display inline-block
 		vertical-align top
+		position relative
+		margin-right 1px
+		& + &
+			&::before
+				content ''
+				position absolute
+				background-color #E1E1E1
+				width 1px
+				top 25px
+				bottom 25px
+				left -1px
 		&.active
 			border-top-color #E14013
-			.product-lp-nav__link
-				background-color #e14013
-				&
-				&:hover
-				&:focus
-				&:active
-					color #fff
+			& + .product-lp-nav__item
+				&::before
+					content none
+	&.nav > li.active > .product-lp-nav__link
+		background-color #e14013
 
-	&__link
+		&
+		&:hover
+		&:focus
+		&:active
+			color #fff
+			background-color #e14013
+
+
+	&__icon
+		margin-right 15px
+		vertical-align middle
+		margin-top -3px
+
+	// &__text
+
+	&.nav > li > &__link
 		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 		font-size 14px
 		display block
