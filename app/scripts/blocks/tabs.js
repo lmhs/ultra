@@ -36,4 +36,18 @@ import $ from 'jquery';
 		e.preventDefault();
 		$(this).tab('show')
 	});
+	$('.js-product-lp-nav').on('click', '.js-product-lp-nav-tab', function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+		var target = $(this.hash);
+		var offset = 93;
+		if (this.hash === '#review' || this.hash === '#questions') {
+			offset = 290;
+			$('.js-product-info-nav-tab[href=' + this.hash + ']').click();
+		}
+		$('html,body').animate({
+			scrollTop: target.offset().top - offset
+		}, 1000);
+	})
+
 }));
