@@ -195,9 +195,8 @@ mixin productPageLP()
 							+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page-lp__info
-		section.product-page-lp__info__nav.sticky
+		section#js-product-info-navigation.product-page-lp__info__nav.sticky
 			+navTabsProductLP({
-										type:'small',
 										links: [
 											{
 												isActive: true,
@@ -208,17 +207,17 @@ mixin productPageLP()
 												},
 											{
 												isActive: false,
-												href: '#features',
-												class: 'js-product-lp-nav-tab',
-												icon: 'info',
-												content: 'Характеристики'
-												},
-											{
-												isActive: false,
 												href: '#video',
 												class: 'js-product-lp-nav-tab',
 												icon: 'video',
 												content: 'Видео'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-lp-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
 												},
 											{
 												isActive: false,
@@ -235,14 +234,114 @@ mixin productPageLP()
 												content: 'Вопрос – ответ'
 												}
 										]
-									})
-		.container-20-outer
-			.row-20.product-page__info__row
-				.col-md-20-5
-					| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
-					| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
-					| Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
+									}).js-product-lp-nav
+		section.product-page-lp-description#description
+			.container-20-outer
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-promo
+							+e('img')(src='./assets/images/description bg.jpg').bg-img
+							+e.inner
+								+e('img')(src='./assets/images/GAMBLER 20 BIKE.png').logo-img
+								+e('p').text
+									| Горный велосипед 2014 года, кардинально переработаный Scott Gambler. Байк стоит вашего внимания.
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-right-features
+							.product-page-lp__inner
+								+e('h1').heading Gambler 20
+								+e('p').text
+									| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
+							.product-page-lp__right
+								ul
+									+e('li').feature-item
+										+e('img')(src='./assets/images/speed-58x52.png').feature-img
+										+e.feature-text
+											+e('strong').strong 27
+											+e('span').text скоростей
+									+e('li').feature-item
+										+e('img')(src='./assets/images/diameter-54x54.png').feature-img
+										+e.feature-text
+											+e('strong').strong 26
+											+e('span').text дюймов колесо
+									+e('li').feature-item
+										+e('img')(src='./assets/images/mountains-60x52.png').feature-img
+										+e.feature-text
+											+e('strong').strong горный
+											+e('span').text велосипед
 
+		section.product-page-lp__info__video#video
+			.container-20-outer
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-video
+							.product-page-lp__inner
+
+							.product-page-lp__right
+								h1 Scott Gambler в Лурде
+								p Следуйте за Бренданом Фэрклафом, Нэко Мулалли и остальной частью команды Гштаад-Скотт в Лурд для первой остановки в UCI MTB Кубка мира.
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-video
+							.product-page-lp__left
+
+							.product-page-lp__inner
+
+
+
+						| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+						| Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
+
+						h1 Дизайн Шредера
+						p Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
+						p На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+		section.product-page-lp__info__features#features
+			.container-20-outer
+				.row-20
+					.col-md-20-3.col-md-20-offset-1
+						h1.product-page-lp__info__heading Характеристики
+						section.general-info
+							h6.small Общая информация
+							table.table-striped
+								tbody
+									tr
+										td Класс
+										td горный
+									tr
+										td Год выпуска
+										td 2014 год
+									tr
+										td Производитель
+										td Scott
+						section.general-info
+							h6.small Рама
+							table.table-striped
+								tbody
+									tr
+										td Тип рамы
+										td закрытая
+									tr
+										td Материал рамы
+										td алюминий
+									tr
+										td Производитель
+										td Scott
+						section.general-info
+							h6.small Вилка
+							table.table-striped
+								tbody
+									tr
+										td Ходо амортизатора
+										td 100 мм
+									tr
+										td Тип вилки
+										td амортизационная
+									tr
+										td Вилка
+										td Scott
+
+		section.product-page-lp__info__review#review
+		section.product-page-lp__info__questions#questions
 
 	+expert({
 						heading: 'Мнение эксперта',

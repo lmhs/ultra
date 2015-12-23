@@ -17,7 +17,7 @@ mixin navTabsProduct(args)
 					span.nav-tabs__text !{item.content}
 
 mixin navTabsProductLP(args)
-	+b('ul').product-lp-nav&attributes(attributes)
+	+b('ul').product-lp-nav.nav&attributes(attributes)
 		each item in args.links
 			if item.isActive
 				+e('li')(role='presentation').item.active
