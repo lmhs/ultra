@@ -28,3 +28,14 @@ mixin buttonMore(args)
 			|  товаров
 		i.icon-arrow-down-10-f.show-more-btn__icon
 	// button more end
+
+mixin buttonMoreFeatures(args)
+	+button({}).btn-lg.btn--dark.show-more-btn&attributes(attributes)
+		if args.text
+			| !{args.text}
+		else
+			| Загрузить еще
+			|  !{args.itemCount}
+			|  товаров
+		i.icon-arrow-down-10-f.show-more-btn__icon
+	// button more end
