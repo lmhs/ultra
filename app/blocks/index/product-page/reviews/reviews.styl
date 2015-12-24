@@ -1,0 +1,99 @@
+.no-reviews
+	padding-top 44px
+	padding-bottom 40px
+	&__icon
+		float left
+	&__text
+		margin-left 86px
+	&__strong
+		color #E14013
+		font-size 26px
+		line-height 1
+		display block
+	&__caption
+		font-weight bold
+		font-size 18px
+		color #B7B7B7
+		line-height 1
+
+.follow-reviews
+	position absolute
+	bottom calc(100% + 10px)
+	left 50%
+	margin-left -208px
+	width 416px
+	border 1px solid #acacac
+	background-color #F5F5F5
+	box-shadow inset 0px 3px 0px 0px #b7b7b7
+	padding 20px
+	display none
+	&.is-opened
+		display block
+	&__heading
+		font-size 14px
+		color #111
+		margin-top 0
+		margin-bottom 14px
+		text-align left
+	&__footer
+		display table
+		width 100%
+	&__input-wrap
+		display table-cell
+		padding-right 4px
+	&__input
+		height 40px
+	&__btn
+		display table-cell
+		font-weight regular
+		padding-top 9px
+		padding-bottom 9px
+
+	&::before
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 16px 11.5px 0 11.5px
+		border-color #acacac transparent transparent transparent
+		position absolute
+		bottom -16px
+		left 50%
+		margin-left -11px
+	&::after
+		content ''
+		width 0
+		height 0
+		border-style solid
+		border-width 14px 9.5px 0 9.5px
+		border-color #F5F5F5 transparent transparent transparent
+		position absolute
+		bottom -14px
+		left 50%
+		margin-left -9px
+
+.reviews
+	padding-top 30px
+	&__heading
+		text-align left
+		margin-top 0
+
+	&__footer
+		padding-top 17px
+		padding-bottom 45px
+		text-align right
+
+	&__follow-wrap
+		display inline-block
+		vertical-align top
+		position relative
+		height 40px
+		line-height 40px
+
+	&__btn-write
+		vertical-align top
+		font-weight regular
+		padding-top 10px
+		padding-bottom 10px
+		margin-left 24px
+

@@ -5,6 +5,7 @@
 
 	&__main
 		margin-left 130px
+		overflow hidden
 
 	&__item
 		position relative
@@ -94,8 +95,262 @@
 	position relative
 
 
+
 .product-page-lp__info__nav
 	top 0
+	z-index 1
+
+.product-page-lp-promo
+	position relative
+	height 420px
+	overflow hidden
+	border-bottom 1px solid #ebebeb
+	&__bg-img
+		position absolute
+		top 50%
+		margin-top -210px
+		left 0
+		height 100%
+
+	&__inner
+		position relative
+		width 520px
+		height 100%
+		padding-top 46px
+		padding-left 67px
+
+	&__logo-img
+		margin-bottom 46px
+	&__text
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 20px
+		color #FFF
+		line-height 30px
+		padding-left 45px
+
+.product-page-lp-info-section
+	padding 60px 110px 80px
+	border-bottom 1px solid #EBEBEB
+	clearfix()
+
+.product-page-lp
+	&__inner
+		width 70%
+		float left
+	&__right
+		width 30%
+		margin-left 70%
+	&__left
+		width 30%
+		float left
+
+.video-wrap-left
+	padding-right 47px
+.video-wrap-right
+	padding-left 47px
+
+.product-page-lp-history
+	&__heading
+		margin-top 0
+		margin-bottom 26px
+		text-align left
+	&__text
+		padding-right 60px
+	&__feature-item
+		margin-bottom 25px
+		display block
+	&__feature-img
+		float left
+	&__feature-text-wrap
+		margin-left 100px
+	&__strong
+		font-size 26px
+		color #E14013
+		text-transform uppercase
+		line-height 1
+	&__feature-text
+		color #B7B7B7
+		line-height 1
+		text-transform uppercase
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+
+.product-page-lp-video
+	&__heading
+		margin-top 0
+		margin-bottom 10px
+		text-align left
+	&__subheading
+		text-transform uppercase
+		font-size 24px
+		font-weight light
+		display block
+		margin-bottom 20px
+	&__dash-icon
+		display block
+		margin-top 10px
+		margin-bottom 10px
+
+.general-info
+	margin-bottom 40px
+	&__heading
+		margin-top 0
+		margin-bottom 10px
+	&__table
+		width 100%
+		td
+		th
+			height 36px
+			width 50%
+			padding-left 24px
+
+.product-page-lp-features-bg
+	min-height 510px
+	overflow hidden
+	position relative
+
+	&__inner
+		position relative
+		width 50%
+		padding 80px 120px 80px 110px
+	&__bg-img
+		position absolute
+		top 0
+		left 0
+		height 100%
+	h1
+	&__heading
+		margin-top 0
+		color #FFF
+		text-align left
+	p
+		color #FFF
+
+.product-page-lp-features-table
+	padding-bottom 80px
+	border-bottom 1px solid #EBEBEB
+
+.product-page-lp-features__body
+
+	&--hidden
+		height 480px
+		overflow hidden
+		position relative
+		&::after
+			content ''
+			position absolute
+			height 140px
+			background-image linear-gradient(to top, rgb(255,255,255) 0%, rgba(255,255,255,0) 100%)
+			bottom 0
+			width 100%
 
 
+.product-page-lp-features__foot
+	text-align center
 
+.product-page-lp-features
+	&__row
+		margin-left -5px
+		margin-right -5px
+	&__col
+		padding-left 5px
+		padding-right 5px
+
+.product-page-lp-features-details
+	font-size 0
+	padding-top 80px
+	padding-bottom 60px
+	&__left
+	&__right
+		display inline-block
+		vertical-align top
+		width 50%
+	&__left
+		padding-right 6px
+	&__right
+		padding-left 60px
+	&__item
+		border 1px solid #ebebeb
+		margin-bottom 10px
+		padding-bottom 100%
+		position relative
+		overflow hidden
+	&__img
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		max-width 100%
+		max-height 100%
+		margin auto
+		transform translateZ(0)
+	&__heading
+		margin-top 0
+		margin-bottom 35px
+		text-align left
+	&__list
+		padding-left 20px
+	&__list-item
+		font-size 15px
+		list-style disc
+		margin-bottom 12px
+
+	&__strong
+		font-family $font-family-sans-serif
+		font-weight regular
+	&__value
+		color #959595
+
+.product-page-lp-info-care
+	background-color #F6F6F6
+
+.product-page-lp-care
+	padding-top 70px
+	&__heading
+		margin-bottom 20px
+		margin-top 0
+		text-align left
+		small
+			margin-top 0
+			text-align left
+
+.tooltip-image
+	position relative
+
+.tooltip-link
+	display block
+	background-color #E14013
+	width 24px
+	height 24px
+	text-align center
+	border-radius 50%
+	&-icon
+		vertical-align top
+		margin-top 6px
+.tooltip-text
+	display inline-block
+	border-radius 3px
+	background-color #E14013
+	color #FFF
+	font-weight semibold
+	font-size 14px
+	padding-right 30px
+	padding-left 30px
+	padding-top 8px
+	padding-bottom 8px
+	position relative
+	position absolute
+	top 0
+	left 0
+	&::after
+		content ''
+		sprite($icon_tooltip_triangle)
+		position absolute
+		top 100%
+		right 0
+
+
+.product-page-lp__info__reviews-questions
+	padding-top 70px
+	&__heading
+		margin-top 0

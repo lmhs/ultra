@@ -56,7 +56,7 @@ mixin product-price(args)
 			| !{args.specialPrice ? args.specialPrice : '350 415 BYR'}
 
 mixin product-features-icons()
-	.product__features-icons.visible-md-block.visible-lg-block
+	.product__features-icons
 		span.product__features__icon-wrap
 			img(src="./assets/images/android-icon.png", alt="android")
 		span.product__features__icon-wrap
@@ -71,7 +71,7 @@ mixin product-features-icons()
 			img(src="./assets/images/gps-icon.png", alt="gps")
 
 mixin product-actions(args)
-	.product__actions.visible-md-block.visible-lg-block&attributes(attributes)
+	.product__actions&attributes(attributes)
 		if args.type !== 'set'
 			+button().btn-sm.btn--red.product__buy-btn
 				| Купить

@@ -135,7 +135,7 @@ mixin productPage()
 							.spec__buy
 								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
 									| Купить
-								+checkbox({name:'product-warranty',value:'add-warranty',label:'Продлить гарантию еще на 1 год'}).spec__warranty
+								+checkbox({name:'product-warranty','id':'warranty',value:'add-warranty',label:'Продлить гарантию еще на 1 год'}).spec__warranty
 									strong.spec__warranty-price + 106 400 BYR
 									+link().link--pseudo.spec__buy__info.js-show-info
 										| узнать подробнее

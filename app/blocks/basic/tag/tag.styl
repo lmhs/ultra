@@ -13,6 +13,9 @@
 	cursor pointer
 	margin-bottom 4px
 	margin-right 4px
+	&.is-opened
+		.tag__select
+			display inline-block
 	+below(2)
 		line-height 33px
 		height 33px
@@ -20,7 +23,6 @@
 		margin-bottom 16px
 
 	&:hover
-		text-decoration line-through
 		.tag-close-icon
 			sprite($icon_close_fff_12x12)
 
@@ -28,6 +30,11 @@
 		background-color #E14013
 		&:hover
 			text-decoration none
+
+.tag__select
+	display none
+
+
 
 .tag-plus-icon
 	vertical-align top

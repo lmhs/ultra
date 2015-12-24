@@ -136,7 +136,7 @@ mixin productPageLP()
 							.spec__buy
 								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
 									| Купить
-								+checkbox({name:'product-warranty',value:'add-warranty',label:'Продлить гарантию еще на 1 год'}).spec__warranty
+								+checkbox({name:'product-warranty','id':'warranty', value:'add-warranty',label:'Продлить гарантию еще на 1 год'}).spec__warranty
 									strong.spec__warranty-price + 106 400 BYR
 									+link().link--pseudo.spec__buy__info.js-show-info
 										| узнать подробнее
@@ -195,21 +195,294 @@ mixin productPageLP()
 							+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page-lp__info
-		section.product-page-lp__info__nav.sticky
-			| header
-		.container-20-outer
-			.row-20.product-page__info__row
-				.col-md-20-5
-					| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
-					| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
-					| Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
+		section#js-product-info-navigation.product-page-lp__info__nav.sticky
+			+navTabsProductLP({
+										links: [
+											{
+												isActive: true,
+												href: '#description',
+												class: 'js-product-lp-nav-tab',
+												icon: 'feather',
+												content: 'Описание'
+												},
+											{
+												isActive: false,
+												href: '#video',
+												class: 'js-product-lp-nav-tab',
+												icon: 'video',
+												content: 'Видео'
+												},
+											{
+												isActive: false,
+												href: '#features',
+												class: 'js-product-lp-nav-tab',
+												icon: 'info',
+												content: 'Характеристики'
+												},
+											{
+												isActive: false,
+												href: '#review',
+												class: 'js-product-lp-nav-tab',
+												icon: 'review',
+												content: 'Отзывы'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-lp-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												}
+										]
+									}).js-product-lp-nav
+		section.product-page-lp-info-description#description
+			.container-20-outer
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-promo
+							+e('img')(src='./assets/images/description bg.jpg').bg-img
+							+e.inner
+								+e('img')(src='./assets/images/GAMBLER 20 BIKE.png').logo-img
+								+e('p').text
+									| Горный велосипед 2014 года, кардинально переработаный Scott Gambler. Байк стоит вашего внимания.
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-history.product-page-lp-info-section
+							.product-page-lp__inner
+								+e('h1').heading Gambler 20
+								+e('p').text
+									| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
+							.product-page-lp__right
+								+e('ul').features
+									+e('li').feature-item
+										+e('img')(src='./assets/images/speed-58x52.png').feature-img
+										+e.feature-text-wrap
+											+e('strong').strong 27
+											+e('p').feature-text скоростей
+									+e('li').feature-item
+										+e('img')(src='./assets/images/diameter-54x54.png').feature-img
+										+e.feature-text-wrap
+											+e('strong').strong 26
+											+e('p').feature-text дюймов колесо
+									+e('li').feature-item
+										+e('img')(src='./assets/images/mountains-60x52.png').feature-img
+										+e.feature-text-wrap
+											+e('strong').strong горный
+											+e('p').feature-text велосипед
 
+		section.product-page-lp-info-video#video
+			.container-20-outer
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-video.product-page-lp-info-section
+							.product-page-lp__inner
+								+e.video-wrap.video-wrap-left
+									iframe(width="100%" height="406" src="https://www.youtube.com/embed/N3gN9Up6hmc" frameborder="0" allowfullscreen)
 
-	+expert({
+							.product-page-lp__right
+								+e('h1').heading Scott Gambler в Лурде
+								+e('i').dash-icon.icon-dash-111-20x4
+								+e('strong').subheading Чемпионат Mountain Bike World Cup Стоп #&nbsp;1
+								p Следуйте за Бренданом Фэрклафом, Нэко Мулалли и остальной частью команды Гштаад-Скотт в Лурд для первой остановки в UCI MTB Кубка мира.
+								+button().btn--red.btn-lg.product-page-lp-video__btn
+									| Смотреть видеообзор
+									i.icon-arrow-gt.btn-more__icon
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-video.product-page-lp-info-section
+							.product-page-lp__left
+								+e('h1').heading Gambler 20 и его достоинства в горах
+								p Ходовые качества велосипеда продолжали нас удивлять и на других частях горы. При дропах со скалы перед нами открывались огромные грязевые участки между Ловер Вистлер ДХ и Ловер Джойрайд которые являются одними из самых опасных зон в нижней части горы, но Гемблер справился и с ними.
+								+button().btn--red.btn-lg
+									| Смотреть видеообзор
+									i.icon-arrow-gt.btn-more__icon
+							.product-page-lp__inner
+								+e.video-wrap.video-wrap-right
+									iframe(width="100%" height="406" src="https://www.youtube.com/embed/7XdYnh729IQ" frameborder="0" allowfullscreen)
+		section.product-page-lp-features#features
+			.container-20-outer
+				.row-20
+					.col-md-20-3.col-md-20-offset-1
+						section.product-page-lp-features-table
+							h1.product-page-lp-heading Характеристики
+							section.product-page-lp__info-features__body.product-page-lp-features__body--hidden.js-features-body
+								+b('section').general-info
+									+e('h6').heading.small Общая информация
+									+e('table').table.table-striped
+										tbody
+											tr
+												td Класс
+												td горный
+											tr
+												td Год выпуска
+												td 2014 год
+											tr
+												td Производитель
+												td Scott
+								+b('section').general-info
+									+e('h6').heading.small Рама
+									+e('table').table.table-striped
+										tbody
+											tr
+												td Тип рамы
+												td закрытая
+											tr
+												td Материал рамы
+												td алюминий
+											tr
+												td Производитель
+												td Scott
+								+b('section').general-info
+									+e('h6').heading.small Вилка
+									+e('table').table.table-striped
+										tbody
+											tr
+												td Ходо амортизатора
+												td 100 мм
+											tr
+												td Тип вилки
+												td амортизационная
+											tr
+												td Вилка
+												td Scott
+							section.product-page-lp-features__foot.js-button-show-more-features-wrap
+								+buttonMoreFeatures({text:'Все характеристики'}).js-button-show-more-features
+				.row-20
+					.col-md-20-5
+						+b('article').product-page-lp-features-bg
+							+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
+							+e.inner
+								h1
+									| Дизайн Шредера
+								p
+									| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
+								p
+									| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+				.row-20
+					.col-md-20-3.col-md-20-offset-1
+						+b('article').product-page-lp-features-details
+							+e.left
+								.row
+									.col-md-3.product-page-lp-features__col
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+									.col-md-3.product-page-lp-features__col
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+								.row.product-page-lp-features__row
+									.col-md-3.product-page-lp-features__col
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+									.col-md-3.product-page-lp-features__col
+										+e.item
+											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
+							+e.right
+								+e('h1').heading Совершенство в деталях
+								+e('ul').list
+									+e('li').list-item
+										+e('strong').strong
+											| Материал рамы: !{''}
+										+e('span').value 6061 алюминий
+									+e('li').list-item
+										+e('strong').strong
+											| Ход подвески: !{''}
+										+e('span').value 210 мм (8,2 дюймов)
+									+e('li').list-item
+										+e('strong').strong
+											| Вес рамы: !{''}
+										+e('span').value 3,904 кг. без амортизатора
+									+e('li').list-item
+										+e('strong').strong
+											| Вилка: !{''}
+										+e('span').value Fox 40 RC2, 20мм ось
+									+e('li').list-item
+										+e('strong').strong
+											| Амортизатор: !{''}
+										+e('span').value Fox DHX RC2 Coil
+									+e('li').list-item
+										+e('strong').strong
+											| Вес в сборе: !{''}
+										+e('span').value 17,8 кг
+				.row
+					.col-md-20-5
+						+b('article').product-page-lp-features-bg
+							+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
+							+e.inner
+								h1
+									| На трассе
+								p
+									| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
+								br
+								p
+									| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
+		+expert({
 						heading: 'Мнение эксперта',
 						subheading: 'кратко о главном'
-					}).product__expert
-		| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
+					}).product__expert.product-lp__expert
+			| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
+		section.product-page-lp-info-care
+			+content-20-outer()
+				.col-md-20-2
+					+b('article').product-page-lp-care
+						+e('h1').heading.h1--red Уход за товаром
+							small Залог долговечности
+						p
+							| Для надежной и качественной работы велосипеда вам необходимо праввильно ухаживать за велосипедом, содержать его в чистоте и следить за еготехническим состоянием.
+						+button().btn--dark.btn-lg.product-page-lp-care__btn
+							| Читать инструкцию
+							i.icon-arrow-gt.btn-more__icon
+				.col-md-20-3
+					+b.tooltip-image
+						+e('img')(src="./assets/images/bike-3.png", alt="placeholder+image").img
+						+e('a')(href=jv0, data-description='Натяжитель', data-id='1', style='position: absolute; top: 265px; left: 96px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Седло', data-id='2', style='position: absolute; top: 128px; left: 187px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Амортизатор', data-id='3', style='position: absolute; top: 196px; left: 232px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Педаль', data-id='4', style='position: absolute; top: 244px; left: 268px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Звезда', data-id='5', style='position: absolute; top: 263px; left: 211px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Руль', data-id='6', style='position: absolute; top: 50px; left: 347px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Трос', data-id='7', style='position: absolute; top: 114px; left: 366px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Передни амортизатор', data-id='8', style='position: absolute; top: 158px; left: 390px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e('a')(href=jv0, data-description='Тормоза', data-id='9', style='position: absolute; top: 264px; left: 447px;').tooltip-link.tooltip-link
+							i.icon-plus-fff-12x12.tooltip-link-icon
+						+e.tooltip-text.tooltip-text
+							span Натяжитель
+		section.product-page-lp__info__reviews-questions(name='review')
+			+content
+				.col-md-20-3.col-md-20-offset-1
+					h1.product-page-lp__info__reviews-questions__heading Отзывы покупателей
+					+navTabsProduct({
+										type:'small',
+										links: [
+											{
+												isActive: true,
+												href: '#review',
+												class: 'js-product-info-nav-tab',
+												icon: 'review',
+												content: 'Комментарии'
+												},
+											{
+												isActive: false,
+												href: '#questions',
+												class: 'js-product-info-nav-tab',
+												icon: 'help',
+												content: 'Вопрос – ответ'
+												}
+										]
+									}).js-product-info-nav
+					.product-page-lp__reviews-questions
+						.tab-content.product-page-lp__tab-content
+							#review.tab-pane.active(role='tabpanel')
+								+reviews()
+							#questions.tab-pane(role='tabpanel')
+								+questions()
 	+pattern()
 	+productPageSet()
 	+recent()
