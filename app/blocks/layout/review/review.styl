@@ -187,7 +187,7 @@
 	background-color #F6F6F6
 	padding 40px 34px 20px
 	clearfix()
-	margin-bottom 20px
+	margin-bottom 40px
 
 	.control-label
 		text-align right
@@ -205,11 +205,12 @@
 		margin-left 3px
 
 .new-review
+	margin-top 40px
 	border-bottom 1px solid #fcfcfc
 	border-top 4px solid #eeeeee
 	background-color #F6F6F6
 	padding 40px 34px 20px
-	margin-bottom 20px
+	margin-bottom 40px
 	text-align left
 
 	.control-label
@@ -223,7 +224,48 @@
 		text-align center
 	&__slider
 		width 220px
+	&__text
+	&__rating
+	&__slider
+	&__status
+		display inline-block
+		vertical-align top
+		line-height 30px
+		height 30px
+	&__text
+		width 165px
+	&__rating
+		padding-top 2px
+		margin-right 15px
+	&__slider
+		padding-top 15px
+		margin-right 10px
+	&__status
+		font-size 12px
+		line-height 30px
+		color #B7B7B7
 	// &__name
 		// width 190px
 	// &__city
 		// width 230px
+
+	&__checkbox
+		.checkbox-text
+			font-size 12px
+			color #666
+			line-height 1
+			border-bottom 1px dashed #666
+		&:hover
+			.checkbox-text
+				border-bottom-style solid
+	&__actions
+		text-align right
+	&__btn-cancel
+		margin-left 3px
+	&__btn-post
+	&__btn-cancel
+		width 160px
+
+		padding-left 20px
+		padding-right 20px
+		margin-bottom 3px
