@@ -5,7 +5,7 @@ mixin reviews()
 	+b('article').reviews.js-reviews
 
 		+e('h6').heading.small Лучший отзыв
-		+review({best:true})
+		+review({best:true,reply:false})
 		+e.footer
 			+e.footer-inner
 				+e.follow-wrap.js-follow-reviews-wrap
@@ -24,7 +24,10 @@ mixin reviews()
 			+b('section').new-review.new-review--is-hidden
 				+e('form').form
 					+e('h6').heading.small Добавь свой отзыв
-
+		+b.reviews-body
+			+e('h6').heading.small 15 отзывов к этому товару
+			+review({reply:true})
+			+review({reply:false})
 
 	+b('article').no-reviews
 		+e('i').icon.icon-smiley-sad-52x52
