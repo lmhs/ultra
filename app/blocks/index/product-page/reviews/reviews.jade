@@ -1,7 +1,34 @@
 include ../../../layout/review/review
+include ../../../basic/button/button
 
 mixin reviews()
-	+b('article').reviews
+	+b('article').reviews.js-reviews
+
+		+e('h6').heading.small Лучший отзыв
 		+review({best:true})
-		+e.no-reviews
+		+e.footer
+			+e.footer-inner
+				+e.follow-wrap.js-follow-reviews-wrap
+					+b.follow-reviews.js-follow-reviews
+						+e('h6').heading Следить за отзывами к этому товару
+						+e.footer
+							.follow-reviews__input-wrap
+								+input-simple({type:'email',placeholder:'Email'}).follow-reviews__input
+							+button().btn--dark.btn-med.follow-reviews__btn
+								| Подписаться
+					+e('a')(href=jv0).link.js-follow-reviews-link Следить за отзывами
+				+button().btn--red.btn-lg.reviews__btn-write.js-write-review
+					| Написать отзыв
+
+
+			+b('section').new-review.new-review--is-hidden
+				+e('form').form
+					+e('h6').heading.small Добавь свой отзыв
+
+
+	+b('article').no-reviews
+		+e('i').icon.icon-smiley-sad-52x52
+		+e.text
+			+e.caption К сожалению нет отзывов к этому товару
+			+e('strong').strong Будь первым!
 
