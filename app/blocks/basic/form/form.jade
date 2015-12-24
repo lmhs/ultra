@@ -13,6 +13,28 @@ mixin textarea(args)
 		placeholder=args.placeholder ? args.placeholder : null
 		id=attributes.id ? attributes.id : null)&attributes(attributes)= args.value ? args.value : null
 
+//- input-horisontal
+mixin textarea-horizontal-group(args)
+	- if (args.name)
+		- var label= args.name
+	.form-group
+		label.control-label.col-sm-20-1(
+			for=attributes.id ? attributes.id : null,
+			class=args.required ? 'is-required' : '') #{label}
+		.col-sm-20-4
+			textarea.form-control(
+				name=args.name ? args.name : null
+				placeholder=args.placeholder ? args.placeholder : null
+				aria-describedby=args.help ? args.help.name : null)&attributes(attributes)
+			if args.help
+				+helpInlineBlock(args.help.name)
+					| !{args.help.text}
+			if args.validate
+				+helpBlock()
+					| !{args.validate.text}
+			if block
+				block
+
 //- Input control with form-group wrapper
 mixin input(args)
 	- if (args.name)
