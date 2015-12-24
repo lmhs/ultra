@@ -281,17 +281,20 @@
 		flex-wrap wrap
 		align-items center
 		align-content center
+		+below(4)
+			display none
 
 	&__features__icon-wrap
 		display inline-block
 		margin-bottom 20px
-		margin-right 9px
-
+		margin-right 4px
+		margin-left 4px
 	// nb to fix
 	.no-flexbox &__features
 		text-align justify
 
 	&__actions
+
 		font-size 0
 		padding-left 6px
 		padding-right 6px
@@ -313,7 +316,6 @@
 		&--similar
 			background-color #FFF
 			display none
-			visibility hidden
 			position absolute
 			bottom 0
 			left 0
@@ -321,8 +323,11 @@
 			text-align center
 			padding-bottom 36px
 
+		+below(4)
+			display none
+
 	&__action
-		position relative
+		position 	relative
 		z-index 2
 		line-height 1
 		margin-bottom 5px
@@ -449,7 +454,7 @@
 		.product__features-icons
 			visibility hidden
 		.product__actions--similar
-			visibility visible
+			display block
 
 	.no-flexbox & .product__features-icons
 		display block
