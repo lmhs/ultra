@@ -16,6 +16,7 @@ import 'wnumb';
   'use strict';
 	// https://github.com/leongersen/noUiSlider
 	let slider = document.getElementById('slider');
+	let experienceSlider = document.getElementById('js-experience-slider');
 
 	if (slider !== null) {
 		noUiSlider.create(slider, {
@@ -57,6 +58,31 @@ import 'wnumb';
 		});
 		inputNumberFrom.addEventListener('change', () => {
 			slider.noUiSlider.set([this.value, null]);
+		});
+	}
+
+	if (experienceSlider !== null) {
+		noUiSlider.create(experienceSlider, {
+			start: [ 2 ],
+			connect: 'lower',
+			step: 1,
+			range: {
+				'min': [  1 ],
+				'max': [ 12 ]
+			},
+			// http://refreshless.com/nouislider/slider-read-write/#section-formatting
+			// http://refreshless.com/wnumb/
+			format: wNumb({
+				decimals: 0
+			})
+		});
+
+		let inputNumberExperience = document.getElementById('js-experience-slider-months');
+
+		experienceSlider.noUiSlider.on('update', ( value ) => {
+
+			inputNumberExperience.innerHTML  = value;
+
 		});
 	}
 
