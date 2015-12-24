@@ -38,6 +38,7 @@ mixin reviews()
 						.col-sm-20-4.col-sm-20-offset-1
 							+e.text Оцените этот товар
 							+rating().new-review__rating
+							input(type='hidden',value='2',data-filled='symbol icon-star-rating', data-empty='symbol icon-star-rating-gray').js-set-rating
 							+e.status — удовлетворительно
 					.form-group
 						.col-sm-20-4.col-sm-20-offset-1
