@@ -43,8 +43,12 @@ mixin reviews()
 					.form-group
 						.col-sm-20-4.col-sm-20-offset-1
 							+e.text Опыт использования
-							.slider
-							+e.status — более 3 месяцев
+							+e.slider
+								#js-experience-slider.noUi-extended
+							+e.status
+								|  — более !{''}
+								span#js-experience-slider-months
+								|  месяцев
 					+textarea-horizontal-group({name:'Преимущества',required: false, advantages:true, placeholder: 'Преимущества'}).new-review__comment
 					+textarea-horizontal-group({name:'Недостатки',required: false, disadvantages:true, placeholder: 'Недостатки'}).new-review__comment
 					+textarea-horizontal-group({name:'Комментарий',required: true, placeholder: 'Комментарий'}).new-review__comment
