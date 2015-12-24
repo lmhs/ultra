@@ -23,13 +23,15 @@ mixin textarea-horizontal-group(args)
 				for=attributes.id ? attributes.id : null,
 				class=args.required ? 'is-required' : '')
 				| #{label}
-				i.icon-plus-green-13x13
+				.label-advantages-icon
+					i.icon-plus-green-13x13
 		else if args.disadvantages
 			label.control-label.col-sm-20-1.label-disadvantages(
 				for=attributes.id ? attributes.id : null,
 				class=args.required ? 'is-required' : '')
 				| #{label}
-				i.icon-dash-red-13x3
+				.label-disadvantages-icon
+					i.icon-dash-red-13x3
 		else
 			label.control-label.col-sm-20-1(
 				for=attributes.id ? attributes.id : null,
