@@ -1,4 +1,5 @@
 include ../../basic/rating/rating
+include ../../basic/form/form
 
 mixin review(args)
 	+b.review(class= args.best ? 'review--best' : '' ).js-review&attributes(attributes)
@@ -39,11 +40,12 @@ mixin review(args)
 					strong Недостатки
 					p Если бы только имел хотя-бы 32 гб внутренней памяти и чтоб micro-SIM с лоточком не извлекается при помощи скрепки, а простым нажатием.
 		+e.foot
-			+e('a')(href=jv0).reply-link
-				+e('i').reply-link-icon.icon-message-16x17
-				+e('span').reply-link-text Ответить
-			if args.reply
-				i.review__foot-reply-icon.icon-dots-vertical-gray-4x24
+			+e.foot-inner
+				+e('a')(href=jv0).reply-link.js-reply-link
+					+e('i').reply-link-icon.icon-message-16x17
+					+e('span').reply-link-text Ответить
+				if args.reply
+					i.review__foot-reply-icon.icon-dots-vertical-gray-4x24
 
 			+e.reply
 				if args.reply
@@ -84,9 +86,25 @@ mixin review(args)
 									strong Недостатки
 									p Если бы только имел хотя-бы 32 гб внутренней памяти и чтоб micro-SIM с лоточком не извлекается при помощи скрепки, а простым нажатием.
 						+e.foot
-							+e('a')(href=jv0).reply-link
-								+e('i').reply-link-icon.icon-message-16x17
-								+e('span').reply-link-text Ответить
+							+e.foot-inner
+								+e('a')(href=jv0).reply-link.js-reply-link
+									+e('i').reply-link-icon.icon-message-16x17
+									+e('span').reply-link-text Ответить
+								i.review__foot-reply-icon.icon-dots-vertical-gray-4x24
+							+e.reply
+								+b.reply-review
+									+e('h6').heading.small Ответить на комментарий
+									+e('form').form
+										+input-horizontal-group({name:'Ваше имя', required: true, placeholder: 'Имя'}).reply-review__name
+										+textarea-horizontal-group({name:'Комментарий',required: true, placeholder: 'Комментарий'}).reply-review__comment
+									+e.foot
+										.form-group
+											.col-sm-20-4.col-sm-20-offset-1
+												+button().btn--red.reply-review__btn-post.js-post-comment
+													| Добавить отзыв
+												+button().btn--gray.reply-review__btn-cancel.js-cancel-comment
+													| Отменить
+
 
 
 
