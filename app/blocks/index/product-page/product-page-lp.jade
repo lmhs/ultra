@@ -264,7 +264,7 @@ mixin productPageLP()
 									}).js-product-lp-nav
 		section.product-page-lp-info-description#description
 			.container-20-outer
-				.row-20
+				.row-20.hidden-xs.hidden-sm
 					.col-md-20-5
 						+b('article').product-page-lp-promo
 							+e('img')(src='./assets/images/description bg.jpg').bg-img
@@ -279,7 +279,7 @@ mixin productPageLP()
 								+e('h1').heading Gambler 20
 								+e('p').text
 									| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
-							.product-page-lp__right
+							.product-page-lp__right.hidden-xs.hidden-sm
 								+e('ul').features
 									+e('li').feature-item
 										+e('img')(src='./assets/images/speed-58x52.png').feature-img
@@ -297,7 +297,7 @@ mixin productPageLP()
 											+e('strong').strong горный
 											+e('p').feature-text велосипед
 
-		section.product-page-lp-info-video#video
+		section.product-page-lp-info-video#video.hidden-xs.hidden-sm
 			.container-20-outer
 				.row-20
 					.col-md-20-5
@@ -388,7 +388,7 @@ mixin productPageLP()
 				.row-20
 					.col-md-20-3.col-md-20-offset-1
 						+b('article').product-page-lp-features-details
-							+e.left
+							+e.left.hidden-xs.hidden-sm
 								.row
 									.col-md-3.product-page-lp-features__col
 										+e.item
@@ -510,7 +510,7 @@ mixin productPageLP()
 								+reviews()
 							#questions.tab-pane(role='tabpanel')
 								+questions()
-	+pattern()
+	+pattern().hidden-xs.hidden-sm
 	+productPageSet()
 	+recent()
 	+not-found()
