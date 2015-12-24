@@ -1,0 +1,182 @@
+.review
+	&__head
+		box-shadow inset 0px 4px 0px 0px #e1e1e1
+		background-color #F6F6F6
+		padding 16px
+		.review--best &
+			box-shadow inset 0px 4px 0px 0px #39b54a
+	&__name
+		font-weight bold
+		font-style italic
+		color #333
+		font-size 14px
+		line-height 1
+		display inline-block
+		vertical-align top
+	&__date
+		font-style italic
+		font-size 11px
+		color #999
+		display inline-block
+		line-height 14px
+		margin-left 12px
+		vertical-align top
+	&__additional-info
+		margin-top 3px
+	&__rating
+		display inline-block
+		vertical-align bottom
+	&__experience
+		margin-left 5px
+		display inline-block
+		vertical-align bottom
+		font-size 12px
+		color #333
+	&__right
+		float right
+		white-space nowrap
+	&__body
+		border 1px solid #F6F6F6
+		border-top none
+		padding 20px 120px 20px 20px
+		font-size 14px
+		line-height 20px
+		color #666
+	&__advantages
+		position relative
+		padding-left 30px
+		&::before
+			content ''
+			position absolute
+			sprite($icon_plus_green_13x13)
+			top 0
+			left 0
+	&__advantages
+	&__disadvantages
+		strong
+			line-height 1
+			display block
+			margin-bottom 5px
+			font-size 14px
+			color #333
+	&__advantages
+	&__disadvantages
+	&__comment
+		margin-bottom 25px
+	&__disadvantages
+		position relative
+		padding-left 30px
+		&::before
+			content ''
+			position absolute
+			sprite($icon_dash_red_13x3)
+			top 3px
+			left 0
+	&__useful
+	&__not-useful
+		font-size 12px
+		color #333
+		margin-left 20px
+		display inline-block
+		vertical-align top
+		&-link
+			display inline-block
+			width 42px
+			height 30px
+			margin-left 13px
+
+
+			border-radius 3px
+			position relative
+			color #fff
+			font-size 14px
+			text-align center
+			line-height 30px
+			&-default
+				display none
+
+			&::before
+				content ''
+				position absolute
+				top 10px
+				left -4px
+				width 0
+				height 0
+				border-style solid
+				border-width 4.5px 4px 4.5px 0
+			&::after
+				content none
+				position absolute
+				top 11px
+				left -3px
+				width 0
+				height 0
+				border-style solid
+				border-width 3.5px 3px 3.5px 0
+				border-color transparent #ffffff transparent transparent
+			&:hover
+				background-color #FFF
+				&::after
+					content ''
+				.review__not-useful-link-default
+				.review__useful-link-default
+					display inline-block
+				.review__not-useful-link-count
+				.review__useful-link-count
+					display none
+		&--no-votes
+			.review__not-useful-link-default
+			.review__useful-link-default
+				display inline-block
+				color #FFF
+
+	&__useful-link
+		background-color #39b54a
+		border 1px solid #39b54a
+		&:hover
+			color #39b54a
+
+		&::before
+			border-color transparent #39b54a transparent transparent
+	&__not-useful-link
+		background-color #e14013
+		border 1px solid #e14013
+		&:hover
+			color #E14013
+
+		&::before
+			border-color transparent #e14013 transparent transparent
+
+	&__right-text
+		color #ACACAC
+		font-size 13px
+		display inline-block
+		vertical-align top
+		line-height 30px
+	&__foot
+		clearfix()
+
+	&__reply
+		.review
+			margin-left 20px
+	&__foot-reply-icon
+		vertical-align top
+		margin-top 11px
+		margin-left 40px
+		margin-bottom 11px
+	&__reply-link-text
+		line-height 1
+		border-bottom 1px dashed #e14013
+		text-decoration none
+		margin-left 8px
+	&__reply-link
+		margin-top 10px
+		margin-bottom 15px
+		float right
+		&:focus
+		&:hover
+		&:active
+		&.active
+			.review__reply-link-text
+				border-bottom-style solid
+
