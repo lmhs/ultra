@@ -18,6 +18,7 @@ import './blocks/maskedInput.js';
 import './blocks/order-address.js';
 import './blocks/scrollspy.js';
 import './blocks/reviews.js';
+import './blocks/tag.js';
 
 $(() => {
 
