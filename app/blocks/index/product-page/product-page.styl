@@ -45,6 +45,8 @@
 
 .product-page__offers
 	padding-bottom 50px
+	+below(4)
+		padding-bottom 10px
 	&__spec--unavailable
 		.spec__price
 		.spec__available
@@ -200,13 +202,15 @@
 	border-bottom 4px solid #EBEBEB
 	padding-top 50px
 	padding-bottom 50px
-	&__inner
-		display flex
-		flex-direction row
-		justify-content space-around
+	+tablet()
+		border none
+		padding-top 10px
+		padding-bottom 20px
+		background #FFF
+	+mobile()
+		display none
 
 .product-page__condition
-	width 282px
 	margin-top 0
 	&__heading
 		color #E14013
@@ -226,6 +230,8 @@
 		border-bottom-color #888
 	&__left
 		padding-right 40px
+		+tablet()
+			display block
 
 .product-page__unavailable-divider
 	margin-top 15px

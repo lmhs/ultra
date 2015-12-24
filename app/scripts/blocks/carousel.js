@@ -37,13 +37,13 @@ import $ from 'jquery';
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
 		dots: false,
 		slidesToShow: 5,
-		slidesToScroll: 5,
+		slidesToScroll: 1,
 		responsive: [
 		{
 			breakpoint: 990,
 			settings: {
 				slidesToShow: 4,
-				slidesToScroll: 4,
+				slidesToScroll: 1,
 				arrows: false,
 				dots: false
 			}
@@ -51,7 +51,35 @@ import $ from 'jquery';
 			breakpoint: 720,
 			settings: {
 				slidesToShow: 3,
-				slidesToScroll: 3,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: false
+			}
+		},{
+			breakpoint: 480,
+			settings: 'unslick'
+		}]
+	});
+	$('.js-similar-carousel').slick({
+		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
+		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
+		dots: false,
+		slidesToShow: 5,
+		slidesToScroll: 5,
+		responsive: [
+		{
+			breakpoint: 990,
+			settings: {
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				arrows: false,
+				dots: false
+			}
+		},{
+			breakpoint: 720,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1,
 				arrows: false,
 				dots: false
 			}
@@ -78,13 +106,13 @@ import $ from 'jquery';
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
 		dots: false,
 		slidesToShow: 5,
-		slidesToScroll: 5,
+		slidesToScroll: 1,
 		responsive: [
 		{
 			breakpoint: 990,
 			settings: {
 				slidesToShow: 4,
-				slidesToScroll: 4,
+				slidesToScroll: 1,
 				arrows: false,
 				dots: false
 			}
@@ -92,7 +120,7 @@ import $ from 'jquery';
 			breakpoint: 720,
 			settings: {
 				slidesToShow: 3,
-				slidesToScroll: 3,
+				slidesToScroll: 1,
 				arrows: false,
 				dots: false
 			}
@@ -138,15 +166,4 @@ import $ from 'jquery';
 			}
 		}]
 	});
-	// $(window).on('resize', function () {
-	// 	let recentSlick = true;
-	// 	if (recentSlick && $(window).width() < 480) {
-	// 		$('.js-recent-carousel').slick('unslick');
-	// 		recentSlick = false;
-	// 	} else if (!recentSlick && $(window).width() > 480) {
-	// 		$('.js-recent-carousel').slick('unslick');
-	// 		recentSlick = true;
-	// 	}
-
-	// })
 }));

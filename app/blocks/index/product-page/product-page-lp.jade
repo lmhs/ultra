@@ -193,35 +193,36 @@ mixin productPageLP()
 								| Купить в один клик
 	section.product-page__conditions
 		+content-outer()
-			.col-md-6
-				.product-page__conditions__inner
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-wire-transfer
-						.media-body
-							h6.product-page__condition__heading Гарантия возврата денег
-							p.product-page__condition__caption в течение 14 дней с даты покупки
-							+link().link--pseudo.product-page__condition__link Условия возврата
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-calendar-48
-						.media-body
-							h6.product-page__condition__heading 48 месяцев гарантии
-							p.product-page__condition__caption от производителя
-							+link().link--pseudo.product-page__condition__link Условия гарантии
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-truck-delivery
-						.media-body
-							h6.product-page__condition__heading Быстрая доставка
-							p.product-page__condition__caption
-								| По Минску сегодня.
-								br
-								| Ежедневно в другие регионы
-							+link().link--pseudo.product-page__condition__link Условия доставки
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-wire-transfer
+					.media-body
+						h6.product-page__condition__heading Гарантия возврата денег
+						p.product-page__condition__caption в течение 14 дней с даты покупки
+						+link().link--pseudo.product-page__condition__link Условия возврата
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-calendar-48
+					.media-body
+						h6.product-page__condition__heading 48 месяцев гарантии
+						p.product-page__condition__caption от производителя
+						+link().link--pseudo.product-page__condition__link Условия гарантии
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-truck-delivery
+					.media-body
+						h6.product-page__condition__heading Быстрая доставка
+						p.product-page__condition__caption
+							| По Минску сегодня.
+							br
+							| Ежедневно в другие регионы
+						+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page-lp__info
-		section#js-product-info-navigation.product-page-lp__info__nav.sticky
+		section#js-product-info-navigation.product-page-lp__info__nav.sticky.hidden-xs.hidden-sm
 			+navTabsProductLP({
 										links: [
 											{

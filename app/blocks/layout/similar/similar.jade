@@ -7,33 +7,34 @@ mixin similar()
 			.row-20
 				.col-md-20-5
 					.similar__head
-						h4.similar__heading Похожие велосипеды с
+						h4.similar__heading Похожие велосипеды
+							span.hidden-sm.hidden-xs с
 						+tag('2014 год',false).similar__tag
 						+tag('горный',false).similar__tag
 						+tag('мужской',false).similar__tag
 						+tag('еще параметр',true).similar__tag
-			.row-20
-				.col-md-20-1
+			.row-20.js-similar-carousel
+				.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 					+product({
 												type:'similar',
 												rating: true
 											})
-				.col-md-20-1
+				.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 					+product({
 												type:'similar',
 												rating: true
 											})
-				.col-md-20-1
+				.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 					+product({
 												type:'similar',
 												rating: true
 											})
-				.col-md-20-1
+				.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 					+product({
 												type:'similar',
 												rating: true
 											})
-				.col-md-20-1
+				.col-md-20-1.col-sm-25-1.col-xs-2.product__col
 					+product({
 												type:'similar',
 												rating: true
