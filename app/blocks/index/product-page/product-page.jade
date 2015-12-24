@@ -41,8 +41,8 @@ mixin productPage()
 	- var	order = pageId === 'order'
 	- var available = productState !== 'notAvailable';
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs.hidden-sm
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
 	section.product-page__head

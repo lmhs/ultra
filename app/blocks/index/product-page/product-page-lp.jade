@@ -41,15 +41,23 @@ mixin productPageLP()
 	- var	order = pageId === 'order'
 	- var available = productState !== 'notAvailable';
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs.hidden-sm
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Велосипеды', pageTitle])
 	section.product-page__head
 		+content-outer()
 			.col-md-6
 				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
-				.product-page__icons
+				.product-page__rating-mobile
+					.spec__rating-wrap
+						+rating()
+						span.spec__rating-number
+							strong 4,8
+							|  из 5
+						em.spec__rating-votes
+							| (8 голосов)
+				.product-page__icons.hidden-xs.hidden-sm
 					span.product-page__icons-wrap
 						img(src="./assets/images/android-icon.png", alt="android")
 					span.product-page__icons-wrap
@@ -67,7 +75,7 @@ mixin productPageLP()
 		+content-outer()
 			.col-md-3
 				+b.product-gallery.product-page__offers__gallery
-					+e.sidebar.js-sidebar-product
+					+e.sidebar.js-sidebar-product.hidden-xs.hidden-sm
 						+e('a')(href=jv0).item
 							+e.item__inner
 								+e.img-wrap
@@ -103,9 +111,27 @@ mixin productPageLP()
 								+e.img-wrap
 									+e('img')(src='./assets/images/bike-2-small.jpg').img
 
+				.product-page__actions-mobile
+					.row
+						.col-xs-3.col-sm-2.product-page__actions-mobile__prices
+							strong.spec__price.spec__price--new
+								| 1 950 000 BYR
+							s.spec__price.spec__price--old
+								| 2 610 000 BYR
+						.col-sm-4
+							.row.product-page__actions-mobile__row
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-1
+									+available({count:5}).spec__available.product-page__actions-mobile__available
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-2
+									+checkbox({name:'product-warranty','id':'warranty2', value:'add-warranty',label:'Дополнительный сервис'}).product-page__actions-mobile__checkbox
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-3
+									+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
+										| Купить
 
 
-			.col-md-3
+
+
+			.col-md-3.hidden-xs.hidden-sm
 				.product-page__offers__spec(class=!available ? 'product-page__offers__spec--unavailable' : '')
 					.row
 						.col-md-4

@@ -112,7 +112,12 @@ import $ from 'jquery';
 		infinite: false,
 		asNavFor: '.js-gallery-product',
 		centerMode: true,
-  	focusOnSelect: true
+  	focusOnSelect: true,
+  	responsive: [
+		{
+			breakpoint: 990,
+			settings: 'unslick'
+		}]
 	});
 	$('.js-gallery-product').slick({
 		arrows: false,
@@ -121,8 +126,17 @@ import $ from 'jquery';
 		slidesToScroll: 1,
 		infinite: false,
   	fade: true,
-		asNavFor: '.js-sidebar-product'
-
+		asNavFor: '.js-sidebar-product',
+		responsive: [
+		{
+			breakpoint: 990,
+			settings: {
+				slidesToShow: 1,
+				centerMode: true,
+				centerPadding: '40px',
+				fade: false
+			}
+		}]
 	});
 	// $(window).on('resize', function () {
 	// 	let recentSlick = true;

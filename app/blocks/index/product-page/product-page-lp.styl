@@ -6,6 +6,13 @@
 	&__main
 		margin-left 130px
 		overflow hidden
+		&__item
+			+below(4)
+				border 1px solid #cfcfcf
+				margin-left 10px
+				margin-right 10px
+		+below(4)
+			margin-left 0
 
 	&__item
 		position relative
@@ -354,3 +361,56 @@
 	padding-top 70px
 	&__heading
 		margin-top 0
+
+.product-page__actions-mobile__row
+	+tablet()
+		display flex
+		flex-wrap wrap
+.product-page__actions-mobile__col-2
+	+tablet()
+		order 2
+.product-page__actions-mobile__col-3
+	+tablet()
+		order 1
+
+.product-page__actions-mobile
+	display none
+	margin-top 25px
+	+below(4)
+		display block
+
+	.col-xs-3
+		+below(2)
+			width 100%
+	&__prices
+		+tablet()
+			display flex
+			flex-wrap wrap
+
+	&__available
+		line-height 1
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 13px
+		+below(2)
+			font-size 11px
+		+at(3)
+			line-height 40px
+		+below(2)
+			line-height 20px
+	&__checkbox
+		margin-top 0
+		+tablet()
+			margin-top -20px
+		+below(3)
+			margin-top 11px
+		+below(2)
+			margin-bottom 20px
+		.checkbox-text
+			font-size 13px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight semibold
+			color #333
+			border-bottom 1px dashed #333
+		&:hover
+			.checkbox-text
+				border-bottom-style solid
