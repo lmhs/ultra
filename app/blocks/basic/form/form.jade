@@ -18,9 +18,22 @@ mixin textarea-horizontal-group(args)
 	- if (args.name)
 		- var label= args.name
 	.form-group
-		label.control-label.col-sm-20-1(
-			for=attributes.id ? attributes.id : null,
-			class=args.required ? 'is-required' : '') #{label}
+		if args.advantages
+			label.control-label.col-sm-20-1.label-advantages(
+				for=attributes.id ? attributes.id : null,
+				class=args.required ? 'is-required' : '')
+				| #{label}
+				i.icon-plus-green-13x13
+		else if args.disadvantages
+			label.control-label.col-sm-20-1.label-disadvantages(
+				for=attributes.id ? attributes.id : null,
+				class=args.required ? 'is-required' : '')
+				| #{label}
+				i.icon-dash-red-13x3
+		else
+			label.control-label.col-sm-20-1(
+				for=attributes.id ? attributes.id : null,
+				class=args.required ? 'is-required' : '') #{label}
 		.col-sm-20-4
 			textarea.form-control(
 				name=args.name ? args.name : null
