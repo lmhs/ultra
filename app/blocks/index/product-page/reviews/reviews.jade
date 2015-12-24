@@ -1,3 +1,95 @@
+include ../../../layout/review/review
+include ../../../basic/button/button
+include ../../../basic/rating/rating
+
 mixin reviews()
-	article.reviews
-		| reviews
+	+b('article').reviews.js-reviews
+
+		+e('h6').heading.small Лучший отзыв
+		+review({best:true,reply:false})
+		+e.footer
+			+e.footer-inner
+				+e.follow-wrap.js-follow-reviews-wrap
+					+b.follow-reviews.js-follow-reviews
+						+e('h6').heading Следить за отзывами к этому товару
+						+e.footer
+							.follow-reviews__input-wrap
+								+input-simple({type:'email',placeholder:'Email'}).follow-reviews__input
+							+button().btn--dark.btn-med.follow-reviews__btn
+								| Подписаться
+					+e('a')(href=jv0).link.js-follow-reviews-link Следить за отзывами
+				+button().btn--red.btn-lg.reviews__btn-write.js-write-review
+					| Написать отзыв
+
+
+			+b('section').new-review.new-review--is-hidden
+				+e('h6').heading.small Добавь свой отзыв
+				+e('form').form
+					.form-group
+						label.control-label.col-sm-20-1.is-required Ваше имя
+						.col-sm-20-4
+							.row
+								.col-sm-20-2
+									+e('input').name.form-control
+								label.control-label.col-sm-20-1.is-required Город
+								.col-sm-20-2
+									+e('input').city.form-control
+					.form-group
+						.col-sm-20-4.col-sm-20-offset-1
+							+e.text Оцените этот товар
+							+e.rating
+								input(type='hidden',value='2',data-filled='symbol icon-star-rating', data-empty='symbol icon-star-rating-gray').js-set-rating
+							+e.status — удовлетворительно
+					.form-group
+						.col-sm-20-4.col-sm-20-offset-1
+							+e.text Опыт использования
+							+e.slider
+								#js-experience-slider.noUi-extended
+							+e.status
+								|  — более !{''}
+								span#js-experience-slider-months
+								|  месяцев
+					+textarea-horizontal-group({name:'Преимущества',required: false, advantages:true, placeholder: 'Преимущества'}).new-review__comment
+					+textarea-horizontal-group({name:'Недостатки',required: false, disadvantages:true, placeholder: 'Недостатки'}).new-review__comment
+					+textarea-horizontal-group({name:'Комментарий',required: true, placeholder: 'Комментарий'}).new-review__comment
+					.form-group
+						.col-sm-3
+							.row
+								.col-sm-20-3.col-sm-20-offset-2
+									+checkbox({label:'Получать ответы на email','id':'send-email'}).new-review__checkbox
+								label.control-label.col-sm-20-2.is-required Email
+								.col-sm-20-3
+									+e('input')(type='email',placeholder='Email').email.form-control
+						.col-sm-3
+							+e.actions
+								+button().btn--red.new-review__btn-post.js-post-comment
+									| Добавить отзыв
+								+button().btn--gray.new-review__btn-cancel.js-cancel-comment
+									| Отменить
+
+
+
+			+b.reply-review
+				+e('h6').heading.small Ответить на комментарий
+				+e('form').form
+					+input-horizontal-group({name:'Ваше имя', required: true, placeholder: 'Имя'}).reply-review__name
+					+textarea-horizontal-group({name:'Комментарий',required: true, placeholder: 'Комментарий'}).reply-review__comment
+				+e.foot
+					.form-group
+						.col-sm-20-4.col-sm-20-offset-1
+							+button().btn--red.reply-review__btn-post.js-post-comment
+								| Добавить отзыв
+							+button().btn--gray.reply-review__btn-cancel.js-cancel-comment
+								| Отменить
+
+		+b.reviews-body
+			+e('h6').heading.small 15 отзывов к этому товару
+			+review({reply:true})
+			+review({reply:false})
+
+	+b('article').no-reviews
+		+e('i').icon.icon-smiley-sad-52x52
+		+e.text
+			+e.caption К сожалению нет отзывов к этому товару
+			+e('strong').strong Будь первым!
+

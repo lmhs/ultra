@@ -1,0 +1,21 @@
+import '../third-party/bootstrap-scrollspy.js'
+import $ from 'jquery';
+
+
+(function (factory) {
+		if (typeof define === 'function' && define.amd) {
+				// AMD. Register as an anonymous module.
+				define(['jquery'], factory);
+		} else if (typeof module === 'object' && module.exports) {
+				// Node/CommonJS
+				module.exports = factory(require('jquery'));
+		} else {
+				// Browser globals
+				factory(jQuery);
+		}
+}(function ($) {
+	$('body').scrollspy({
+												target: '#js-product-info-navigation',
+												offset: 94
+												 });
+}));

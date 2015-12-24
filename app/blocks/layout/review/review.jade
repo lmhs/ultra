@@ -1,0 +1,112 @@
+include ../../basic/rating/rating
+include ../../basic/form/form
+
+mixin review(args)
+	+b.review(class= args.best ? 'review--best' : '' ).js-review&attributes(attributes)
+		+e.inner
+			+e.head
+				+e.right
+					+e.right-text
+						| Отзыв полезен?
+					+e.useful
+						| Да
+						+e('a')(href=jv0).useful-link.js-useful
+							+e.useful-link-default
+								| +1
+							+e.useful-link-count
+								| 12
+					+e.not-useful
+						| Нет
+						+e('a')(href=jv0).not-useful-link.js-not-useful
+							+e('span').not-useful-link-default
+								| -1
+							+e('span').not-useful-link-count
+								| 2
+				+e.main-info
+					+e.name Евгений, Минск
+					+e.date 4 декабря 2013
+				+e.additional-info
+					+e.rating
+						+rating()
+					+e.experience Использую более 2 лет
+
+			+e.body
+				+e.comment
+					| Общее впечатление: Я уже писал об этом в форме обратной связи, но не получил ответа в течении недели. Что ж пишу тут: Курьер не поставил печать на официальной гарантии от Samsung, которая была внутри упаковки. Никакого документа о гарантии от магазина курьер тоже не оставил.
+				+e.advantages
+					strong Преимущества
+					p Tелефон работает очень быстро, с таким большим экраном очень удобно пользоваться интернетом, очень много хороших и не дорогих приложений под андроид. так же очень много бесплатных приложений (всевозможных игр и полезных программ), G2 стал для меня очень хорошим помощником!! качество сборки и материалов на высоте !! пользуюсь менее месяца, только положительные эмоции.
+				+e.disadvantages
+					strong Недостатки
+					p Если бы только имел хотя-бы 32 гб внутренней памяти и чтоб micro-SIM с лоточком не извлекается при помощи скрепки, а простым нажатием.
+		+e.foot
+			+e.foot-inner
+				+e('a')(href=jv0).reply-link.js-reply-link
+					+e('i').reply-link-icon.icon-message-16x17
+					+e('span').reply-link-text Ответить
+				if args.reply
+					i.review__foot-reply-icon.icon-dots-vertical-gray-4x24
+
+			+e.reply
+				if args.reply
+					+b.review.js-reviews
+						+e.inner
+							+e.head
+								+e.right
+									+e.right-text
+										| Отзыв полезен?
+									+e.useful
+										| Да
+										+e('a')(href=jv0).useful-link.js-useful
+											+e.useful-link-default
+												| +1
+											+e.useful-link-count
+												| 12
+									+e.not-useful
+										| Нет
+										+e('a')(href=jv0).not-useful-link.js-not-useful
+											+e('span').not-useful-link-default
+												| -1
+											+e('span').not-useful-link-count
+												| 2
+								+e.main-info
+									+e.name Евгений, Минск
+									+e.date 4 декабря 2013
+								+e.additional-info
+									+e.rating 5
+									+e.experience Использую более 2 лет
+
+							+e.body
+								+e.comment
+									| Общее впечатление: Я уже писал об этом в форме обратной связи, но не получил ответа в течении недели. Что ж пишу тут: Курьер не поставил печать на официальной гарантии от Samsung, которая была внутри упаковки. Никакого документа о гарантии от магазина курьер тоже не оставил.
+								+e.advantages
+									strong Преимущества
+									p Tелефон работает очень быстро, с таким большим экраном очень удобно пользоваться интернетом, очень много хороших и не дорогих приложений под андроид. так же очень много бесплатных приложений (всевозможных игр и полезных программ), G2 стал для меня очень хорошим помощником!! качество сборки и материалов на высоте !! пользуюсь менее месяца, только положительные эмоции.
+								+e.disadvantages
+									strong Недостатки
+									p Если бы только имел хотя-бы 32 гб внутренней памяти и чтоб micro-SIM с лоточком не извлекается при помощи скрепки, а простым нажатием.
+						+e.foot
+							+e.foot-inner
+								+e('a')(href=jv0).reply-link.js-reply-link
+									+e('i').reply-link-icon.icon-message-16x17
+									+e('span').reply-link-text Ответить
+								i.review__foot-reply-icon.icon-dots-vertical-gray-4x24
+							+e.reply
+								+b.reply-review
+									+e('h6').heading.small Ответить на комментарий
+									+e('form').form
+										+input-horizontal-group({name:'Ваше имя', required: true, placeholder: 'Имя'}).reply-review__name
+										+textarea-horizontal-group({name:'Комментарий',required: true, placeholder: 'Комментарий'}).reply-review__comment
+									+e.foot
+										.form-group
+											.col-sm-20-4.col-sm-20-offset-1
+												+button().btn--red.reply-review__btn-post.js-post-comment
+													| Добавить отзыв
+												+button().btn--gray.reply-review__btn-cancel.js-cancel-comment
+													| Отменить
+
+
+
+
+
+
