@@ -57,7 +57,7 @@ mixin modalLogin(id)
 						+input-horizontal-group({type:'email',name:'Email',placeholder:'Email'})#email.login-modal__form__input
 						+input-horizontal-group({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
 						.login-modal__form__actions
-							.col-sm-4.col-sm-offset-1
+							.col-sm-20-4.col-sm-20-offset-1
 								+button().btn-med.btn--red.modal__form__login-btn.js-login-btn(data-toggle="modal", data-target="#helloPopup")
 									| Войти
 								.login-modal__form__checkbox-wrap
@@ -68,7 +68,7 @@ mixin modalLogin(id)
 														}).login-modal__form__checkbox.js-remember-checkbox
 
 						.login-modal__form__actions
-							.col-sm-4.col-sm-offset-1
+							.col-sm-20-4.col-sm-20-offset-1
 								+button().btn-sm.btn--ghost.btn--ghost-gray.modal__form__forgot-btn.js-forgot-btn(data-toggle="modal", data-target="#forgotPopup")
 									| Вспомнить пароль
 								+button().btn-sm.btn--ghost.btn--ghost-dark.modal__form__register-btn.js-register-btn
@@ -121,7 +121,7 @@ mixin modalForgot(id)
 						form.modal__form.forgot-modal__form.js-forgot-form
 							+input-horizontal-group({name:'Email',placeholder:'Email'})#forgotEmail.forgot-modal__form__input
 							.form-group
-								.col-sm-4.col-sm-offset-1
+								.col-sm-20-4.col-sm-20-offset-1
 									+button().btn-med.btn--red.modal__form__forgot-btn.js-forgot-btn
 										| Напомнить пароль
 							.form-group
