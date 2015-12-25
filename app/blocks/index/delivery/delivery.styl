@@ -1,9 +1,62 @@
 .delivery
-	&__payment
-	&__head
-	&__conditions
-	&__location
-		text-align center
+	&-payment
+		&__caption
+			text-align center
+
+
+		&__features
+			margin-top 30px
+			text-align center
+			font-size 0
+
+		&__feature
+			display inline-block
+			width 250px
+			vertical-align top
+
+			& + &
+				margin-left 100px
+
+			&-img-wrap
+				height 200px
+				position relative
+				vertical-align bottom
+
+			&-img
+				display inline-block
+				vertical-align bottom
+				&--money
+					margin-top 17px
+				&--receipt
+					margin-top 43px
+				&--mailbox
+					margin-top 16px
+
+			&-heading
+				text-align left
+				margin-top 20px
+				margin-bottom 20px
+
+			&-text
+				font-size 15px
+				text-align left
+
+			&-count
+				position absolute
+				bottom 8px
+				left 50%
+				margin-left -20px
+				border-radius 50%
+				display inline-block
+				text-align center
+				width 40px
+				height 40px
+				font-size 24px
+				background-color #252525
+				color #FFF
+				line-height 40px
+
+
 	&__intro
 		height 370px
 		margin 0 auto

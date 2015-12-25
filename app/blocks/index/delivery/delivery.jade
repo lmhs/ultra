@@ -12,26 +12,59 @@ mixin delivery()
 
 	+nav-main()
 	+content-outer()
-		.inner.inner--w1360
-			.col-md-6
-				+breadcrumb(['Главная', pageTitle])
-	section.delivery__payment
-		h1.delivery__heading-main Оплата
-		p.caption
-			| Наша задача — предоставить Вам максимально комфортные условия по минимальной цене.
-			| Поэтому, мы исключаем всех посредников и не работаем с банковскими терминалами для оплаты пластиковыми картами, т.к это увеличивает стоимость товара на несколько процентов.
-	section.delivery__location
-		h2.delivery__location__heading Самовывоз
-		.delivery__location-map
+		.col-md-6
+			+breadcrumb(['Главная', pageTitle])
+	+b('section').delivery-payment
+		.container-20-outer
+			.row-20
+				.col-md-20-3.col-md-20-offset-1
+					+e.head
+						+e('h1') Оплата
+						+e('p').caption
+							| Наша задача — предоставить Вам максимально комфортные условия по минимальной цене.
+							| Поэтому, мы исключаем всех посредников и не работаем с банковскими терминалами для оплаты пластиковыми картами, т.к это увеличивает стоимость товара на несколько процентов.
+			.row-20
+				.col-md-20-5
+					+e.body
+						+e.features
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/byr-money.jpg' width='238' height='183').feature-img.delivery-payment__feature-img--money
+									//- +e('img')(src='./assets/images/belarus-arrow.jpg' width='242' height='220')
+									+e.feature-count 1
+								+e.feature-info
+									+e('h6').feature-heading.small Наличный расчет
+									+e('p').feature-text В одном из наших магазинов или курьеру при доставке.
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/receipt.png' width='176' height='157').feature-img.delivery-payment__feature-img--receipt
+									+e.feature-count 2
+								+e.feature-info
+									+e('h6').feature-heading.small Безналичный расчет
+									+e('p').feature-text Мы вышлем Вам счет для оплаты и вы сможете перевести деньги.
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/belpost-mailbox.png' width='162' height='184').feature-img.delivery-payment__feature-img--mailbox
+									+e.feature-count 3
+								+e.feature-info
+									+e('h6').feature-heading.small Дистанционная оплата
+									+e('p').feature-text Можете воспользоваться наложенным платежом от РУП "Белпочта"
+
+	+b('section').delivery-location
+		+content-20-outer()
+			.col-md-20-3.col-md-20-offset-1
+				+e('h1').heading Самовывоз
+		+e.map
 			<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=100%&lang=ru_RU&sourceType=constructor"></script>
-	section.help
-		.inner.inner--w900
-			.help__center
-				.help__photo
-					img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
-				.help__call
-					h2.help__heading Нужна помощь?
-					h3.help__subheading Звони сейчас
-					+phone({})
+	+b('section').help
+		.container-outer
+			.col-md-5.col-md-offset-1
+				.help__center
+					.help__photo
+						img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
+					.help__call
+						h2.help__heading Нужна помощь?
+						h3.help__subheading Звони сейчас
+						+phone({})
 
 
