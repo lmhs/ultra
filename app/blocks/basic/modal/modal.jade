@@ -54,7 +54,7 @@ mixin modalLogin(id)
 					h4.login-modal__heading Вход в личный кабинет
 				.modal-body
 					form.modal__form.login-modal__form.js-login-form
-						+input-horizontal-group({name:'Email',placeholder:'Email'})#email.login-modal__form__input
+						+input-horizontal-group({type:'email',name:'Email',placeholder:'Email'})#email.login-modal__form__input
 						+input-horizontal-group({type:'password',name:'Пароль',placeholder:'Пароль'})#password.login-modal__form__input
 						.login-modal__form__actions
 							.col-sm-4.col-sm-offset-1

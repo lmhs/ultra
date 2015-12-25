@@ -36,6 +36,47 @@ mixin contacts()
 								+e('h6').heading Call центр работает:
 								+e.text Понедельник - Воскресенье
 								+e.time 8:00 - 22:00
+	+b('section').help-big
+		+content-outer()
+			.col-md-6
+				.row
+					+e.left.col-md-3
+						+e.call
+							+e('h6').heading Звоните нам по телефону
+							+e('ul').call-list
+								+e('li').call-list-item
+									+e('a')(href='tel:+375447825555').call-link
+										+e('i').call-link__icon.icon-vel-29x29
+										+e.call-link__number
+											+e.call-link__number-code +375
+											|  (44) 782  55 55
+								+e('li').call-list-item
+									+e('a')(href='tel:+375447825555').call-link
+										+e('i').call-link__icon.icon-mts-29x29
+										+e.call-link__number
+											+e.call-link__number-code +375
+											|  (44) 782  55 55
+								+e('li').call-list-item
+									+e('a')(href='tel:+375447825555').call-link
+										+e('i').call-link__icon.icon-life-29x29
+										+e.call-link__number
+											+e.call-link__number-code +375
+											|  (44) 782  55 55
+							+e('h6').heading Пишите нам на email
+							+e('a')(href='mailto:vip@ultra.by').email
+								| vip@ultra.by
+					+e.right.col-md-3
+						+e('form').form
+							+e('h6').heading Есть вопросы? Пишите!
+							+e.form__fields
+								+input-horizontal-group({name:'Имя',placeholder:'Имя'})#name
+								+input-horizontal-group({type:'email',name:'Email',placeholder:'Email'})#email
+								+textarea-horizontal-group({name:'Сообщение',placeholder:'Сообщение'})#message
+								.form-group
+									.col-sm-20-4.col-sm-20-offset-1
+										+button({type: 'submit', name: 'Отправить'}).btn-lg.btn--dark.btn-block
+					+e.girl
+
 
 	+b('section').delivery-location
 		+content-20-outer()
@@ -108,16 +149,5 @@ mixin contacts()
 							span.promo__link-item__desc
 								strong Сделка без рисков
 								| Плати наличными при получении или денежным переводом
-
-	+b('section').help
-		.container-outer
-			.col-md-4.col-md-offset-1
-				.help__center
-					.help__photo
-						img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
-					.help__call
-						h2.help__heading Нужна помощь?
-						h3.help__subheading Звони сейчас
-						+phone({type:'not-found'})
 
 
