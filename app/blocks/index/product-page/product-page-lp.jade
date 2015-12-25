@@ -527,7 +527,7 @@ mixin productPageLP()
 						+e.tooltip-text.tooltip-text
 							span Натяжитель
 		section.product-page-lp__info__reviews-questions(name='review')
-			+content
+			+content-20-outer()
 				.col-md-20-3.col-md-20-offset-1
 					h1.product-page-lp__info__reviews-questions__heading Отзывы покупателей
 					+navTabsProduct({
@@ -548,15 +548,15 @@ mixin productPageLP()
 												content: 'Вопрос – ответ'
 												}
 										]
-									}).js-product-info-nav
+									}).js-product-info-nav.hidden-xs.hidden-sm
 					.product-page-lp__reviews-questions
 						.tab-content.product-page-lp__tab-content
 							#review.tab-pane.active(role='tabpanel')
 								+reviews()
-							#questions.tab-pane(role='tabpanel')
+							#questions.tab-pane(role='tabpanel').hidden-xs.hidden-sm
 								+questions()
 	+pattern().hidden-xs.hidden-sm
-	+productPageSet()
+	+productPageSet().hidden-xs.hidden-sm
 	+recent()
 	+not-found()
 
