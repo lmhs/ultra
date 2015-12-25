@@ -28,8 +28,36 @@ import $ from 'jquery';
 		$(this).tab('show')
 	});
 
+	$('.js-subheader-contacts-tab').on('click','.js-contacts-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
+	});
+	$('.js-show-map').on('click',function(e){
+		e.preventDefault();
+		$('.js-contacts-nav-tab[href="#map"]').click();
+	});
+
 	$('.js-menu-popup-nav').on('click','.js-menu-popup-nav-tab', function (e) {
 		e.preventDefault();
 		$(this).tab('show')
 	});
+	$('.js-product-info-nav').on('click','.js-product-info-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
+	});
+
+	$('.js-product-lp-nav').on('click', '.js-product-lp-nav-tab', function(e) {
+		e.preventDefault();
+		$(this).tab('show');
+		var target = $(this.hash);
+		var offset = 93;
+		if (this.hash === '#review' || this.hash === '#questions') {
+			offset = 290;
+			$('.js-product-info-nav-tab[href=' + this.hash + ']').click();
+		}
+		$('html,body').animate({
+			scrollTop: target.offset().top - offset
+		}, 1000);
+	})
+
 }));

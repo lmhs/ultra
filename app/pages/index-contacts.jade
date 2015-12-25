@@ -1,0 +1,11 @@
+block vars
+	- var pageId = 'Контакты';
+
+include ../blocks/index/contacts/contacts
+extends ../blocks/layout-default/layout-default
+
+block head
+	- var pageTitle = 'Контакты';
+
+block content
+	+contacts()

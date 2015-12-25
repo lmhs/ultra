@@ -1,4 +1,4 @@
-.nav-tabs.product-nav-tabs
+s.nav-tabs.product-nav-tabs
 	display table
 	width 100%
 	& > li
@@ -74,6 +74,7 @@
 				padding-top 22px
 				height 63px
 				text-decoration none
+				background-color #FFF
 				&
 				&:hover
 				&:focus
@@ -296,4 +297,77 @@
 				.nav-tabs__position__icon-rows
 					sprite($icon_burger_red_19x19)
 
+.product-lp-nav
+	border-top 4px solid #dddde0
+	background-color #F3F3F5
+	border-bottom 3px solid #e14013
+	font-size 0
+	white-space nowrap
+	text-align center
+	position relative
+	&.nav > &__item
+		margin-top -4px
+		border-top 4px solid #dddde0
+		display inline-block
+		vertical-align top
+		position relative
+		margin-right 1px
+		& + &
+			&::before
+				content ''
+				position absolute
+				background-color #E1E1E1
+				width 1px
+				top 25px
+				bottom 25px
+				left -1px
+		&.active
+			border-top-color #E14013
+			& + .product-lp-nav__item
+				&::before
+					content none
+	&.nav > li.active > .product-lp-nav__link
+		background-color #e14013
+
+		&
+		&:hover
+		&:focus
+		&:active
+			color #fff
+			background-color #e14013
+
+
+	&__icon
+		margin-right 15px
+		vertical-align middle
+		margin-top -3px
+
+	// &__text
+
+	&.nav > li > &__link
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 14px
+		display block
+		padding 30px 30px 0
+		height 86px
+
+		&
+		&:hover
+		&:focus
+		&:active
+			text-decoration none
+			color #333
+
+
+		&:hover
+		&:focus
+		&:active
+			background-color #ebebeb
+
+		&:hover
+			.product-lp-nav__text
+				text-decoration underline
+
+	&__text
+		text-decoration none
 
