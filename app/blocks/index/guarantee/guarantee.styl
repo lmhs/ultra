@@ -1,31 +1,48 @@
 .guarantee
 	&__terms
 	&__solve
-	&__obligation
-	&__questions
 	&__thanks
 	&__law
 		text-align center
 
+	&__law
+		overflow hidden
+		h6.small
+			margin-top 30px
+			margin-bottom 36px
+
+
 	&__solve
+		padding-top 60px
 		padding-bottom 88px
 
 	&__questions
 	&__sample
 		background-color #F6F6F6
 		padding-top 92px
-		padding-bottom 65px
 		border-top 1px solid #E1E1E1
-		border-bottom 1px solid #E1E1E1
+
+	&__sample__col
+		margin-left -12px
+		margin-right -12px
 
 .sample__warranty
-	background-image url('../images/pattern.png')
-	background-repeat repeat-x
+	background 	url('../images/pattern-color-bones-136x135.png') repeat-x,
+							#F6F6F6
 	background-position-y 50%
+	background-size 136px 135px
+	padding-top 35px
+	padding-bottom 70px
+	text-align center
+	border-bottom 1px solid #E1E1E1
+
+.subheading--red
+	color #E14013
+	font-size 15px
 
 .terms
 	&__caption
-		width 600px
+		max-width 600px
 		margin 0 auto
 
 	&__illustration
@@ -39,24 +56,32 @@
 
 	&__reasons
 		position relative
+		margin-top 150px
+		text-align center
 
 	&__reason
 		width 280px
+		display inline-block
+		vertical-align top
 		position relative
 		z-index 1
 		text-align left
 		padding-top 28px
+		h6
+			margin-bottom 13px
 
-.obligation__sections
-	border-bottom 1px solid #E1E1E1
+.truck-img
+	position relative
+	float right
+	top 40px
 
-.icon-left-arrow-guarantee
-	sprite($icon_left_arrow_guarantee)
-	margin-left 123px
+.rule__heading
+	margin-top 0
 
-.icon-right-arrow-guarantee
-	sprite($icon_right_arrow_guarantee)
-	margin-left 14px
+.exceptions
+	border-top 1px solid #E1E1E1
+	margin-top 10px
+
 
 .icon-left-arrow-phone
 	sprite($icon_left_arrow_phone)
@@ -68,19 +93,19 @@
 	margin-left 45px
 	margin-top 15px
 
-.section-half
-	width 50%
-	float left
 
 .questions
 	&__sections
 		text-align left
+	&__left
+		padding-left 110px
 	&__right
-		padding-left 49px
+		padding-left 20px
+		padding-right 110px
 	&__icon
 		float left
 	&__item
-		margin-bottom 31px
+		margin-bottom 20px
 	&__heading
 		margin-left 78px
 		margin-top 16px
@@ -90,26 +115,54 @@
 	margin-top 0
 	vertical-align top
 
+
+
 .first-reason
-.solve-recipe
-	float left
+	margin-right 200px
 
 .second-reason
-	float right
+	margin-left 200px
 
 .reason__number-first
 	margin-left 85px
+	position relative
+	&::after
+		content ''
+		sprite($icon_left_arrow_guarantee)
+		position absolute
+		bottom 65px
+		left 45px
 
 .reason__number-second
 	margin-left 123px
+	position relative
+	&::after
+		content ''
+		sprite($icon_right_arrow_guarantee)
+		position absolute
+		bottom 65px
+		right 45px
+
+.solve-recipes
+	margin-top 30px
+	text-align center
 
 .solve-recipe
 	width 360px
+	display inline-block
+	vertical-align top
 	text-align left
 	&:first-child
 		padding-right 36px
 	&:last-child
 		padding-left 36px
+
+	h6
+		margin-top 0
+		margin-bottom 15px
+
+	.icon-glasses
+		margin-bottom 24px
 
 	&--gray
 		text-align center
@@ -129,7 +182,7 @@
 	border-radius 50%
 	left 50%
 	margin-left -20px
-	.icon-down
+	.icon-arrow-down-fff-10x6
 		vertical-align top
 		margin-top 18px
 
@@ -137,13 +190,18 @@
 	&__sections
 		text-align left
 	&__left
+		padding-left 110px
 		padding-right 30px
+
 	&__right
+		padding-right 110px
 		padding-left 30px
 	&__heading
 		margin-top 0
 	&__default-ul
 		margin-left 20px
+		li
+			margin-bottom 15px
 
 
 .connection
@@ -153,9 +211,11 @@
 
 	&__call
 		float left
+		padding-top 15px
 		padding-left 7px
 		width 210px
 		line-height 1
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 		&__phone
 			display block
 			margin-bottom 12px
@@ -165,6 +225,8 @@
 			font-size 17px
 			padding 0 11px 0 16px
 			color #999
+			display inline-block
+			margin-top 2px
 		&__number
 			vertical-align top
 			font-size 18px
@@ -172,10 +234,12 @@
 		&__btn
 			padding 11px 14px 10px
 			font-size 14px
+			border-radius 3px
 
 	&__photo
 		border-radius 50%
 		border 1px solid #d7d7d7
+		margin-bottom 6px
 
 	&__name
 		font-style italic
@@ -195,6 +259,9 @@
 		&-line
 			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 
+	&__metro
+		margin-top 5px
+
 	&__metro-name
 		font-size 15px
 		color #555
@@ -205,6 +272,7 @@
 
 	&__icon-map
 		vertical-align top
+		margin-right 7px
 
 	&__map-link
 		font-size 13px
@@ -216,28 +284,34 @@
 
 .exceptions
 	text-align left
-	padding-top 50px
-	padding-bottom 80px
+	padding 50px 210px 80px
 
 .exception
 	margin-left 100px
 	&__icon
 		float left
+		margin-top 7px
 
 .sample
 	&__check
 		float right
+		margin-top 23px
 	&__heading
+		text-align left
+		small
+			margin 3px 0 0
+			text-align left
 		&-small
-			margin-left 50px
+			margin-left 55px
 			margin-bottom 0
 	&__number-round
 		float left
 	&__caption
-		margin-left 50px
+		margin-left 55px
+		color #777
 	&__warranty-img
 		display block
-		margin 30px auto 0
+		margin 0 auto
 
 .thanks
 	&__icons
@@ -258,23 +332,24 @@
 		position relative
 		&::before
 			content ''
-			width 271px
+			width 341px
 			height 113px
 			position absolute
 			top 7px
-			left -287px
-			background url('../images/pattern-color-left-407x135.png') no-repeat
+			left calc(100% + 16px)
+			background url('../images/pattern-color-right-341x113.png') no-repeat
 		&::after
 			content ''
-			width 270px
+			width 341px
 			height 113px
 			position absolute
 			top 7px
-			right -286px
-			background url('../images/pattern-color-right-407x135.png') no-repeat
+			right calc(100% + 16px)
+			background url('../images/pattern-color-left-341x113.png') no-repeat
 
 	&__heading
-		margin-bottom 20px
+		margin-top 80px
+		margin-bottom 27px
 		small
 			color #111
 			margin-top 5px
@@ -291,8 +366,8 @@
 	background-color #111
 	width 20px
 	height 4px
-	display inline-block
-	vertical-align top
+	display block
+	margin 0 auto 30px
 	border-radius 2px
 
 
