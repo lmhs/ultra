@@ -279,6 +279,12 @@ mixin productPageLP()
 								+e('h1').heading Gambler 20
 								+e('p').text
 									| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Описание полностью
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+
 							.product-page-lp__right.hidden-xs.hidden-sm
 								+e('ul').features
 									+e('li').feature-item
@@ -331,60 +337,90 @@ mixin productPageLP()
 				.row-20
 					.col-md-20-3.col-md-20-offset-1
 						section.product-page-lp-features-table
-							h1.product-page-lp-heading Характеристики
+							h1.product-page-lp__heading Характеристики
 							section.product-page-lp__info-features__body.product-page-lp-features__body--hidden.js-features-body
-								+b('section').general-info
-									+e('h6').heading.small Общая информация
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Класс
-												td горный
-											tr
-												td Год выпуска
-												td 2014 год
-											tr
-												td Производитель
-												td Scott
-								+b('section').general-info
-									+e('h6').heading.small Рама
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Тип рамы
-												td закрытая
-											tr
-												td Материал рамы
-												td алюминий
-											tr
-												td Производитель
-												td Scott
-								+b('section').general-info
-									+e('h6').heading.small Вилка
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Ходо амортизатора
-												td 100 мм
-											tr
-												td Тип вилки
-												td амортизационная
-											tr
-												td Вилка
-												td Scott
+								.row
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Общая информация
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Класс
+														td
+															span горный
+													tr
+														td
+															span Год выпуска
+														td
+															span 2014 год
+													tr
+														td
+															span Производитель
+														td
+															span Scott
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Рама
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Тип рамы
+														td
+															span закрытая
+													tr
+														td
+															span Материал рамы
+														td
+															span алюминий
+													tr
+														td
+															span Производитель
+														td
+															span Scott
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Вилка
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Ходо амортизатора
+														td
+															span 100 мм
+													tr
+														td
+															span Тип вилки
+														td
+															span амортизационная
+													tr
+														td
+															span Вилка
+														td
+															span Scott
 							section.product-page-lp-features__foot.js-button-show-more-features-wrap
-								+buttonMoreFeatures({text:'Все характеристики'}).js-button-show-more-features
+								+buttonMoreFeatures({text:'Все характеристики'}).product-page-lp__more-btn.js-button-show-more-features
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Все характеристики
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+		+b('section').product-page-lp-features-bg
+			+e.container.container-20-outer
 				.row-20
 					.col-md-20-5
-						+b('article').product-page-lp-features-bg
-							+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
-							+e.inner
-								h1
-									| Дизайн Шредера
-								p
-									| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
-								p
-									| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+						+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
+						+e.inner
+							h1
+								| Дизайн Шредера
+							p
+								| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
+							p
+								| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+		section.product-page-lp-features
+			.container-20-outer
 				.row-20
 					.col-md-20-3.col-md-20-offset-1
 						+b('article').product-page-lp-features-details
@@ -405,43 +441,52 @@ mixin productPageLP()
 											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
 							+e.right
 								+e('h1').heading Совершенство в деталях
-								+e('ul').list
-									+e('li').list-item
-										+e('strong').strong
-											| Материал рамы: !{''}
-										+e('span').value 6061 алюминий
-									+e('li').list-item
-										+e('strong').strong
-											| Ход подвески: !{''}
-										+e('span').value 210 мм (8,2 дюймов)
-									+e('li').list-item
-										+e('strong').strong
-											| Вес рамы: !{''}
-										+e('span').value 3,904 кг. без амортизатора
-									+e('li').list-item
-										+e('strong').strong
-											| Вилка: !{''}
-										+e('span').value Fox 40 RC2, 20мм ось
-									+e('li').list-item
-										+e('strong').strong
-											| Амортизатор: !{''}
-										+e('span').value Fox DHX RC2 Coil
-									+e('li').list-item
-										+e('strong').strong
-											| Вес в сборе: !{''}
-										+e('span').value 17,8 кг
-				.row
+								.row-25
+									.col-md-6.col-sm-25-2
+										+e('ul').list
+											+e('li').list-item
+												+e('strong').strong
+													| Материал рамы: !{''}
+												+e('span').value 6061 алюминий
+											+e('li').list-item
+												+e('strong').strong
+													| Ход подвески: !{''}
+												+e('span').value 210 мм (8,2 дюймов)
+											+e('li').list-item
+												+e('strong').strong
+													| Вес рамы: !{''}
+												+e('span').value 3,904 кг. без амортизатора
+									.col-md-6.col-sm-25-2
+										+e('li').list-item
+											+e('strong').strong
+												| Вилка: !{''}
+											+e('span').value Fox 40 RC2, 20мм ось
+										+e('li').list-item
+											+e('strong').strong
+												| Амортизатор: !{''}
+											+e('span').value Fox DHX RC2 Coil
+										+e('li').list-item
+											+e('strong').strong
+												| Вес в сборе: !{''}
+											+e('span').value 17,8 кг
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Ещё детали
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+		+b('section').product-page-lp-features-bg
+			+e.container.container-20-outer
+				.row-20
 					.col-md-20-5
-						+b('article').product-page-lp-features-bg
-							+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
-							+e.inner
-								h1
-									| На трассе
-								p
-									| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
-								br
-								p
-									| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
+						+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
+						+e.inner
+							h1
+								| На трассе
+							p
+								| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
+							br
+							p
+								| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
 		+expert({
 						heading: 'Мнение эксперта',
 						subheading: 'кратко о главном'
@@ -449,7 +494,7 @@ mixin productPageLP()
 			| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
 		section.product-page-lp-info-care
 			+content-20-outer()
-				.col-md-20-2
+				.col-md-20-2.col-sm-25-2
 					+b('article').product-page-lp-care
 						+e('h1').heading.h1--red Уход за товаром
 							small Залог долговечности
@@ -458,7 +503,7 @@ mixin productPageLP()
 						+button().btn--dark.btn-lg.product-page-lp-care__btn
 							| Читать инструкцию
 							i.icon-arrow-gt.btn-more__icon
-				.col-md-20-3
+				.col-md-20-3.col-sm-25-2.tooltip-image-wrap
 					+b.tooltip-image
 						+e('img')(src="./assets/images/bike-3.png", alt="placeholder+image").img
 						+e('a')(href=jv0, data-description='Натяжитель', data-id='1', style='position: absolute; top: 265px; left: 96px;').tooltip-link.tooltip-link
