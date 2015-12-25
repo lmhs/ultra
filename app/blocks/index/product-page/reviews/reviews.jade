@@ -4,10 +4,14 @@ include ../../../basic/rating/rating
 
 mixin reviews()
 	+b('article').reviews.js-reviews
-
-		+e('h6').heading.small Лучший отзыв
+		.mobile-text-more
+			+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+				span.link__text Написать отзыв
+				| !{''}
+				i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+		+e('h6').heading.small.hidden-xs.hidden-sm Лучший отзыв
 		+review({best:true,reply:false})
-		+e.footer
+		+e.footer.hidden-xs.hidden-sm
 			+e.footer-inner
 				+e.follow-wrap.js-follow-reviews-wrap
 					+b.follow-reviews.js-follow-reviews
@@ -18,7 +22,7 @@ mixin reviews()
 							+button().btn--dark.btn-med.follow-reviews__btn
 								| Подписаться
 					+e('a')(href=jv0).link.js-follow-reviews-link Следить за отзывами
-				+button().btn--red.btn-lg.reviews__btn-write.js-write-review
+				+button().btn--red.btn-lg.reviews__btn-write.js-write-review.hidden-xs.hidden-sm
 					| Написать отзыв
 
 
@@ -83,7 +87,7 @@ mixin reviews()
 								| Отменить
 
 		+b.reviews-body
-			+e('h6').heading.small 15 отзывов к этому товару
+			+e('h6').heading.small.hidden-xs.hidden-sm 15 отзывов к этому товару
 			+review({reply:true})
 			+review({reply:false})
 

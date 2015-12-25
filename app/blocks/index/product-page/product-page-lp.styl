@@ -6,6 +6,13 @@
 	&__main
 		margin-left 130px
 		overflow hidden
+		&__item
+			+below(4)
+				border 1px solid #cfcfcf
+				margin-left 10px
+				margin-right 10px
+		+below(4)
+			margin-left 0
 
 	&__item
 		position relative
@@ -132,17 +139,34 @@
 	padding 60px 110px 80px
 	border-bottom 1px solid #EBEBEB
 	clearfix()
+	+below(4)
+		padding 0
+		border none
 
 .product-page-lp
 	&__inner
 		width 70%
 		float left
+		+below(4)
+			width 100%
+			float none
 	&__right
 		width 30%
 		margin-left 70%
 	&__left
 		width 30%
 		float left
+	&__heading
+		+below(4)
+			font-size 22px
+			margin-top 0
+			margin-bottom 10px
+			text-align left
+		+below(2)
+			font-size 20px
+	&__more-btn
+		+below(4)
+			display none
 
 .video-wrap-left
 	padding-right 47px
@@ -154,8 +178,17 @@
 		margin-top 0
 		margin-bottom 26px
 		text-align left
+		+below(4)
+			font-size 22px
+			margin-bottom 10px
+		+below(2)
+			font-size 20px
 	&__text
 		padding-right 60px
+		+below(4)
+			padding-right 0
+			font-size 13px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
 	&__feature-item
 		margin-bottom 25px
 		display block
@@ -192,9 +225,13 @@
 
 .general-info
 	margin-bottom 40px
+	+below(4)
+		margin-bottom 15px
 	&__heading
 		margin-top 0
 		margin-bottom 10px
+		+below(4)
+			display none
 	&__table
 		width 100%
 		td
@@ -202,32 +239,108 @@
 			height 36px
 			width 50%
 			padding-left 24px
+			+below(4)
+				padding-left 0
+				height 30px
+				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		td:nth-child(odd)
+			span
+				+below(4)
+					font-size 13px
+					font-weight semibold
+					color #444
+					padding-right 7px
+					text-align right
+
+
+		td:nth-child(even)
+			span
+				+below(4)
+					display block
+					width 100%
+					font-size 13px
+					font-weight regular
+					color #444
+					padding-right 0
+					padding-left 7px
+		td
+			span
+				+below(4)
+					display inline-block
+					vertical-align middle
+					background-color #fff
+					position relative
+					z-index 2
+		tr
+			+below(4)
+				position relative
+				&::after
+					content ''
+					position absolute
+					left 10px
+					right 10px
+					display block
+					z-index 1
+					margin-top 15px
+					border-bottom 1px dashed #555555
+			+below(2)
+				&::after
+					content none
+
+		+below(4)
+			background-color #fff
+			&.table-striped > tbody > tr:nth-of-type(odd)
+				background-color #fff
+
 
 .product-page-lp-features-bg
 	min-height 510px
 	overflow hidden
 	position relative
+	+mobile()
+		display none
+	+tablet()
+		min-height 270px
+		overflow visible
+	&__container
+		+tablet()
+			overflow hidden
 
 	&__inner
 		position relative
 		width 50%
 		padding 80px 120px 80px 110px
+		+tablet()
+			padding 20px 0
 	&__bg-img
 		position absolute
 		top 0
 		left 0
 		height 100%
+		+tablet()
+			left -20px
+			right -20px
 	h1
 	&__heading
 		margin-top 0
 		color #FFF
 		text-align left
+		+tablet()
+			font-size 22px
+			margin-top 0
+			margin-bottom 15px
 	p
 		color #FFF
+		+tablet()
+			font-size 12px
 
 .product-page-lp-features-table
 	padding-bottom 80px
 	border-bottom 1px solid #EBEBEB
+	+below(4)
+		padding-top 35px
+		padding-bottom 25px
+		border-bottom none
 
 .product-page-lp-features__body
 
@@ -235,6 +348,9 @@
 		height 480px
 		overflow hidden
 		position relative
+		+below(4)
+			height auto
+
 		&::after
 			content ''
 			position absolute
@@ -242,10 +358,15 @@
 			background-image linear-gradient(to top, rgb(255,255,255) 0%, rgba(255,255,255,0) 100%)
 			bottom 0
 			width 100%
+			+below(4)
+				content none
+
 
 
 .product-page-lp-features__foot
 	text-align center
+	+below(4)
+		text-align left
 
 .product-page-lp-features
 	&__row
@@ -259,6 +380,9 @@
 	font-size 0
 	padding-top 80px
 	padding-bottom 60px
+	+below(4)
+		padding-top 35px
+		padding-bottom 25px
 	&__left
 	&__right
 		display inline-block
@@ -268,6 +392,10 @@
 		padding-right 6px
 	&__right
 		padding-left 60px
+		+below(4)
+			display block
+			width 100%
+			padding-left 0
 	&__item
 		border 1px solid #ebebeb
 		margin-bottom 10px
@@ -288,34 +416,105 @@
 		margin-top 0
 		margin-bottom 35px
 		text-align left
+		+below(4)
+			font-size 22px
+			margin-bottom 10px
+		+below(2)
+			font-size 20px
 	&__list
 		padding-left 20px
+		+below(4)
+			padding-left 0
 	&__list-item
 		font-size 15px
 		list-style disc
 		margin-bottom 12px
+		position relative
+
+		&::after
+			position absolute
+			left 10px
+			right 10px
+			z-index 1
+			top 50%
+			display block
+			border-bottom 1px dashed #555555
+
+		+below(4)
+			list-style none
+			&::after
+				content ''
+		+below(2)
+			&::after
+				content none
 
 	&__strong
 		font-family $font-family-sans-serif
 		font-weight regular
+		+below(4)
+			display inline-block
+			vertical-align top
+			height 25px
+			background-color #fff
+			padding-right 6px
+			position relative
+			z-index 2
+			font-size 13px
+
 	&__value
 		color #959595
+		+below(4)
+			font-size 13px
+			display inline-block
+			vertical-align top
+			height 25px
+			background-color #fff
+			padding-left 6px
+			position relative
+			z-index 2
+			float right
 
 .product-page-lp-info-care
 	background-color #F6F6F6
 
 .product-page-lp-care
 	padding-top 70px
+	+mobile()
+		display none
+	+tablet()
+		padding-top 20px
+		padding-bottom 20px
 	&__heading
 		margin-bottom 20px
 		margin-top 0
 		text-align left
+		+tablet()
+			font-size 22px
 		small
 			margin-top 0
 			text-align left
+			+tablet()
+				font-size 16px
+				margin-top 10px
+	p
+		+tablet()
+			font-size 13px
+	&__btn
+		+tablet()
+			text-transform uppercase
+			font-size 14px
+			font-weight regular
+			padding-top 11px
+			padding-bottom 11px
+			border-radius 2px
+			.btn-more__icon
+				display none
 
 .tooltip-image
 	position relative
+	&-wrap
+		+below(4)
+			overflow-x scroll
 
 .tooltip-link
 	display block
@@ -349,8 +548,81 @@
 		top 100%
 		right 0
 
+.product-page__rating-mobile
+	display none
+	+below(4)
+		display block
 
 .product-page-lp__info__reviews-questions
 	padding-top 70px
+	+below(4)
+		padding-top 20px
+		.container-20-outer
+			width 100%
+			padding-left 0
+			padding-right 0
 	&__heading
 		margin-top 0
+		+below(4)
+			font-size 22px
+			text-align left
+			margin-bottom 10px
+			margin-left 20px
+
+.product-page__actions-mobile__row
+	+tablet()
+		display flex
+		flex-wrap wrap
+.product-page__actions-mobile__col-2
+	+tablet()
+		order 2
+.product-page__actions-mobile__col-3
+	+tablet()
+		order 1
+
+.product-page__actions-mobile
+	display none
+	margin-top 25px
+	+below(4)
+		display block
+
+	.col-xs-3
+		+below(2)
+			width 100%
+	&__prices
+		+tablet()
+			display flex
+			flex-wrap wrap
+
+	&__available
+		line-height 1
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-size 13px
+		+below(2)
+			font-size 11px
+		+at(3)
+			line-height 40px
+		+below(2)
+			line-height 20px
+	&__checkbox
+		margin-top 0
+		+tablet()
+			margin-top -20px
+		+below(3)
+			margin-top 11px
+		+below(2)
+			margin-bottom 20px
+		.checkbox-text
+			font-size 13px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight semibold
+			color #333
+			border-bottom 1px dashed #333
+		&:hover
+			.checkbox-text
+				border-bottom-style solid
+
+.mobile-text-more
+	display none
+	+below(4)
+		display block

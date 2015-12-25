@@ -41,15 +41,23 @@ mixin productPageLP()
 	- var	order = pageId === 'order'
 	- var available = productState !== 'notAvailable';
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs.hidden-sm
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Велосипеды', pageTitle])
 	section.product-page__head
 		+content-outer()
 			.col-md-6
 				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
-				.product-page__icons
+				.product-page__rating-mobile
+					.spec__rating-wrap
+						+rating()
+						span.spec__rating-number
+							strong 4,8
+							|  из 5
+						em.spec__rating-votes
+							| (8 голосов)
+				.product-page__icons.hidden-xs.hidden-sm
 					span.product-page__icons-wrap
 						img(src="./assets/images/android-icon.png", alt="android")
 					span.product-page__icons-wrap
@@ -67,7 +75,7 @@ mixin productPageLP()
 		+content-outer()
 			.col-md-3
 				+b.product-gallery.product-page__offers__gallery
-					+e.sidebar.js-sidebar-product
+					+e.sidebar.js-sidebar-product.hidden-xs.hidden-sm
 						+e('a')(href=jv0).item
 							+e.item__inner
 								+e.img-wrap
@@ -103,9 +111,27 @@ mixin productPageLP()
 								+e.img-wrap
 									+e('img')(src='./assets/images/bike-2-small.jpg').img
 
+				.product-page__actions-mobile
+					.row
+						.col-xs-3.col-sm-2.product-page__actions-mobile__prices
+							strong.spec__price.spec__price--new
+								| 1 950 000 BYR
+							s.spec__price.spec__price--old
+								| 2 610 000 BYR
+						.col-sm-4
+							.row.product-page__actions-mobile__row
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-1
+									+available({count:5}).spec__available.product-page__actions-mobile__available
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-2
+									+checkbox({name:'product-warranty','id':'warranty2', value:'add-warranty',label:'Дополнительный сервис'}).product-page__actions-mobile__checkbox
+								.col-xs-3.col-sm-3.product-page__actions-mobile__col-3
+									+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
+										| Купить
 
 
-			.col-md-3
+
+
+			.col-md-3.hidden-xs.hidden-sm
 				.product-page__offers__spec(class=!available ? 'product-page__offers__spec--unavailable' : '')
 					.row
 						.col-md-4
@@ -167,35 +193,36 @@ mixin productPageLP()
 								| Купить в один клик
 	section.product-page__conditions
 		+content-outer()
-			.col-md-6
-				.product-page__conditions__inner
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-wire-transfer
-						.media-body
-							h6.product-page__condition__heading Гарантия возврата денег
-							p.product-page__condition__caption в течение 14 дней с даты покупки
-							+link().link--pseudo.product-page__condition__link Условия возврата
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-calendar-48
-						.media-body
-							h6.product-page__condition__heading 48 месяцев гарантии
-							p.product-page__condition__caption от производителя
-							+link().link--pseudo.product-page__condition__link Условия гарантии
-					.media.product-page__condition
-						.media-left.product-page__condition__left
-							i.icon-truck-delivery
-						.media-body
-							h6.product-page__condition__heading Быстрая доставка
-							p.product-page__condition__caption
-								| По Минску сегодня.
-								br
-								| Ежедневно в другие регионы
-							+link().link--pseudo.product-page__condition__link Условия доставки
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-wire-transfer
+					.media-body
+						h6.product-page__condition__heading Гарантия возврата денег
+						p.product-page__condition__caption в течение 14 дней с даты покупки
+						+link().link--pseudo.product-page__condition__link Условия возврата
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-calendar-48
+					.media-body
+						h6.product-page__condition__heading 48 месяцев гарантии
+						p.product-page__condition__caption от производителя
+						+link().link--pseudo.product-page__condition__link Условия гарантии
+			.col-md-2.col-sm-2
+				.media.product-page__condition
+					.media-left.product-page__condition__left
+						i.icon-truck-delivery
+					.media-body
+						h6.product-page__condition__heading Быстрая доставка
+						p.product-page__condition__caption
+							| По Минску сегодня.
+							br
+							| Ежедневно в другие регионы
+						+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page-lp__info
-		section#js-product-info-navigation.product-page-lp__info__nav.sticky
+		section#js-product-info-navigation.product-page-lp__info__nav.sticky.hidden-xs.hidden-sm
 			+navTabsProductLP({
 										links: [
 											{
@@ -237,7 +264,7 @@ mixin productPageLP()
 									}).js-product-lp-nav
 		section.product-page-lp-info-description#description
 			.container-20-outer
-				.row-20
+				.row-20.hidden-xs.hidden-sm
 					.col-md-20-5
 						+b('article').product-page-lp-promo
 							+e('img')(src='./assets/images/description bg.jpg').bg-img
@@ -252,7 +279,13 @@ mixin productPageLP()
 								+e('h1').heading Gambler 20
 								+e('p').text
 									| Весной 2012 года, кардинально переработаный Scott Gambler впервые был представлен в интернете. Первым райдером, который должен тестировать его, был Брендон Феирклаф и команда Скотт 11. Байк оснащён интереснейшей системой линков задней подвески и впечатляющим наклоном рулевой в 62-градуса. На протяжении всего гоночного сезона, байк претерпел несколько изменений, прежде чем его официально представили в июле 2012 года. К тому же он являлся тем, кто тестировал и усовершенствовал байк. На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска.
-							.product-page-lp__right
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Описание полностью
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+
+							.product-page-lp__right.hidden-xs.hidden-sm
 								+e('ul').features
 									+e('li').feature-item
 										+e('img')(src='./assets/images/speed-58x52.png').feature-img
@@ -270,7 +303,7 @@ mixin productPageLP()
 											+e('strong').strong горный
 											+e('p').feature-text велосипед
 
-		section.product-page-lp-info-video#video
+		section.product-page-lp-info-video#video.hidden-xs.hidden-sm
 			.container-20-outer
 				.row-20
 					.col-md-20-5
@@ -304,64 +337,94 @@ mixin productPageLP()
 				.row-20
 					.col-md-20-3.col-md-20-offset-1
 						section.product-page-lp-features-table
-							h1.product-page-lp-heading Характеристики
+							h1.product-page-lp__heading Характеристики
 							section.product-page-lp__info-features__body.product-page-lp-features__body--hidden.js-features-body
-								+b('section').general-info
-									+e('h6').heading.small Общая информация
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Класс
-												td горный
-											tr
-												td Год выпуска
-												td 2014 год
-											tr
-												td Производитель
-												td Scott
-								+b('section').general-info
-									+e('h6').heading.small Рама
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Тип рамы
-												td закрытая
-											tr
-												td Материал рамы
-												td алюминий
-											tr
-												td Производитель
-												td Scott
-								+b('section').general-info
-									+e('h6').heading.small Вилка
-									+e('table').table.table-striped
-										tbody
-											tr
-												td Ходо амортизатора
-												td 100 мм
-											tr
-												td Тип вилки
-												td амортизационная
-											tr
-												td Вилка
-												td Scott
+								.row
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Общая информация
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Класс
+														td
+															span горный
+													tr
+														td
+															span Год выпуска
+														td
+															span 2014 год
+													tr
+														td
+															span Производитель
+														td
+															span Scott
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Рама
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Тип рамы
+														td
+															span закрытая
+													tr
+														td
+															span Материал рамы
+														td
+															span алюминий
+													tr
+														td
+															span Производитель
+														td
+															span Scott
+									.col-md-6.col-sm-3.col-xs-6
+										+b('section').general-info
+											+e('h6').heading.small Вилка
+											+e('table').table.table-striped
+												tbody
+													tr
+														td
+															span Ходо амортизатора
+														td
+															span 100 мм
+													tr
+														td
+															span Тип вилки
+														td
+															span амортизационная
+													tr
+														td
+															span Вилка
+														td
+															span Scott
 							section.product-page-lp-features__foot.js-button-show-more-features-wrap
-								+buttonMoreFeatures({text:'Все характеристики'}).js-button-show-more-features
+								+buttonMoreFeatures({text:'Все характеристики'}).product-page-lp__more-btn.js-button-show-more-features
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Все характеристики
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+		+b('section').product-page-lp-features-bg
+			+e.container.container-20-outer
 				.row-20
 					.col-md-20-5
-						+b('article').product-page-lp-features-bg
-							+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
-							+e.inner
-								h1
-									| Дизайн Шредера
-								p
-									| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
-								p
-									| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+						+e('img')(src='./assets/images/bike-design-bg.jpg').bg-img
+						+e.inner
+							h1
+								| Дизайн Шредера
+							p
+								| Бен Уолкер, менеджер по производству байков, присоединилися к нашим покатушкам. В какой-то степени, мы хотели бы верить, что ходовые характеристики велосипеда, это отраженние усилий дизайнеров над работой по его проектированию. К тому же он являлся тем, кто тестировал и усовершенствовал байк.
+							p
+								| На протяжении нескольких заездов стало ясно, что Бен очень ловок на велосипеде. Он никогда не был в Уистлере раньше, но он не отставал от нас ни на секунду до самого последнего спуска. А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+		section.product-page-lp-features
+			.container-20-outer
 				.row-20
 					.col-md-20-3.col-md-20-offset-1
 						+b('article').product-page-lp-features-details
-							+e.left
+							+e.left.hidden-xs.hidden-sm
 								.row
 									.col-md-3.product-page-lp-features__col
 										+e.item
@@ -378,43 +441,52 @@ mixin productPageLP()
 											+e('img')(src="http://dummyimage.com/800x600/4d494d/686a82.gif&text=placeholder+image", width='800', height='600', alt="placeholder+image").img
 							+e.right
 								+e('h1').heading Совершенство в деталях
-								+e('ul').list
-									+e('li').list-item
-										+e('strong').strong
-											| Материал рамы: !{''}
-										+e('span').value 6061 алюминий
-									+e('li').list-item
-										+e('strong').strong
-											| Ход подвески: !{''}
-										+e('span').value 210 мм (8,2 дюймов)
-									+e('li').list-item
-										+e('strong').strong
-											| Вес рамы: !{''}
-										+e('span').value 3,904 кг. без амортизатора
-									+e('li').list-item
-										+e('strong').strong
-											| Вилка: !{''}
-										+e('span').value Fox 40 RC2, 20мм ось
-									+e('li').list-item
-										+e('strong').strong
-											| Амортизатор: !{''}
-										+e('span').value Fox DHX RC2 Coil
-									+e('li').list-item
-										+e('strong').strong
-											| Вес в сборе: !{''}
-										+e('span').value 17,8 кг
-				.row
+								.row-25
+									.col-md-6.col-sm-25-2
+										+e('ul').list
+											+e('li').list-item
+												+e('strong').strong
+													| Материал рамы: !{''}
+												+e('span').value 6061 алюминий
+											+e('li').list-item
+												+e('strong').strong
+													| Ход подвески: !{''}
+												+e('span').value 210 мм (8,2 дюймов)
+											+e('li').list-item
+												+e('strong').strong
+													| Вес рамы: !{''}
+												+e('span').value 3,904 кг. без амортизатора
+									.col-md-6.col-sm-25-2
+										+e('li').list-item
+											+e('strong').strong
+												| Вилка: !{''}
+											+e('span').value Fox 40 RC2, 20мм ось
+										+e('li').list-item
+											+e('strong').strong
+												| Амортизатор: !{''}
+											+e('span').value Fox DHX RC2 Coil
+										+e('li').list-item
+											+e('strong').strong
+												| Вес в сборе: !{''}
+											+e('span').value 17,8 кг
+								.mobile-text-more
+									+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+										span.link__text Ещё детали
+										| !{''}
+										i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
+		+b('section').product-page-lp-features-bg
+			+e.container.container-20-outer
+				.row-20
 					.col-md-20-5
-						+b('article').product-page-lp-features-bg
-							+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
-							+e.inner
-								h1
-									| На трассе
-								p
-									| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
-								br
-								p
-									| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
+						+e('img')(src='./assets/images/bike-bg-2.jpg').bg-img
+						+e.inner
+							h1
+								| На трассе
+							p
+								| В нашем первом заезде мы прокатались на Гемблере от Шлейера к низлежащему Кенедиан Опен, трасса была полна различных по размеру дропов, глубоких впадин, камней, неровностей, скалистых секций, ну и конечно же нескольких вылетов.
+							br
+							p
+								| Сразу стало понятно, что этот байк удивительно хорошо отрабатывает поверхности с жёсткими препятствиями. Чуть выше кресельной канатной дороги, есть участок Шлейера, где выпрыгивая с каменной плиты приземляешься на площадку усеянную камнями. К нашему удивлению, Гемблер едва замедлялся на камнях, как будто проглатывая их.
 		+expert({
 						heading: 'Мнение эксперта',
 						subheading: 'кратко о главном'
@@ -422,7 +494,7 @@ mixin productPageLP()
 			| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
 		section.product-page-lp-info-care
 			+content-20-outer()
-				.col-md-20-2
+				.col-md-20-2.col-sm-25-2
 					+b('article').product-page-lp-care
 						+e('h1').heading.h1--red Уход за товаром
 							small Залог долговечности
@@ -431,7 +503,7 @@ mixin productPageLP()
 						+button().btn--dark.btn-lg.product-page-lp-care__btn
 							| Читать инструкцию
 							i.icon-arrow-gt.btn-more__icon
-				.col-md-20-3
+				.col-md-20-3.col-sm-25-2.tooltip-image-wrap
 					+b.tooltip-image
 						+e('img')(src="./assets/images/bike-3.png", alt="placeholder+image").img
 						+e('a')(href=jv0, data-description='Натяжитель', data-id='1', style='position: absolute; top: 265px; left: 96px;').tooltip-link.tooltip-link
@@ -455,7 +527,7 @@ mixin productPageLP()
 						+e.tooltip-text.tooltip-text
 							span Натяжитель
 		section.product-page-lp__info__reviews-questions(name='review')
-			+content
+			+content-20-outer()
 				.col-md-20-3.col-md-20-offset-1
 					h1.product-page-lp__info__reviews-questions__heading Отзывы покупателей
 					+navTabsProduct({
@@ -476,15 +548,15 @@ mixin productPageLP()
 												content: 'Вопрос – ответ'
 												}
 										]
-									}).js-product-info-nav
+									}).js-product-info-nav.hidden-xs.hidden-sm
 					.product-page-lp__reviews-questions
 						.tab-content.product-page-lp__tab-content
 							#review.tab-pane.active(role='tabpanel')
 								+reviews()
-							#questions.tab-pane(role='tabpanel')
+							#questions.tab-pane(role='tabpanel').hidden-xs.hidden-sm
 								+questions()
-	+pattern()
-	+productPageSet()
+	+pattern().hidden-xs.hidden-sm
+	+productPageSet().hidden-xs.hidden-sm
 	+recent()
 	+not-found()
 
