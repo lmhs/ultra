@@ -12,26 +12,115 @@ mixin delivery()
 
 	+nav-main()
 	+content-outer()
-		.inner.inner--w1360
-			.col-md-6
-				+breadcrumb(['Главная', pageTitle])
-	section.delivery__payment
-		h1.delivery__heading-main Оплата
-		p.caption
-			| Наша задача — предоставить Вам максимально комфортные условия по минимальной цене.
-			| Поэтому, мы исключаем всех посредников и не работаем с банковскими терминалами для оплаты пластиковыми картами, т.к это увеличивает стоимость товара на несколько процентов.
-	section.delivery__location
-		h2.delivery__location__heading Самовывоз
-		.delivery__location-map
-			<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=100%&lang=ru_RU&sourceType=constructor"></script>
-	section.help
-		.inner.inner--w900
-			.help__center
-				.help__photo
-					img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
-				.help__call
-					h2.help__heading Нужна помощь?
-					h3.help__subheading Звони сейчас
-					+phone({})
+		.col-md-6
+			+breadcrumb(['Главная', pageTitle])
+	+b('section').delivery-payment
+		.container-20-outer
+			.row-20
+				.col-md-20-3.col-md-20-offset-1
+					+e.head
+						+e('h1') Оплата
+						+e('p').caption
+							| Наша задача — предоставить Вам максимально комфортные условия по минимальной цене.
+							| Поэтому, мы исключаем всех посредников и не работаем с банковскими терминалами для оплаты пластиковыми картами, т.к это увеличивает стоимость товара на несколько процентов.
+			.row-20
+				.col-md-20-5
+					+e.body
+						+e.features
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/byr-money.jpg' width='238' height='183').feature-img.delivery-payment__feature-img--money
+									+e.feature-count 1
+								+e.feature-info
+									+e('h6').feature-heading.small Наличный расчет
+									+e('p').feature-text В одном из наших магазинов или курьеру при доставке.
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/receipt.png' width='176' height='157').feature-img.delivery-payment__feature-img--receipt
+									+e.feature-count 2
+								+e.feature-info
+									+e('h6').feature-heading.small Безналичный расчет
+									+e('p').feature-text Мы вышлем Вам счет для оплаты и вы сможете перевести деньги.
+							+e.feature
+								+e.feature-img-wrap
+									+e('img')(src='./assets/images/belpost-mailbox.png' width='162' height='184').feature-img.delivery-payment__feature-img--mailbox
+									+e.feature-count 3
+								+e.feature-info
+									+e('h6').feature-heading.small Дистанционная оплата
+									+e('p').feature-text Можете воспользоваться наложенным платежом от РУП "Белпочта"
+	+b('section').delivery-main
+		.container-20-outer
+			.row-20
+				.col-md-20-6
+					+e('h1').heading Доставка
+			.row-20
+				+e.right.col-md-20-3
+					+e('h5').heading2 По Минску
+					+e('p').text Доставка осуществляется в удобное для покупателя время !{''}
+						strong с 10.30 до 23.00
+						|  в день заказа, либо на следующий (по согласованию с клиентом).
+					+e('ul').types
+						+b('li').delivery-type
+							+e.icon-wrap
+								+e('i').icon.icon-free-58x34
+							+e.content
+								+e('h6').content__heading.small Бесплатная
+								| , если стоимость товара более !{''}
+								strong 800 000 BYR.
+								|  (* доставка крупногабаритной техники - стиральных машин, холодильников, духовых шкафов, телевизоров платная, стоимость - от 90 000 BYR)
+						+b('li').delivery-type
+							+e.icon-wrap
+								+e('i').icon.icon-money-56x32
+							+e.content
+								+e('h6').content__heading.small 45 000 BYR
+								| , если цена товара !{''}
+								strong меньше 800 000 BYR
+						+b('li').delivery-type
+							+e.icon-wrap
+								+e('i').icon.icon-clock-arrow-52x55
+							+e.content
+								+e('h6').content__heading.delivery-type__content__heading--block.small Экспресс-доставка в течении часа
+								| Стоимость этой услуги составляет !{''}
+								strong 100 000 руб.
+								|  (если доставка изначально платная, то стоимость экспресс-доставки составит 45 000 + 100 000)
+				+e.left.col-md-20-2
+					+e('h5').heading2 В регионы Беларуси
+					+e('p').text Стоимость оговаривается с менеджером и зависит от особенностей заказа (в среднем от 90 000 до 150 000 руб.)
+					br
+					+e('p').text Срок и способ отправки: ежедневно, курьером по указанному адресу.
+					+e('img')(src='./assets/images/belarus-arrow.png' width='242' height='220').img
+	+b('section').delivery-attention
+		+content-20-outer()
+			.col-md-20-5
+				+e.inner
+					+e('i').icon.icon-important-triangle-54x48
+					+e.content
+						+e('h6').heading Обратите внимание
+						+e('p').text В случае, если товар доставлен, но заказчик от него отказывается без уважительных причин (наличие дефекта или других свойств, свидетельствующих о том, что товар некачественный), клиент обязуется возместить магазину затраты, связанные с доставкой товара в размере 45 000 руб. согласно !{''}
+							em пункту 3 статьи 467 Гражданского кодекса РБ, а также Постановлению Совета Министров Республики Беларусь №31 от 15.01.2009 г п.16.
+	+b('section').delivery-location
+		+content-20-outer()
+			.col-md-20-3.col-md-20-offset-1
+				+e.head
+					+e('h1').heading Самовывоз
+					+e('address').address
+						+e('i').address__icon.icon-map-red-12x18
+						+e('span').address__text г.Минск, пр-т Независимости 28
+					+e.metro
+						+e('i').metro__icon.icon-metro
+						+e('span').metro__text Октябрьская
+
+		+e.map
+			script(type="text/javascript", charset="utf-8", src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=500&lang=ru_RU&sourceType=constructor")
+	+b('section').help
+		.container-outer
+			.col-md-4.col-md-offset-1
+				.help__center
+					.help__photo
+						img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
+					.help__call
+						h2.help__heading Нужна помощь?
+						h3.help__subheading Звони сейчас
+						+phone({type:'not-found'})
 
 
