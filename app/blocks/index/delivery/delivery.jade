@@ -103,12 +103,13 @@ mixin delivery()
 			.col-md-20-3.col-md-20-offset-1
 				+e.head
 					+e('h1').heading Самовывоз
-					+e('address').address
-						+e('i').address__icon.icon-map-red
-						+e('span').address__text г.Минск, пр-т Независимости 28
-					+e.metro
-						+e('i').metro__icon.icon-metro
-						+e('span').metro__text Октябрьская
+					+b('address').address
+						+e.street
+							+e('i').street__icon.icon-map-red-17x28
+							+e('span').street__text г.Минск, пр-т Независимости 28
+						+e.metro
+							+e('i').metro__icon.icon-metro-blue-19x19
+							+e('span').metro__text Октябрьская
 
 		+e.map
 			script(type="text/javascript", charset="utf-8", src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=500&lang=ru_RU&sourceType=constructor")

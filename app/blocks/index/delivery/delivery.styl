@@ -3,6 +3,48 @@
 		padding-bottom 100px
 		&__caption
 			text-align center
+<<<<<<< HEAD
+
+
+		&__features
+			margin-top 30px
+			text-align center
+			font-size 0
+
+		&__feature
+			display inline-block
+			width 250px
+			vertical-align top
+
+			& + &
+				margin-left 100px
+
+			&-img-wrap
+				height 200px
+				position relative
+				vertical-align bottom
+
+			&-img
+				display inline-block
+				vertical-align bottom
+				&--money
+					margin-top 17px
+				&--receipt
+					margin-top 43px
+				&--mailbox
+					margin-top 16px
+					margin-left -20px
+
+			&-heading
+				text-align left
+				margin-top 20px
+				margin-bottom 20px
+
+			&-text
+				font-size 15px
+				text-align left
+
+=======
 
 
 		&__features
@@ -119,35 +161,62 @@
 		&__head
 			text-align center
 			margin-bottom 45px
-		&__address
-			display inline-block
-			&__icon
-				vertical-align bottom
-				margin-right 5px
-			&__text
-				color #111
-				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-				vertical-align bottom
-				font-size 24px
-				font-weight light
-				line-height 1
-				display inline-block
 
-		&__metro
-			display block
-			margin 0 auto
-			white-space nowrap
-			&__icon
-				vertical-align middle
-				margin-right 8px
-			&__text
-				vertical-align middle
-				line-height 20px
-				font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
-				font-weight regular
-				font-size 15px
-				color #555
 		&__heading
 			margin-top 0
 		&__map
 			height 500px
+		&__tour
+			height 500px
+			overflow hidden
+
+
+.address
+	display block
+	margin 0 auto
+	white-space nowrap
+	text-align center
+
+	&__street
+		display inline-block
+
+		&__icon
+			vertical-align bottom
+			margin-right 5px
+		&__text
+			color #111
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			vertical-align bottom
+			font-size 24px
+			font-weight light
+			line-height 1
+			display inline-block
+
+	&__metro
+		display block
+		margin 6px auto 0
+		white-space nowrap
+		&__icon
+			vertical-align middle
+			margin-right 8px
+		&__text
+			vertical-align middle
+			line-height 20px
+			font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+			font-weight regular
+			font-size 15px
+			color #555
+
+	&__link
+		margin-top 6px
+		.link
+			color #888
+			font-size 12px
+		.link--pseudo
+			border-bottom-color #888
+			&:hover
+			&:focus
+			&:active
+			&.active
+				border-bottom-style solid
+>>>>>>> info-contacts
