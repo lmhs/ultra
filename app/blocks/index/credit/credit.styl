@@ -61,33 +61,35 @@
 .help
 	padding-top 86px
 	padding-bottom 90px
+	overflow hidden
 	background-color #F6F6F6
 	&__center
-		width 900px
-		height 367px
+		// width 900px
+		min-height 367px
 		border 1px solid #E1E1E1
 		border-radius 2px
 		background-color #FFF
 		position relative
-		margin-left -12px
+		padding-bottom 20px
+		// margin-left -12px
 		&::after
 			content ''
-			width 231px
+			width 407px
 			height 135px
 			position absolute
-			right -231px
+			right -407px
 			top 50%
 			margin-top -68px
-			background url('../images/pattern-color-big-right.png') no-repeat
+			background url('../images/pattern-color-right-407x135.png') no-repeat
 		&::before
 			content ''
-			width 230px
+			width 407px
 			height 135px
 			position absolute
 			top 50%
-			left -230px
+			left -407px
 			margin-top -68px
-			background url('../images/pattern-color-big-left.png') no-repeat
+			background url('../images/pattern-color-left-407x135.png') no-repeat
 	&__photo
 		position absolute
 		bottom 0
@@ -98,6 +100,7 @@
 		font-size 38px
 		color #111
 		margin-bottom 7px
+		text-align left
 	&__subheading
 		font-size 28px
 		color #D74125
