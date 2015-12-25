@@ -1,0 +1,59 @@
+.contacts
+	&-main
+		overflow hidden
+		&__inner
+			background-color #252525
+			border 1px solid #707070
+			box-shadow inset 0px -4px 0px 0px #5d5d5d
+			text-align center
+			position relative
+
+
+			&::before
+			&::after
+				content ''
+				position absolute
+				top 50%
+				margin-top -50px
+				width 302px
+				height 100px
+
+			&::before
+				right 100%
+				background url(../images/pattern-color-left-302x100.png) no-repeat
+
+			&::after
+				left 100%
+				background url(../images/pattern-color-right-302x100.png) no-repeat
+
+			.col-md-25-2 + .col-md-25-2
+				border-left 1px solid #5d5d5d
+				margin-left -1px
+			&-item
+				width 240px
+				display inline-block
+				color #fff
+				text-align left
+				padding 30px 10px
+		&__heading
+			color #fff
+			font-size 20px
+			margin-top 0
+			margin-bottom 0
+		&__text
+			font-size 16px
+		&__time
+			font-size 28px
+			font-weight semibold
+			margin-top 5px
+
+	&__nav
+		.subheader-nav-tabs-outer
+			background-color #F6F6F6
+			border-top 1px solid #ebebeb
+		&-tabs
+			&.nav-tabs.subheader-nav-tabs > li > a
+				padding-left 30px
+				padding-right 30px
+
+

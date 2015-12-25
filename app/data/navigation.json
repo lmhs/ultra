@@ -3,7 +3,7 @@
 		"top" : [
 			{
 				"name" : "О магазине",
-				"href" : "/index-about.html",
+				"href" : "/index-contacts.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : ""
@@ -157,7 +157,7 @@
 		"footer-left" : [
 			{
 				"name" : "О магазине",
-				"href" : "/index-about.html",
+				"href" : "/index-contacts.html",
 				"menu" : false,
 				"sale" : false,
 				"icon" : ""

@@ -28,6 +28,15 @@ import $ from 'jquery';
 		$(this).tab('show')
 	});
 
+	$('.js-subheader-contacts-tab').on('click','.js-contacts-nav-tab', function (e) {
+		e.preventDefault();
+		$(this).tab('show')
+	});
+	$('.js-show-map').on('click',function(e){
+		e.preventDefault();
+		$('.js-contacts-nav-tab[href="#map"]').click();
+	});
+
 	$('.js-menu-popup-nav').on('click','.js-menu-popup-nav-tab', function (e) {
 		e.preventDefault();
 		$(this).tab('show')
@@ -36,6 +45,7 @@ import $ from 'jquery';
 		e.preventDefault();
 		$(this).tab('show')
 	});
+
 	$('.js-product-lp-nav').on('click', '.js-product-lp-nav-tab', function(e) {
 		e.preventDefault();
 		$(this).tab('show');
