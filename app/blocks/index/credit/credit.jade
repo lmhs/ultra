@@ -5,6 +5,7 @@ include ../../basic/button/button
 include ../../basic/details/details
 include ../../basic/phone/phone
 include ../../layout/nav-main/nav-main
+include ../../layout/location/location
 
 mixin credit()
 	block vars
@@ -18,84 +19,114 @@ mixin credit()
 		+content-outer()
 			.col-md-6
 				h1.credit__heading-main Кредит
-	section.credit__intro
+	+b('section').credit-intro
 		+content-outer()
 			.col-md-6
-				.credit__headlines.cf
-					.credit__headlines-left
-						h3.credit__intro__heading-light Хватит мечтать!
-						h3.credit__intro__heading-bold Пора воплощать
-					.credit__headlines-right
-						h3.credit__intro__heading-light Кредит За 30 минут
+				.row
+					.col-md-3
+						+e.headlines-left
+							+e('h3').heading-light-1 Хватит мечтать!
+							+e('h3').heading-bold-1 Пора воплощать
+					.col-md-3
+						+e.headlines-right
+							+e('strong').heading-bold-2 30
+							+e('h3').heading-light-2 Кредит за
+							+e('h3').heading-bold-3 минут
 	section.credit__conditions
-		+content-outer()
-			.col-md-6
-				//- .inner.inner--w1100
-				h2.credit__conditions__heading Условия приобретения товара в кредит
-		+content-outer()
-			.col-md-3
-				.conditions-wrap.cf
-					.conditions.push-right
-						.condition
-							i.icon-calculator.condition__icon
-							.condition__text
-								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
-								p.caption.condition__caption
-									| Кредит оформляется на товары, стоимость которых более 1 500 000 BYR.
-									| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
-					.conditions.push-right
-						.condition
-							i.icon-stock-percent.condition__icon
-							.condition__text
-								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
-								ul.default-ul.condition__default-ul
-									li размер ставки зависит от наименования товара и срока кредитования
-									li проценты начисляются ежемесячно на остаток кредита за вычетом предыдущих платежей
-									li дополнительные проценты и платежи отсутствуют
-			.col-md-3
-				.conditions-wrap.cf
-					.conditions--right
-						.condition
-							i.icon-stock.condition__icon
-							.condition__text
-								h6.small.condition__heading Увеличение стоимости на 12%
-								p.caption.condition__caption
-									| Цены на сайте действительны при оплате наличными. При оформлении товара в кредит, его стоимость может увеличиться на 12%
+		.container-outer
+			.row
+				.col-md-6
+					h2.credit__conditions__heading Условия приобретения товара в кредит
+			.row
+				.col-md-3.credit-condition-col.credit-condition-col--left
+					+b.credit-condition
+						+e.icon-wrap
+							+e('i').icon.icon-calculator
+						+e.content
+							+e('h6').heading.small Стоимость товара более 1&nbsp;500&nbsp;000&nbsp;BYR
+							+e('p').caption.caption
+								| Кредит оформляется на товары, стоимость которых более 1&nbsp;500&nbsp;000&nbsp;BYR.
+								| А это говорит о том, что он приложил немало усилий при проектировке велосипеда.
+				.col-md-3.credit-condition-col.credit-condition-col--right
+					+b.credit-condition
+						+e.icon-wrap
+							+e('i').icon.icon-stock
+						+e.content
+							+e('h6').heading.small Увеличение стоимости на 12%
+							+e('p').caption.caption
+								| Цены на сайте действительны при оплате наличными. При оформлении товара в кредит, его стоимость может увеличиться на 12%
+			.row
+				.col-md-3.credit-condition-col.credit-condition-col--left
+					+b.credit-condition
+						+e.icon-wrap
+							+e('i').icon.icon-stock-percent
+						+e.content
+							+e('h6').heading.small Процентная ставка от 3% до 7%
+							+e('ul').default-ul.default-ul
+								li размер ставки зависит от наименования товара и срока кредитования
+								li проценты начисляются ежемесячно на остаток кредита за вычетом предыдущих платежей
+								li дополнительные проценты и платежи отсутствуют
+				.col-md-3.credit-condition-col.credit-condition-col--right
+					+b.credit-condition
+						+e.icon-wrap
+							+e('i').icon.icon-withdrawal
+						+e.content
+							+e('h6').heading.small Первоначальный взнос
+							+e('ul').default-ul.default-ul
+								li при приобретении товара стоимостью до 14&nbsp;000&nbsp;000&nbsp;BYR&nbsp;— 0&nbsp;BYR
+								li при приобретении товара стоимостью свыше 14&nbsp;000&nbsp;000&nbsp;BYR&nbsp;— 10% от стоимости
 
-					.conditions--right
-						.condition
-							i.icon-withdrawal.condition__icon
-							.condition__text
-								h6.small.condition__heading Стоимость товара более 1 500 000 BYR
-								ul.default-ul.condition__default-ul
-									li при приобретении товара стоимостью до 14 000 000 BYR — 0 BYR
-									li при приобретении товара стоимостью свыше 14 000 000 BYR — 10% от стоимости
-
-	section.credit__documents
+	+b('section').credit-documents
 		+content-outer()
 			.col-md-2
-				h1.h1--red.documents__heading Документы
-					small необходимые при оформлении кредита
-				p.caption Для оформления покупки в кредит, необходимо предъявить следующий минимум документов
+				+e.col-inner
+					+e('h1').heading.h1--red Документы
+						small необходимые при оформлении кредита
+					+e('p').caption.caption Для оформления покупки в кредит, необходимо предъявить следующий минимум документов
+					+e('i').icon.icon-arrow-bottom-up-right
 			.col-md-4
+				+b.credit-document
+					+e.img-wrap
+						+e('img')(src="./assets/images/passport.png").img
+					+e.info
+						+e('h6').heading Паспорт
+						+e('p').text Наличие паспорта гражданина Республики Беларусь либо вид на жительство
+				+b.credit-document
+					+e.img-wrap
+						+e('img')(src="./assets/images/income-statement.png").img
+					+e.info
+						+e('h6').heading Справка о доходах
+						+e('p').text Необходимо быть официально трудоустроенным не менее 3-х месяцев и предоставить справку о доходах с места работы.
+				+b.credit-document
+					+e.img-wrap
+						+e('img')(src="./assets/images/stamp.png").img
+					+e.info
+						+e('h6').heading Предпринимателям
+						+e('p').text Индивидуальным предпринимателям необходима копия свидетельства.
 
+	+location({
+							title:'Место оформления кредита',
+							type:'credit',
+							address:{
+											street: 'г.Минск, ул. Немига 8',
+											metro:[{
+															name:'Немига',
+															caption:'(ТЦ "Пассаж на Немиге", павильон 1)'
+															},{
+															name:'Фрунзенская'
+															}]
+											}
+						})
 
-	section.credit__location
-		+content-outer()
-			.col-md-6
-				h2.credit__location__heading Место оформления кредита
-		.credit__location-map
-			script(type="text/javascript", charset="utf-8", src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=FhX9G4kYS8Rdm3YQ0A8_WP4a0Jqu6IcG&width=100%&height=100%&lang=ru_RU&sourceType=constructor")
-	section.help
-		+content-outer()
+	+b('section').help
+		.container-outer
 			.col-md-4.col-md-offset-1
-				//- .inner.inner--w900
 				.help__center
 					.help__photo
-						img(src="/assets/images/help-photo.jpg", alt="Позвони мне")
+						img(src="./assets/images/help-photo.jpg", alt="Позвони мне")
 					.help__call
 						h2.help__heading Нужна помощь?
 						h3.help__subheading Звони сейчас
-						+phone({})
+						+phone({type:'not-found'})
 
 
