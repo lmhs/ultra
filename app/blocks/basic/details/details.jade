@@ -16,3 +16,14 @@ mixin details-section(args)
 			i.icon-details-marker
 		+e.details-section__summary__content
 			block
+
+mixin details-simple(args)
+	details.details-simple&attributes(attributes)
+		summary.details-simple__summary
+			span.details-simple__summary__title !{args.title}
+			if args.advantages
+				i.icon-plus-green-13x13.details-simple__icon.details-simple__icon--plus
+			else
+				i.icon-dash-red-13x3.details-simple__icon.details-simple__icon--dash
+		.details-simple__summary__content
+			block

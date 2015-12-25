@@ -74,6 +74,29 @@
 		&::-webkit-details-marker
 			display none
 
+.details-simple
+	position relative
+	padding 5px 0
+
+	&__summary
+		cursor pointer
+		padding-right 36px
+		outline none
+		padding-left 20px
+		&::-webkit-details-marker
+			display none
+		&__title
+			color #252525
+			font-size 14px
+			border-bottom 1px dashed #252525
+	&__icon
+		position absolute
+		left 0
+		&--plus
+			top 8px
+		&--dash
+			top 14px
+
 .aside-catalogue__details-section__summary__content
 	+below(2)
 		padding 18px

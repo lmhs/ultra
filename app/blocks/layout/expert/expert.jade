@@ -11,13 +11,16 @@ mixin expert(args)
 					.media.expert__block
 						.media-left.expert__avatar
 							img(src="http://dummyimage.com/110x110/4d494d/686a82.gif&text=expert-photo",width="110",height="110", alt="expert-photo").img-circle
-							if args.namePosition === 'below'
-								em.expert__name Алексеев Юрий
-								em.expert__position Эксперт-товаровед
+							em.expert__name Алексеев Юрий
+							em.expert__position Эксперт-товаровед
 						.media-body.expert__body
 							blockquote.expert__blockquote
 								p
 									block
-								if args.namePosition !== 'below'
-									footer
-										em Алексеев Юрий
+								footer
+									em Алексеев Юрий
+							.mobile-text-more
+								+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+									span.link__text Смотреть полностью
+									| !{''}
+									i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
