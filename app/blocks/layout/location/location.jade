@@ -1,0 +1,22 @@
+include ../address/address
+
+mixin location(args)
+
+	+b('section').location
+		+content-20-outer()
+			.col-md-20-3.col-md-20-offset-1
+				+e.head
+					+e('h1').heading !{args.title}
+						+address(args)
+
+		+e.map
+			if args.type === 'credit'
+				+map-credit()
+			else
+				+map()
+
+mixin map()
+	script(type="text/javascript", charset="utf-8", src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&width=100%&height=500&lang=ru_RU&sourceType=constructor")
+
+mixin map-credit()
+	script(type="text/javascript", charset="utf-8", src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=FhX9G4kYS8Rdm3YQ0A8_WP4a0Jqu6IcG&width=100%&height=100%&lang=ru_RU&sourceType=constructor")

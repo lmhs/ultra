@@ -1,18 +1,53 @@
 .credit
-	&__intro
-	&__head
-	&__conditions
-	&__location
-		text-align center
-	&__intro
+	&-intro
 		height 370px
 		margin 0 auto
-		// width 1088px
 		background #FCFCFC url('../images/credit-intro.png') no-repeat center center
-		&__heading-light
+		&__headlines-left
+			padding-left 42px
+		&__headlines-right
+			float right
+			padding-top 50px
+			padding-right 75px
+			text-align left
+		&__heading-light-1
+			margin-top 57px
+			margin-bottom 4px
+			line-height 1
 			font-weight light
 			font-size 32px
 			color #252525
+		&__heading-light-2
+			margin-top 0
+			margin-bottom 0
+			line-height 1
+			font-weight light
+			font-size 30px
+			color #111
+			margin-left 120px
+		&__heading-bold-1
+			margin-top 0
+			margin-bottom 0
+			line-height 1
+			font-size 44px
+			font-weight bold
+			color #252525
+		&__heading-bold-2
+			margin-top 0
+			margin-bottom 0
+			line-height .9
+			font-size 86px
+			font-weight bold
+			color #E14013
+			float left
+		&__heading-bold-3
+			margin-top 0
+			margin-bottom 0
+			line-height 1
+			font-size 48px
+			font-weight bold
+			color #E14013
+			margin-left 120px
 
 		&__heading-bold
 			font-size 44px
@@ -21,41 +56,79 @@
 	&__location-map
 		height 500px
 
-	&__headlines-left
-		float left
 
-	&__headlines-right
-		float right
-
-	&__documents
+	&-documents
 		background-color #F6F6F6
 		padding-top 92px
 		padding-bottom 65px
 		border-top 1px solid #E1E1E1
 		border-bottom 1px solid #E1E1E1
 
-.documents__heading
-	margin-top 0
-	margin-bottom 0
-	small
-		margin-top 0
-		margin-bottom 30px
+		&__col-inner
+			padding-left 70px
+			position relative
+			padding-right 90px
 
-.condition
+		&__heading
+			margin-top 0
+			margin-bottom 30px
+			text-align left
+			small
+				text-align left
+				margin-top 3px
+				margin-bottom 0
+		&__caption
+			color #777
+		&__icon
+			position absolute
+			bottom -100px
+			right 50px
+
+.credit__conditions
+	padding-bottom 50px
+	&__heading
+		margin-bottom 92px
+
+.credit-condition
 	text-align left
-	width 470px
-	margin-bottom 40px
-	&__icon
+	// width 470px
+	margin-bottom 50px
+	&-col
+		&--left
+			padding-left 110px
+			padding-right 60px
+		&--right
+			padding-right 110px
+			padding-left 60px
+	&__icon-wrap
 		float left
-	&__text
-		margin-left 90px
+		width 120px
+		text-align center
+	&__content
+		margin-left 120px
 	&__default-ul
 		margin-left 20px
 		li
-			margin-bottom 10px
+			margin-bottom 20px
 	&__heading
-		margin-top 30px
+		margin-top 0
+		margin-bottom 15px
 
+.credit-document
+	width 240px
+	display inline-block
+	vertical-align top
+	&__heading
+		margin-top 0
+		margin-bottom 5px
+		font-size 16px
+	&__text
+		color #777
+		font-size 14px
+	& + &
+		margin-left 60px
+	&__img-wrap
+		height 200px
 
 
 .help

@@ -1,0 +1,19 @@
+mixin address(args)
+
+	+b('address').address
+		+e.street
+			+e('i').street__icon.icon-map-red-17x28
+			+e('span').street__text !{args.address.street}
+		+e.metro
+			each item, index in args.address.metro
+				if item.caption
+					+e('span').metro__text !{item.caption}
+				if args.type === 'credit'
+					+e('i').metro__icon.icon-metro-red-19x19
+				else
+					+e('i').metro__icon.icon-metro-blue-19x19
+				+e('span').metro__text
+					| !{item.name}
+					if args.address.metro.length > 1
+						| , !{''}
+
