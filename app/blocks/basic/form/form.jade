@@ -37,7 +37,7 @@ mixin textarea-horizontal-group(args)
 				for=attributes.id ? attributes.id : null,
 				class=args.required ? 'is-required' : '') #{label}
 		.col-sm-20-4
-			textarea.form-control(
+			textarea.form-control.form-control--textarea(
 				name=args.name ? args.name : null
 				placeholder=args.placeholder ? args.placeholder : null
 				aria-describedby=args.help ? args.help.name : null)&attributes(attributes)

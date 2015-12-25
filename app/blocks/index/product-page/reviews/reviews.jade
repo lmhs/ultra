@@ -11,8 +11,8 @@ mixin reviews()
 				i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
 		+e('h6').heading.small.hidden-xs.hidden-sm Лучший отзыв
 		+review({best:true,reply:false})
-		+e.footer.hidden-xs.hidden-sm
-			+e.footer-inner
+		+e.footer
+			+e.footer-inner.hidden-xs.hidden-sm
 				+e.follow-wrap.js-follow-reviews-wrap
 					+b.follow-reviews.js-follow-reviews
 						+e('h6').heading Следить за отзывами к этому товару
