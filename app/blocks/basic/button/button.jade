@@ -20,8 +20,22 @@ mixin button(args)
 
 mixin buttonMore(args)
 	+button({}).btn-lg.btn--dark.show-more-btn.js-more-btn&attributes(attributes)(data-loading-text="Загрузка...")
-		| Загрузить еще
-		|  !{args.itemCount}
-		|  товаров
+		if args.text
+			| !{args.text}
+		else
+			| Загрузить еще
+			|  !{args.itemCount}
+			|  товаров
+		i.icon-arrow-down-10-f.show-more-btn__icon
+	// button more end
+
+mixin buttonMoreFeatures(args)
+	+button({}).btn-lg.btn--dark.show-more-btn&attributes(attributes)
+		if args.text
+			| !{args.text}
+		else
+			| Загрузить еще
+			|  !{args.itemCount}
+			|  товаров
 		i.icon-arrow-down-10-f.show-more-btn__icon
 	// button more end

@@ -20,6 +20,9 @@ import $ from 'jquery';
 		if ( $(e.target).closest('.js-user-menu-wrap').length === 0 ) {
 			$('.js-user-menu-wrap.is-opened').removeClass('is-opened');
 		}
+		if ( $(e.target).closest('.js-follow-reviews-wrap').length === 0 ) {
+			$('.js-follow-reviews.is-opened').removeClass('is-opened');
+		}
 	});
 	$('#js-top-menu').on('click','.js-main-menu-link', function () {
 		$('.js-main-menu-item').removeClass('is-selected');

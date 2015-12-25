@@ -14,44 +14,13 @@
 	+below(4)
 		border-radius 0
 
-	&::before
-		visibility visible
-		position absolute
-		top 0
-		left 0
-		width 22px
-		height 22px
-		content ''
-		border 1px solid #e1e1e1
-		border-radius 2px
-		cursor pointer
-		+below(4)
-			border-radius 0
-
-	&::after
-		position absolute
-		top 50%
-		left 5px
-
-		margin-top -5px
-
-		content ''
-		cursor pointer
-
-		transform rotate(-45deg)
-		border-bottom 2px solid #fff
-		border-left 2px solid #fff
-
-		width 12px
-		height 7px
-
-
 	&:checked
-		&::before
-			background-color #E14013
-			border-color #E14013
-		&::after
-			visibility visible
+		& + label
+			&::before
+				background-color #E14013
+				border-color #E14013
+			&::after
+				visibility visible
 
 input[type='checkbox'].checkbox-element
 	margin-left -34px
@@ -61,6 +30,39 @@ input[type='checkbox'].checkbox-element
 .checkbox label
 	padding-left 34px
 	min-height 22px
+	position relative
+
+	&::before
+		visibility visible
+		position absolute
+		top 0
+		left 0
+		width 22px
+		height 22px
+		content ''
+		background-color #FFF
+		border 1px solid #e1e1e1
+		border-radius 2px
+		cursor pointer
+		+below(4)
+			border-radius 0
+
+	&::after
+		position absolute
+		top 6px
+		left 5px
+
+
+		content ''
+		cursor pointer
+
+		transform rotate(-45deg)
+		border-bottom 2px solid #fff
+		border-left 2px solid #fff
+		visibility hidden
+
+		width 12px
+		height 7px
 
 .login-modal__form__checkbox
 	.checkbox-element:checked::before
