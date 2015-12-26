@@ -7,18 +7,18 @@ include ../../layout/select-sm/select-sm
 
 mixin content-catalogue(type)
 	+b.content-catalogue
-		+e.breadcrumb-outer.hidden-xs
+		+e.breadcrumb-outer.hidden-xs.hidden-sm
 			+breadcrumb(['Главная', 'Фото, телефония, мультимедиа', 'Телефония', 'Мобильные телефоны'])
 		+e.head
 			if type === 'banner'
-				+e.banner-outer.hidden-xs
+				+e.banner-outer.hidden-xs.hidden-sm
 					+banner-medium().content-catalogue__banner-medium
 					+banner-horizontal().content-catalogue__banner-horizontal
 			else
-				+e.banner-small-outer.hidden-xs
+				+e.banner-small-outer.hidden-xs.hidden-sm
 					+banner-small()
-			+e('h1').heading.hidden-xs Мобильные телефоны
-			+e.subheader.hidden-xs
+			+e('h1').heading.hidden-xs.hidden-sm Мобильные телефоны
+			+e.subheader.hidden-xs.hidden-sm
 				+navSubheaderSmall({
 									links: [
 										{
@@ -60,7 +60,7 @@ mixin content-catalogue(type)
 								}).js-subheader-filter-tab
 		+e.body
 			+e.items-wrap.js-catalogue-items
-				.row.visible-xs
+				.row.visible-xs-block.visible-sm-block
 					.col-xs-6
 						+e.heading-filter
 							+e.txt Вывод товаров
