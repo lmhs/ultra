@@ -184,6 +184,11 @@ mixin product-layout(args)
 		a(href="/index-product.html").product__link
 		block
 
+mixin product-plus
+	//- a(href=jv0).product-plus.js-plus
+	span.product-plus
+		i.product-plus__icon.icon-plus-bold-11
+
 mixin product(args)
 	case args.type
 		when 'hot'
@@ -283,6 +288,34 @@ mixin product(args)
 					+product-actions(args)
 				if args.video
 					+product-video()
+
+		when 'set-category'
+			+product-layout(args).set-category-product
+				+product-head().product__head--set-category
+					+product-title-category()
+				+product-body(args).product__body--set-category
+					+product-image(args)
+				+product-plus()
+
+		when 'set-main'
+			+product-layout(args).set-main-product
+				+product-head().product__head--set-main
+					+product-title().product__title-text--set-main
+					+product-rating()
+				+product-body(args).product__body--set-main
+					+product-image(args)
+					+product-price(args).product__price--set-main
+				+product-plus()
+
+		when 'set-added'
+			+product-layout(args).set-added-product
+				+product-head().product__head--set-added
+					+product-title().product__title-text--set-added
+					+product-rating()
+				+product-body(args).product__body--set-added
+					+product-image(args)
+					+product-price(args).product__price--set-main
+
 
 		when 'other'
 			+product-layout(args).other-product

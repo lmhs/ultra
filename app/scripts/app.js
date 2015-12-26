@@ -20,6 +20,7 @@ import './blocks/scrollspy.js';
 import './blocks/reviews.js';
 import './blocks/tag.js';
 import './blocks/rating.js';
+import './blocks/set.js';
 
 $(() => {
 

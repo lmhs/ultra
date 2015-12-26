@@ -1,0 +1,99 @@
+include ../../basic/product/product
+include ../../basic/button/button
+
+mixin set-items()
+
+	+b('section').set-items.js-set-items
+		+content-20-outer()
+			.col-md-20-1
+				+product({
+											type:'set-main',
+											rating: true
+										})
+			.col-md-20-4
+				+e.row.row-25.js-set-items-row
+					.col-md-25-1
+						+product({
+											type:'set-added',
+											oldPrice: '250 000 BYR',
+											rating: true
+										})
+					.col-md-25-1
+						+set-economy()
+					.col-md-25-1
+						+set-add-item()
+					.col-md-25-1
+
+mixin set-categories()
+	+b('section').set-items.set-categories.js-set-categories
+		+content-20-outer()
+			.col-md-20-1
+				+product({
+											type:'set-main',
+											rating: true
+										})
+			.col-md-20-4
+				+e.row.row-25.js-set-categories-row
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+					.col-md-25-1
+						+set-category()
+
+mixin set-category()
+	+b.set-category.set-item.js-set-category
+		a(href=jv0).set-item__link.js-choose-category
+		+e.head
+			+e.title
+				+e('i').title-icon.icon-check-green
+				+e('h6').heading.small Шлем
+			+e.subheading (23 товара)
+		+e.body
+			+product-image()
+		+e.down
+			+e('i').down-icon.icon-arrow-down-fff-10x6
+
+
+mixin set-equal()
+	//- a(href=jv0).set-equal.js-plus
+	span.set-equal
+		i.set-equal__icon.icon-equal-fff-11x9
+
+mixin set-economy()
+	+b.set-economy.set-item
+		+e('h3').heading Экономим
+			small покупая вместе
+		+e.saving 125 000 BYR
+		+e.price
+			+e('s').price-old 2 610 000 BYR
+			+e('strong').price-special 2 075 000 BYR
+		+e.btn-wrap
+			+button().btn-lg.btn--red.btn-block.set-economy__btn
+				| Купить комплект
+		+set-equal()
+
+
+mixin set-add-item()
+	+b.set-add-item.set-item
+		a(href=jv0).set-item__link.js-add-new-item-to-set
+		+e.btn
+			a(href=jv0)
+				+e('i').icon.icon-set-add
+			+e.help-wrap
+				+e.help
+					| добавить еще товар

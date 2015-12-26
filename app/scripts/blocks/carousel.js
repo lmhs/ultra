@@ -88,6 +88,20 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+	$('.js-set-items-row').slick({
+		prevArrow: '<button type="button" data-role="none" class="slick-prev slick-prev-small" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
+		nextArrow: '<button type="button" data-role="none" class="slick-next slick-next-small" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
+		dots: false,
+		slidesToShow: 4,
+		slidesToScroll: 1
+	});
+	$('.js-set-categories-row').slick({
+		prevArrow: '<button type="button" data-role="none" class="slick-prev slick-prev-small" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
+		nextArrow: '<button type="button" data-role="none" class="slick-next slick-next-small" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
+		dots: false,
+		slidesToShow: 4,
+		slidesToScroll: 1
+	});
 	$('.js-other-carousel').slick({
 		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',

@@ -1,6 +1,7 @@
 include ../content/content
 include ../other/other
 include ../set/set
+include ../set-items/set-items
 include ../../basic/product/product
 include ../../basic/tag/tag
 include ../../basic/button/button
@@ -15,6 +16,8 @@ mixin productPageSet()
 						small собери комплект и получи скидку
 		.product-page__set__items
 			+set()
+			+set-categories()
+			+set-items()
 		+other()
 
 
