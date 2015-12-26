@@ -1,0 +1,200 @@
+.set-items
+	&__col
+		margin-right -8px
+		margin-left -8px
+		&:first-child
+			margin-left 1px
+	&__row
+		border-bottom 1px solid #ebebeb
+
+.set-item
+	margin-right -8px
+	margin-left -8px
+	margin-top 0
+	margin-bottom -1px
+	height 420px
+	margin-bottom 24px
+	border 1px solid #b7b7b7
+	border-top-width 4px
+	padding 20px
+	position relative
+	text-align center
+	&__link
+		&::after
+			position absolute
+			content ''
+			top -1px
+			right -1px
+			bottom -1px
+			left -1px
+			z-index 2
+
+.set-economy
+	background #f6f6f6
+
+	&__heading
+		margin-top 30px
+		margin-bottom 20px
+		small
+			display block
+			line-height 1
+			font-size 24px
+			font-weight light
+	&__saving
+		color #E14013
+		font-size 22px
+		font-weight bold
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		background-color #fff
+		display block
+		position relative
+		border 1px solid #ebebeb
+		padding-top 12px
+		padding-bottom 13px
+		border-radius 2px
+		margin-bottom 50px
+		&::after
+		&::before
+			content ''
+			position absolute
+			width 0
+			height 0
+			border-style solid
+
+		&::after
+			top -9px
+			left 50%
+			margin-left -10px
+			border-width 0 9.5px 10px 9.5px
+			border-color transparent transparent #fff transparent
+
+		&::before
+			top -10px
+			left 50%
+			margin-left -10px
+			border-width 0 9.5px 10px 9.5px
+			border-color transparent transparent #ebebeb transparent
+	&__price
+		line-height 1.2
+		margin-bottom 10px
+	&__price-old
+		color #898989
+		font-size 14px
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+		font-weight light
+	&__price-special
+		font-size 16px
+		display block
+	&__btn
+		font-weight regular
+
+.set-add-item
+	border-color #ebebeb
+	border-left none
+	padding-left 0
+	padding-right 0
+	&__btn
+		margin-bottom 22px
+		position absolute
+		top 50%
+		margin-top -56px
+		left 50%
+		margin-left -55px
+	&__help-wrap
+		position absolute
+		top calc(100% + 22px)
+		text-align center
+		margin-left -20px
+		margin-right -20px
+	&__help
+		font-size 13px
+		color #252525
+		display inline-block
+		padding 7px 14px
+		background-color #fff8ba
+		position relative
+		line-height 1
+		&::after
+			content ''
+			position absolute
+			width 0
+			height 0
+			border-style solid
+			top -5px
+			left 50%
+			margin-left -5px
+			border-width 0 5px 5px 5px
+			border-color transparent transparent #fff8ba transparent
+
+.set-category
+	border-color #EBEBEB
+	border-left-color rgba(235, 235, 235, 0)
+
+	&:hover
+		border-color #7B7B7B
+		border-left 1px solid #7B7B7B
+		margin-left -8px
+		z-index 1
+	&--is-active
+		border-color #e14013
+		border-left 1px solid #e14013
+		margin-left -8px
+		z-index 2
+		.set-category__down
+			display block
+		.set-category__title-icon.icon-check-green
+			display block
+		&:hover
+			border-color #e14013
+	&__head
+		position absolute
+		top 20px
+		left 0
+		width 100%
+	&__body
+		padding-top 65px
+	&__title
+		position relative
+		display inline-block
+		&-icon.icon-check-green
+			position absolute
+			top 11px
+			left -23px
+			display none
+	&__heading
+		margin-top 5px
+		margin-bottom 0
+		font-weight semibold
+	&__subheading
+		font-size 14px
+		font-weight light
+		line-height 1
+		color #898989
+		font-family 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif
+	&__down
+		display none
+		border-radius 50%
+		width 40px
+		height 40px
+		line-height 40px
+		text-align center
+		background-color #E14013
+		position absolute
+		bottom -22px
+		left 50%
+		margin-left -20px
+		z-index 1
+
+.set-equal
+	display block
+	border-radius 50%
+	background-color #111
+	height 41px
+	width 41px
+	line-height 41px
+	text-align center
+	position absolute
+	top 50%
+	margin-top -20px
+	left -22px
+	z-index 1

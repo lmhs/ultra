@@ -27,6 +27,36 @@
 	@extend .carousel__control
 	left 0
 
+.carousel__control--small
+	position absolute
+	z-index 1
+	bottom 27px
+	font-size 0
+	line-height 0
+	display block
+	top auto
+	margin-top auto
+	width 60px
+	height 40px
+	padding 0
+	cursor pointer
+	color transparent
+	border none
+	outline none
+	background #cccccc
+	border-radius 3px
+	&:hover
+		background #252525
+
+.slick-next-small
+	@extend .carousel__control--small
+	right 0
+
+.slick-prev-small
+	@extend .carousel__control--small
+	left 0
+
+
 
 .slick-loading .slick-list
 	background #fff url(../images/ajax-loader.gif) center center no-repeat
