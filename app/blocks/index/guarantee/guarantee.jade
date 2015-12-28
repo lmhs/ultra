@@ -9,8 +9,8 @@ mixin guarantee()
 	block vars
 	- var	order = pageId === 'order'
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', pageTitle])
 
@@ -161,7 +161,7 @@ mixin guarantee()
 							span.number-round.number-round--small.sample__number-round 2
 							h6.small.sample__heading-small Гарантийный талон
 							p.caption.sample__caption - выдается товарам, на которые распространяется гарантия
-	.sample__warranty
+	.sample__warranty.hidden-xs.hidden-sm
 		img(src='./assets/images/warranty-card.png').sample__warranty-img
 
 	section.guarantee__thanks

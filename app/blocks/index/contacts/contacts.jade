@@ -10,8 +10,8 @@ mixin contacts()
 	block vars
 	- var	order = pageId === 'order'
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', pageTitle])
 
