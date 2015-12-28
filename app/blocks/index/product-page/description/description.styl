@@ -46,9 +46,21 @@
 	float left
 	padding-right 6px
 
+	.description &
+		+mobile()
+			float none
+			width 100%
+			padding-right 0
+
+
 	&+&
 		padding-right 0
 		padding-left 6px
+
+		.description &
+			+mobile()
+				padding-left 0
+
 
 
 
