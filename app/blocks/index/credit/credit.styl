@@ -166,6 +166,12 @@
 		position relative
 		padding-bottom 20px
 		// margin-left -12px
+		+below(4)
+			padding 20px
+		+mobile()
+			border none
+			background none
+			padding 0
 		&::after
 			content ''
 			width 407px
@@ -175,6 +181,8 @@
 			top 50%
 			margin-top -68px
 			background url('../images/pattern-color-right-407x135.png') no-repeat
+			+below(4)
+				content none
 		&::before
 			content ''
 			width 407px
@@ -184,17 +192,26 @@
 			left -407px
 			margin-top -68px
 			background url('../images/pattern-color-left-407x135.png') no-repeat
+			+below(4)
+				content none
 	&__photo
 		position absolute
 		bottom 0
 		left 80px
+		+below(4)
+			display none
 	&__call
 		margin-left 427px
+		+below(4)
+			margin-left 0
+			text-align center
 	&__heading
 		font-size 38px
 		color #111
 		margin-bottom 7px
 		text-align left
+		+below(4)
+			text-align center
 	&__subheading
 		font-size 28px
 		color #D74125

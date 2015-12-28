@@ -22,7 +22,8 @@ mixin phone(args)
 				when 'not-found'
 					.not-found__btn-wrap
 						+button().btn-med.btn--dark.not-found__btn-callback
-							| Заказать обратный звонок
+							span.hidden-sm.hidden-xs Заказать !{''}
+							| обратный звонок
 					.phone__extra
 						| Время работы магазина: Пн-Пт с&nbsp;9&nbsp;до&nbsp;20
 				default
