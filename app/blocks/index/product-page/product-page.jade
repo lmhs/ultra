@@ -46,10 +46,18 @@ mixin productPage()
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Мобильные телефоны', pageTitle])
 	section.product-page__head
-		+content-outer()
+		+content-outer().product-page-container
 			.col-md-6
 				h2.product-page__heading-main Samsung 19300 Galaxy S III Garnet
-				.product-page__icons
+				.product-page__rating-mobile
+					.spec__rating-wrap
+						+rating()
+						span.spec__rating-number
+							strong 4,8
+							|  из 5
+						em.spec__rating-votes
+							| (8 голосов)
+				.product-page__icons.hidden-xs.hidden-sm
 					span.product-page__icons-wrap
 						img(src="./assets/images/android-icon.png", alt="android")
 					span.product-page__icons-wrap
@@ -64,10 +72,10 @@ mixin productPage()
 						img(src="./assets/images/gps-icon.png", alt="gps")
 
 	section.product-page__offers
-		+content-outer()
+		+content-outer().product-page-container.product-page-container--no-padding
 			.col-md-3
 				+b.product-gallery.product-page__offers__gallery
-					+e.sidebar.js-sidebar-product
+					+e.sidebar.js-sidebar-product.hidden-xs.hidden-sm
 						+e('a')(href=jv0).item
 							+e.item__inner
 								+e.img-wrap
@@ -103,8 +111,7 @@ mixin productPage()
 								+e.img-wrap
 									+e('img')(src='./assets/images/bike-2-small.jpg').img
 
-
-			.col-md-3
+			.col-md-3.hidden-xs.hidden-sm
 				.product-page__offers__spec(class=!available ? 'product-page__offers__spec--unavailable' : '')
 					.row
 						.col-md-4
@@ -164,7 +171,28 @@ mixin productPage()
 							i.icon-arrow-right.spec__icon-arrow
 							+button({type:'buttonSubmit'}).btn-med.btn--dark.spec__one-click__btn.js-one-click-buy
 								| Купить в один клик
-	section.product-page__conditions
+
+
+		+content-outer().product-page-container
+			.product-page__actions-mobile
+				.row
+					.col-xs-3.col-sm-2.product-page__actions-mobile__prices
+						strong.spec__price.spec__price--new
+							| 1 950 000 BYR
+						s.spec__price.spec__price--old
+							| 2 610 000 BYR
+					.col-sm-4
+						.row.product-page__actions-mobile__row
+							.col-xs-3.col-sm-3.product-page__actions-mobile__col-1
+								+available({count:5}).spec__available.product-page__actions-mobile__available
+							.col-xs-3.col-sm-3.product-page__actions-mobile__col-2
+								+checkbox({name:'product-warranty','id':'warranty2', value:'add-warranty',label:'Дополнительный сервис'}).product-page__actions-mobile__checkbox
+							.col-xs-3.col-sm-3.product-page__actions-mobile__col-3
+								+button({type:'buttonSubmit'}).btn-lg.btn--red.btn-block.spec__buy__btn.js-buy
+									| Купить
+
+
+	section.product-page__conditions.hidden-xs.hidden-sm
 		+content-outer()
 			.col-md-2.col-sm-2
 				.media.product-page__condition
@@ -195,16 +223,16 @@ mixin productPage()
 						+link().link--pseudo.product-page__condition__link Условия доставки
 	+similar()
 	section.product-page__info
-		.container-20-outer
+		.container-20-outer.product-page-container
 			.row-20.product-page__info__row
-				.col-md-20-1.product-page__info__col
+				.col-md-20-1.product-page__info__col.hidden-xs.hidden-sm
 					aside.product-page__aside.sticky
 						+product({
 											type:'sidebar',
 											rating: true,
 											oldPrice: '45 000 BYR'
 										})
-				.col-md-20-4.product-page__info__col
+				.col-md-20-4.col-sm-20-5.product-page__info__col
 					+navTabsProduct({
 										type:'small',
 										links: [
@@ -244,26 +272,30 @@ mixin productPage()
 												content: 'Доставка и оплата'
 												}
 										]
-									}).js-product-nav
+									}).js-product-nav.hidden-xs.hidden-sm
 
 					.tab-content.product-page__tab-content
 						#description.tab-pane.active(role='tabpanel')
-							+description()
+							section.product-page-description
+								+description()
 						#features.tab-pane(role='tabpanel')
-							+features()
+							section.product-page-features
+								+features-content()
 						#review.tab-pane(role='tabpanel')
-							+reviews()
+							section.product-page-reviews
+								+reviews()
 						#questions.tab-pane(role='tabpanel')
 							+questions()
 						#delivery.tab-pane(role='tabpanel')
 							+delivery()
 	+expert({
 						heading: 'Мнение эксперта',
-						subheading: 'кратко о главном'
+						subheading: 'кратко о главном',
+						type: 'product'
 					}).product__expert
 		| В то время, когда несколько компаний выпускают велосипеды стоимостью свыше 9000 тыс. долл., Скотт разработал гоночный аппарат способный на равне конкурировать с топ-байками всего то за две трети их стоимости. Мы видим Гемблер в качестве идеального байка для езды на высоких скоростях с крутых склонов, а также обладающим способностью хорошо выполнять другие, более сложные задачи, после изменения несколько настроек геометрии рамы.
-	+pattern()
-	+productPageSet()
+	+pattern().hidden-xs.hidden-sm
+	+productPageSet().hidden-xs.hidden-sm
 	+recent()
 	+not-found()
 
