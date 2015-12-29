@@ -51,7 +51,7 @@
 	&__link
 		&::after
 			position absolute
-			content ''
+			// content ''
 			top -1px
 			right -1px
 			bottom -1px
@@ -95,14 +95,16 @@
 	&__head
 		padding-left 16px
 		padding-right 16px
-		position absolute
-		top product-head-top
-		height product-head-height
+		padding-top 20px
 		+below(4)
-			top 10px
+			padding-top 10px
 			padding-left 10px
 			padding-right 10px
-			height product-head-height - 10px
+
+		&--hot
+			position static
+			height auto
+			padding 20px 16px 10px
 
 		&--sidebar
 			position static
@@ -111,8 +113,6 @@
 			background-color #F6F6F6
 
 		&--set-main
-			top 0
-			height 92px
 			padding-top 20px
 			background-color #252525
 
@@ -121,21 +121,17 @@
 		padding-top = product-head-top + product-head-height
 		padding-top-hot = product-head-top + product-hot-head-height
 
-		padding padding-top 10px 0
+		padding 0 10px 0
 		&--hot
-			padding-top padding-top-hot
+			padding-top 12px
 			font-size 0
-
-			+below(4)
-				padding-top 56px
 
 		&--sidebar
 			padding 12px 15px 4px
 		&--set-main
-			padding 92px 15px 4px
+			padding 12px 15px 4px
 
 		+below(4)
-			padding-top 56px
 			display flex
 			flex-direction column
 
@@ -159,7 +155,8 @@
 				width 100%
 
 			&--hot
-				width 350px
+				max-width 350px
+				width 100%
 				padding-top 10px
 				padding-bottom 10px
 				+below(4)
@@ -168,9 +165,8 @@
 					padding-bottom 0
 
 			&--recent
-				width 190px
-				// padding-top 10px
-				// padding-bottom 10px
+				max-width 190px
+				width 100%
 				+below(4)
 					width 100%
 
@@ -326,11 +322,18 @@
 		padding-left 6px
 		padding-right 6px
 		padding-bottom 18px
+		+below(1340px)
+			text-align center
 		&__links
 			max-width 50%
 			padding-left 15px
 			display inline-block
 			vertical-align top
+			min-width 110px
+			+below(1340px)
+				width 100%
+				margin-top 10px
+				padding-left 0
 			&--similar
 				display block
 				margin 10px auto 0

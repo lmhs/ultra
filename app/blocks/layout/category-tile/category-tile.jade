@@ -47,9 +47,9 @@ mixin category-tile(args)
 					h6.category-tile__heading
 						| !{args.title}
 			.category-tile__body.category-tile__body--columns
-				+content()
+				.row
 					each item in args.items
-						div(class='col-md-'+ Math.floor(6/args.items.length))
+						div(class='col-md-'+ Math.floor(6/args.items.length) + ' col-sm-'+ Math.floor(6/args.items.length))
 							a(href=jv0).category-tile-column__item
 								.category-tile-column__title !{item}
 								.category-tile-column__img-wrap

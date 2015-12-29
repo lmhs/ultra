@@ -15,7 +15,7 @@ mixin showcase()
 	- var	order = pageId === 'order'
 
 
-	+nav-main()
+	+nav-main().hidden-xs
 	+content-outer().visible-md-block.visible-lg-block
 		.col-md-6
 			+breadcrumb(['Главная', 'Каталог товаров', 'Бытовая техника'])

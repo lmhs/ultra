@@ -32,12 +32,12 @@ mixin timer(args)
 						strong.timer__strong Подарок
 						+link().link--pseudo.timer__link
 							| задняя мигалка KELLYS — FOCUS
-					.timer__countdown-wrap
-						+countdown(args.countdownId)
 					if args.limit
 						.timer__limit
 							i.icon-important.timer__limit__icon
 							|  Товар заканчивается
+					.timer__countdown-wrap
+						+countdown(args.countdownId)
 
 			when 'discount'
 			default
@@ -45,9 +45,9 @@ mixin timer(args)
 					.timer__label__text
 						| -10%
 				.timer__body
-					.timer__countdown-wrap
-						+countdown(args.countdownId)
 					if args.limit
 						.timer__limit
 							i.icon-important.timer__limit__icon
 							|  Товар заканчивается
+					.timer__countdown-wrap
+						+countdown(args.countdownId)
