@@ -12,9 +12,9 @@ import $ from 'jquery';
 				factory(jQuery);
 		}
 }(function ($) {
-	let reasonArticle = $('.js-reasons-article');
-	let showArticleLink = $('.js-show-reasons-article');
-	let showArticleLinkWrap = $('.js-showmore-wrap');
+	var reasonArticle = $('.js-reasons-article');
+	var showArticleLink = $('.js-show-reasons-article');
+	var showArticleLinkWrap = $('.js-showmore-wrap');
 
 	if (reasonArticle.hasClass('reasons-article--is-hidden')) {
 		showArticleLinkWrap.on('click', '.js-show-reasons-article', function () {

@@ -12,9 +12,9 @@ import $ from 'jquery';
 				factory(jQuery);
 		}
 }(function ($) {
-	let featuresBody = $('.js-features-body');
-	let showFeaturesButton = $('.js-button-show-more-features');
-	let showFeaturesWrap = $('.js-button-show-more-features-wrap');
+	var featuresBody = $('.js-features-body');
+	var showFeaturesButton = $('.js-button-show-more-features');
+	var showFeaturesWrap = $('.js-button-show-more-features-wrap');
 
 	if (featuresBody.hasClass('product-page-lp-features__body--hidden')) {
 		showFeaturesWrap.on('click', '.js-button-show-more-features', function () {
