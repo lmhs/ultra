@@ -58,6 +58,14 @@
 	padding-top 63px
 	border-top 1px solid #e1e1e1
 
+.product-page-container
+	&--no-padding
+		+below(4)
+			padding-left 0
+			padding-right 0
+	+below(4)
+		width 100%
+
 .spec__label__caption
 	margin-top 4px
 	font-size 13px
@@ -241,6 +249,10 @@
 .product-page__tab-content
 	width 75%
 	padding-bottom 80px
+	+below(4)
+		width 100%
+		&.tab-content > .tab-pane
+			display block
 
 .product-page__aside
 	margin-top 10px
@@ -259,6 +271,9 @@
 
 .product-page__info__row
 	display flex
+	+below(4)
+		flex-direction column
+		flex-wrap wrap
 
 .no-flexbox
 	.product-page__info__row

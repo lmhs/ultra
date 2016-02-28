@@ -15,8 +15,8 @@ import 'wnumb';
 }(function ($) {
   'use strict';
 	// https://github.com/leongersen/noUiSlider
-	let slider = document.getElementById('slider');
-	let experienceSlider = document.getElementById('js-experience-slider');
+	var slider = document.getElementById('slider');
+	var experienceSlider = document.getElementById('js-experience-slider');
 
 	if (slider !== null) {
 		noUiSlider.create(slider, {
@@ -39,12 +39,12 @@ import 'wnumb';
 			})
 		});
 		// duplicate values to input fields
-		let inputNumberTo = document.getElementById('js-slider-to');
-		let inputNumberFrom = document.getElementById('js-slider-from');
+		var inputNumberTo = document.getElementById('js-slider-to');
+		var inputNumberFrom = document.getElementById('js-slider-from');
 
-		slider.noUiSlider.on('update', ( values, handle ) => {
+		slider.noUiSlider.on('update', function( values, handle ) {
 
-			let value = values[handle];
+			var value = values[handle];
 
 			if ( handle ) {
 				inputNumberTo.value = value;
@@ -53,10 +53,10 @@ import 'wnumb';
 			}
 		});
 
-		inputNumberTo.addEventListener('change', () => {
+		inputNumberTo.addEventListener('change', function () {
 			slider.noUiSlider.set([null, this.value]);
 		});
-		inputNumberFrom.addEventListener('change', () => {
+		inputNumberFrom.addEventListener('change', function () {
 			slider.noUiSlider.set([this.value, null]);
 		});
 	}
@@ -77,9 +77,9 @@ import 'wnumb';
 			})
 		});
 
-		let inputNumberExperience = document.getElementById('js-experience-slider-months');
+		var inputNumberExperience = document.getElementById('js-experience-slider-months');
 
-		experienceSlider.noUiSlider.on('update', ( value ) => {
+		experienceSlider.noUiSlider.on('update', function ( value ) {
 
 			inputNumberExperience.innerHTML  = value;
 

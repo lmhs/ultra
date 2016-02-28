@@ -2,8 +2,9 @@
 	background url(../images/girl-2-ok.jpg) center bottom no-repeat;
 	padding-top 90px
 	padding-bottom 150px
-	+below(4)
+	+below(1140px)
 		background none
+	+below(4)
 		padding 0
 	+below(3)
 		width 100%
@@ -12,6 +13,7 @@
 		text-align center
 		margin-top 0
 		margin-bottom 118px
+
 
 		+below(4)
 			font-size 22px
@@ -24,6 +26,12 @@
 
 		+mobile()
 			text-align center
+
+
+		.product-page__not-found &
+			+tablet()
+				text-align center
+				font-weight bold
 
 	&__heading3
 		font-size 28px
@@ -50,6 +58,14 @@
 		+at(3)
 			margin-right auto
 			margin-left auto
+		.product-page__not-found &
+			+tablet()
+				float right
+			+mobile()
+				margin-top 20px
+				margin-bottom 0
+
+
 
 	+below(4)
 		.search__list

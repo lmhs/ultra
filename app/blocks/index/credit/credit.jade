@@ -11,15 +11,15 @@ mixin credit()
 	block vars
 	- var	order = pageId === 'order'
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', pageTitle])
-	section.credit__head
+	section.credit__head.hidden-xs.hidden-sm
 		+content-outer()
 			.col-md-6
 				h1.credit__heading-main Кредит
-	+b('section').credit-intro
+	+b('section').credit-intro.hidden-xs.hidden-sm
 		+content-outer()
 			.col-md-6
 				.row

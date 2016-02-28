@@ -1,6 +1,6 @@
 mixin expert(args)
 	section.expert&attributes(attributes)
-		.container-outer
+		.container-outer(class= args.type === 'product' ? 'product-page-container' : '')
 			.row
 				.col-md-6
 					h1.expert__heading

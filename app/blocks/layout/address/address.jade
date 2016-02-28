@@ -8,12 +8,13 @@ mixin address(args)
 			each item, index in args.address.metro
 				if item.caption
 					+e('span').metro__text !{item.caption}
-				if args.type === 'credit'
-					+e('i').metro__icon.icon-metro-red-19x19
-				else
-					+e('i').metro__icon.icon-metro-blue-19x19
-				+e('span').metro__text
-					| !{item.name}
-					if args.address.metro.length > 1
-						| , !{''}
+				+e('span').metro__name
+					if args.type === 'credit'
+						+e('i').metro__icon.icon-metro-red-19x19
+					else
+						+e('i').metro__icon.icon-metro-blue-19x19
+					+e('span').metro__text
+						| !{item.name}
+						if args.address.metro.length > 1
+							| , !{''}
 

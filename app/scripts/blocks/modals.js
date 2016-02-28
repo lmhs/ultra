@@ -13,30 +13,30 @@ import $ from 'jquery';
 		factory(jQuery);
 	}
 }(function ($) {
-	$('.js-login-btn').on('click',() => {
+	$('.js-login-btn').on('click',function () {
 		$('#loginPopup').modal('hide');
 	});
-	$('.js-register-btn').on('click',() => {
+	$('.js-register-btn').on('click',function () {
 		$('#loginPopup').modal('hide');
 	});
-	$('.js-forgot-btn').on('click',() => {
+	$('.js-forgot-btn').on('click',function () {
 		$('#loginPopup').modal('hide');
 	});
-	$('.js-forgot-return').on('click',() => {
+	$('.js-forgot-return').on('click',function () {
 		$('#forgotPopup').modal('hide');
 		$('#loginPopup').modal('show');
 	});
 	if ($('.js-open-subscribe-modal').length) {
-		let subscribeSection = $('.js-open-subscribe-modal');
+		var subscribeSection = $('.js-open-subscribe-modal');
 		if (subscribeSection.is(':visible')) {
-			let modalOffset = Math.floor(subscribeSection.offset().top);
-			let subscribeSectionHeight = subscribeSection.outerHeight();
-			let shown = false;
+			var modalOffset = Math.floor(subscribeSection.offset().top);
+			var subscribeSectionHeight = subscribeSection.outerHeight();
+			var shown = false;
 
 			$(window).on('scroll resize', function() {
 				if (!shown) {
-					let pageOffset = window.pageYOffset;
-					let windowHeight = $(window).height();
+					var pageOffset = window.pageYOffset;
+					var windowHeight = $(window).height();
 
 					if (pageOffset >= ( modalOffset - windowHeight ) ) {
 						$('#subscribePopup').modal('show');

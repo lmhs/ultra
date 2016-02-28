@@ -10,8 +10,8 @@ mixin contacts()
 	block vars
 	- var	order = pageId === 'order'
 
-	+nav-main()
-	+content-outer()
+	+nav-main().hidden-xs
+	+content-outer().hidden-xs.hidden-sm
 		.col-md-6
 			+breadcrumb(['Главная', pageTitle])
 
@@ -88,8 +88,9 @@ mixin contacts()
 							+e('i').street__icon.icon-map-red-17x28
 							+e('span').street__text г.Минск, пр-т Независимости 28
 						+e.metro
-							+e('i').metro__icon.icon-metro-blue-19x19
-							+e('span').metro__text Октябрьская
+							+e.metro__name
+								+e('i').metro__icon.icon-metro-blue-19x19
+								+e('span').metro__text Октябрьская
 						+e.link
 							+link('#map').link--pseudo.js-show-map
 								| Смотреть на карте

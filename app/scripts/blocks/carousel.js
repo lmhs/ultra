@@ -60,6 +60,7 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+
 	$('.js-similar-carousel').slick({
 		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
@@ -88,6 +89,7 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+
 	$('.js-set-items-row').slick({
 		prevArrow: '<button type="button" data-role="none" class="slick-prev slick-prev-small" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-left-fff-13x24 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next slick-next-small" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-right-fff-13x24 slick-next__icon"></i></button>',
@@ -130,6 +132,7 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+
 	$('.js-announce-carousel').slick({
 		mobileFirst: true,
 		centerMode: true,
@@ -171,6 +174,21 @@ import $ from 'jquery';
 			settings: 'unslick'
 		}]
 	});
+	$(window).on('resize orientationChange', function(event) {
+		if ($(window).width() > 990) {//check window.width()...
+			$('.js-sidebar-product').slick('reinit');
+		}
+		if ($(window).width() > 480) {
+			$('.js-recent-carousel').slick('reinit');
+			$('.js-other-carousel').slick('reinit');
+			$('.js-live-carousel').slick('reinit');
+			$('.js-similar-carousel').slick('reinit');
+			$('.js-other-carousel').slick('reinit');
+		}
+		if ($(window).width() > 481) {
+			$('.js-announce-carousel').slick('reinit');
+		}
+	});
 	$('.js-sidebar-product').slick({
 		prevArrow: '<button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0" role="button"><i class="icon-arrow-up-EB-24x12 slick-prev__icon"></i></button>',
 		nextArrow: '<button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0" role="button"><i class="icon-arrow-down-EB-24x12 slick-next__icon"></i></button>',
@@ -208,4 +226,5 @@ import $ from 'jquery';
 			}
 		}]
 	});
+	$('.js-gallery-product').slick('slickFilter',':not(.product-gallery__main__item--is-hidden)');
 }));

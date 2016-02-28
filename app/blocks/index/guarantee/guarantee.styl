@@ -21,6 +21,8 @@
 		background-color #F6F6F6
 		padding-top 92px
 		border-top 1px solid #E1E1E1
+		+mobile()
+			padding-top 20px
 
 	&__sample__col
 		margin-left -12px
@@ -53,11 +55,15 @@
 		margin-top -237px
 		left 50%
 		margin-left -253px
+		+below(1100px)
+			display none
 
 	&__reasons
 		position relative
 		margin-top 150px
 		text-align center
+		+below(1100px)
+			margin-top 20px
 
 	&__reason
 		width 280px
@@ -67,6 +73,9 @@
 		z-index 1
 		text-align left
 		padding-top 28px
+		+mobile()
+			width 100%
+			text-align center
 		h6
 			margin-bottom 13px
 
@@ -74,6 +83,8 @@
 	position relative
 	float right
 	top 40px
+	+below(1100px)
+		display none
 
 .rule__heading
 	margin-top 0
@@ -87,21 +98,31 @@
 	sprite($icon_left_arrow_phone)
 	margin-right 65px
 	margin-top 28px
+	+below(1100px)
+		&.icon-left-arrow-phone
+			display none
 
 .icon-right-steps
 	sprite($icon_right_steps)
 	margin-left 45px
 	margin-top 15px
-
+	+below(1100px)
+		&.icon-right-steps
+			display none
 
 .questions
 	&__sections
 		text-align left
 	&__left
 		padding-left 110px
+		+below(4)
+			padding-left 0
 	&__right
 		padding-left 20px
 		padding-right 110px
+		+below(4)
+			padding-left 0
+			padding-right 0
 	&__icon
 		float left
 	&__item
@@ -119,29 +140,47 @@
 
 .first-reason
 	margin-right 200px
+	+below(1100px)
+		margin-right 20px
+	+mobile()
+		margin-right 0
 
 .second-reason
 	margin-left 200px
+	+below(1100px)
+		margin-left 20px
+	+mobile()
+		margin-left 0
 
 .reason__number-first
 	margin-left 85px
 	position relative
+	+below(1100px)
+		margin-left 0
+
 	&::after
 		content ''
 		sprite($icon_left_arrow_guarantee)
 		position absolute
 		bottom 65px
 		left 45px
+		+below(1100px)
+			content none
 
 .reason__number-second
 	margin-left 123px
 	position relative
+	+below(1100px)
+		margin-left 0
+
 	&::after
 		content ''
 		sprite($icon_right_arrow_guarantee)
 		position absolute
 		bottom 65px
 		right 45px
+		+below(1100px)
+			content none
 
 .solve-recipes
 	margin-top 30px
@@ -152,10 +191,19 @@
 	display inline-block
 	vertical-align top
 	text-align left
+	+below(1100px)
+		display block
+		margin 20px auto
+	+mobile()
+		width 100%
 	&:first-child
 		padding-right 36px
+		+below(1100px)
+			padding-right 0
 	&:last-child
 		padding-left 36px
+		+below(1100px)
+			padding-left 0
 
 	h6
 		margin-top 0
@@ -171,6 +219,9 @@
 		background-color #f6f6f6
 		border-bottom 3px solid #e6e6e6
 		position relative
+		+mobile()
+			padding 6px
+			width 100%
 
 .down
 	width 40px
@@ -192,10 +243,16 @@
 	&__left
 		padding-left 110px
 		padding-right 30px
+		+below(4)
+			padding-left 0
+			padding-right 0
 
 	&__right
 		padding-right 110px
 		padding-left 30px
+		+below(4)
+			padding-left 0
+			padding-right 0
 	&__heading
 		margin-top 0
 	&__default-ul
@@ -205,6 +262,7 @@
 
 
 .connection
+	clearfix()
 	&__profile
 		width 113px
 		float left
@@ -285,12 +343,21 @@
 .exceptions
 	text-align left
 	padding 50px 210px 80px
+	+below(4)
+		padding 10px
+		text-align center
 
 .exception
 	margin-left 100px
+	+below(4)
+		margin-left 0
+		text-align left
 	&__icon
 		float left
 		margin-top 7px
+		+below(4)
+			float none
+			margin-bottom 20px
 
 .sample
 	&__check
@@ -338,6 +405,8 @@
 			top 7px
 			left calc(100% + 16px)
 			background url('../images/pattern-color-right-341x113.png') no-repeat
+			+below(4)
+				content none
 		&::after
 			content ''
 			width 341px
@@ -346,6 +415,8 @@
 			top 7px
 			right calc(100% + 16px)
 			background url('../images/pattern-color-left-341x113.png') no-repeat
+			+below(4)
+				content none
 
 	&__heading
 		margin-top 80px

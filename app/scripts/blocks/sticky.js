@@ -1,4 +1,4 @@
-// http://kenwheeler.github.io/slick/
+
 import './polyfills/jquery.sticky.min.js';
 import $ from 'jquery';
 

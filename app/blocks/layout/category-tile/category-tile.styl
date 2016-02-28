@@ -78,10 +78,15 @@
 				transform rotate(127deg)
 				background url(../images/pattern-color-bones-83x80.png) repeat-x
 				background-size 83px 80px
+				+between(3,1220px)
+					top 0
+					left 0
+
 		&--columns
-			padding 34px 0 40px
+			padding 34px 10px 40px
 
 		&--super-offer
+			position relative
 			+below(3)
 				padding 40px 10px 15px 15px
 
@@ -92,9 +97,12 @@
 		color #FFF
 		position relative
 		z-index 1
+		position absolute
+		top 11px
+		left 20px
 		+below(3)
 			width 100%
-			position absolute
+			// position absolute
 			left 0
 			top 0
 			font-size 16px
@@ -131,6 +139,9 @@
 			text-decoration underline
 
 	&-super__info
+		margin-right 0
+		padding-top 40px
+	&-super__info
 	&-assistant__info
 		margin-right 150px
 		+below(3)
@@ -162,11 +173,19 @@
 			border 10px solid rgba(0,0,0,0)
 
 	&-super__img-wrap
+		margin-top 40px
+		+below(3)
+			margin-top 0
+	&-super__img-wrap
 	&-assistant__img-wrap
 		float right
 		width 150px
 		+below(3)
 			width 90px
+
+	&-assistant__img-wrap
+		+between(3,1220px)
+			float none
 
 	&__img-wrap
 		float left

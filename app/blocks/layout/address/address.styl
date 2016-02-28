@@ -1,7 +1,7 @@
 .address
 	display block
 	margin 0 auto
-	white-space nowrap
+	// white-space nowrap
 	text-align center
 
 	&__street
@@ -22,7 +22,10 @@
 	&__metro
 		display block
 		margin 6px auto 0
-		white-space nowrap
+		&__name
+			white-space nowrap
+			vertical-align middle
+			line-height 20px
 		&__icon
 			vertical-align middle
 			margin-right 8px

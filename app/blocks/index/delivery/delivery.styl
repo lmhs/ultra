@@ -13,9 +13,13 @@
 			display inline-block
 			width 250px
 			vertical-align top
+			+mobile()
+				width 100%
 
 			& + &
 				margin-left 100px
+				+mobile()
+					margin-left 0
 
 			&-img-wrap
 				height 200px
@@ -37,10 +41,14 @@
 				text-align left
 				margin-top 20px
 				margin-bottom 20px
+				+mobile()
+					text-align center
 
 			&-text
 				font-size 15px
 				text-align left
+				+mobile()
+					text-align center
 
 			&-count
 				position absolute
@@ -67,13 +75,21 @@
 			font-weight semibold
 		&__right
 			padding-left 110px
+			+below(4)
+				padding-left 10px
 			p
 				margin-bottom 40px
 		&__left
 			padding-right 110px
 			padding-left 72px
+			+below(4)
+				padding-right 10px
+				padding-left 0
 			p
 				margin-bottom 30px
+		&__img
+			+below(4)
+				display none
 
 	&-type
 		&__icon-wrap
@@ -81,11 +97,16 @@
 			width 113px
 			text-align center
 			padding-top 20px
+			+mobile()
+				float none
+				width 100%
 		&__content
 			margin-left 120px
 			padding 20px 0
 			border-bottom 1px solid #e1e1e1
 			color #555
+			+mobile()
+				margin-left 0
 			strong
 				color #555
 			&__heading
@@ -102,11 +123,19 @@
 		&__inner
 			padding 45px 110px
 			background-color #FFFCDD
+			+mobile()
+				padding 20px
 		&__icon
 			float left
 			margin-left 90px
+			+below(4)
+				float none
+				margin-left 0
+				margin-bottom 30px
 		&__content
 			margin-left 195px
+			+below(4)
+				margin-left 0
 		&__heading
 			margin-top 0
 			margin-bottom 25px

@@ -1,3 +1,71 @@
-mixin features()
-	article.features
-		| features
+mixin features-content()
+	section.product-page-features-table
+		section.product-page-lp__info-features__body.product-page-lp-features__body--hidden.js-features-body
+			.row
+				.col-md-6.col-sm-3.col-xs-6
+					+b('section').general-info
+						+e('h6').heading.small Общая информация
+						+e('table').table.table-striped
+							tbody
+								tr
+									td
+										span Класс
+									td
+										span горный
+								tr
+									td
+										span Год выпуска
+									td
+										span 2014 год
+								tr
+									td
+										span Производитель
+									td
+										span Scott
+				.col-md-6.col-sm-3.col-xs-6
+					+b('section').general-info
+						+e('h6').heading.small Рама
+						+e('table').table.table-striped
+							tbody
+								tr
+									td
+										span Тип рамы
+									td
+										span закрытая
+								tr
+									td
+										span Материал рамы
+									td
+										span алюминий
+								tr
+									td
+										span Производитель
+									td
+										span Scott
+				.col-md-6.col-sm-3.col-xs-6
+					+b('section').general-info
+						+e('h6').heading.small Вилка
+						+e('table').table.table-striped
+							tbody
+								tr
+									td
+										span Ходо амортизатора
+									td
+										span 100 мм
+								tr
+									td
+										span Тип вилки
+									td
+										span амортизационная
+								tr
+									td
+										span Вилка
+									td
+										span Scott
+		section.product-page-lp-features__foot.js-button-show-more-features-wrap
+			+buttonMoreFeatures({text:'Все характеристики'}).product-page-lp__more-btn.js-button-show-more-features
+			.mobile-text-more
+				+link().link--pseudo.link--pseudo-with-icon.mobile-text-more__link.js-show-more-mobile
+					span.link__text Все характеристики
+					| !{''}
+					i.icon-arrow-down-red-8x5.link__icon.mobile-text-more__link-icon
