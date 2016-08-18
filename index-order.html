@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="imagetoolbar" content="no">
+		<meta name="msthemecompatible" content="no">
+		<meta name="cleartype" content="on">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+		<meta name="google" value="notranslate">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link sizes="57x57" href="/apple-touch-icon-57x57.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="/apple-touch-icon-114x114.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="/apple-touch-icon-72x72.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="/apple-touch-icon-144x144.png" rel="apple-touch-icon">
+		<link sizes="60x60" href="/apple-touch-icon-60x60.png" rel="apple-touch-icon">
+		<link sizes="120x120" href="/apple-touch-icon-120x120.png" rel="apple-touch-icon">
+		<link sizes="76x76" href="/apple-touch-icon-76x76.png" rel="apple-touch-icon">
+		<link sizes="152x152" href="/apple-touch-icon-152x152.png" rel="apple-touch-icon">
+		<link sizes="180x180" href="/apple-touch-icon-180x180.png" rel="apple-touch-icon">
+		<link sizes="192x192" href="/favicon-192x192.png" rel="icon" type="image/png">
+		<link sizes="160x160" href="/favicon-160x160.png" rel="icon" type="image/png">
+		<link sizes="96x96" href="/favicon-96x96.png" rel="icon" type="image/png">
+		<link sizes="16x16" href="/favicon-16x16.png" rel="icon" type="image/png">
+		<link sizes="32x32" href="/favicon-32x32.png" rel="icon" type="image/png">
+		<link rel="manifest" href="/assets/icons/manifest.json">
+		<meta name="application-name" content="">
+		<meta name="msapplication-tooltip" content="">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/mstile-large.png">
+		<meta name="msapplication-starturl" content="https://csssr.github.io/csssr-project-template/">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="msapplication-square70x70logo" content="/mstile-small.png">
+		<meta name="msapplication-square150x150logo" content="/mstile-medium.png">
+		<meta name="msapplication-wide310x150logo" content="/mstile-wide.png">
+		<meta name="msapplication-square310x310logo" content="/mstile-large.png">
+		<title>Оформление заказа</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800&amp;subset=latin,latin-ext,cyrillic-ext,cyrillic" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900italic,900&amp;subset=latin,cyrillic-ext,cyrillic,latin-ext" rel="stylesheet" type="text/css">
+		<link href="./assets/styles/app.min.css?t=1471515682614" rel="stylesheet">
+	</head>
+
+	<body>
+		<header class="header header--w-border">
+			<button type="button" class="btn js-toggle-mobile-menu header__toggle-btn"><i class="toggle-btn-icon icon-burger-menu-252525-18x12"></i>
+			</button>
+			<div id="js-header-mobile-menu" class="header__mobile">
+				<nav class="header-mobile-menu">
+					<div class="header-mobile-menu__head">
+						<div class="header-mobile-menu__search-wrap">
+							<label class="search-input-label header-mobile-menu__search-input-label">
+								<input type="search" placeholder="Поиск по сайту" class="form-control">
+							</label>
+						</div>
+						<div class="header-mobile-menu__menu">
+							<button type="button" class="btn header-mobile-menu__toggle-btn js-toggle-mobile-menu"><i class="toggle-btn-icon icon-burger-menu-434141-18x12"></i>
+							</button>
+						</div>
+					</div>
+					<div class="header-mobile-menu__body">
+						<ul class="header-mobile-menu__list">
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-multimedia-mobile icon-mobile-menu icon-multimedia-mobile"></i><span class="header-mobile-menu__name">Фото, телефония, мультимедиа</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-household-mobile icon-household-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Бытовая техника</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-sport-mobile icon-mobile-menu icon-sport-mobile"></i><span class="header-mobile-menu__name">Туризм, спорт, отдых</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-children-mobile icon-children-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Товары для детей, игры</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-auto-mobile icon-auto-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Автотовары</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-repair-mobile icon-mobile-menu icon-repair-mobile"></i><span class="header-mobile-menu__name">Дом, сад, ремонт</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-sale-mobile icon-mobile-menu icon-sale-mobile"></i><span class="header-mobile-menu__name">Акции, скидки, уценка</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-delivery-mobile icon-delivery-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Оплата и доставка</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-about-mobile icon-about-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Про нас</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-guarantee-mobile icon-guarantee-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Гарантия</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-discont-mobile icon-discont-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Дисконтная прогамма</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-service-mobile icon-mobile-menu icon-service-mobile"></i><span class="header-mobile-menu__name">Сервисные центры</span></a>
+							</li>
+							<li class="header-mobile-menu__list-item"><a href="javascript:void(0);" class="header-mobile-menu__list-item-link"><i class="header-mobile-menu__icon-blog-mobile icon-blog-mobile icon-mobile-menu"></i><span class="header-mobile-menu__name">Блог</span></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="header__top-wrap visible-md-block visible-lg-block">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="header__top"><a href="/index" class="link link-small--pseudo"><i class="icon-return link-icon-return"></i><span class="link__text link-text--pseudo">В магазин</span></a>
+								<div class="user__block"><a href="/cart" class="link header-top__link header-top__link--cart"><i class="icon-cart header-top__icon-cart"><span class="cart__label">0</span></i><span class="link__text">Корзина</span></a><a href="javascript:void(0);" class="link header-top__link js-login"
+									data-toggle="modal" data-target="#loginPopup"><i class="icon-enter header-top__icon-enter"></i><span class="link__text">Войти</span></a>
+									<div id="loginPopup" tabindex="-1" role="dialog" aria-labelledby="loginPopupLabel" aria-hidden="true" class="modal fade">
+										<div class="modal-dialog modal-dialog--login">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true"><i class="icon-close-20-b7 modal-close-icon"></i></span><span class="sr-only">Close</span>
+													</button>
+													<h4 class="login-modal__heading">Вход в личный кабинет</h4>
+												</div>
+												<div class="modal-body">
+													<form class="modal__form login-modal__form js-login-form">
+														<div class="form-group">
+															<label for="email" class="control-label col-sm-20-1">Email</label>
+															<div class="col-sm-20-4">
+																<input type="email" name="Email" placeholder="Email" class="form-control login-modal__form__input" id="email">
+															</div>
+														</div>
+														<div class="form-group">
+															<label for="password" class="control-label col-sm-20-1">Пароль</label>
+															<div class="col-sm-20-4">
+																<input type="password" name="Пароль" placeholder="Пароль" class="form-control login-modal__form__input" id="password">
+															</div>
+														</div>
+														<div class="login-modal__form__actions">
+															<div class="col-sm-20-4 col-sm-20-offset-1"><a href="javascript:void(0);" role="button" class="btn btn-med btn--red modal__form__login-btn js-login-btn" data-toggle="modal" data-target="#helloPopup">Войти</a>
+																<div class="login-modal__form__checkbox-wrap">
+																	<div class="checkbox login-modal__form__checkbox js-remember-checkbox">
+																		<input type="checkbox" name="" id="check-remember" value="" class="checkbox-element">
+																		<label for="check-remember"><span class="checkbox-text">Запомнить меня</span>
+																		</label>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="login-modal__form__actions">
+															<div class="col-sm-20-4 col-sm-20-offset-1"><a href="javascript:void(0);" role="button" class="btn btn-sm btn--ghost btn--ghost-gray modal__form__forgot-btn js-forgot-btn" data-toggle="modal" data-target="#forgotPopup">Вспомнить пароль</a><a href="javascript:void(0);" role="button"
+																class="btn btn-sm btn--ghost btn--ghost-dark modal__form__register-btn js-register-btn">Регистрация</a>
+															</div>
+														</div>
+														<div class="login-modal__form__actions login-modal__form__actions--foot">
+															<div class="login-modal__form__actions__or">или</div>
+															<div class="login-modal__form__actions__social"><a href="javascript:void(0);" class="link login-modal__form__actions__social-link js-fb-login"><i class="icon-fb-42x43"></i></a><a href="javascript:void(0);" class="link login-modal__form__actions__social-link js-vk-login"><i class="icon-vk-42x43"></i></a>
+																<a
+																href="javascript:void(0);" class="link login-modal__form__actions__social-link js-google-login"><i class="icon-google-42x43"></i>
+																	</a>
+															</div>
+														</div>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="helloPopup" tabindex="-1" role="dialog" aria-labelledby="helloPopupLabel" aria-hidden="true" class="modal fade">
+										<div class="modal-dialog modal-dialog--hello">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true"><i class="icon-close-20-b7 modal-close-icon"></i></span><span class="sr-only">Close</span>
+													</button>
+													<div class="hello-modal__people-icons"><i class="icon-person-female-red-43x64 hello-modal__people-icon"></i><i class="icon-person-male-dark-43x64 hello-modal__people-icon"></i>
+													</div>
+													<h4 class="hello-modal__heading">Здравствуйте,<span class="js-username"> Наталья</span>!</h4>
+												</div>
+												<div class="modal-body">
+													<div class="modal-body__content">
+														<p class="modal-body__text">Рады снова видеть Вас на сайте.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="forgotPopup" tabindex="-1" role="dialog" aria-labelledby="forgotPopupLabel" aria-hidden="true" class="modal fade">
+										<div class="modal-dialog modal-dialog--forgot">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" data-dismiss="modal" class="close"><span aria-hidden="true"><i class="icon-close-20-b7 modal-close-icon"></i></span><span class="sr-only">Close</span>
+													</button>
+													<h4 class="forgot-modal__heading">Напомнить пароль</h4>
+												</div>
+												<div class="modal-body">
+													<div class="modal-body__content">
+														<p class="modal-body__text">Введите Email, который вы указывали при регистрации. На него мы вышлем инструкции по восстановлению пароля</p>
+														<form class="modal__form forgot-modal__form js-forgot-form">
+															<div class="form-group">
+																<label for="forgotEmail" class="control-label col-sm-20-1">Email</label>
+																<div class="col-sm-20-4">
+																	<input type="text" name="Email" placeholder="Email" class="form-control forgot-modal__form__input" id="forgotEmail">
+																</div>
+															</div>
+															<div class="form-group">
+																<div class="col-sm-20-4 col-sm-20-offset-1"><a href="javascript:void(0);" role="button" class="btn btn-med btn--red modal__form__forgot-btn js-forgot-btn">Напомнить пароль</a>
+																</div>
+															</div>
+															<div class="form-group"><a href="javascript:void(0);" class="link link-small--pseudo js-forgot-return"><i class="icon-return link-icon-return"></i><span class="link__text link-text--pseudo">Вернуться</span></a>
+															</div>
+														</form>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__main-wrap">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="header__main">
+								<a href="./index.html" class="link">
+									<div class="logo header__logo">
+										<img src="./assets/images/logo.png" width="206" height="50" alt="logo">
+									</div>
+								</a>
+								<div class="header__inner visible-md-block visible-lg-block">
+									<div class="phone header__phone">
+										<div class="phone__number-wrap"><span class="phone__area">+375</span>
+											<ul class="phone__code">
+												<li class="phone__code-item phone__code-item--vel">(44)</li>
+												<li class="phone__code-item phone__code-item--mts">(29)</li>
+												<li class="phone__code-item phone__code-item--life">(25)</li>
+											</ul><a href="tel:7825555" class="link phone__number">782&nbsp;55&nbsp;55</a>
+										</div>
+										<div class="phone__txt">Звони сейчас</div>
+										<div class="phone__extra">Время работы магазина: Пн-Пт с&nbsp;9&nbsp;до&nbsp;20</div>
+										<div class="not-found__btn-wrap"><a href="javascript:void(0);" role="button" class="btn btn-xsm btn--dark btn--callback">Обратный звонок</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__right"><a href="javascript:void(0);" class="header-mobile__link hidden-mobile"><i class="icon-sale-sticker-22x22 header-mobile-icon header-mobile__sale-sticker-icon"></i></a><a href="javascript:void(0);" class="header-mobile__link hidden-mobile"><i class="icon-phone-19x19 header-mobile-icon header-mobile__phone-icon"></i></a>
+				<a
+				href="javascript:void(0);" class="header-mobile__link"><i class="icon-search-17x17 header-mobile-icon header-mobile__search-icon"></i>
+					</a><a href="/cart" class="link header-mobile__link"><i class="icon-cart header-mobile-icon header-mobile__cart-icon"><span class="cart__label">0</span></i></a>
+			</div>
+		</header>
+		<main role="main" class="main">
+			<section class="hidden-lg hidden-md order-items-text-mobile">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="order-items-text-mobile__inner"><span class="order-items-text-mobile__text">Вы заказываете: </span><strong class="order-items-text-mobile__strong"><span class="js-order-items-count">2</span> товара на сумму <span class="js-order-items-price">1 212 000 BYR</span></strong>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="hidden-lg hidden-md order-items-mobile">
+				<div class="container-outer">
+					<div class="row">
+						<div class="order-items-mobile__order-items">
+							<div class="order-item-mobile">
+								<div class="order-item-mobile__close"><a href="javascript:void(0);" class="link order-item-mobile__close-link js-remove-item"><i class="icon-trash order-item-mobile__icon-trash"></i></a>
+								</div>
+								<div class="order-item-mobile__image-outer">
+									<div class="order-item-mobile__image-wrap">
+										<img src="http://dummyimage.com/217x143/4d494d/686a82.gif&amp;text=placeholder+image" width="217" height="143" alt="placeholder+image" class="order-item-mobile__image" title="" />
+									</div>
+								</div>
+								<div class="order-item-mobile__info-outer">
+									<div class="order-item-mobile__head"><a href="/index-good.html"><strong class="order-item-mobile__description__name">Nokia Lumia 630 Yellow (Black)</strong><span class="order-item-mobile__description__price">1 950 000 BYR</span><span class="order-item-mobile__description__text">Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM</span></a>
+									</div>
+									<div class="order-item-mobile__body">
+										<div class="order-item-mobile__count">
+											<div class="order-item-mobile__select-sm-wrap select-sm-wrap">
+												<select class="selectpicker select2-container--bootstrap select--sm js-select-sm">
+													<option value="all" selected>1 шт.
+														<option value="2">2 шт.</option>
+														<option value="3">3 шт.</option>
+														<option value="4">4 шт.</option>
+														<option value="5">5 шт.</option>
+													</option>
+												</select>
+											</div>
+											<div class="order-item-mobile__total">Итого:<strong class="order-item-mobile__total-price">1 950 000 BYR</strong>
+											</div>
+										</div>
+										<div class="order-item-mobile__extra">
+											<div class="checkbox">
+												<label>
+													<input type="checkbox" class="checkbox-element" /><a href="javascript:void(0);" class="link link--pseudo order-item-mobile__link-more">Дополнительный сервис</a><span class="order-item-mobile__checkbox__text"><strong>+ 150 400 BYR</strong></span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="order__head">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-6">
+							<h1 class="order__heading">Оформление заказа</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="order__body">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="order__form-wrap">
+								<form class="order__form form-horisontal js-order-form">
+									<div class="order-section">
+										<div class="order-section__head">
+											<div class="order-section__number">1</div>Введите ваши данные</div>
+										<div class="order-section__body">
+											<div class="form-group">
+												<label for="name" class="control-label col-sm-20-1 is-required">Имя</label>
+												<div class="col-sm-20-4">
+													<input type="text" name="Имя" placeholder="Имя" aria-describedby="helpName" class="form-control order__form__input" id="name"><span class="help-block--inline">Например, Иван</span>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="email" class="control-label col-sm-20-1 is-required">Email</label>
+												<div class="col-sm-20-4">
+													<input type="email" name="Email" placeholder="Email" aria-describedby="helpEmail" class="form-control order__form__input" id="email"><span class="help-block--inline">На этот почтовый ящик пришлем подробности заказа</span>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="phone" class="control-label col-sm-20-1 is-required">Телефон</label>
+												<div class="col-sm-20-4">
+													<input type="phone" name="Телефон" placeholder="+375" aria-describedby="helpPhone" class="form-control order__form__input js-phone" id="phone"><span class="help-block--inline">Контактный телефон только на случай вопросов по Вашему заказу</span><span class="help-block">Введите номер телефона</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order-section">
+										<div class="order-section__head">
+											<div class="order-section__number">2</div>Город и способ доставки</div>
+										<div class="order-section__body">
+											<div class="form-group form-group-city">
+												<label class="control-label col-sm-20-1">Город</label>
+												<div class="col-sm-20-4">
+													<div class="select-sm-wrap select-sm-city-wrap order__form__input">
+														<select class="selectpicker select2-container--bootstrap select--sm select--sm-city js-select-sm">
+															<option value="all" selected>Минск
+																<option value="brest">Брест</option>
+																<option value="grodno">Гродно</option>
+																<option value="vitebsk">Витебск</option>
+																<option value="mogilev">Могилев</option>
+															</option>
+														</select>
+													</div><span class="help-block--inline help-block-city--inline"><a href="javascript:void(0);" class="link link--pseudo help-link--inline">Нет Вашего города в списке?</a></span>
+												</div>
+											</div>
+											<div class="form-group form-group-radio js-radio-address-block">
+												<div class="col-sm-20-4 col-sm-20-offset-1">
+													<div class="radio order__form__radio radio--courier js-radio-address">
+														<input type="radio" checked="checked" id="radio-1" name="addressRadios" class="radio-element">
+														<label for="radio-1">Курьерская доставка по Минску</label>
+														<div role="tooltip" class="tooltip right in order__form__tooltip">
+															<div class="tooltip-arrow order__form__tooltip-arrow"></div>
+															<div class="tooltip-inner">Бесплатно</div>
+														</div>
+													</div>
+												</div>
+												<div class="address-block js-address">
+													<label for="address-courier" class="control-label col-sm-20-1">Адрес</label>
+													<div class="col-sm-20-4">
+														<input type="text" name="Адрес" placeholder="Адрес" class="form-control order__form__input" id="address-courier">
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-radio js-radio-address-block">
+												<div class="col-sm-20-4 col-sm-20-offset-1">
+													<div class="radio order__form__radio radio--self-pickup js-radio-address">
+														<input type="radio" id="radio-2" name="addressRadios" class="radio-element">
+														<label for="radio-2">Самовывоз со склада в Минске</label>
+														<div role="tooltip" class="tooltip right in order__form__tooltip">
+															<div class="tooltip-arrow order__form__tooltip-arrow"></div>
+															<div class="tooltip-inner">Бесплатно</div>
+														</div>
+													</div>
+												</div>
+												<div class="address-block address--is-hidden js-address">
+													<div class="col-sm-20-4 col-sm-20-offset-1">
+														<div class="order-map">
+															<div class="order-map__iframe">
+																<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=V4sidRrcu64JsAX_eB1YkU2mRkHsicGW&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;sourceType=constructor"></script>
+															</div>
+															<div class="order-map__footer"><i class="icon-map-292929-12x18 order-map__icon-map"></i><address class="order-map__address">г.Минск, ул.Ленина 56, оф 7</address>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="form-group form-group-radio js-radio-address-block">
+												<div class="col-sm-20-4 col-sm-20-offset-1">
+													<div class="radio order__form__radio radio--express js-radio-address">
+														<input type="radio" id="radio-3" name="addressRadios" class="radio-element">
+														<label for="radio-3">Экспресс доставка по Минску (в течении часа)</label> <strong class="order__form__price js-order-price">41 612 BYR</strong>
+													</div>
+												</div>
+												<div class="address-block address--is-hidden js-address">
+													<label for="address-express" class="control-label col-sm-20-1">Адрес</label>
+													<div class="col-sm-20-4">
+														<input type="text" name="Адрес" placeholder="Адрес" class="form-control order__form__input" id="address-express">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order-section">
+										<div class="order-section__head">
+											<div class="order-section__number">3</div>Способ оплаты</div>
+										<div class="order-section__body">
+											<div class="form-group">
+												<div class="col-sm-20-4 col-sm-20-offset-1">
+													<div class="radio order__form__radio">
+														<input type="radio" id="radio-4" name="paymentRadios" class="radio-element">
+														<label for="radio-4">Наличными курьеру при доставке</label>
+													</div>
+													<div class="radio order__form__radio">
+														<input type="radio" id="radio-5" name="paymentRadios" class="radio-element">
+														<label for="radio-5">Безналичная оплата согласно выставленному счету</label>
+													</div>
+													<div class="radio order__form__radio">
+														<input type="radio" id="radio-6" name="paymentRadios" class="radio-element">
+														<label for="radio-6">Оплата наличными в магазине при самовывозе</label>
+													</div>
+												</div>
+											</div>
+											<div class="form-group visible-md-block visible-lg-block">
+												<div class="col-sm-20-4 col-sm-20-offset-1"><a href="javascript:void(0);" class="link link--pseudo order__form__back-link js-return-order">Вернуться назад</a>
+													<button type="submit" class="btn btn-lg btn--dark order__form__submit-btn js-submit-order">Оформить заказ</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="order__form__foot hidden-md hidden-lg">
+										<div class="form-group">
+											<div class="col-sm-20-4 col-sm-20-offset-1">
+												<div class="order__form__final"><span class="js-order-items-count">3</span> товара на сумму<strong class="order__form__final__price">3 374 000 BYR</strong>
+												</div>
+												<div class="order__form__submit-wrap">
+													<button type="submit" class="btn btn-med btn--red order__form__submit-btn--mobile js-submit-order">Оформить заказ</button>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-20-4 col-sm-20-offset-1"><a href="javascript:void(0);" class="link link--pseudo link--pseudo-with-icon order__form__return-link js-back"><i class="icon-left-555-5x9 link__icon order__form__return-link-icon"></i><span class="link__text">Вернуться к покупкам</span></a>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-2 visible-md-block visible-lg-block">
+							<section class="order__fast">
+								<div class="order__fast__inner">
+									<h2 class="order__fast__heading h2--red">Быстрый заказ</h2>
+									<h6 class="small order__fast__subheading">Не хотите заполнять никаких форм?</h6>
+									<form>
+										<label class="order__fast__label">Просто введите номер:</label>
+										<div class="form-group">
+											<input type="phone" placeholder="+375" class="form-control js-phone">
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-lg btn--dark btn-block order-fast__form__submit-btn js-submit-order-fast">Заказать быстро</button>
+										</div>
+									</form>
+								</div>
+							</section>
+							<section class="order__delivery">
+								<div class="order__delivery__head">
+									<h6 class="small order__delivery__heading">Доставка</h6>
+									<div class="icon-order-delivery-wrap"><i class="icon-truck-delivery icon-order-truck-delivery"></i>
+									</div>
+								</div>
+								<div class="order__delivery__body">
+									<div class="order__delivery__row"><strong class="order__delivery__strong">Дни работы:</strong><span class="order__delivery__span">Понедельник — Суббота</span>
+									</div>
+									<div class="order__delivery__row"><strong class="order__delivery__strong">Часы работы:</strong><span class="order__delivery__span">с 12.00 до 24.00</span>
+									</div>
+									<ul class="default-ul order__delivery__default-ul">
+										<li>Бесплатная доставка по Минску</li>
+										<li>Дешевая доставка по РБ</li>
+									</ul>
+								</div>
+							</section>
+							<section class="order-info">
+								<h6 class="order-info__heading small">Оформление заказа не обязывает к покупке</h6>
+								<p class="order-info__text">Заказ будет направлен вам только после подтверждения по телефону.</p>
+								<p class="order-info__text">Менеджер свяжется с вами для уточнения деталей в течении 30 минут после оформления заказa.</p>
+								<div class="order-info__promo">
+									<div class="media categories-promo__tile-link__inner">
+										<div class="media-left media-middle categories-promo__tile__img"><i class="icon-wire-transfer"></i>
+										</div>
+										<div class="media-body categories-promo__tile__body">
+											<h5 class="media-heading categories-promo__tile__heading">Гарантия возврата денег</h5>
+											<p class="categories-promo__tile__text">Выгодные условия кредита. Не откладывай на потом!</p>
+										</div>
+									</div>
+									<div class="media categories-promo__tile-link__inner">
+										<div class="media-left media-middle categories-promo__tile__img"><i class="icon-security categories-promo__tile__icon-security"></i>
+										</div>
+										<div class="media-body categories-promo__tile__body">
+											<h5 class="media-heading categories-promo__tile__heading">Сделка без рисков</h5>
+											<p class="categories-promo__tile__text">Плати наличными при получении или денежным переводом</p>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="pattern visible-md-block visible-lg-block"></div>
+			<section class="order__items visible-md-block visible-lg-block">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="order__items__text"><strong>Вы заказываете </strong><span><span class="js-order-items-count">2</span> товара на сумму <span class="js-order-items-price">1 212 000 BYR</span></span>
+							</div>
+							<table class="table table-bordered-rows order__table">
+								<thead>
+									<tr>
+										<th colspan="2" class="order__table__desc">Описание товара</th>
+										<th class="order__table__price">Цена за шт.</th>
+										<th class="order__table__amount">Кол-во</th>
+										<th class="order__table__total">Итого</th>
+										<th class="order__table__remove"></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a href="/index-good.html">
+												<img src="/assets/images/w9fdby7l0gdogomcxqkka.jpg" alt="phone" class="order-item__img" />
+											</a>
+										</td>
+										<td>
+											<div class="order-item__description"><a href="/index-good.html"><strong class="order-item__description__name">Nokia Lumia 630 Yellow (Black)</strong><span class="order-item__description__text">Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM</span></a>
+												<div class="order-item__description__warranty">
+													<div class="checkbox">
+														<label>
+															<input type="checkbox" class="checkbox-element" /><span class="order-item__checkbox__text"><span>Продлить гарантию еще на 1 год </span><strong>+ 50 400 BYR</strong>
+															</span><a href="javascript:void(0);" class="link link--pseudo order-item__link-more">узнать подробнее</a>
+														</label>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__price-value">712 000 BYR</td>
+										<td class="order__table__amount-value">
+											<div class="form-group input-group input-number js-input-number">
+												<input data-type="number" data-ride="spinner" type="number" value="2" min="0" max="999" class="form-control js-input-number-control" id="id1">
+												<div class="input-group__btn--vertical">
+													<button type="button" role="button" data-value="increase" data-toggle="spinner" data-target="#id1" class="input-number-btn input-number-btn--up js-up-input"><i class="icon-caret-up"></i>
+													</button>
+													<button type="button" role="button" data-value="decrease" data-toggle="spinner" data-target="#id1" class="input-number-btn input-number-btn--down js-down-input"><i class="icon-caret-down"></i>
+													</button>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__total-value">712 000 BYR</td>
+										<td><a href="javascript:void(0);" class="link js-remove-item"><i class="icon-trash order-item__icon-trash"></i></a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="/index-good.html">
+												<img src="/assets/images/w9fdby7l0gdogomcxqkka.jpg" alt="phone" class="order-item__img" />
+											</a>
+										</td>
+										<td>
+											<div class="order-item__description"><a href="/index-good.html"><strong class="order-item__description__name">Nokia Lumia 630 Yellow (Black)</strong><span class="order-item__description__text">Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM</span></a>
+												<div class="order-item__description__warranty">
+													<div class="checkbox">
+														<label>
+															<input type="checkbox" class="checkbox-element" /><span class="order-item__checkbox__text"><span>Продлить гарантию еще на 1 год </span><strong>+ 50 400 BYR</strong>
+															</span><a href="javascript:void(0);" class="link link--pseudo order-item__link-more">узнать подробнее</a>
+														</label>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__price-value">712 000 BYR</td>
+										<td class="order__table__amount-value">
+											<div class="form-group input-group input-number js-input-number">
+												<input data-type="number" data-ride="spinner" type="number" value="2" min="0" max="999" class="form-control js-input-number-control" id="id2">
+												<div class="input-group__btn--vertical">
+													<button type="button" role="button" data-value="increase" data-toggle="spinner" data-target="#id2" class="input-number-btn input-number-btn--up js-up-input"><i class="icon-caret-up"></i>
+													</button>
+													<button type="button" role="button" data-value="decrease" data-toggle="spinner" data-target="#id2" class="input-number-btn input-number-btn--down js-down-input"><i class="icon-caret-down"></i>
+													</button>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__total-value">712 000 BYR</td>
+										<td><a href="javascript:void(0);" class="link js-remove-item"><i class="icon-trash order-item__icon-trash"></i></a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="/index-good.html">
+												<img src="/assets/images/w9fdby7l0gdogomcxqkka.jpg" alt="phone" class="order-item__img" />
+											</a>
+										</td>
+										<td>
+											<div class="order-item__description"><a href="/index-good.html"><strong class="order-item__description__name">Nokia Lumia 630 Yellow (Black)</strong><span class="order-item__description__text">Смартфон 4.5" сенсорный экран, SIM-карт 2 SIM</span></a>
+												<div class="order-item__description__warranty">
+													<div class="checkbox">
+														<label>
+															<input type="checkbox" class="checkbox-element" /><span class="order-item__checkbox__text"><span>Продлить гарантию еще на 1 год </span><strong>+ 50 400 BYR</strong>
+															</span><a href="javascript:void(0);" class="link link--pseudo order-item__link-more">узнать подробнее</a>
+														</label>
+													</div>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__price-value">712 000 BYR</td>
+										<td class="order__table__amount-value">
+											<div class="form-group input-group input-number js-input-number">
+												<input data-type="number" data-ride="spinner" type="number" value="2" min="0" max="999" class="form-control js-input-number-control" id="id3">
+												<div class="input-group__btn--vertical">
+													<button type="button" role="button" data-value="increase" data-toggle="spinner" data-target="#id3" class="input-number-btn input-number-btn--up js-up-input"><i class="icon-caret-up"></i>
+													</button>
+													<button type="button" role="button" data-value="decrease" data-toggle="spinner" data-target="#id3" class="input-number-btn input-number-btn--down js-down-input"><i class="icon-caret-down"></i>
+													</button>
+												</div>
+											</div>
+										</td>
+										<td class="order__table__total-value">712 000 BYR</td>
+										<td><a href="javascript:void(0);" class="link js-remove-item"><i class="icon-trash order-item__icon-trash"></i></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="order__foot">
+								<div class="order__return"><a href="/index.html" class="link link--pseudo order__return-link">Вернуться к покупкам</a>
+								</div>
+								<div class="order__cart">
+									<div class="order__cart__refresh"><a href="javascript:void(0);" class="link order__cart__refresh-link"><i class="icon-refresh"></i><span class="order__cart__refresh-link-text--pseudo">Обновить корзину</span></a>
+									</div>
+									<div class="order__cart__final">Сумма заказа: <strong>1 212 000 BYR</strong>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__navigation">
+				<div class="container-outer">
+					<div class="row">
+						<div class="col-md-1 visible-md-block visible-lg-block">
+							<nav class="nav nav--footer-left">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/index-contacts.html" class="link footer__link--light">О магазине</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-delivery.html" class="link footer__link--light">Доставка и оплата</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-credit.html" class="link footer__link--light">Товары в кредит</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-guarantee.html" class="link footer__link--light">Гарантия</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Дополнительная гарантия</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Дисконтная программа</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Часто задаваемые вопросы</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Благотворительность</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Подарочные сертификаты</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Сервисные центры</a>
+									</li>
+									<li class="nav-list-item"><a href="/index-help.html" class="link footer__link--light">Блог</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-4">
+							<section class="subscribe">
+								<h3 class="subscribe__heading">Ultra предложения</h3>
+								<div class="subscribe__arrows"><i class="icon-left-arrow--footer"></i><span class="subscribe__arrows__caption">Подпишись и получи купон на скидку</span><i class="icon-right-arrow--footer"></i>
+								</div>
+								<div class="subscribe__forms clearfix">
+									<div class="subscribe__form">
+										<div class="subscribe__head"><span class="subscribe__head__txt subscribe__head__txt--red">Для женщин</span><i class="icon-person-female-49x74 subscribe__head__icon subscribe__head__icon--person-female"></i>
+										</div>
+										<div class="subscribe__form__inner">
+											<div class="subscribe__body">
+												<input type="email" placeholder="female@gmail.com" class="subscribe__input">
+											</div>
+											<div class="subscribe__foot">
+												<button type="submit" class="btn btn-med btn--ghost subscribe__btn subscribe__btn--red">Подписаться</button>
+											</div>
+										</div>
+									</div>
+									<div class="subscribe__form">
+										<div class="subscribe__head"><i class="icon-person-male-49x74 subscribe__head__icon subscribe__head__icon--person-male"></i><span class="subscribe__head__txt subscribe__head__txt--white">Для мужчин</span>
+										</div>
+										<div class="subscribe__form__inner">
+											<div class="subscribe__body">
+												<input type="email" placeholder="male@gmail.com" class="subscribe__input">
+											</div>
+											<div class="subscribe__foot">
+												<button type="submit" class="btn btn-med btn--ghost subscribe__btn subscribe__btn--white">Подписаться</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+						<div class="col-md-1 visible-md-block visible-lg-block"><a href="/sale.html" class="link footer__link--red">Акции, скидки, уценка</a>
+							<nav class="nav nav--footer-right">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--dark">Фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Объективы</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Вспышки и лампы</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Mp3 плееры</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Наушники</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Фены и Стайлеры</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Машинки для стрижки</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Бритвы</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Мультиварки</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="row footer__bottom-nav visible-md-block visible-lg-block">
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="col-md-1">
+							<nav class="nav nav--footer-bottom">
+								<ul class="nav-list cf">
+									<li class="nav-list-item"><a href="/about.html" class="link footer__link--heading footer__link--dark">Фото, телефония, мультимедиа</a>
+									</li>
+									<li class="nav-list-item"><a href="/delivery.html" class="link footer__link--dark">Фототехника и фотоаппараты</a>
+									</li>
+									<li class="nav-list-item"><a href="/credit.html" class="link footer__link--dark">Телефония</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Аудио, Видео, TV</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Оборудование для DJ</a>
+									</li>
+									<li class="nav-list-item"><a href="/help.html" class="link footer__link--dark">Планшеты, компьютерная и офисная техника</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<section class="footer-legal">
+					<div class="container-outer visible-md-block visible-lg-block">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="footer-legal__info">ИП Левитан Артур Борисович проживающий по адресу <address>г.&nbsp;Минск, ул.&nbsp;Романовская&nbsp;Слобода&nbsp;11, кв.&nbsp;45</address>, зарегистрирован Минским горисполкомом решением от 8&nbsp;сентября 2006&nbsp;года №&nbsp;1798 в едином государственном
+									регистре юридических лиц и индивидуальных предпринимателей
+									<br>Свидетельство №190751859
+									<br>Зарегистрирован в торговом реестре 30.06.2010</div>
+								<div class="footer-social"><a href="javascript:void(0);" class="footer-social__social-link"><i class="icon-fb-42x43"></i></a><a href="javascript:void(0);" class="footer-social__social-link"><i class="icon-vk-42x43"></i></a>
+									<a href="javascript:void(0);" class="footer-social__social-link"><i class="icon-google-42x43"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="footer-info">
+					<div class="container-25-outer">
+						<div class="row-25">
+							<div class="col-md-25-2 col-xs-25-2 footer-info__col">
+								<div class="footer-info__copyright">©&nbsp;2004–2015 Интернет-магазин&nbsp;«Ultra.by»</div>
+							</div>
+							<div class="col-md-25-1 col-xs-25-2 footer-info__col footer-info__col-author">
+								<div class="footer-info__author"><i class="footer-info__icon icon-sensepro-logo-51x30"></i>
+									<div class="footer-info__txt">проектирование и дизайн от <a href="javascript:void(0);">Sense&nbsp;Production</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="./assets/scripts/modernizr.custom.min.js"></script>
+		<script src="./assets/scripts/app.min.js"></script>
+	</body>
+
+</html>
